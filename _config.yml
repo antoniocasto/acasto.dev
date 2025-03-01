@@ -13,7 +13,7 @@ url: "https://antoniocasto.github.io"   # Website base url (to be updated in the
 baseurl: "" # The subpath of your site, e.g. /blog
 permalink: "pretty" # Clean URLs (for instance, /about/ in place of /about.html)
 markdown: kramdown
-email: antoniocasto.info@gmail.com
+email: developer@acasto.dev
 linkedin_link: https://www.linkedin.com/in/antonio-casto-547a411a1/
 github_username:  antoniocasto
 
