@@ -1,0 +1,13 @@
+// _sass/_components.scss
+.glass-panel {
+    @include glass(15px, 0.4);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}

@@ -1,0 +1,39 @@
+<!-- _layouts/default.html -->
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}" />
+  <!-- SEO meta tags (Open Graph, Twitter, ecc.) Automatically generated -->
+  {% seo %}
+
+  <!-- Main CSS compiled from SCSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+  <!-- Header with navigation bar. Wraps a page. -->
+  <header class="site-header glass-panel">
+    <nav class="nav-bar container">
+      <ul class="menu">
+        <li><a href="{{ "/" | relative_url }}">Home</a></li>
+        <li><a href="{{ "/about/" | relative_url }}">About</a></li>
+        <li><a href="{{ "/portfolio/" | relative_url }}">Portfolio</a></li>
+        <li><a href="{{ "/blog/" | relative_url }}">Blog</a></li>
+        <li><a href="{{ "/contacts/" | relative_url }}">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page main content here. -->
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <!-- Footer. Wraps a page. -->
+  <footer class="site-footer container">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved. Made with ♥️.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+// _sass/_base.scss
+
+/*
+    Define base global styles
+*/
+
+body {
+    font-family: $font-stack;
+    color: $text-color;
+    background-color: $background-color;
+    margin: 0;
+  }
+  
+  h1, h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 0.5em;
+  }
+  
+  // Links
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+  // Hover effect for Links
+  a:hover {
+    text-decoration: underline;
+  }
