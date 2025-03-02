@@ -9,13 +9,14 @@ description: >- # This means to ignore newlines until "baseurl:"
   "This is the personal website and blog of Antonio Casto - Passionate iOS Developer.
   Here you will find my projects, my thoughts and my contacts.""
 lang: "en-EN"
-url: "https://antoniocasto.github.io"   # Website base url (to be updated in the future to use personal domain)
+url: "https://acasto.dev"   # Website base url (to be updated in the future to use personal domain)
 baseurl: "" # The subpath of your site, e.g. /blog
 permalink: "pretty" # Clean URLs (for instance, /about/ in place of /about.html)
 markdown: kramdown
 email: developer@acasto.dev
 linkedin_link: https://www.linkedin.com/in/antonio-casto-547a411a1/
 github_username:  antoniocasto
+github_link: https://github.com/antoniocasto/
 
 # Build settings
 theme: null # Using personalized layout
