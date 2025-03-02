@@ -8,6 +8,19 @@
   <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}" />
   <!-- SEO meta tags (Open Graph, Twitter, ecc.) Automatically generated -->
   {% seo %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Antonio Casto",
+      "jobTitle": "iOS Developer",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "sameAs": [
+        "{{ site.linkedin_link }}",
+        "{{ site.github_link }}"
+      ]
+    }
+    </script>
 
   <!-- Main CSS compiled from SCSS -->
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
