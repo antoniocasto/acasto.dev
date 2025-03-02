@@ -19,10 +19,21 @@ Currently, I am focused on improving my approach to **building modular, testable
 I enjoy **sharing challenges** with my team and collaborating to find the most **effective solutions**.  
 I always **think before I code**. If I don’t know how to do something, I **research** and consult with more **experienced developers**.
 
-## Working Experience
+## Work Experience
 
-- 🎓 Laurea in Informatica presso Università XYZ.
-- 💼 iOS Developer presso ABC S.r.l. (2015-2020), attualmente Senior Developer in DEF S.p.A.
+### iOS Developer
+**Hidonix** - *Catania, Italy*  
+📅 **October 9, 2023 – Present** 
+
+- **Design, development, testing, deployment, and maintenance** of iOS applications within the company.  
+- **Research and development** activities to explore new technologies and improve existing solutions.  
+
+### Developer – Research Scholarship  
+**Nexa Center for Internet & Society – Politecnico di Torino – DAUIN**  
+📅 **October 2021 – October 2022** *(Remote – Turin, Italy)*  
+
+- Contributed to the development of a **recommender system** for the European **Erasmus+ CLIKC project** (*Content and Language Integrated Learning for Key Competences*).  
+- Worked on an **adaptive learning system** leveraging **semantic technologies** to enhance personalized content recommendations.  
 
 ## Development Skills
 
