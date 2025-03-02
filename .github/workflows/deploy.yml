@@ -29,4 +29,5 @@ jobs:
         with:
           publish_dir: ./_site
           publish_branch: gh-pages
+          cname: acasto.dev
           github_token: ${{ secrets.GITHUB_TOKEN }}
