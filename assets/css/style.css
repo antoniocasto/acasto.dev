@@ -1,0 +1,25 @@
+/* Define colors, fonts, and a reusable mixin for the "glass" panel
+*/
+/* Define base global styles
+*/
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #333; background-color: #f0f4f8; margin: 0; }
+
+h1, h2, h3, h4 { font-weight: 600; margin-bottom: 0.5em; }
+
+a { color: #0a84ff; text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+/* Here we define the classes for the layout (container, header, nav, footer)
+*/
+.container { max-width: 800px; margin: 0 auto; padding: 1rem; }
+
+.site-header { padding: 1rem 0; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); /* For iOS Safari support */ border: 1px solid rgba(255, 255, 255, 0.3); }
+
+.site-header .menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
+
+.site-header .menu li a { font-weight: 500; }
+
+.glass-panel { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); /* For iOS Safari support */ border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+
+.profile-image { border-radius: 50%; width: 150px; height: 150px; object-fit: cover; }
