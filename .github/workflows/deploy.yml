@@ -1,0 +1,31 @@
+name: Jekyll Build and Deploy
+on:
+  push:
+    branches: [ main ]   # Trigger when pushing on main branch
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v3
+
+      - name: Ruby setup
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'       # Ruby version to use
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Build Jekyll
+        run: bundle exec jekyll build  --strict_front_matter
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages   # Use gh-pages branch for published files
