@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="post">
+    <h1>{{ page.title }}</h1>
+    <p>
+      <small>
+        {% if page.lang == "en" %}
+          Published on 
+          {{ page.date | date: "%d %B %Y" }}
+        {% elsif page.lang == "it" %}
+          Pubblicato il 
+          {{ page.date | date: "%d %B %Y" | replace: "January", "Gennaio" 
+                                           | replace: "February", "Febbraio"
+                                           | replace: "March", "Marzo"
+                                           | replace: "April", "Aprile"
+                                           | replace: "May", "Maggio"
+                                           | replace: "June", "Giugno"
+                                           | replace: "July", "Luglio"
+                                           | replace: "August", "Agosto"
+                                           | replace: "September", "Settembre"
+                                           | replace: "October", "Ottobre"
+                                           | replace: "November", "Novembre"
+                                           | replace: "December", "Dicembre" }}
+        {% endif %}
+      </small>
+    </p>
+    <div class="content">
+      {{ content }}
+    </div>
+</article>

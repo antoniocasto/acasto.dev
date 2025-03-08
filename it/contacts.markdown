@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Contacts
+title: "Contatti"
+ref: "contacts"
+permalink: "/it/contacts/"
 ---
-
 # Contacts  
 
 Feel free to send me a message, or reach out to me through my social profiles.  

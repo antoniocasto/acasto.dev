@@ -1,13 +1,21 @@
 <!-- _layouts/default.html -->
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="{{ page.lang | default: site.default_lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} - {{ site.title }}</title>
   <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}" />
+
   <!-- SEO meta tags (Open Graph, Twitter, ecc.) Automatically generated -->
+  {% for lang in site.languages %}
+    {% assign translated = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
+    {% if translated %}
+      <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ translated.url }}">
+    {% endif %}
+  {% endfor %}
   {% seo %}
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -20,7 +28,7 @@
         "{{ site.github_link }}"
       ]
     }
-    </script>
+  </script>
 
   <!-- Main CSS compiled from SCSS -->
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
@@ -30,11 +38,26 @@
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
       <ul class="menu">
-        <li><a href="{{ "/" | relative_url }}">Home</a></li>
-        <li><a href="{{ "/about/" | relative_url }}">About</a></li>
-        <li><a href="{{ "/portfolio/" | relative_url }}">Portfolio</a></li>
-        <li><a href="{{ "/blog/" | relative_url }}">Blog</a></li>
-        <li><a href="{{ "/contacts/" | relative_url }}">Contacts</a></li>
+        <li><a href="{{ site.baseurl }}/{{ page.lang }}/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/{{ page.lang }}/about/">About</a></li>
+        <li><a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">Portfolio</a></li>
+        <li><a href="{{ site.baseurl }}/{{ page.lang }}/blog/">Blog</a></li>
+        <li><a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">Contacts</a></li>
+      </ul>
+      <ul class="language-switcher">
+        {% for lang in site.languages %}
+          {% assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
+          {% if translated_page == nil %}
+            {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
+          {% endif %}
+          {% if translated_page %}
+            {% if lang == page.lang %}
+              <li class="current-lang">{{ lang | upcase }}</li>
+            {% else %}
+              <li><a href="{{ translated_page.url }}">{{ lang | upcase }}</a></li>
+            {% endif %}
+         {% endif %}
+        {% endfor %}
       </ul>
     </nav>
   </header>

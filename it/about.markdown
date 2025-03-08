@@ -1,6 +1,8 @@
 ---
 layout: default
-title: About
+title: "Chi Sono"
+ref: "about"
+permalink: "/it/about/"
 ---
 # About Me
 

@@ -1,15 +1,20 @@
 ---
 layout: default
-title: Portfolio
+title: "Portfolio"
+ref: "portfolio"
+permalink: "/en/portfolio/"
 ---
 # Portfolio  
-{% if site.portfolio.size == 0 %}
+
+{% assign localized_projects = site.portfolio | where: "lang", page.lang %}
+
+{% if localized_projects.size == 0 %}
 Here you will find some personal projects I worked on. Stay tuned!
 {% else %}
 Here are some personal projects I worked on:
 {% endif %}
 
-{% for project in site.portfolio %}
+{% for project in localized_projects %}
 **{{ project.title }}** – {{ project.description }}  
 <small>[Source code]({{ project.github }})</small>
 {% endfor %}
