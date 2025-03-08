@@ -4,13 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} - {{ site.title }}</title>
+  <!-- Link to the main CSS file -->
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 </head>
 <body>
+  <!-- Header with navigation bar -->
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
+      <!-- Left side: contains burger button and desktop menu -->
       <div class="nav-left">
-        <ul class="menu">
+        <!-- Burger button (visible on mobile) -->
+        <button class="menu-toggle" aria-label="Apri menu">
+          <span class="burger-icon"></span>
+        </button>
+        <!-- Desktop horizontal menu (visible on larger screens) -->
+        <ul class="menu desktop-menu">
           <li {% if page.ref == "home" %}class="active"{% endif %}>
             <a href="{{ site.baseurl }}/{{ page.lang }}/">
               {{ site.data.localization[page.lang].navigation.home }}
@@ -39,58 +47,38 @@
         </ul>
       </div>
 
-      <!-- Sezione destra (selettore lingua su desktop) -->
+      <!-- Right side: language selector always visible -->
       <div class="nav-right">
-        <details class="language-dropdown desktop-lang">
+        <details class="language-dropdown">
           <summary>{{ page.lang | upcase }}</summary>
           <ul class="language-options">
             {% for lang in site.languages %}
-              {% assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
-              {% if translated_page == nil %}
-                {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
-              {% endif %}
-              {% if translated_page == nil %}
-                {% assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first %}
-              {% endif %}
-              {% if translated_page and lang != page.lang %}
+              {%- assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first -%}
+              {%- if translated_page == nil -%}
+                {%- assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first -%}
+              {%- endif -%}
+              {%- if translated_page == nil -%}
+                {%- assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first -%}
+              {%- endif -%}
+              {%- if translated_page and lang != page.lang -%}
                 <li>
                   <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
                 </li>
-              {% endif %}
+              {%- endif -%}
             {% endfor %}
           </ul>
         </details>
-      </div>
-
-      <div class="mobile-controls">
-        <details class="language-dropdown mobile-lang">
-          <summary>{{ page.lang | upcase }}</summary>
-          <ul class="language-options">
-            {% for lang in site.languages %}
-              {% assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
-              {% if translated_page == nil %}
-                {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
-              {% endif %}
-              {% if translated_page == nil %}
-                {% assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first %}
-              {% endif %}
-              {% if translated_page and lang != page.lang %}
-                <li>
-                  <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </details>
-        <button class="menu-toggle" aria-label="Apri menu">
-          <span class="burger-icon"></span>
-        </button>
       </div>
     </nav>
   </header>
 
+  <!-- Side menu for mobile devices -->
   <div class="side-menu">
-    <button class="close-menu" aria-label="Chiudi menu">&times;</button>
+    <div class="side-menu-header">
+      <!-- Close button -->
+      <button class="close-menu" aria-label="Chiudi menu">&times;</button>
+    </div>
+    <!-- Mobile menu items -->
     <ul class="menu">
       <li {% if page.ref == "home" %}class="active"{% endif %}>
         <a href="{{ site.baseurl }}/{{ page.lang }}/">
@@ -120,6 +108,7 @@
     </ul>
   </div>
 
+  <!-- Main content area -->
   <main class="container">
     {{ content }}
   </main>
@@ -129,7 +118,7 @@
     <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥️.</p>
   </footer>
 
-  <!-- JS -->
+  <!-- Include main JavaScript file -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
