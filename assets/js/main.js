@@ -1,37 +1,30 @@
-document.addEventListener('click', function(e) {
-  const dropdown = document.querySelector('.language-dropdown');
-  if (dropdown && !dropdown.contains(e.target)) {
-    dropdown.removeAttribute('open');
-  }
-});
-
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const sideMenu = document.querySelector('.side-menu');
   const closeMenu = document.querySelector('.close-menu');
 
-  // Apri il side menu
-  menuToggle.addEventListener('click', function() {
+  // Open side menu when burger button is clicked
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
     sideMenu.classList.add('open');
   });
 
-  // Chiudi il side menu
-  closeMenu.addEventListener('click', function() {
+  // Close side menu when close button is clicked
+  closeMenu.addEventListener('click', function(e) {
+    e.stopPropagation();
     sideMenu.classList.remove('open');
   });
 
-  // Chiudi il side menu cliccando fuori
+  // Close side menu when clicking outside
   document.addEventListener('click', function(e) {
-    if (sideMenu.classList.contains('open') &&
-        !sideMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)) {
+    if (sideMenu.classList.contains('open') && !sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
       sideMenu.classList.remove('open');
     }
   });
 
-  // Se si ridimensiona lo schermo oltre 768px e il side menu è aperto, chiudilo
+  // Close side menu on window resize if above mobile breakpoint
   window.addEventListener('resize', function() {
-    if (window.innerWidth > 768 && sideMenu.classList.contains('open')) {
+    if (window.innerWidth >= 769 && sideMenu.classList.contains('open')) {
       sideMenu.classList.remove('open');
     }
   });

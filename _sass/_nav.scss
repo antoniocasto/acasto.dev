@@ -115,7 +115,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  display: none; // Default hidden on desktop; shown via media query
+  display: none; // Hidden by default on desktop; shown via media query
 }
 
 .burger-icon {
@@ -226,11 +226,11 @@
 @media (max-width: 768px) {
   // Hide desktop menu on mobile
   .desktop-menu {
-    display: none;
+    display: none !important;
   }
   // Show burger button on mobile
   .menu-toggle {
-    display: block;
+    display: block !important;
   }
 }
 

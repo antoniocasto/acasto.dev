@@ -20,11 +20,11 @@
 .circular-container::before {
   content: "";
   position: absolute;
-  top: -4px; /* Spazio di 2px tra anello e container */
+  top: -4px;
   left: -4px;
   width: calc(100% + 8px);
   height: calc(100% + 8px);
-  border: 2px solid #0a84ff; /* Colore primario */
+  border: 2px solid #0a84ff;
   border-radius: 50%;
   box-sizing: border-box;
 }
