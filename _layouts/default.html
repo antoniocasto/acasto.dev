@@ -1,52 +1,144 @@
-<!-- _layouts/default.html -->
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="{{ page.lang | default: site.default_lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} - {{ site.title }}</title>
-  <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}" />
-  <!-- SEO meta tags (Open Graph, Twitter, ecc.) Automatically generated -->
-  {% seo %}
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Antonio Casto",
-      "jobTitle": "iOS Developer",
-      "url": "{{ site.url }}{{ site.baseurl }}",
-      "sameAs": [
-        "{{ site.linkedin_link }}",
-        "{{ site.github_link }}"
-      ]
-    }
-    </script>
 
-  <!-- Main CSS compiled from SCSS -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="acasto" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+  
+  <!-- Link to the main CSS file -->
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 </head>
 <body>
-  <!-- Header with navigation bar. Wraps a page. -->
+  <!-- Header with navigation bar -->
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
-      <ul class="menu">
-        <li><a href="{{ "/" | relative_url }}">Home</a></li>
-        <li><a href="{{ "/about/" | relative_url }}">About</a></li>
-        <li><a href="{{ "/portfolio/" | relative_url }}">Portfolio</a></li>
-        <li><a href="{{ "/blog/" | relative_url }}">Blog</a></li>
-        <li><a href="{{ "/contacts/" | relative_url }}">Contacts</a></li>
-      </ul>
+      <!-- Nav Left: Desktop logo and burger button -->
+      <div class="nav-left">
+        <!-- Desktop Logo (visible on desktop only) -->
+        <a href="{{ site.baseurl }}/{{ page.lang }}/" class="brand-logo desktop-logo">
+          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img">
+        </a>
+        <!-- Burger button (always visible on mobile) -->
+        <button class="menu-toggle" aria-label="Open menu">
+          <span class="burger-icon"></span>
+        </button>
+        <!-- Desktop menu (visible on wide screens) -->
+        <ul class="menu desktop-menu">
+          <li {% if page.ref == "home" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/">
+              {{ site.data.localization[page.lang].navigation.home }}
+            </a>
+          </li>
+          <li {% if page.ref == "about" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/about/">
+              {{ site.data.localization[page.lang].navigation.about }}
+            </a>
+          </li>
+          <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
+              {{ site.data.localization[page.lang].navigation.portfolio }}
+            </a>
+          </li>
+          <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">
+              {{ site.data.localization[page.lang].navigation.blog }}
+            </a>
+          </li>
+          <li {% if page.ref == "contacts" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">
+              {{ site.data.localization[page.lang].navigation.contacts }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Nav Center: Mobile logo (visible on mobile only) -->
+      <div class="nav-center">
+        <a href="{{ site.baseurl }}/{{ page.lang }}/" class="brand-logo mobile-logo">
+          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Nav Right: Language selector (always visible) -->
+      <div class="nav-right">
+        <details class="language-dropdown">
+          <summary>{{ page.lang | upcase }}</summary>
+          <ul class="language-options">
+            {% for lang in site.languages %}
+              {%- assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first -%}
+              {%- if translated_page == nil -%}
+                {%- assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first -%}
+              {%- endif -%}
+              {%- if translated_page == nil -%}
+                {%- assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first -%}
+              {%- endif -%}
+              {%- if translated_page and lang != page.lang -%}
+                <li>
+                  <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
+                </li>
+              {%- endif -%}
+            {% endfor %}
+          </ul>
+        </details>
+      </div>
     </nav>
   </header>
 
-  <!-- Page main content here. -->
+  <!-- Side menu for mobile devices -->
+  <div class="side-menu">
+    <!-- Side menu header with close button -->
+    <div class="side-menu-header">
+      <button class="close-menu" aria-label="Close menu">&times;</button>
+    </div>
+    <!-- Mobile menu items -->
+    <ul class="menu">
+      <li {% if page.ref == "home" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/">
+          {{ site.data.localization[page.lang].navigation.home }}
+        </a>
+      </li>
+      <li {% if page.ref == "about" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/about/">
+          {{ site.data.localization[page.lang].navigation.about }}
+        </a>
+      </li>
+      <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
+          {{ site.data.localization[page.lang].navigation.portfolio }}
+        </a>
+      </li>
+      <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">
+          {{ site.data.localization[page.lang].navigation.blog }}
+        </a>
+      </li>
+      <li {% if page.ref == "contacts" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">
+          {{ site.data.localization[page.lang].navigation.contacts }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main content area -->
   <main class="container">
     {{ content }}
   </main>
 
-  <!-- Footer. Wraps a page. -->
+  <!-- Footer -->
   <footer class="site-footer container">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved. Made with ♥️.</p>
+    <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥️.</p>
   </footer>
+
+  <!-- Include main JavaScript file -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

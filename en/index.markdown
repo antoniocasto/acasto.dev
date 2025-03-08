@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Home
+title: "Home"
+ref: "home"
+permalink: "/en/"
 ---
 # Hi, I'm Antonio Casto 👋
 
