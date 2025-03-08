@@ -38,11 +38,21 @@
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
       <ul class="menu">
-        <li><a href="{{ site.baseurl }}/{{ page.lang }}/">Home</a></li>
-        <li><a href="{{ site.baseurl }}/{{ page.lang }}/about/">About</a></li>
-        <li><a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">Portfolio</a></li>
-        <li><a href="{{ site.baseurl }}/{{ page.lang }}/blog/">Blog</a></li>
-        <li><a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">Contacts</a></li>
+        <li {% if page.ref == "home" %}class="active"{% endif %}>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/">Home</a>
+        </li>
+        <li {% if page.ref == "about" %}class="active"{% endif %}>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/about/">About</a>
+        </li>
+        <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">Portfolio</a>
+        </li>
+        <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">Blog</a>
+        </li>
+        <li {% if page.ref == "contacts" %}class="active"{% endif %}>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">Contacts</a>
+        </li>
       </ul>
       <ul class="language-switcher">
         {% for lang in site.languages %}

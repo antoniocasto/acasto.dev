@@ -12,6 +12,11 @@
     object-fit: cover;
 }
 
+.menu li.active a {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
 // Language Switcher Styles
 .language-switcher {
     list-style: none;
