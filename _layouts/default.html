@@ -11,12 +11,13 @@
   <!-- Header with navigation bar -->
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
-      <!-- Nav Left: Contains burger button (mobile) and desktop menu -->
+      <!-- Nav Left: Desktop logo and burger button -->
       <div class="nav-left">
-        <a href="{{ site.baseurl }}/{{ page.lang }}/" class="brand-logo">
+        <!-- Desktop Logo (visible on desktop only) -->
+        <a href="{{ site.baseurl }}/{{ page.lang }}/" class="brand-logo desktop-logo">
           <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img">
         </a>
-        <!-- Burger button, always present on mobile -->
+        <!-- Burger button (always visible on mobile) -->
         <button class="menu-toggle" aria-label="Open menu">
           <span class="burger-icon"></span>
         </button>
@@ -49,8 +50,15 @@
           </li>
         </ul>
       </div>
-      
-      <!-- Nav Right: Language selector (always visible, fixed on the right) -->
+
+      <!-- Nav Center: Mobile logo (visible on mobile only) -->
+      <div class="nav-center">
+        <a href="{{ site.baseurl }}/{{ page.lang }}/" class="brand-logo mobile-logo">
+          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Nav Right: Language selector (always visible) -->
       <div class="nav-right">
         <details class="language-dropdown">
           <summary>{{ page.lang | upcase }}</summary>

@@ -1,11 +1,13 @@
-// ------------------------------
-// BRAND LOGO
-// ------------------------------
-
-.brand-logo .logo-img {
-  height: 40px;   // oppure la dimensione che preferisci
+// Desktop Logo dimensions (visible on desktop)
+.desktop-logo .logo-img {
+  height: 40px;  // Adjust height as desired
   width: auto;
-  // margine o padding se necessario
+}
+
+// Mobile Logo dimensions (visible on mobile, centered in nav-center)
+.mobile-logo .logo-img {
+  height: 40px;  // Adjust height for mobile if needed
+  width: auto;
 }
 
 // ------------------------------
@@ -112,12 +114,17 @@
 }
 
 // ------------------------------
-// Nav Left: Burger Button & Desktop Menu Container
+// Nav Left: Contains burger button & (desktop) logo & desktop menu
 // ------------------------------
 .nav-left {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+// Desktop Logo (visible on desktop)
+.desktop-logo {
+  display: inline-block;
 }
 
 // Burger button styling (visible on mobile)
@@ -155,7 +162,22 @@
 }
 
 // ------------------------------
-// Nav Right: Language Dropdown
+// Nav Center: Mobile Logo (visible on mobile only)
+// ------------------------------
+.nav-center {
+  display: none; // Hidden on desktop; shown via media query
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mobile-logo {
+  display: none; // Hidden on desktop; visible on mobile
+}
+
+// ------------------------------
+// Nav Right: Language Dropdown (always visible)
 // ------------------------------
 .nav-right {
   /* Always visible on all screen sizes */
@@ -242,10 +264,26 @@
   .menu-toggle {
     display: block !important;
   }
+  // Hide desktop logo and show mobile logo in nav-center
+  .desktop-logo {
+    display: none;
+  }
+  .nav-center {
+    display: flex;
+  }
+  .mobile-logo {
+    display: inline-block;
+  }
 }
 
 @media (min-width: 769px) {
-  // Hide burger button on desktop
+  // On desktop: hide mobile-specific elements
+  .nav-center {
+    display: none;
+  }
+  .desktop-logo {
+    display: inline-block;
+  }
   .menu-toggle {
     display: none;
   }
