@@ -4,9 +4,8 @@ title: "Home"
 ref: "home"
 permalink: "/it/"
 ---
-# Hi, I'm Antonio Casto 👋
+# Ciao, sono Antonio Casto 👋
 
-**Passionate iOS Developer** dedicated to creating intuitive and high-performance apps.
-I specialize in designing applications in **SwiftUI** and **UIKit** that meet the requirements of modularity, scalability, and testability,
-following the industry’s best practices.
-Welcome to my personal website, where I share my projects and ideas on iOS development.
+**Sviluppatore iOS appassionato** che si dedica alla creazione di app intuitive e ad alte prestazioni.
+Sono specializzato nella progettazione di applicazioni in **SwiftUI** e **UIKit** che soddisfano i requisiti di modularità, scalabilità e testabilità, seguendo le migliori pratiche del settore.
+Benvenuto sul mio sito personale, dove condivido i miei progetti e le mie idee inerenti allo sviluppo iOS.

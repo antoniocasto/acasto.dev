@@ -1,97 +1,94 @@
 ---
-layout: default
+layout: about
 title: "Chi Sono"
 ref: "about"
 permalink: "/it/about/"
 ---
-# About Me
+# Chi Sono
+**Sviluppatore iOS Appassionato**  
+Appassionato di **informatica** sin da bambino, ho sempre nutrito una profonda curiosità per il funzionamento del **software**.  
+L'avvento degli **smartphone e delle app** ha ampliato i miei orizzonti, mostrandomi il potenziale di creare **soluzioni** che migliorano la vita quotidiana delle persone.  
 
-![Antonio Casto - Passionate iOS Developer](/assets/images/profile.jpeg){: .profile-image }
+Lo **sviluppo mobile** è sempre stato il mio principale interesse, e ho soddisfatto la mia curiosità frequentando corsi universitari e attività extracurriculari.  
+Ho iniziato con lo sviluppo per **Android**, poi sono passato allo sviluppo cross-platform con **Flutter**, ed infine mi sono dedicato allo sviluppo iOS con **SwiftUI**.  
 
-**Passionate iOS Developer**  
-Passionate about **computer science** since childhood, I have always been deeply curious about how **software** works.  
-The advent of **smartphones and apps** broadened my horizons, showing me the potential to create **solutions** that improve people’s daily lives.  
+Ho trasformato la mia passione in una **carriera professionale**, ampliando le mie competenze imparando **UIKit**, pattern architetturali come **VIPER, MVVM e TCA**, tecnologie di realtà aumentata come **ARKit e SceneKit** e pratiche di **CI/CD**, utilizzando strumenti come **SwiftLint e Fastlane**.  
 
-**Mobile development** has always been my main interest, and I satisfied my curiosity by taking both **university** and **extracurricular courses**.  
-I started with **Android development**, then moved to **cross-platform development** with **Flutter**, and eventually transitioned to **iOS development** with **SwiftUI**.  
+Attualmente, mi sto concentrando nel migliorare il mio approccio alla creazione di applicazioni **modulari, testabili e altamente scalabili**.  
+Mi piace **condividere le sfide** con il mio team e collaborare per trovare le soluzioni più **efficaci**.  
+Penso sempre **prima di scrivere codice**. Se non so come fare qualcosa, mi informo e consulto sviluppatori con maggiore esperienza.
 
-I turned my passion into a **professional career**, expanding my skill set by learning **UIKit**, architectural patterns such as **VIPER, MVVM, and TCA**, **AR technologies** like **ARKit and SceneKit**, and **CI/CD practices**, including tools like **SwiftLint and Fastlane**.  
+## Esperienza Lavorativa
 
-Currently, I am focused on improving my approach to **building modular, testable, and highly scalable applications**.  
-I enjoy **sharing challenges** with my team and collaborating to find the most **effective solutions**.  
-I always **think before I code**. If I don’t know how to do something, I **research** and consult with more **experienced developers**.
+### Sviluppatore iOS
+**Hidonix** - *Catania, Italia*  
+📅 **9 ottobre 2023 – Presente** 
 
-## Work Experience
+- **Progettazione, sviluppo, test, distribuzione e manutenzione** di applicazioni iOS all'interno dell'azienda.  
+- Attività di **ricerca e sviluppo** per esplorare nuove tecnologie e migliorare le soluzioni esistenti.  
 
-### iOS Developer
-**Hidonix** - *Catania, Italy*  
-📅 **October 9, 2023 – Present** 
-
-- **Design, development, testing, deployment, and maintenance** of iOS applications within the company.  
-- **Research and development** activities to explore new technologies and improve existing solutions.  
-
-### Developer – Research Scholarship  
+### Sviluppatore – Borsa di Studio di Ricerca  
 **Nexa Center for Internet & Society – Politecnico di Torino – DAUIN**  
-📅 **October 2021 – October 2022** *(Remote – Turin, Italy)*  
+📅 **ottobre 2021 – ottobre 2022** *(Remoto – Torino, Italia)*  
 
-- Contributed to the development of a **recommender system** for the European **Erasmus+ CLIKC project** (*Content and Language Integrated Learning for Key Competences*).  
-- Worked on an **adaptive learning system** leveraging **semantic technologies** to enhance personalized content recommendations.  
+- Ho contribuito allo sviluppo di un **sistema di raccomandazione** per il progetto europeo **Erasmus+ CLIKC** (*Content and Language Integrated Learning for Key Competences*).  
+- Ho lavorato a un **sistema di apprendimento adattivo** che sfrutta tecnologie semantiche per migliorare le raccomandazioni di contenuti personalizzati.  
 
-## Development Skills
+## Competenze nello Sviluppo
 
-### iOS Development
-- **Frameworks & Technologies:** SwiftUI, UIKit, ARKit, SceneKit, Core Data, MapKit, Core Location, User Defaults  
-- **Architectures & Patterns:** MVVM, VIPER, The Composable Architecture (TCA), Coordinator  
-- **Networking & Data Handling:** REST API, FastAPI, Firebase, MongoDB  
-- **Dependency Management & CI/CD:** Swift Package Manager (SPM), CocoaPods, Fastlane, GitLab CI/CD  
-- **Code Quality & Testing:** SwiftLint, XCTest, UI Testing, TDD, Mocking  
+### Sviluppo iOS
+- **Framework e Tecnologie:** SwiftUI, UIKit, ARKit, SceneKit, Core Data, MapKit, Core Location, User Defaults  
+- **Architetture e Pattern:** MVVM, VIPER, The Composable Architecture (TCA), Coordinator  
+- **Networking e Gestione dei Dati:** REST API, FastAPI, Firebase, MongoDB  
+- **Gestione delle Dipendenze e CI/CD:** Swift Package Manager (SPM), CocoaPods, Fastlane, GitLab CI/CD  
+- **Qualità del Codice e Testing:** SwiftLint, XCTest, UI Testing, TDD, Mocking  
 
-### Additional Technologies
-- **Cross-Platform Development:** Flutter, Kotlin Multiplatform  
-- **Frontend & Backend:** React, Angular, Spring Boot  
-- **Programming Languages:** Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript  
+### Tecnologie Aggiuntive
+- **Sviluppo Cross-Platform:** Flutter, Kotlin Multiplatform  
+- **Frontend e Backend:** React, Angular, Spring Boot  
+- **Linguaggi di Programmazione:** Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript  
 
-### Tools
-- **Development:** Xcode, Visual Studio Code, Android Studio  
-- **Debugging & API Testing:** Proxyman, Postman, Swagger  
-- **Version Control & Collaboration:** Git, GitHub, GitLab  
+### Strumenti
+- **Sviluppo:** Xcode, Visual Studio Code, Android Studio  
+- **Debugging e Test delle API:** Proxyman, Postman, Swagger  
+- **Controllo Versione e Collaborazione:** Git, GitHub, GitLab  
 
-## Education
+## Formazione
 
-### Computer Engineering - Software | Master’s Degree
+### Ingegneria Informatica - Software | Laurea Magistrale
 *Politecnico di Torino*  
 📅 09/2018 – 06/2022  
-📍 Turin, Italy  
+📍 Torino, Italia  
 
-### Computer Engineering | Bachelor’s Degree
+### Ingegneria Informatica | Laurea Triennale
 *Politecnico di Torino*  
 📅 09/2014 – 09/2018  
-📍 Turin, Italy  
+📍 Torino, Italia  
 
 ### Liceo Scientifico P.N.I.
 *Istituto di Istruzione Superiore "Matteo Raeli" in Noto*  
 📅 2008 – 2013  
-📍 Noto, Italy  
+📍 Noto, Italia  
 
-### IELTS - 5.5 Certification
-*British Council (required by Politecnico di Torino)*  
+### Certificazione IELTS - 5.5
+*British Council (richiesto dal Politecnico di Torino)*  
 
-## iOS Development Learning Sources
-### 100 Days of SwiftUI - iOS development starting point
+## Fonti di Apprendimento per lo Sviluppo iOS
+### 100 Days of SwiftUI - Punto di Partenza per lo Sviluppo iOS
 *Hacking with Swift - Paul Hudson*  
-🔗 [Website](https://www.hackingwithswift.com/100/swiftui)  
+🔗 [Sito Web](https://www.hackingwithswift.com/100/swiftui)  
 
-### Continuous Learning
-- In-depth studies of SwiftUI through Hacking With Swift, [Design+Code](https://www.designcode.io/), and YouTube mentors  
-- Advanced iOS concepts from Point-Free, other online resources, documentations and books
+### Apprendimento Continuo
+- Studi approfonditi di SwiftUI tramite Hacking With Swift, [Design+Code](https://www.designcode.io/) e mentori su YouTube  
+- Concetti avanzati di iOS da Point-Free, altre risorse online, documentazioni e libri
 
-## Soft Skills  
+## Competenze Trasversali
 
-### **Teamwork & Communication**  
-- Strong ability to **collaborate in cross-functional teams**.  
-- Experience in **international environments**, working with colleagues from the **U.S. branch**.  
-- Excellent **problem-solving and adaptability skills** in fast-paced projects.  
+### Lavoro di Squadra e Comunicazione
+- Forte capacità di **collaborare in team multidisciplinari**.  
+- Esperienza in ambienti internazionali, lavorando con colleghi della filiale statunitense.  
+- Eccellenti capacità di **problem-solving** e adattabilità in progetti dinamici.
 
-### **Critical Thinking & Decision-Making**  
-- Strategic approach to **design and development** for long-term scalability.  
-- Ability to **prioritize tasks effectively** and **identify key technical challenges**.  
+### Pensiero Critico e Decision Making
+- Approccio strategico alla **progettazione e allo sviluppo** per una scalabilità a lungo termine.  
+- Capacità di dare **priorità alle attività** in modo efficace e identificare le principali sfide tecniche.
