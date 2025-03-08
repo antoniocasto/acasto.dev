@@ -16,7 +16,7 @@ _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
 
 {% for post in localized_posts %}
 - **[{{ post.title }}]({{ post.url | relative_url }})** <small> {% if page.lang == "it" %}
-    (Pubblicato il {{ post.date | date: "%d %B %Y" 
+    ({{ site.data.localization[page.lang].post.published_on }} {{ post.date | date: "%d %B %Y" 
        | replace: "January", "Gennaio" 
        | replace: "February", "Febbraio" 
        | replace: "March", "Marzo" 

@@ -37,21 +37,22 @@
   <!-- Header with navigation bar. Wraps a page. -->
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
+      {% assign nav = site.data.localization[page.lang].navigation %}
       <ul class="menu">
         <li {% if page.ref == "home" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/">Home</a>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/">{{ nav.home }}</a>
         </li>
         <li {% if page.ref == "about" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/about/">About</a>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/about/">{{ nav.about }}</a>
         </li>
         <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">Portfolio</a>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">{{ nav.portfolio }}</a>
         </li>
         <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">Blog</a>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">{{ nav.blog }}</a>
         </li>
         <li {% if page.ref == "contacts" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">Contacts</a>
+          <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">{{ nav.contacts }}</a>
         </li>
       </ul>
       <ul class="language-switcher">

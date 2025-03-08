@@ -7,10 +7,10 @@ layout: default
     <p>
       <small>
         {% if page.lang == "en" %}
-          Published on 
+          {{ site.data.localization[page.lang].post.published_on }}
           {{ page.date | date: "%d %B %Y" }}
         {% elsif page.lang == "it" %}
-          Pubblicato il 
+          {{ site.data.localization[page.lang].post.published_on }} 
           {{ page.date | date: "%d %B %Y" | replace: "January", "Gennaio" 
                                            | replace: "February", "Febbraio"
                                            | replace: "March", "Marzo"
