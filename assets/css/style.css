@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Define colors, fonts, and a reusable mixin for the "glass" panel
 */
 /* Define base global styles
@@ -16,10 +17,124 @@ a:hover { text-decoration: underline; }
 
 .site-header { padding: 1rem 0; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); /* For iOS Safari support */ border: 1px solid rgba(255, 255, 255, 0.3); }
 
+/* Regole di base per il menu */
 .site-header .menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
 
 .site-header .menu li a { font-weight: 500; }
 
 .glass-panel { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); /* For iOS Safari support */ border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
 
-.profile-image { border-radius: 50%; width: 150px; height: 150px; object-fit: cover; }
+.menu li.active a { font-weight: bold; color: #0a84ff; }
+
+.language-dropdown { position: relative; display: inline-block; cursor: pointer; }
+
+.language-dropdown summary { list-style: none; outline: none; cursor: pointer; padding: 0.5rem 1rem; border: 1px solid transparent; border-radius: 4px; background: transparent; color: #0a84ff; font-size: 0.9rem; font-weight: bold; /* Aggiungiamo un'icona freccia */ position: relative; padding-right: 1.5rem; }
+
+.language-dropdown summary::after { content: "►"; position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); font-size: 0.7rem; color: #0a84ff; transition: transform 0.3s; }
+
+.language-dropdown[open] summary::after { transform: translateY(-50%) rotate(90deg); }
+
+.language-dropdown summary:hover { background-color: rgba(10, 132, 255, 0.1); }
+
+.language-dropdown[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+.language-options { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+
+.language-options { margin: 0; padding: 0; list-style: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd; border-top: none; width: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); z-index: 100; }
+
+.language-options li a { display: block; padding: 0.5rem 1rem; text-decoration: none; color: #0a84ff; transition: background-color 0.3s; }
+
+.language-options li a:hover { background-color: rgba(10, 132, 255, 0.1); }
+
+.collection_item { background-color: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+
+.collection_item h1 { margin-top: 0; margin-bottom: 1rem; font-size: 2.0rem; }
+
+.collection_item p { line-height: 1.6; margin-bottom: 1rem; }
+
+.about-header { padding: 2rem; border-bottom: 2px solid #0a84ff; }
+
+.about-container { display: flex; align-items: center; justify-content: center; gap: 2rem; }
+
+.circular-container { position: relative; width: 120px; height: 120px; border-radius: 50%; }
+
+.circular-container::before { content: ""; position: absolute; top: -4px; left: -4px; width: calc(100% + 8px); height: calc(100% + 8px); border: 2px solid #0a84ff; border-radius: 50%; box-sizing: border-box; }
+
+.circular-image { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+.profile-name .cursive-name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-style: italic; font-size: 2rem; margin: 0; }
+
+.desktop-logo .logo-img { height: 40px; width: auto; }
+
+.mobile-logo .logo-img { height: 40px; width: auto; }
+
+.nav-bar { display: flex; align-items: center; justify-content: space-between; position: relative; }
+
+.desktop-menu { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+
+.desktop-menu li { position: relative; }
+
+.desktop-menu li a { text-decoration: none; color: #333; font-weight: 500; }
+
+.desktop-menu li.active a { color: #0a84ff; font-weight: 600; }
+
+.language-dropdown { position: relative; display: inline-block; cursor: pointer; }
+
+.language-dropdown summary { list-style: none; outline: none; cursor: pointer; padding: 0.5rem 1rem; border: 1px solid transparent; border-radius: 4px; background: transparent; color: #0a84ff; font-size: 0.9rem; font-weight: bold; position: relative; padding-right: 1.5rem; }
+
+.language-dropdown summary::after { content: "►"; position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); font-size: 0.7rem; color: #0a84ff; transition: transform 0.3s; }
+
+.language-dropdown[open] summary::after { transform: translateY(-50%) rotate(90deg); }
+
+.language-options { margin: 0; padding: 0; list-style: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd; width: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); z-index: 100; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+
+.language-options li a { display: block; padding: 0.5rem 1rem; text-decoration: none; color: #0a84ff; transition: background-color 0.3s; }
+
+.language-options li a:hover { background-color: rgba(10, 132, 255, 0.1); }
+
+.nav-left { display: flex; align-items: center; gap: 1rem; }
+
+.desktop-logo { display: inline-block; }
+
+.menu-toggle { background: none; border: none; cursor: pointer; display: none; }
+
+.burger-icon { display: block; width: 25px; height: 2px; background: currentColor; position: relative; }
+
+.burger-icon::before, .burger-icon::after { content: ''; position: absolute; width: 25px; height: 2px; background: currentColor; left: 0; }
+
+.burger-icon::before { top: -8px; }
+
+.burger-icon::after { top: 8px; }
+
+.nav-center { display: none; flex: 1; justify-content: center; align-items: center; text-align: center; }
+
+.mobile-logo { display: none; }
+
+.nav-right { /* Always visible on all screen sizes */ }
+
+.side-menu { position: fixed; top: 0; left: 0; transform: translateX(-100%); width: 80%; max-width: 300px; height: 100%; background: #fff; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease; z-index: 1000; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+
+.side-menu.open { transform: translateX(0); }
+
+.side-menu .side-menu-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+
+.close-menu { background: none; border: none; font-size: 2rem; cursor: pointer; }
+
+.side-menu .menu { flex-direction: column; gap: 0; list-style: none; padding: 0; }
+
+.side-menu .menu li { border-bottom: 1px solid #eee; padding: 0.5rem 0; }
+
+.side-menu .menu li:last-child { border-bottom: none; }
+
+.side-menu .menu li a { display: block; padding: 1rem 0; color: #333; font-weight: 600; }
+
+.side-menu .menu li.active a { color: #0a84ff; font-weight: 600; }
+
+@media (max-width: 768px) { .desktop-menu { display: none !important; }
+  .menu-toggle { display: block !important; }
+  .desktop-logo { display: none; }
+  .nav-center { display: flex; }
+  .mobile-logo { display: inline-block; } }
+@media (min-width: 769px) { .nav-center { display: none; }
+  .desktop-logo { display: inline-block; }
+  .menu-toggle { display: none; } }

@@ -1,65 +1,136 @@
-<!-- _layouts/default.html -->
 <!DOCTYPE html>
-<html lang="en-EN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Antonio Casto - Passionate iOS Developer</title>
-  <meta name="description" content=""This is the personal website and blog of Antonio Casto - Passionate iOS Developer. Here you will find my projects, my thoughts and my contacts.""" />
-  <!-- SEO meta tags (Open Graph, Twitter, ecc.) Automatically generated -->
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>About | Antonio Casto - Passionate iOS Developer</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="About" />
-<meta property="og:locale" content="en_EN" />
-<meta name="description" content="“This is the personal website and blog of Antonio Casto - Passionate iOS Developer. Here you will find my projects, my thoughts and my contacts.””" />
-<meta property="og:description" content="“This is the personal website and blog of Antonio Casto - Passionate iOS Developer. Here you will find my projects, my thoughts and my contacts.””" />
-<link rel="canonical" href="https://acasto.dev/about/" />
-<meta property="og:url" content="https://acasto.dev/about/" />
-<meta property="og:site_name" content="Antonio Casto - Passionate iOS Developer" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="About" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"“This is the personal website and blog of Antonio Casto - Passionate iOS Developer. Here you will find my projects, my thoughts and my contacts.””","headline":"About","name":"Antonio Casto - Passionate iOS Developer","url":"https://acasto.dev/about/"}</script>
-<!-- End Jekyll SEO tag -->
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Antonio Casto",
-      "jobTitle": "iOS Developer",
-      "url": "https://acasto.dev",
-      "sameAs": [
-        "https://www.linkedin.com/in/antonio-casto-547a411a1/",
-        "https://github.com/antoniocasto/"
-      ]
-    }
-    </script>
-
-  <!-- Main CSS compiled from SCSS -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="acasto" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+  
+  <!-- Link to the main CSS file -->
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <!-- Header with navigation bar. Wraps a page. -->
+  <!-- Header with navigation bar -->
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
-      <ul class="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/contacts/">Contacts</a></li>
-      </ul>
+      <!-- Nav Left: Desktop logo and burger button -->
+      <div class="nav-left">
+        <!-- Desktop Logo (visible on desktop only) -->
+        <a href="/en/" class="brand-logo desktop-logo">
+          <img src="/assets/images/acasto-logo.png" alt="ACasto Logo" class="logo-img">
+        </a>
+        <!-- Burger button (always visible on mobile) -->
+        <button class="menu-toggle" aria-label="Open menu">
+          <span class="burger-icon"></span>
+        </button>
+        <!-- Desktop menu (visible on wide screens) -->
+        <ul class="menu desktop-menu">
+          <li >
+            <a href="/en/">
+              Home
+            </a>
+          </li>
+          <li class="active">
+            <a href="/en/about/">
+              About
+            </a>
+          </li>
+          <li >
+            <a href="/en/portfolio/">
+              Portfolio
+            </a>
+          </li>
+          <li >
+            <a href="/en/blog/">
+              Blog
+            </a>
+          </li>
+          <li >
+            <a href="/en/contacts/">
+              Contacts
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Nav Center: Mobile logo (visible on mobile only) -->
+      <div class="nav-center">
+        <a href="/en/" class="brand-logo mobile-logo">
+          <img src="/assets/images/acasto-logo.png" alt="ACasto Logo" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Nav Right: Language selector (always visible) -->
+      <div class="nav-right">
+        <details class="language-dropdown">
+          <summary>EN</summary>
+          <ul class="language-options">
+            <li>
+                  <a href="/it/about/">IT</a>
+                </li>
+          </ul>
+        </details>
+      </div>
     </nav>
   </header>
 
-  <!-- Page main content here. -->
-  <main class="container">
-    <h1 id="about-me">About Me</h1>
+  <!-- Side menu for mobile devices -->
+  <div class="side-menu">
+    <!-- Side menu header with close button -->
+    <div class="side-menu-header">
+      <button class="close-menu" aria-label="Close menu">&times;</button>
+    </div>
+    <!-- Mobile menu items -->
+    <ul class="menu">
+      <li >
+        <a href="/en/">
+          Home
+        </a>
+      </li>
+      <li class="active">
+        <a href="/en/about/">
+          About
+        </a>
+      </li>
+      <li >
+        <a href="/en/portfolio/">
+          Portfolio
+        </a>
+      </li>
+      <li >
+        <a href="/en/blog/">
+          Blog
+        </a>
+      </li>
+      <li >
+        <a href="/en/contacts/">
+          Contacts
+        </a>
+      </li>
+    </ul>
+  </div>
 
-<p><img src="/assets/images/profile.jpeg" alt="Antonio Casto - Passionate iOS Developer" class="profile-image" /></p>
+  <!-- Main content area -->
+  <main class="container">
+    <div class="about-header">
+    <div class="about-container">
+      <div class="circular-container">
+        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="circular-image">
+      </div>
+      <div class="profile-name">
+        <p class="cursive-name">Antonio Casto</p>
+      </div>
+    </div>
+  </div>
+  
+<h1 id="about-me">About Me</h1>
 
 <p><strong>Passionate iOS Developer</strong><br />
 Passionate about <strong>computer science</strong> since childhood, I have always been deeply curious about how <strong>software</strong> works.<br />
@@ -167,9 +238,12 @@ I always <strong>think before I code</strong>. If I don’t know how to do somet
 
   </main>
 
-  <!-- Footer. Wraps a page. -->
+  <!-- Footer -->
   <footer class="site-footer container">
-    <p>&copy; 2025 Antonio Casto - Passionate iOS Developer. All rights reserved. Made with ♥️.</p>
+    <p>2025 Antonio Casto - Passionate iOS Developer. Made with ♥️.</p>
   </footer>
+
+  <!-- Include main JavaScript file -->
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
