@@ -1,91 +1,135 @@
-<!-- _layouts/default.html -->
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.default_lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} - {{ site.title }}</title>
-  <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}" />
-
-  <!-- SEO meta tags (Open Graph, Twitter, ecc.) Automatically generated -->
-  {% for lang in site.languages %}
-    {% assign translated = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
-    {% if translated %}
-      <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ translated.url }}">
-    {% endif %}
-  {% endfor %}
-  {% seo %}
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Antonio Casto",
-      "jobTitle": "iOS Developer",
-      "url": "{{ site.url }}{{ site.baseurl }}",
-      "sameAs": [
-        "{{ site.linkedin_link }}",
-        "{{ site.github_link }}"
-      ]
-    }
-  </script>
-
-  <!-- Main CSS compiled from SCSS -->
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 </head>
 <body>
-  <!-- Header with navigation bar. Wraps a page. -->
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
-      {% assign nav = site.data.localization[page.lang].navigation %}
-      <ul class="menu">
-        <li {% if page.ref == "home" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/">{{ nav.home }}</a>
-        </li>
-        <li {% if page.ref == "about" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/about/">{{ nav.about }}</a>
-        </li>
-        <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">{{ nav.portfolio }}</a>
-        </li>
-        <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">{{ nav.blog }}</a>
-        </li>
-        <li {% if page.ref == "contacts" %}class="active"{% endif %}>
-          <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">{{ nav.contacts }}</a>
-        </li>
-      </ul>
-      <details class="language-dropdown">
-        <summary>{{ page.lang | upcase }}</summary>
-        <ul class="language-options">
-          {% for lang in site.languages %}
-            {% assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
-            {% if translated_page == nil %}
-              {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
-            {% endif %}
-            {% if translated_page == nil %}
-              {% assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first %}
-            {% endif %}
-            {% if translated_page and lang != page.lang %}
-              <li>
-                <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
+      <div class="nav-left">
+        <ul class="menu">
+          <li {% if page.ref == "home" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/">
+              {{ site.data.localization[page.lang].navigation.home }}
+            </a>
+          </li>
+          <li {% if page.ref == "about" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/about/">
+              {{ site.data.localization[page.lang].navigation.about }}
+            </a>
+          </li>
+          <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
+              {{ site.data.localization[page.lang].navigation.portfolio }}
+            </a>
+          </li>
+          <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">
+              {{ site.data.localization[page.lang].navigation.blog }}
+            </a>
+          </li>
+          <li {% if page.ref == "contacts" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">
+              {{ site.data.localization[page.lang].navigation.contacts }}
+            </a>
+          </li>
         </ul>
-      </details>
+      </div>
+
+      <!-- Sezione destra (selettore lingua su desktop) -->
+      <div class="nav-right">
+        <details class="language-dropdown desktop-lang">
+          <summary>{{ page.lang | upcase }}</summary>
+          <ul class="language-options">
+            {% for lang in site.languages %}
+              {% assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
+              {% if translated_page == nil %}
+                {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
+              {% endif %}
+              {% if translated_page == nil %}
+                {% assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first %}
+              {% endif %}
+              {% if translated_page and lang != page.lang %}
+                <li>
+                  <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </details>
+      </div>
+
+      <div class="mobile-controls">
+        <details class="language-dropdown mobile-lang">
+          <summary>{{ page.lang | upcase }}</summary>
+          <ul class="language-options">
+            {% for lang in site.languages %}
+              {% assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
+              {% if translated_page == nil %}
+                {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
+              {% endif %}
+              {% if translated_page == nil %}
+                {% assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first %}
+              {% endif %}
+              {% if translated_page and lang != page.lang %}
+                <li>
+                  <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </details>
+        <button class="menu-toggle" aria-label="Apri menu">
+          <span class="burger-icon"></span>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <!-- Page main content here. -->
+  <div class="side-menu">
+    <button class="close-menu" aria-label="Chiudi menu">&times;</button>
+    <ul class="menu">
+      <li {% if page.ref == "home" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/">
+          {{ site.data.localization[page.lang].navigation.home }}
+        </a>
+      </li>
+      <li {% if page.ref == "about" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/about/">
+          {{ site.data.localization[page.lang].navigation.about }}
+        </a>
+      </li>
+      <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
+          {{ site.data.localization[page.lang].navigation.portfolio }}
+        </a>
+      </li>
+      <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">
+          {{ site.data.localization[page.lang].navigation.blog }}
+        </a>
+      </li>
+      <li {% if page.ref == "contacts" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">
+          {{ site.data.localization[page.lang].navigation.contacts }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
   <main class="container">
     {{ content }}
   </main>
 
-  <!-- Footer. Wraps a page. -->
+  <!-- Footer -->
   <footer class="site-footer container">
     <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥️.</p>
   </footer>
+
+  <!-- JS -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

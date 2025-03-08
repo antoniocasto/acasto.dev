@@ -8,12 +8,14 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
-  }
-  
+}
+
 .site-header {
     padding: 1rem 0;
     @include glass(10px, 0.5);
 }
+
+/* Regole di base per il menu */
 .site-header .menu {
     list-style: none;
     margin: 0;
