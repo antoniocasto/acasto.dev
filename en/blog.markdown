@@ -15,6 +15,5 @@ _There are no articles at the moment. Check back soon for updates!_
 {% endif %}
 
 {% for post in localized_posts %}
-- **[{{ post.title }}]({{ post.url | relative_url }})** <small>({{ post.date | date: "%d %B %Y" }})</small>
-  - {{ post.excerpt }}
+- **[{{ post.title }}]({{ post.url | relative_url }})** <small>(Published on {{ post.date | date: "%d %B %Y" }})</small>
 {% endfor %}

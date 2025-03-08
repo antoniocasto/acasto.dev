@@ -15,6 +15,19 @@ _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
 {% endif %}
 
 {% for post in localized_posts %}
-- **[{{ post.title }}]({{ post.url | relative_url }})** <small>({{ post.date | date: "%d %B %Y" }})</small>
-  - {{ post.excerpt }}
+- **[{{ post.title }}]({{ post.url | relative_url }})** <small> {% if page.lang == "it" %}
+    (Pubblicato il {{ post.date | date: "%d %B %Y" 
+       | replace: "January", "Gennaio" 
+       | replace: "February", "Febbraio" 
+       | replace: "March", "Marzo" 
+       | replace: "April", "Aprile" 
+       | replace: "May", "Maggio" 
+       | replace: "June", "Giugno" 
+       | replace: "July", "Luglio" 
+       | replace: "August", "Agosto" 
+       | replace: "September", "Settembre" 
+       | replace: "October", "Ottobre" 
+       | replace: "November", "Novembre" 
+       | replace: "December", "Dicembre" }})
+  {% endif %} </small>
 {% endfor %}
