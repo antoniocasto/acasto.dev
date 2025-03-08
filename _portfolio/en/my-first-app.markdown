@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: portfolio
 title: "My First App"
 ref: "first-app"
 permalink: "/en/portfolio/my-first-app/"

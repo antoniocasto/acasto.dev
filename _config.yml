@@ -38,6 +38,7 @@ collections:
     permalink: "/:collection/:year/:month/:day/:title/"
 
 # Default settings - Automatically assign the language based on the folder
+# Default settings - Automatically assign the language based on the folder
 defaults:
   # Regular pages (Home, About, Portfolio, etc.)
   - scope:
@@ -69,14 +70,14 @@ defaults:
 
   # Portfolio projects (organized by language)
   - scope:
-      path: "_portfolio/en"
+      path: "_portfolio/en/*"
       type: "portfolio"
     values:
       lang: "en"
       permalink: "/en/portfolio/:path/"
 
   - scope:
-      path: "_portfolio/it"
+      path: "_portfolio/it/*"
       type: "portfolio"
     values:
       lang: "it"

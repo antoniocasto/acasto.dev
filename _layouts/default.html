@@ -50,13 +50,16 @@
           {% if translated_page == nil %}
             {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
           {% endif %}
+          {% if translated_page == nil %}
+            {% assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first %}
+          {% endif %}
           {% if translated_page %}
             {% if lang == page.lang %}
               <li class="current-lang">{{ lang | upcase }}</li>
             {% else %}
               <li><a href="{{ translated_page.url }}">{{ lang | upcase }}</a></li>
             {% endif %}
-         {% endif %}
+          {% endif %}
         {% endfor %}
       </ul>
     </nav>

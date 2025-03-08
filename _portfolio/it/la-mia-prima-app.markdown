@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: portfolio
 title: "La Mia Prima App"
 ref: "first-app"
 permalink: "/it/portfolio/la-mia-prima-app/"

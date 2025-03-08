@@ -15,6 +15,5 @@ Here are some personal projects I worked on:
 {% endif %}
 
 {% for project in localized_projects %}
-**{{ project.title }}** – {{ project.description }}  
-<small>[Source code]({{ project.github }})</small>
+**[{{ project.title }}]({{ project.url | relative_url }})** – {{ project.description }}
 {% endfor %}
