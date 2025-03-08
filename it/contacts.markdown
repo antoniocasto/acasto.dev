@@ -4,15 +4,15 @@ title: "Contatti"
 ref: "contacts"
 permalink: "/it/contacts/"
 ---
-# Contacts  
+# Contatti  
 
-Feel free to send me a message, or reach out to me through my social profiles.  
+Sentiti libero di inviarmi un messaggio oppure di contattarmi attraverso i miei profili social.  
 
 ## Email  
-You can contact me via email at [{{ site.email }}](mailto:{{ site.email }}).
+Puoi contattarmi via email a [{{ site.email }}](mailto:{{ site.email }}).
 
 ## Social  
-[LinkedIn]({{ site.linkedin_link }})  
+[LinkedIn]({{ site.linkedin_link }})
 
-## Development  
-[GitHub]({{ site.github_link }})  
+## Sviluppo  
+[GitHub]({{ site.github_link }})
