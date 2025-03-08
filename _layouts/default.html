@@ -55,24 +55,25 @@
           <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">{{ nav.contacts }}</a>
         </li>
       </ul>
-      <ul class="language-switcher">
-        {% for lang in site.languages %}
-          {% assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
-          {% if translated_page == nil %}
-            {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
-          {% endif %}
-          {% if translated_page == nil %}
-            {% assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first %}
-          {% endif %}
-          {% if translated_page %}
-            {% if lang == page.lang %}
-              <li class="current-lang">{{ lang | upcase }}</li>
-            {% else %}
-              <li><a href="{{ translated_page.url }}">{{ lang | upcase }}</a></li>
+      <details class="language-dropdown">
+        <summary>{{ page.lang | upcase }}</summary>
+        <ul class="language-options">
+          {% for lang in site.languages %}
+            {% assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first %}
+            {% if translated_page == nil %}
+              {% assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first %}
             {% endif %}
-          {% endif %}
-        {% endfor %}
-      </ul>
+            {% if translated_page == nil %}
+              {% assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first %}
+            {% endif %}
+            {% if translated_page and lang != page.lang %}
+              <li>
+                <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </details>
     </nav>
   </header>
 
@@ -83,7 +84,8 @@
 
   <!-- Footer. Wraps a page. -->
   <footer class="site-footer container">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved. Made with ♥️.</p>
+    <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥️.</p>
   </footer>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

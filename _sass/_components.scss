@@ -1,4 +1,5 @@
 // _sass/_components.scss
+
 .glass-panel {
     @include glass(15px, 0.4);
     border-radius: 8px;
@@ -8,38 +9,82 @@
 .menu li.active a {
     font-weight: bold;
     color: $primary-color;
-  }
-
-// Language Switcher Styles
-.language-switcher {
-    list-style: none;
-    display: flex;
-    gap: 10px;
-    padding: 0;
-    margin: 10px 0;
 }
 
-.language-switcher li {
+.language-dropdown {
+    position: relative;
     display: inline-block;
-}
-
-.language-switcher a {
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .language-dropdown summary {
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
     color: $primary-color;
-    transition: background-color 0.3s ease;
-}
-
-.language-switcher a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.language-switcher .current-lang {
+    font-size: 0.9rem;
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: $primary-color;
-    color: white;
-}
+    /* Aggiungiamo un'icona freccia */
+    position: relative;
+    padding-right: 1.5rem;
+  }
+  
+  .language-dropdown summary::after {
+    content: "►";  // Freccia orizzontale che indica a destra
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    color: $primary-color;
+    transition: transform 0.3s;
+  }
+  
+  .language-dropdown[open] summary::after {
+    transform: translateY(-50%) rotate(90deg); // Ruota la freccia per indicare che il menu è aperto
+  }
+  
+  .language-dropdown summary:hover {
+    background-color: rgba($primary-color, 0.1);
+  }
+  
+  .language-dropdown[open] summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .language-options {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  
+  .language-options {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+  }
+  
+  .language-options li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: $primary-color;
+    transition: background-color 0.3s;
+  }
+  
+  .language-options li a:hover {
+    background-color: rgba($primary-color, 0.1);
+  }
