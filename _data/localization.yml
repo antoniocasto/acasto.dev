@@ -1,0 +1,18 @@
+en:
+  navigation:
+    home: "Home"
+    about: "About"
+    portfolio: "Portfolio"
+    blog: "Blog"
+    contacts: "Contacts"
+  post:
+    published_on: "Published on"
+it:
+  navigation:
+    home: "Home"
+    about: "Chi Sono"
+    portfolio: "Portfolio"
+    blog: "Blog"
+    contacts: "Contatti"
+  post:
+    published_on: "Pubblicato il"

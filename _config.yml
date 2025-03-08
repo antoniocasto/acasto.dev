@@ -1,48 +1,84 @@
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: "Antonio Casto - Passionate iOS Developer"
-description: >- # This means to ignore newlines until "baseurl:"
+description: >-
   "This is the personal website and blog of Antonio Casto - Passionate iOS Developer.
-  Here you will find my projects, my thoughts and my contacts.""
-lang: "en-EN"
-url: "https://acasto.dev"   # Website base url (to be updated in the future to use personal domain)
-baseurl: "" # The subpath of your site, e.g. /blog
-permalink: "pretty" # Clean URLs (for instance, /about/ in place of /about.html)
-markdown: kramdown
+  Here you will find my projects, my thoughts and my contacts."
+
+# Multilingual settings
+languages: ["en", "it"]  # Add new languages here (e.g., "fr", "de")
+default_lang: "en"  # Default language
+
+# Base URL settings
+url: "https://acasto.dev"
+baseurl: ""
+
+# Permalinks - Clean and SEO-friendly URLs
+permalink: "pretty"
+
+# Social links
 email: developer@acasto.dev
 linkedin_link: https://www.linkedin.com/in/antonio-casto-547a411a1/
-github_username:  antoniocasto
+github_username: antoniocasto
 github_link: https://github.com/antoniocasto/
 
 # Build settings
-theme: null # Using personalized layout
+markdown: kramdown
+theme: null 
 plugins:
-  - jekyll-seo-tag # Plugin for SEO meta tags
-  - jekyll-sitemap # Plugin to generate sitemap.xml (useful for SEO and search engines)
+  - jekyll-seo-tag  # Generates SEO meta tags
+  - jekyll-sitemap  # Automatically generates sitemap.xml
+
+# Collections - Portfolio and Blog
 collections:
   portfolio:
-    output: true # Enables each markdown item in the collection to be output as a page
+    output: true
+    permalink: "/:collection/:path/"
+  posts:
+    output: true
+    permalink: "/:collection/:year/:month/:day/:title/"
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Default settings - Automatically assign the language based on the folder
+# Default settings - Automatically assign the language based on the folder
+defaults:
+  # Regular pages (Home, About, Portfolio, etc.)
+  - scope:
+      path: "en"
+      type: "pages"
+    values:
+      lang: "en"
+
+  - scope:
+      path: "it"
+      type: "pages"
+    values:
+      lang: "it"
+
+  # Blog posts (organized by language)
+  - scope:
+      path: "_posts/en"
+      type: "posts"
+    values:
+      lang: "en"
+      permalink: "/en/blog/:year/:month/:day/:title/"
+
+  - scope:
+      path: "_posts/it"
+      type: "posts"
+    values:
+      lang: "it"
+      permalink: "/it/blog/:year/:month/:day/:title/"
+
+  # Portfolio projects (organized by language)
+  - scope:
+      path: "_portfolio/en/*"
+      type: "portfolio"
+    values:
+      lang: "en"
+      permalink: "/en/portfolio/:path/"
+
+  - scope:
+      path: "_portfolio/it/*"
+      type: "portfolio"
+    values:
+      lang: "it"
+      permalink: "/it/portfolio/:path/"

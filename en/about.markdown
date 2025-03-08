@@ -1,10 +1,10 @@
 ---
-layout: default
-title: About
+layout: about
+title: "About"
+ref: "about"
+permalink: "/en/about/"
 ---
 # About Me
-
-![Antonio Casto - Passionate iOS Developer](/assets/images/profile.jpeg){: .profile-image }
 
 **Passionate iOS Developer**  
 Passionate about **computer science** since childhood, I have always been deeply curious about how **software** works.  
