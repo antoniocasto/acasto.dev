@@ -185,6 +185,7 @@
 // ------------------------------
 .nav-right {
   /* Always visible on all screen sizes */
+  margin: 0;
 }
 
 // ------------------------------
@@ -274,9 +275,13 @@
   }
   .nav-center {
     display: flex;
+    position: relative;
   }
   .mobile-logo {
     display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-30%);
   }
 }
 
