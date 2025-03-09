@@ -1,20 +1,16 @@
 en:
-  index:
-    welcome: Hi, I'm Antonio Casto 👋
   navigation:
     home: "Home"
-    about: "About"
+    about: "About me"
     portfolio: "Portfolio"
     blog: "Blog"
     contacts: "Contacts"
   post:
     published_on: "Published on"
 it:
-  index:
-    welcome: Ciao, sono Antonio Casto 👋
   navigation:
     home: "Home"
-    about: "Chi Sono"
+    about: "Chi sono"
     portfolio: "Portfolio"
     blog: "Blog"
     contacts: "Contatti"
