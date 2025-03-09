@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Antonio Casto - Passionate iOS Developer</title>
+  <title>SwiftUIClima - Antonio Casto - Passionate iOS Developer</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
@@ -73,7 +73,7 @@
           <summary>IT</summary>
           <ul class="language-options">
             <li>
-                  <a href="/en/portfolio/">EN</a>
+                  <a href="/en/portfolio/swiftui-clima/">EN</a>
                 </li>
           </ul>
         </details>
@@ -119,14 +119,43 @@
 
   <!-- Main content area -->
   <main class="container">
-    <h1 id="portfolio">Portfolio</h1>
+    <article class="collection_item">
+    <h1>SwiftUIClima</h1>
+    <div class="content">
+      <p><em>Un’app iOS per il meteo scritta in SwiftUI.</em></p>
 
-<p>Ecco alcuni progetti personali su cui ho lavorato:</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png" width="180" alt="Weather - Light" />
+    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/2.png" width="180" alt="Weather - Dark" />
+    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/3.png" width="180px" alt="Weather Details - Light" />
+    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/4.png" width="180px" alt="Weather Details - Dark" />
+</div>
 
-<p><strong><a href="/it/portfolio/notaplace/">NotAPlace</a></strong> – Un’app iOS sviluppata in SwiftUI per tracciare i luoghi che evocano emozioni positive.</p>
+<p>SwiftUIClima è un’applicazione per iPhone, scritta in <strong>SwiftUI</strong>, che consente di tenere traccia delle condizioni meteorologiche nel luogo in cui ti trovi e nei tuoi luoghi preferiti.</p>
 
-<p><strong><a href="/it/portfolio/swiftui-clima/">SwiftUIClima</a></strong> – Un’app iOS per il meteo scritta in SwiftUI.</p>
+<p>Sfrutta la versatilità di <strong>SwiftUI</strong> e la bellezza di <strong>LottieFiles</strong> per presentare un’interfaccia utente semplice e attraente.</p>
 
+<p>L’applicazione utilizza l’<strong>API OpenWeather</strong> per ottenere informazioni aggiornate sulle condizioni meteorologiche.</p>
+
+<p><strong>📌 Nota:</strong><br />
+<em>Questo progetto rappresenta un’importante tappa del mio percorso come sviluppatore iOS. Da allora, ho affinato le mie competenze e adottato approcci più avanzati per la progettazione di app modulari e scalabili. Sebbene il codice non rifletta il mio attuale livello di sviluppo, resta un esempio significativo del mio lavoro e della mia evoluzione nel tempo.</em></p>
+
+<h3 id="feature-principali">Feature principali:</h3>
+<ul>
+  <li><strong>Architettura MVVM</strong> per una separazione chiara tra UI e logica di business.</li>
+  <li><strong>Networking</strong> con <code class="language-plaintext highlighter-rouge">URLSession</code> e il protocollo <code class="language-plaintext highlighter-rouge">Decodable</code> per il fetch dei dati meteo.</li>
+  <li><strong>Persistenza dati</strong> con <code class="language-plaintext highlighter-rouge">CoreData</code> per salvare localmente le città preferite.</li>
+  <li><strong>Geolocalizzazione</strong> tramite <code class="language-plaintext highlighter-rouge">CoreLocation</code> per rilevare la posizione attuale.</li>
+  <li><strong>Gestione preferenze utente</strong> con <code class="language-plaintext highlighter-rouge">UserDefaults</code> e <code class="language-plaintext highlighter-rouge">@AppStorage</code>.</li>
+  <li><strong>Gestione dello stato</strong> tramite <code class="language-plaintext highlighter-rouge">@StateObject</code> e <code class="language-plaintext highlighter-rouge">ObservableObject</code>.</li>
+  <li><strong>Gestione dei permessi</strong> per l’accesso alla posizione.</li>
+  <li><strong>Traduzione multilingua</strong> (italiano e inglese).</li>
+</ul>
+
+<p>Il codice sorgente è disponibile su <strong><a href="https://github.com/antoniocasto/SwiftUIClima">GitHub</a></strong>.</p>
+
+    </div>
+</article>
   </main>
 
   <!-- Footer -->

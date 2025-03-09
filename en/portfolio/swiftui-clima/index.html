@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Antonio Casto - Passionate iOS Developer</title>
+  <title>SwiftUIClima - Antonio Casto - Passionate iOS Developer</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
@@ -73,7 +73,7 @@
           <summary>EN</summary>
           <ul class="language-options">
             <li>
-                  <a href="/it/portfolio/">IT</a>
+                  <a href="/it/portfolio/swiftui-clima/">IT</a>
                 </li>
           </ul>
         </details>
@@ -119,14 +119,43 @@
 
   <!-- Main content area -->
   <main class="container">
-    <h1 id="portfolio">Portfolio</h1>
+    <article class="collection_item">
+    <h1>SwiftUIClima</h1>
+    <div class="content">
+      <p><em>An iOS weather app built with SwiftUI.</em></p>
 
-<p>Here are some personal projects I worked on:</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png" width="180" alt="Weather - Light" />
+    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/2.png" width="180" alt="Weather - Dark" />
+    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/3.png" width="180px" alt="Weather Details - Light" />
+    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/4.png" width="180px" alt="Weather Details - Dark" />
+</div>
 
-<p><strong><a href="/en/portfolio/notaplace/">NotAPlace</a></strong> – An iOS app built with SwiftUI to track places that evoke positive emotions.</p>
+<p>SwiftUIClima is an iPhone application built with <strong>SwiftUI</strong> that allows users to track weather conditions in their current location and favorite places.</p>
 
-<p><strong><a href="/en/portfolio/swiftui-clima/">SwiftUIClima</a></strong> – An iOS weather app built with SwiftUI.</p>
+<p>It leverages the versatility of <strong>SwiftUI</strong> and the visual appeal of <strong>LottieFiles</strong> to provide a simple and engaging user interface.</p>
 
+<p>The application uses the <strong>OpenWeather API</strong> to fetch real-time weather data.</p>
+
+<p><strong>📌 Note:</strong><br />
+<em>This project represents an important milestone in my journey as an iOS developer. Since then, I have refined my skills and adopted more advanced approaches to designing modular and scalable apps. While the code does not fully reflect my current development level, it remains a valuable example of my work and professional growth over time.</em></p>
+
+<h3 id="key-features">Key Features:</h3>
+<ul>
+  <li><strong>MVVM architecture</strong> for clear separation between UI and business logic.</li>
+  <li><strong>Networking</strong> with <code class="language-plaintext highlighter-rouge">URLSession</code> and <code class="language-plaintext highlighter-rouge">Decodable</code> protocol for fetching weather data.</li>
+  <li><strong>Data persistence</strong> using <code class="language-plaintext highlighter-rouge">CoreData</code> to store favorite locations.</li>
+  <li><strong>Geolocation</strong> via <code class="language-plaintext highlighter-rouge">CoreLocation</code> to detect the current position.</li>
+  <li><strong>User preferences management</strong> with <code class="language-plaintext highlighter-rouge">UserDefaults</code> and <code class="language-plaintext highlighter-rouge">@AppStorage</code>.</li>
+  <li><strong>State management</strong> with <code class="language-plaintext highlighter-rouge">@StateObject</code> and <code class="language-plaintext highlighter-rouge">ObservableObject</code>.</li>
+  <li><strong>Permission handling</strong> for location access.</li>
+  <li><strong>Multilingual support</strong> (English and Italian).</li>
+</ul>
+
+<p>The source code is available on <strong><a href="https://github.com/antoniocasto/SwiftUIClima">GitHub</a></strong>.</p>
+
+    </div>
+</article>
   </main>
 
   <!-- Footer -->

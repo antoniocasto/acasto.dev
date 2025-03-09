@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://acasto.dev/en/portfolio/notaplace/</loc>
+<lastmod>2025-03-09T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://acasto.dev/en/portfolio/swiftui-clima/</loc>
+<lastmod>2025-03-09T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://acasto.dev/it/portfolio/notaplace/</loc>
+<lastmod>2025-03-09T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://acasto.dev/it/portfolio/swiftui-clima/</loc>
+<lastmod>2025-03-09T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://acasto.dev/it/about/</loc>
 </url>
 <url>
