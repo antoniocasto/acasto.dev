@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: index
 title: "Home"
 ref: "home"
 permalink: "/en/"
 ---
-# Hi, I'm Antonio Casto 👋
-
 **Passionate iOS Developer** dedicated to creating intuitive and high-performance apps.
 I specialize in designing applications in **SwiftUI** and **UIKit** that meet the requirements of modularity, scalability, and testability,
 following the industry’s best practices.
