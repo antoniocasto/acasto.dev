@@ -1,7 +1,6 @@
 .terminal {
-    font-family: $font-stack;
+    font-family: 'Courier New', Courier, monospace;
     text-align: left;
-    /* Assicura che il contenuto sia allineato a sinistra */
 }
 
 .typing-animation {
@@ -23,7 +22,7 @@ html[lang="it"] .typing-animation {
     }
 
     to {
-        width: 20ch;
+        width: 27ch;
     }
 }
 
@@ -38,7 +37,7 @@ html[lang="en"] .typing-animation {
     }
 
     to {
-        width: 17ch;
+        width: 24ch;
     }
 }
 
