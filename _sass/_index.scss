@@ -10,8 +10,6 @@
     white-space: nowrap;
     width: 0;
     border-right: 0.15em solid $primary-color;
-    /* Cursore in stile terminale */
-    animation: typing 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
 }
 
 /* Typing animation for it language */
@@ -31,7 +29,7 @@ html[lang="it"] .typing-animation {
 
 /* Typing animation for en language */
 html[lang="en"] .typing-animation {
-    animation: typing-en 1.5s steps(120, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
+    animation: typing-en 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
 }
 
 @keyframes typing-en {
@@ -40,6 +38,11 @@ html[lang="en"] .typing-animation {
     }
 
     to {
-        width: 18ch;
+        width: 17ch;
     }
 }
+
+@keyframes blink-caret {
+    0%, 100% { border-color: $primary-color; }
+    50% { border-color: transparent; }
+  }
