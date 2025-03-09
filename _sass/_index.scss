@@ -9,35 +9,20 @@
     white-space: nowrap;
     width: 0;
     border-right: 0.15em solid $primary-color;
+    animation: typing 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
 }
 
-/* Typing animation for it language */
-html[lang="it"] .typing-animation {
-    animation: typing-it 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
+.typing-animation .dot {
+    color: $primary-color;
 }
 
-@keyframes typing-it {
+@keyframes typing {
     from {
         width: 0;
     }
 
     to {
-        width: 27ch;
-    }
-}
-
-/* Typing animation for en language */
-html[lang="en"] .typing-animation {
-    animation: typing-en 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
-}
-
-@keyframes typing-en {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 24ch;
+        width: 13ch;
     }
 }
 
