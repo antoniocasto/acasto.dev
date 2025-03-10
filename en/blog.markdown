@@ -10,6 +10,9 @@ In this section, I will publish articles and tutorials about iOS development and
 
 {% assign localized_posts = site.posts | where: "lang", page.lang %}
 
+{% if localized_posts.size == 0 %}
+_There are no articles at the moment. Check back soon for updates!_
+{% else %}
 <div id="category-filters">
   <h3>Filter by Category</h3>
   <div class="tiles-container">
@@ -32,9 +35,6 @@ In this section, I will publish articles and tutorials about iOS development and
   </div>
 </div>
 <br>
-
-{% if localized_posts.size == 0 %}
-_There are no articles at the moment. Check back soon for updates!_
 {% endif %}
 
 

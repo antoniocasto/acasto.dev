@@ -11,8 +11,11 @@ In questa sezione pubblicherò articoli e tutorial sullo sviluppo iOS e tecnolog
 
 {% assign localized_posts = site.posts | where: "lang", page.lang %}
 
+{% if localized_posts.size == 0 %}
+_Non ci sono articoli al momento. Torna presto per aggiornamenti!_
+{% else %}
 <div id="category-filters">
-  <h3>Filter by Category</h3>
+  <h3>Filtra per categoria</h3>
   <div class="tiles-container">
     {% assign categories = "" %}
     {% for post in localized_posts %}
@@ -33,9 +36,6 @@ In questa sezione pubblicherò articoli e tutorial sullo sviluppo iOS e tecnolog
   </div>
 </div>
 <br>
-
-{% if localized_posts.size == 0 %}
-_Non ci sono articoli al momento. Torna presto per aggiornamenti!_
 {% endif %}
 
 
