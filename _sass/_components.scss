@@ -10,3 +10,26 @@
   font-weight: bold;
   color: $primary-color;
 }
+
+.tiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.filter-tile {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  font-weight: normal;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.filter-tile.selected {
+  border: 2px solid $primary-color;
+  font-weight: bold;
+  color: $primary-color;
+}

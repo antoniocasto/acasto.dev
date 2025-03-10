@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const sideMenu = document.querySelector('.side-menu');
   const closeMenu = document.querySelector('.close-menu');
-  const checkboxes = document.querySelectorAll('.category-checkbox');
+  const filterTiles = document.querySelectorAll('.filter-tile');
   const postItems = document.querySelectorAll('.post-item');
+  //const checkboxes = document.querySelectorAll('.category-checkbox');
+  //const postItems = document.querySelectorAll('.post-item');
 
   // Open side menu when burger button is clicked
   menuToggle.addEventListener('click', function (e) {
@@ -31,23 +33,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  checkboxes.forEach(function (checkbox) {
-    checkbox.addEventListener('change', function () {
+  filterTiles.forEach(tile => {
+    tile.addEventListener('click', function() {
+      // Toggle dello stato selezionato
+      tile.classList.toggle('selected');
       filterPosts();
     });
   });
 
   function filterPosts() {
-    const checkedValues = Array.from(checkboxes)
-      .filter(cb => cb.checked)
-      .map(cb => cb.value);
+    const selectedFilters = Array.from(filterTiles)
+      .filter(tile => tile.classList.contains('selected'))
+      .map(tile => tile.getAttribute('data-value'));
 
-    postItems.forEach(function (item) {
+    postItems.forEach(item => {
       const categories = item.getAttribute('data-categories').split(',');
-      if (checkedValues.length === 0) {
+      // Se nessun filtro è selezionato, mostra tutti i post
+      if (selectedFilters.length === 0) {
         item.style.display = '';
       } else {
-        const match = checkedValues.some(val => categories.includes(val));
+        // Mostra il post se almeno una categoria selezionata è presente
+        const match = selectedFilters.some(filter => categories.includes(filter));
         item.style.display = match ? '' : 'none';
       }
     });

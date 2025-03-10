@@ -12,33 +12,34 @@ In questa sezione pubblicherò articoli e tutorial sullo sviluppo iOS e tecnolog
 
 <div id="category-filters">
   <h3>Filtra per Categoria</h3>
-  {% assign categories = "" %}
-  {% for post in localized_posts %}
-    {% for cat in post.categories %}
-      {% assign normalizedCat = cat %}
-      {% if page.lang == "it" %}
-        {% if cat == "sviluppo" or cat == "development" %}
-          {% assign normalizedCat = "development" %}
+  <div class="tiles-container">
+    {% assign categories = "" %}
+    {% for post in localized_posts %}
+      {% for cat in post.categories %}
+        {% assign normalizedCat = cat %}
+        {% if page.lang == "it" %}
+          {% if cat == "sviluppo" or cat == "development" %}
+            {% assign normalizedCat = "development" %}
+          {% endif %}
         {% endif %}
-      {% endif %}
-      {% unless categories contains normalizedCat %}
-        {% assign categories = categories | append: normalizedCat | append: "," %}
-      {% endunless %}
+        {% unless categories contains normalizedCat %}
+          {% assign categories = categories | append: normalizedCat | append: "," %}
+        {% endunless %}
+      {% endfor %}
     {% endfor %}
-  {% endfor %}
-  {% assign categories = categories | split: "," | uniq %}
-  {% for normCat in categories %}
-    {% if normCat != "" %}
-      <label>
-        <input type="checkbox" class="category-checkbox" value="{{ normCat }}" />
-        {% if page.lang == "it" and normCat == "development" %}
-          sviluppo
-        {% else %}
-          {{ normCat | capitalize }}
-        {% endif %}
-      </label><br />
-    {% endif %}
-  {% endfor %}
+    {% assign categories = categories | split: "," | uniq %}
+    {% for normCat in categories %}
+      {% if normCat != "" %}
+        <div class="filter-tile" data-value="{{ normCat }}">
+          {% if page.lang == "it" and normCat == "development" %}
+            sviluppo
+          {% else %}
+            {{ normCat | capitalize }}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
 
 {% if localized_posts.size == 0 %}
