@@ -36,6 +36,29 @@ In questa sezione pubblicherò articoli e tutorial sullo sviluppo iOS e tecnolog
 
 {% if localized_posts.size == 0 %}
 _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
+{% else %}
+<div id="category-filters">
+  <h3>Filtra per categoria</h3>
+  <div class="tiles-container">
+    {% assign categories = "" %}
+    {% for post in localized_posts %}
+      {% for cat in post.categories %}
+        {% unless categories contains cat %}
+          {% assign categories = categories | append: cat | append: "," %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+    {% assign categories = categories | split: "," | uniq %}
+    {% for normCat in categories %}
+      {% if normCat != "" %}
+        <div class="filter-tile" data-value="{{ normCat }}">
+          {{ normCat | capitalize }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+<br>
 {% endif %}
 
 
