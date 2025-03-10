@@ -31,10 +31,12 @@ In this section, I will publish articles and tutorials about iOS development and
     {% endfor %}
   </div>
 </div>
+<br>
 
 {% if localized_posts.size == 0 %}
 _There are no articles at the moment. Check back soon for updates!_
 {% endif %}
+
 
 <div id="posts-list">
   {% for post in localized_posts %}
@@ -45,14 +47,16 @@ _There are no articles at the moment. Check back soon for updates!_
         {% assign postCategories = postCategories | append: "," %}
       {% endunless %}
     {% endfor %}
+    <p>
     <div class="post-item" data-categories="{{ postCategories }}">
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
       <div class="post-categories">
         {% for cat in post.categories %}
-          <span class="category">{{ cat | capitalize }}</span>
+          <span class="category-tile">{{ cat | capitalize }}</span>
         {% endfor %}
       </div>
-      <small>(Published on {{ post.date | date: "%d %B %Y" }})</small>
+      <small class="post-date"><i>(Published on {{ post.date | date: "%d %B %Y" }})</i></small>
     </div>
+    </p>
   {% endfor %}
 </div>

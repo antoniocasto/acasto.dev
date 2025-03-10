@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeMenu = document.querySelector('.close-menu');
   const filterTiles = document.querySelectorAll('.filter-tile');
   const postItems = document.querySelectorAll('.post-item');
-  //const checkboxes = document.querySelectorAll('.category-checkbox');
-  //const postItems = document.querySelectorAll('.post-item');
 
   // Open side menu when burger button is clicked
   menuToggle.addEventListener('click', function (e) {
@@ -48,11 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     postItems.forEach(item => {
       const categories = item.getAttribute('data-categories').split(',');
-      // Se nessun filtro è selezionato, mostra tutti i post
       if (selectedFilters.length === 0) {
         item.style.display = '';
       } else {
-        // Mostra il post se almeno una categoria selezionata è presente
         const match = selectedFilters.some(filter => categories.includes(filter));
         item.style.display = match ? '' : 'none';
       }

@@ -11,6 +11,7 @@
   color: $primary-color;
 }
 
+// Category filter tiles
 .tiles-container {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +21,7 @@
 
 .filter-tile {
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 0.7rem;
   border: 1px solid #ccc;
   border-radius: 9999px;
   font-weight: normal;
@@ -32,4 +33,34 @@
   border: 2px solid $primary-color;
   font-weight: bold;
   color: $primary-color;
+}
+
+.post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.post-date {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.category-tile {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #333;
+  background-color: #f5f7fa;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  transition: all 0.2s ease-in-out;
+}
+
+.category-tile:hover {
+  background-color: #e3e8ee;
+  border-color: #0a84ff;
+  color: #0a84ff;
 }
