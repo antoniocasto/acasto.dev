@@ -4,18 +4,51 @@
   margin-bottom: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: var(--collection-text);
+  color: var(--text-color);
 }
 
 .collection_item h1 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 2rem;
-  color: var(--collection-text);
+  color: var(--text-color);
 }
 
 .collection_item p {
   line-height: 1.6;
   margin-bottom: 1rem;
-  color: var(--collection-text);
+  color: var(--text-color);
+}
+
+/* Stile specifico per le tile dei blog (post-item) */
+.post-item {
+  background-color: var(--collection-bg);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.post-item:hover {
+  background-color: var(--blog-tile-hover-bg);
+}
+
+.post-item strong a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.post-item strong a:hover {
+  color: var(--primary-color);
+}
+
+.post-categories {
+  margin-top: 0.5rem;
+}
+
+.post-date {
+  color: var(--text-color);
+  font-size: 0.8rem;
 }
