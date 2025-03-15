@@ -9,6 +9,11 @@
   --switch-icon-color: #ffffff;  /* Icona in light mode */
   --side-menu-bg: #fff;           /* Background sidebar in light mode */
   --side-menu-border: #eee;       /* Bordo sidebar in light mode */
+  --dropdown-bg: #fff;             /* Sfondo dropdown (summary) in light mode */
+  --dropdown-border: #ddd;         /* Bordo dropdown in light mode */
+  --dropdown-text: #0a84ff;         /* Colore testo dropdown in light mode */
+  --dropdown-hover-bg: rgba(10,132,255,0.1); /* Effetto hover */
+  --dropdown-option-bg: #efefef;     /* Sfondo opzioni disponibili in light mode */
 }
 
 .dark-theme {
@@ -21,4 +26,9 @@
   --switch-icon-color: #222222;  /* Icona in dark mode */
   --side-menu-bg: #2c2c2e;        /* Background sidebar in dark mode */
   --side-menu-border: #444;       /* Bordo sidebar in dark mode */
+  --dropdown-bg: #2c2c2e;          /* Sfondo dropdown in dark mode */
+  --dropdown-border: #444;         /* Bordo dropdown in dark mode */
+  --dropdown-text: #0a84ff;         /* Colore testo dropdown in dark mode */
+  --dropdown-hover-bg: rgba(10,132,255,0.2);
+  --dropdown-option-bg: #454545;     /* Sfondo opzioni disponibili in dark mode */
 }
