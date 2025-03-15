@@ -173,7 +173,9 @@
   background: none;
   border: none;
   cursor: pointer;
-  display: none; // Hidden by default on desktop; shown via media query
+  width: 50px;  // Imposta la stessa larghezza del language dropdown
+  height: 50px; // (Opzionale) Puoi definirne l'altezza se vuoi un pulsante quadrato
+  display: none; // Mostrato in mobile tramite media query
 }
 
 .burger-icon {
@@ -332,7 +334,7 @@
     display: inline-block;
     position: absolute;
     left: 50%;
-    transform: translateX(-30%);
+    transform: translateX(-50%);
   }
 }
 
