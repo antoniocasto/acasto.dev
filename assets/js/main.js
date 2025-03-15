@@ -16,10 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
   
   if (themeToggle) {
     themeToggle.addEventListener('change', function () {
-      // Attiva l'animazione espansiva
+      // Calcola il fattore di scala: usa il raggio (10px) come divisore
+      const scaleFactor = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2) / 10;
       if (overlay) {
+        overlay.style.setProperty('--overlay-scale', scaleFactor);
         overlay.classList.add('expand');
       }
+      
       // Dopo 600ms (durata dell'animazione), applica il tema
       setTimeout(() => {
         if (this.checked) {
