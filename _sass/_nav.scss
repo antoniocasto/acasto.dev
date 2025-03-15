@@ -229,6 +229,13 @@
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.close-menu:hover {
+  color: var(--primary-color);
+  transform: rotate(90deg);
 }
 
 // Lista dei menu nella sidebar
