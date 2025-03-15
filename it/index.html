@@ -119,7 +119,8 @@
 
   <!-- Main content area -->
   <main class="container">
-    <div class="terminal">
+    <!-- This is the main index layout for the website. It includes a terminal-style header with a typing animation and a placeholder for the page content. -->
+<div class="terminal">
     <h1 class="typing-animation">acasto<span class="dot">.</span>dev 👋🏻</h1>
 </div>
 
@@ -137,6 +138,16 @@
   <footer class="site-footer container">
     <p>2025 Antonio Casto - Passionate iOS Developer. Made with ♥️.</p>
   </footer>
+
+  <!-- Floating theme switch button -->
+  <div class="theme-switch">
+    <input type="checkbox" id="theme-toggle">
+    <label for="theme-toggle" class="theme-toggle-label">
+      <span class="theme-icon">🌙</span>
+    </label>
+  </div>
+  <!-- Theme overlay for expansion animation on theme change -->
+  <div class="theme-overlay"></div>
 
   <!-- Include main JavaScript file -->
   <script src="/assets/js/main.js"></script>

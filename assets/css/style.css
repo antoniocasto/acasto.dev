@@ -1,13 +1,17 @@
 @charset "UTF-8";
-/* Define colors, fonts, and a reusable mixin for the "glass" panel
+:root { --primary-color: #0a84ff; /* Primary color */ --background-color: #f0f4f8; /* Background color */ --text-color: #333; /* Text color */ --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Font stack */ --glass-bg: rgba(226, 226, 226, 0.2); /* Glass background */ --glass-border: rgba(255, 255, 255, 0.3); /* Glass border */ --switch-bg: #4A4A4A; /* Switch button background in light mode */ --switch-icon-color: #ffffff; /* Switch icon color in light mode */ --side-menu-bg: #fff; /* Sidebar background in light mode */ --side-menu-border: #eee; /* Sidebar border in light mode */ --dropdown-bg: #fff; /* Dropdown background in light mode */ --dropdown-border: #ddd; /* Dropdown border in light mode */ --dropdown-text: #0a84ff; /* Dropdown text color in light mode */ --dropdown-hover-bg: rgba(10,132,255,0.1); /* Dropdown hover effect */ --dropdown-option-bg: #efefef; /* Dropdown options background in light mode */ --logo-filter-light: invert(0%) sepia(24%) saturate(4853%) hue-rotate(189deg) brightness(90%) contrast(92%); /* Logo filter in light mode */ --collection-bg: #fff; /* Collection pages background in light mode */ --collection-text: var(--text-color); /* Collection pages text color */ --blog-tile-hover-bg: #f9f9f9; /* Blog tile hover background in light mode */ --category-bg: #f5f7fa; /* Category tile background in light mode */ --category-border: #ccc; /* Category tile border in light mode */ --category-hover-bg: #e3e8ee; /* Category tile hover background in light mode */ }
+
+.dark-theme { --primary-color: #0a84ff; /* Primary color */ --background-color: #1c1c1e; /* Background color */ --text-color: #f0f0f0; /* Text color */ --glass-bg: rgb(43, 43, 44); /* Glass background */ --glass-border: rgba(28, 28, 30, 0.3); /* Glass border */ --switch-bg: #878787; /* Switch button background in dark mode */ --switch-icon-color: #222222; /* Switch icon color in dark mode */ --side-menu-bg: #2c2c2e; /* Sidebar background in dark mode */ --side-menu-border: #444; /* Sidebar border in dark mode */ --dropdown-bg: #2c2c2e; /* Dropdown background in dark mode */ --dropdown-border: #444; /* Dropdown border in dark mode */ --dropdown-text: #0a84ff; /* Dropdown text color in dark mode */ --dropdown-hover-bg: rgba(10,132,255,0.2); /* Dropdown hover effect */ --dropdown-option-bg: #454545; /* Dropdown options background in dark mode */ --logo-filter-dark: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Logo filter in dark mode */ --collection-bg: #2c2c2e; /* Collection pages background in dark mode */ --collection-text: var(--text-color); /* Collection pages text color */ --blog-tile-hover-bg: #333333; /* Blog tile hover background in dark mode */ --category-bg: #3a3a3c; /* Category tile background in dark mode */ --category-border: #555; /* Category tile border in dark mode */ --category-hover-bg: #4a4a4c; /* Category tile hover background in dark mode */ }
+
+/* Define mixin for the "glass" panel
 */
-/* Define base global styles
+/* Define base global styles using CSS custom properties
 */
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #333; background-color: #f0f4f8; margin: 0; }
+body { font-family: var(--font-stack); color: var(--text-color); background-color: var(--background-color); margin: 0; }
 
 h1, h2, h3, h4 { font-weight: 600; margin-bottom: 0.5em; }
 
-a { color: #0a84ff; text-decoration: none; }
+a { color: var(--primary-color); text-decoration: none; }
 
 a:hover { text-decoration: underline; }
 
@@ -15,58 +19,95 @@ a:hover { text-decoration: underline; }
 */
 .container { max-width: 800px; margin: 0 auto; padding: 1rem; }
 
-.site-header { padding: 1rem 0; background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); /* For iOS Safari support */ border: 1px solid rgba(255, 255, 255, 0.3); }
+.site-header { padding: 1rem 0; background: var(--glass-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--glass-border); }
 
-/* Regole di base per il menu */
+/* Basic rules for the menu inside the site header */
 .site-header .menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
 
 .site-header .menu li a { font-weight: 500; }
 
-.glass-panel { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); /* For iOS Safari support */ border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+.glass-panel { background: var(--glass-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid var(--glass-border); border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
 
-.menu li.active a { font-weight: bold; color: #0a84ff; }
+.menu li.active a { font-weight: bold; color: var(--primary-color); }
 
+/* Category filter tiles */
 .tiles-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1rem; }
 
-.filter-tile { cursor: pointer; padding: 0.1rem 0.7rem; border: 1px solid #ccc; border-radius: 9999px; font-weight: normal; color: #333; transition: all 0.2s ease; }
+.filter-tile { cursor: pointer; padding: 0.1rem 0.7rem; border: 1px solid #ccc; border-radius: 9999px; font-weight: normal; color: var(--text-color); transition: all 0.2s ease; }
 
-.filter-tile.selected { border: 2px solid #0a84ff; font-weight: bold; color: #0a84ff; }
+.filter-tile.selected { border: 2px solid var(--primary-color); font-weight: bold; color: var(--primary-color); }
 
 .post-categories { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
 
 .post-date { font-size: 0.7rem; color: #666; }
 
-.category-tile { display: inline-block; padding: 2px 8px; font-size: 0.75rem; font-weight: 500; color: #333; background-color: #f5f7fa; border: 1px solid #ccc; border-radius: 9999px; transition: all 0.2s ease-in-out; }
+.category-tile { display: inline-block; padding: 2px 8px; font-size: 0.75rem; font-weight: 500; color: var(--text-color); background-color: var(--category-bg); border: 1px solid var(--category-border); border-radius: 9999px; transition: all 0.2s ease-in-out; }
 
-.category-tile:hover { background-color: #e3e8ee; border-color: #0a84ff; color: #0a84ff; }
+.category-tile:hover { background-color: var(--category-hover-bg); border-color: var(--primary-color); color: var(--primary-color); }
 
-.collection_item { background-color: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+@keyframes rotate-animation { from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); } }
+.rotate-animation { animation: rotate-animation 0.5s ease-in-out; }
 
-.collection_item h1 { margin-top: 0; margin-bottom: 1rem; font-size: 2.0rem; }
+/* Floating button for theme switch */
+.theme-switch { position: fixed; bottom: 1rem; right: 1rem; z-index: 1100; width: 50px; height: 50px; background-color: var(--switch-bg); border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease, transform 0.3s ease; }
 
-.collection_item p { line-height: 1.6; margin-bottom: 1rem; }
+.theme-switch:hover { transform: scale(1.1); }
+
+/* Hide the checkbox */
+.theme-switch input { display: none; }
+
+/* Label fills the entire button */
+.theme-switch label { margin: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+
+/* Icon style */
+.theme-icon { font-size: 24px; color: var(--switch-icon-color); transition: color 0.3s ease; }
+
+/* Overlay for expanding animation */
+.theme-overlay { position: fixed; bottom: 1rem; right: 1rem; width: 20px; height: 20px; background-color: var(--background-color); border-radius: 50%; z-index: 1000; transform: scale(0); transform-origin: center center; transition: transform 0.6s ease-out; pointer-events: none; }
+
+.theme-overlay.expand { transform: scale(var(--overlay-scale, 100)); }
+
+.collection_item { background-color: var(--collection-bg); padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); color: var(--text-color); }
+
+.collection_item h1 { margin-top: 0; margin-bottom: 1rem; font-size: 2rem; color: var(--text-color); }
+
+.collection_item p { line-height: 1.6; margin-bottom: 1rem; color: var(--text-color); }
+
+/* Specific style for blog tiles (post-item) */
+.post-item { background-color: var(--collection-bg); padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease; }
+
+.post-item:hover { background-color: var(--blog-tile-hover-bg); }
+
+.post-item strong a { color: var(--text-color); text-decoration: none; transition: color 0.3s ease; }
+
+.post-item strong a:hover { color: var(--primary-color); }
+
+.post-categories { margin-top: 0.5rem; }
+
+.post-date { color: var(--text-color); font-size: 0.8rem; }
 
 .terminal { font-family: 'Courier New', Courier, monospace; text-align: left; }
 
-.typing-animation { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: 0.15em solid #0a84ff; animation: typing 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s; }
+.typing-animation { display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: 0.15em solid var(--primary-color); animation: typing 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s; }
 
-.typing-animation .dot { color: #0a84ff; }
+.typing-animation .dot { color: var(--primary-color); }
 
 @keyframes typing { from { width: 0; }
   to { width: 13ch; } }
-@keyframes blink-caret { 0%, 100% { border-color: #0a84ff; }
+@keyframes blink-caret { 0%, 100% { border-color: var(--primary-color); }
   50% { border-color: transparent; } }
-.about-header { padding: 2rem; border-bottom: 2px solid #0a84ff; }
+.about-header { padding: 2rem; border-bottom: 2px solid var(--primary-color); }
 
 .about-container { display: flex; align-items: center; justify-content: center; gap: 2rem; }
 
-.circular-border { display: flex; align-items: center; justify-content: center; width: 125px; height: 125px; border-radius: 50%; border: 2px solid #0a84ff; box-sizing: content-box; aspect-ratio: 1 / 1; }
+.circular-border { display: flex; align-items: center; justify-content: center; width: 125px; height: 125px; border-radius: 50%; border: 2px solid var(--primary-color); box-sizing: content-box; aspect-ratio: 1 / 1; }
 
 .circular-container { width: 120px; height: 120px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; }
 
 .circular-image { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
-.profile-name .cursive-name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-style: italic; font-size: 2rem; margin: 0; }
+.profile-name .cursive-name { font-family: var(--font-stack); font-style: italic; font-size: 2rem; margin: 0; }
 
 @media (max-width: 768px) { .circular-border { width: 108px; height: 108px; border-width: 2px; aspect-ratio: 1 / 1; }
   .circular-container { width: 104px; height: 104px; aspect-ratio: 1 / 1; } }
@@ -74,41 +115,62 @@ a:hover { text-decoration: underline; }
 
 .mobile-logo .logo-img { height: 40px; width: auto; }
 
+.desktop-logo .logo-img, .mobile-logo .logo-img { filter: brightness(0) saturate(100%) var(--logo-filter-light); }
+
+.dark-theme .desktop-logo .logo-img, .dark-theme .mobile-logo .logo-img { filter: brightness(0) saturate(100%) var(--logo-filter-dark); }
+
 .nav-bar { display: flex; align-items: center; justify-content: space-between; position: relative; }
 
 .desktop-menu { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
 
 .desktop-menu li { position: relative; }
 
-.desktop-menu li a { text-decoration: none; color: #333; font-weight: 500; }
+.desktop-menu li a { text-decoration: none; color: var(--text-color); font-weight: 500; }
 
-.desktop-menu li.active a { color: #0a84ff; font-weight: 600; }
+.desktop-menu li.active a { color: var(--primary-color); font-weight: 600; }
 
-.language-dropdown { position: relative; display: inline-block; cursor: pointer; }
+.language-dropdown { position: relative; display: inline-block; width: 50px; cursor: pointer; }
 
-.language-dropdown summary { list-style: none; outline: none; cursor: pointer; padding: 0.5rem 1rem; padding-left: 1.5rem; /* Spazio per la freccia a sinistra */ border: 1px solid transparent; border-radius: 4px; background: transparent; color: #0a84ff; font-size: 0.9rem; font-weight: bold; position: relative; }
+/* Closed button (summary) */
+.language-dropdown summary { display: flex; align-items: center; justify-content: center; padding: 0.5rem 1rem; width: 100%; box-sizing: border-box; border: 1px solid var(--dropdown-border); background-color: var(--dropdown-bg); color: var(--dropdown-text); font-size: 0.9rem; font-weight: bold; /* Only round the top corners for continuity with the menu */ border-radius: 4px 4px 4px 4px; transition: background-color 0.3s, border-color 0.3s; /* Space on the left for the icon */ padding-left: 2rem; position: relative; }
 
-.language-dropdown summary::before { content: "►"; /* Freccia a sinistra */ position: absolute; left: 0.5rem; top: 50%; transform: translateY(-50%); font-size: 0.7rem; color: #0a84ff; transition: transform 0.3s; }
+/* Icon positioned on the left */
+.language-dropdown summary::before { content: "▶"; position: absolute; left: 0.5rem; top: 50%; transform: translateY(-50%); font-size: 0.8rem; color: var(--dropdown-text); transition: transform 0.3s ease; }
 
+/* When the dropdown is open, rotate the arrow to point down */
 .language-dropdown[open] summary::before { transform: translateY(-50%) rotate(90deg); }
 
+.language-dropdown[open] summary { border-radius: 4px 4px 0px 0; }
+
+/* Remove the default marker */
 .language-dropdown summary::-webkit-details-marker { display: none; }
 
-.language-options { margin: 0; padding: 0; list-style: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd; width: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); z-index: 100; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+/* Container for the options (dropdown) */
+.language-options { list-style: none; margin: 0; padding: 0; position: absolute; top: calc(100% - 1px); left: 0; width: 96%; background: var(--dropdown-option-bg); border: 1px solid var(--dropdown-border); border-top: none; /* Only round the bottom corners */ border-radius: 0 0 4px 4px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); z-index: 100; /* Initially hidden, with a sliding effect */ opacity: 0; transform: translateY(-10px); pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; }
 
-.language-options li a { display: block; padding: 0.5rem 1rem; text-decoration: none; color: #0a84ff; transition: background-color 0.3s; }
+/* When the dropdown is open, show the options */
+.language-dropdown[open] .language-options { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
-.language-options li a:hover { background-color: rgba(10, 132, 255, 0.1); }
+/* Style for each option */
+.language-options li a { display: block; padding: 0.5rem 1rem; text-decoration: none; color: var(--dropdown-text); transition: background-color 0.3s ease; }
+
+/* Hover for each option */
+.language-options li a:hover { background-color: var(--dropdown-hover-bg); }
+
+/* Selected state (current language) */
+.language-options li a.selected { background-color: var(--primary-color); color: #fff; }
 
 .nav-left { display: flex; align-items: center; gap: 1rem; }
 
 .desktop-logo { display: inline-block; }
 
-.menu-toggle { background: none; border: none; cursor: pointer; display: none; }
+.menu-toggle { background: none; border: none; cursor: pointer; width: 50px; height: 50px; display: none; color: var(--text-color); transition: color 0.3s ease, transform 0.3s ease; }
 
-.burger-icon { display: block; width: 25px; height: 2px; background: currentColor; position: relative; }
+.menu-toggle:hover { color: var(--primary-color); transform: scale(1.1); }
 
-.burger-icon::before, .burger-icon::after { content: ''; position: absolute; width: 25px; height: 2px; background: currentColor; left: 0; }
+.burger-icon { display: block; width: 25px; height: 2px; background-color: currentColor; position: relative; transition: background-color 0.3s ease; }
+
+.burger-icon::before, .burger-icon::after { content: ''; position: absolute; width: 25px; height: 2px; background-color: currentColor; left: 0; transition: background-color 0.3s ease; }
 
 .burger-icon::before { top: -8px; }
 
@@ -120,29 +182,31 @@ a:hover { text-decoration: underline; }
 
 .nav-right { /* Always visible on all screen sizes */ margin: 0; }
 
-.side-menu { position: fixed; top: 0; left: 0; transform: translateX(-100%); width: 80%; max-width: 300px; height: 100%; background: #fff; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease; z-index: 1000; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+.side-menu { position: fixed; top: 0; left: 0; transform: translateX(-100%); width: 80%; max-width: 300px; height: 100%; background: var(--side-menu-bg); box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease; z-index: 1000; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
 
 .side-menu.open { transform: translateX(0); }
 
 .side-menu .side-menu-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
 
-.close-menu { background: none; border: none; font-size: 2rem; cursor: pointer; }
+.close-menu { background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--text-color); transition: color 0.3s ease, transform 0.2s ease; }
+
+.close-menu:hover { color: var(--primary-color); transform: rotate(90deg); }
 
 .side-menu .menu { flex-direction: column; gap: 0; list-style: none; padding: 0; }
 
-.side-menu .menu li { border-bottom: 1px solid #eee; padding: 0.5rem 0; }
+.side-menu .menu li { border-bottom: 1px solid var(--side-menu-border); padding: 0.5rem 0; }
 
 .side-menu .menu li:last-child { border-bottom: none; }
 
-.side-menu .menu li a { display: block; padding: 1rem 0; color: #333; font-weight: 600; }
+.side-menu .menu li a { display: block; padding: 1rem 0; color: var(--text-color); font-weight: 600; }
 
-.side-menu .menu li.active a { color: #0a84ff; font-weight: 600; }
+.side-menu .menu li.active a { color: var(--primary-color); font-weight: 600; }
 
 @media (max-width: 768px) { .desktop-menu { display: none !important; }
   .menu-toggle { display: block !important; }
   .desktop-logo { display: none; }
   .nav-center { display: flex; position: relative; }
-  .mobile-logo { display: inline-block; position: absolute; left: 50%; transform: translateX(-30%); } }
+  .mobile-logo { display: inline-block; position: absolute; left: 50%; transform: translateX(-50%); } }
 @media (min-width: 769px) { .nav-center { display: none; }
   .desktop-logo { display: inline-block; }
   .menu-toggle { display: none; } }

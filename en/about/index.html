@@ -119,15 +119,18 @@
 
   <!-- Main content area -->
   <main class="container">
-    <div class="about-header">
+    <!-- This is the about page layout for Antonio Casto's personal website. 
+  It includes a header section with a profile image and name, 
+  followed by the main content of the page. -->
+<div class="about-header">
   <div class="about-container">
     <div class="circular-border">
-      <div class="circular-container">
-        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="circular-image">
-      </div>
+   <div class="circular-container">
+     <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="circular-image">
+   </div>
     </div>
     <div class="profile-name">
-      <p class="cursive-name">Antonio Casto</p>
+   <p class="cursive-name">Antonio Casto</p>
     </div>
   </div>
 </div>
@@ -244,6 +247,16 @@ I always <strong>think before I code</strong>. If I don’t know how to do somet
   <footer class="site-footer container">
     <p>2025 Antonio Casto - Passionate iOS Developer. Made with ♥️.</p>
   </footer>
+
+  <!-- Floating theme switch button -->
+  <div class="theme-switch">
+    <input type="checkbox" id="theme-toggle">
+    <label for="theme-toggle" class="theme-toggle-label">
+      <span class="theme-icon">🌙</span>
+    </label>
+  </div>
+  <!-- Theme overlay for expansion animation on theme change -->
+  <div class="theme-overlay"></div>
 
   <!-- Include main JavaScript file -->
   <script src="/assets/js/main.js"></script>

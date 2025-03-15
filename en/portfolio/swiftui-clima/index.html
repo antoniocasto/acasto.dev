@@ -119,10 +119,15 @@
 
   <!-- Main content area -->
   <main class="container">
-    <article class="collection_item">
-    <h1>SwiftUIClima</h1>
-    <div class="content">
-      <p><em>An iOS weather app built with SwiftUI.</em></p>
+    <!--
+  This is the portfolio layout for the website.
+  It displays the title and content of a portfolio item.
+-->
+
+<article class="collection_item">
+  <h1>SwiftUIClima</h1>
+  <div class="content">
+    <p><em>An iOS weather app built with SwiftUI.</em></p>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png" width="180" alt="Weather - Light" />
@@ -154,7 +159,7 @@
 
 <p>The source code is available on <strong><a href="https://github.com/antoniocasto/SwiftUIClima">GitHub</a></strong>.</p>
 
-    </div>
+  </div>
 </article>
   </main>
 
@@ -162,6 +167,16 @@
   <footer class="site-footer container">
     <p>2025 Antonio Casto - Passionate iOS Developer. Made with ♥️.</p>
   </footer>
+
+  <!-- Floating theme switch button -->
+  <div class="theme-switch">
+    <input type="checkbox" id="theme-toggle">
+    <label for="theme-toggle" class="theme-toggle-label">
+      <span class="theme-icon">🌙</span>
+    </label>
+  </div>
+  <!-- Theme overlay for expansion animation on theme change -->
+  <div class="theme-overlay"></div>
 
   <!-- Include main JavaScript file -->
   <script src="/assets/js/main.js"></script>
