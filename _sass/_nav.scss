@@ -10,6 +10,17 @@
   width: auto;
 }
 
+.desktop-logo .logo-img,
+.mobile-logo .logo-img {
+  filter: brightness(0) saturate(100%) var(--logo-filter-light);
+}
+
+/* In dark mode, usa il filtro specifico */
+.dark-theme .desktop-logo .logo-img,
+.dark-theme .mobile-logo .logo-img {
+  filter: brightness(0) saturate(100%) var(--logo-filter-dark);
+}
+
 // ------------------------------
 // NAV BAR BASE STYLES
 // ------------------------------
@@ -173,17 +184,25 @@
   background: none;
   border: none;
   cursor: pointer;
-  width: 50px;  // Imposta la stessa larghezza del language dropdown
-  height: 50px; // (Opzionale) Puoi definirne l'altezza se vuoi un pulsante quadrato
-  display: none; // Mostrato in mobile tramite media query
+  width: 50px;  // stessa larghezza del language dropdown
+  height: 50px;
+  display: none; // verrà mostrato in mobile tramite media query
+  color: var(--text-color); // stato normale: usa il colore del testo definito nel tema
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: var(--primary-color); // cambia colore a var(--primary-color) all'hover
+  transform: scale(1.1);       // leggera scala per l'hover
 }
 
 .burger-icon {
   display: block;
   width: 25px;
   height: 2px;
-  background: currentColor;
+  background-color: currentColor; // eredita il colore dallo stato normale o hover
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .burger-icon::before,
@@ -192,8 +211,9 @@
   position: absolute;
   width: 25px;
   height: 2px;
-  background: currentColor;
+  background-color: currentColor;
   left: 0;
+  transition: background-color 0.3s ease;
 }
 
 .burger-icon::before {
