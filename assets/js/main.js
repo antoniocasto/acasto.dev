@@ -1,9 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Theme handling
+  const themeToggle = document.getElementById('theme-toggle');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  // Other variables
   const menuToggle = document.querySelector('.menu-toggle');
   const sideMenu = document.querySelector('.side-menu');
   const closeMenu = document.querySelector('.close-menu');
   const filterTiles = document.querySelectorAll('.filter-tile');
   const postItems = document.querySelectorAll('.post-item');
+
+  // Set theme based on user preference
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    if (themeToggle) themeToggle.checked = true;
+  }
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        document.body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  }
 
   // Open side menu when burger button is clicked
   menuToggle.addEventListener('click', function (e) {

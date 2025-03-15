@@ -37,12 +37,12 @@
 
 .desktop-menu li a {
   text-decoration: none;
-  color: $text-color;
+  color: var(--text-color);
   font-weight: 500;
 }
 
 .desktop-menu li.active a {
-  color: $primary-color;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -60,24 +60,24 @@
   outline: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  padding-left: 1.5rem; /* Spazio per la freccia a sinistra */
+  padding-left: 1.5rem; /* Arrow left space */
   border: 1px solid transparent;
   border-radius: 4px;
   background: transparent;
-  color: $primary-color;
+  color: var(--primary-color);
   font-size: 0.9rem;
   font-weight: bold;
   position: relative;
 }
 
 .language-dropdown summary::before {
-  content: "►"; /* Freccia a sinistra */
+  content: "►"; /* Left arrow */
   position: absolute;
   left: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.7rem;
-  color: $primary-color;
+  color: var(--primary-color);
   transition: transform 0.3s;
 }
 
@@ -109,12 +109,12 @@
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: $primary-color;
+  color: var(--primary-color);
   transition: background-color 0.3s;
 }
 
 .language-options li a:hover {
-  background-color: rgba($primary-color, 0.1);
+  background-color: rgba(var(--primary-color), 0.1);
 }
 
 // ------------------------------
@@ -248,12 +248,12 @@
 .side-menu .menu li a {
   display: block;
   padding: 1rem 0;
-  color: $text-color;
+  color: var(--text-color);
   font-weight: 600;
 }
 
 .side-menu .menu li.active a {
-  color: $primary-color;
+  color: var(--primary-color);
   font-weight: 600;
 }
 

@@ -1,6 +1,6 @@
 .about-header {
   padding: 2rem;
-  border-bottom: 2px solid #0a84ff;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .about-container {
@@ -17,7 +17,7 @@
   width: 125px;
   height: 125px;
   border-radius: 50%;
-  border: 2px solid #0a84ff;
+  border: 2px solid var(--primary-color);
   box-sizing: content-box;
   aspect-ratio: 1 / 1;
 }
@@ -41,7 +41,7 @@
 }
 
 .profile-name .cursive-name {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-stack);
   font-style: italic;
   font-size: 2rem;
   margin: 0;
