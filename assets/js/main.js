@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Gestione del tema
+  // Theme management
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.querySelector('.theme-icon');
   const overlay = document.querySelector('.theme-overlay');
   const currentTheme = localStorage.getItem('theme') || 'light';
 
-  // Imposta il tema in base alla preferenza salvata
+  // Set theme based on saved preference
   if (currentTheme === 'dark') {
     document.body.classList.add('dark-theme');
     if (themeToggle) themeToggle.checked = true;
@@ -13,17 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     if (themeIcon) themeIcon.textContent = '🌙';
   }
-  
+
+  // Theme toggle event listener
   if (themeToggle) {
     themeToggle.addEventListener('change', function () {
-      // Calcola il fattore di scala: usa il raggio (10px) come divisore
+      // Calculate scale factor using the radius (10px) as divisor
       const scaleFactor = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2) / 10;
       if (overlay) {
         overlay.style.setProperty('--overlay-scale', scaleFactor);
         overlay.classList.add('expand');
       }
-      
-      // Dopo 600ms (durata dell'animazione), applica il tema
+
+      // Apply theme after 600ms (animation duration)
       setTimeout(() => {
         if (this.checked) {
           document.body.classList.add('dark-theme');
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
           }
         }
-        // Rimuove la classe per poter riutilizzare l'animazione al prossimo cambio
+        // Remove class to reuse animation on next change
         if (overlay) {
           overlay.classList.remove('expand');
         }
@@ -50,41 +51,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Gestione del menu e side menu (rimane invariato)
+  // Menu and side menu management
   const menuToggle = document.querySelector('.menu-toggle');
   const sideMenu = document.querySelector('.side-menu');
   const closeMenu = document.querySelector('.close-menu');
   const filterTiles = document.querySelectorAll('.filter-tile');
   const postItems = document.querySelectorAll('.post-item');
 
+  // Menu toggle event listener
   if (menuToggle) {
     menuToggle.addEventListener('click', function (e) {
       e.stopPropagation();
       sideMenu.classList.add('open');
     });
   }
+
+  // Close menu event listener
   if (closeMenu) {
     closeMenu.addEventListener('click', function (e) {
       e.stopPropagation();
       sideMenu.classList.remove('open');
     });
   }
+
+  // Close side menu when clicking outside
   document.addEventListener('click', function (e) {
     if (sideMenu.classList.contains('open') && !sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
       sideMenu.classList.remove('open');
     }
   });
+
+  // Close side menu on window resize if width >= 769px
   window.addEventListener('resize', function () {
     if (window.innerWidth >= 769 && sideMenu.classList.contains('open')) {
       sideMenu.classList.remove('open');
     }
   });
+
+  // Filter tiles event listener
   filterTiles.forEach(tile => {
     tile.addEventListener('click', function() {
       tile.classList.toggle('selected');
       filterPosts();
     });
   });
+
+  // Filter posts based on selected filters
   function filterPosts() {
     const selectedFilters = Array.from(filterTiles)
       .filter(tile => tile.classList.contains('selected'))

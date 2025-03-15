@@ -1,31 +1,36 @@
+// Styles for the terminal container
 .terminal {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: left;
-  }
-  
-  .typing-animation {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+}
+
+// Styles for the typing animation
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 0.15em solid var(--primary-color);
+  animation: typing 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
+}
+
+// Styles for the dot in the typing animation
+.typing-animation .dot {
+  color: var(--primary-color);
+}
+
+// Keyframes for the typing animation
+@keyframes typing {
+  from {
     width: 0;
-    border-right: 0.15em solid var(--primary-color);
-    animation: typing 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
   }
-  
-  .typing-animation .dot {
-    color: var(--primary-color);
+  to {
+    width: 13ch;
   }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 13ch;
-    }
-  }
-  
-  @keyframes blink-caret {
-    0%, 100% { border-color: var(--primary-color); }
-    50% { border-color: transparent; }
-  }
+}
+
+// Keyframes for the blinking caret animation
+@keyframes blink-caret {
+  0%, 100% { border-color: var(--primary-color); }
+  50% { border-color: transparent; }
+}

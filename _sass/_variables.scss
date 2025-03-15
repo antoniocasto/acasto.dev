@@ -1,17 +1,23 @@
 // _sass/_variables.scss
 
 /*
-    Define mixin for the "glass" panel
+  Define mixin for the "glass" panel
 */
 
 // Mixin for glassmorphism effect
 @mixin glass($blur: 8px, $alpha: null) {
+  // Check if alpha value is provided
   @if $alpha == null {
-    background: var(--glass-bg);
+  // Use default glass background color
+  background: var(--glass-bg);
   } @else {
-    background: rgba(255, 255, 255, $alpha);
+  // Use provided alpha value for background color
+  background: rgba(255, 255, 255, $alpha);
   }
+  // Apply blur effect for glassmorphism
   backdrop-filter: blur($blur);
-  -webkit-backdrop-filter: blur($blur); /* For iOS Safari support */
+  // Apply blur effect for iOS Safari support
+  -webkit-backdrop-filter: blur($blur);
+  // Add border to the glass panel
   border: 1px solid var(--glass-border);
 }

@@ -10,12 +10,13 @@
   width: auto;
 }
 
+// Apply filter to logo images
 .desktop-logo .logo-img,
 .mobile-logo .logo-img {
   filter: brightness(0) saturate(100%) var(--logo-filter-light);
 }
 
-/* In dark mode, usa il filtro specifico */
+// In dark mode, use the specific filter
 .dark-theme .desktop-logo .logo-img,
 .dark-theme .mobile-logo .logo-img {
   filter: brightness(0) saturate(100%) var(--logo-filter-dark);
@@ -60,15 +61,15 @@
 // ------------------------------
 // Language Dropdown (common for desktop & mobile)
 // ------------------------------
-// Imposta una larghezza fissa per il dropdown
+// Set a fixed width for the dropdown
 .language-dropdown {
   position: relative;
   display: inline-block;
-  width: 50px; // larghezza ridotta per essere più compatta
+  width: 50px; // reduced width for compactness
   cursor: pointer;
 }
 
-/* Bottone (summary) chiuso */
+/* Closed button (summary) */
 .language-dropdown summary {
   display: flex;
   align-items: center;
@@ -81,15 +82,15 @@
   color: var(--dropdown-text);
   font-size: 0.9rem;
   font-weight: bold;
-  /* Rendi solo gli angoli superiori arrotondati per creare continuità con il menu */
+  /* Only round the top corners for continuity with the menu */
   border-radius: 4px 4px 4px 4px;
   transition: background-color 0.3s, border-color 0.3s;
-  /* Spazio a sinistra per l'icona */
+  /* Space on the left for the icon */
   padding-left: 2rem;
   position: relative;
 }
 
-/* Icona posta a sinistra */
+/* Icon positioned on the left */
 .language-dropdown summary::before {
   content: "▶";
   position: absolute;
@@ -101,7 +102,7 @@
   transition: transform 0.3s ease;
 }
 
-/* Quando il dropdown è aperto, ruota la freccia per puntare verso il basso */
+/* When the dropdown is open, rotate the arrow to point down */
 .language-dropdown[open] summary::before {
   transform: translateY(-50%) rotate(90deg);
 }
@@ -110,42 +111,42 @@
   border-radius: 4px 4px 0px 0;
 }
 
-/* Rimuove il marker predefinito */
+/* Remove the default marker */
 .language-dropdown summary::-webkit-details-marker {
   display: none;
 }
 
-/* Contenitore delle opzioni (dropdown) */
+/* Container for the options (dropdown) */
 .language-options {
   list-style: none;
   margin: 0;
   padding: 0;
   position: absolute;
-  top: calc(100% - 1px);  // Si "attacca" al summary
+  top: calc(100% - 1px);  // Attach to the summary
   left: 0;
   width: 96%;
-  background: var(--dropdown-option-bg);  // Colore leggermente diverso dalle opzioni selezionate
+  background: var(--dropdown-option-bg);  // Slightly different color from selected options
   border: 1px solid var(--dropdown-border);
-  border-top: none;  // Per collegare visivamente al summary
-  /* Arrotonda solo gli angoli inferiori */
+  border-top: none;  // Visually connect to the summary
+  /* Only round the bottom corners */
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 100;
-  /* Inizialmente nascosto, con effetto di scorrimento */
+  /* Initially hidden, with a sliding effect */
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Quando il dropdown è aperto, mostra le opzioni */
+/* When the dropdown is open, show the options */
 .language-dropdown[open] .language-options {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-/* Stile per ogni opzione */
+/* Style for each option */
 .language-options li a {
   display: block;
   padding: 0.5rem 1rem;
@@ -154,12 +155,12 @@
   transition: background-color 0.3s ease;
 }
 
-/* Hover per ogni opzione */
+/* Hover for each option */
 .language-options li a:hover {
   background-color: var(--dropdown-hover-bg);
 }
 
-/* Stato selezionato (lingua corrente) */
+/* Selected state (current language) */
 .language-options li a.selected {
   background-color: var(--primary-color);
   color: #fff;
@@ -184,23 +185,23 @@
   background: none;
   border: none;
   cursor: pointer;
-  width: 50px;  // stessa larghezza del language dropdown
+  width: 50px;  // same width as the language dropdown
   height: 50px;
-  display: none; // verrà mostrato in mobile tramite media query
-  color: var(--text-color); // stato normale: usa il colore del testo definito nel tema
+  display: none; // will be shown on mobile via media query
+  color: var(--text-color); // normal state: use the text color defined in the theme
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .menu-toggle:hover {
-  color: var(--primary-color); // cambia colore a var(--primary-color) all'hover
-  transform: scale(1.1);       // leggera scala per l'hover
+  color: var(--primary-color); // change color to var(--primary-color) on hover
+  transform: scale(1.1);       // slight scale for hover
 }
 
 .burger-icon {
   display: block;
   width: 25px;
   height: 2px;
-  background-color: currentColor; // eredita il colore dallo stato normale o hover
+  background-color: currentColor; // inherit color from normal or hover state
   position: relative;
   transition: background-color 0.3s ease;
 }
@@ -255,11 +256,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateX(-100%); // Nasconde la sidebar di default
+  transform: translateX(-100%); // Hide the sidebar by default
   width: 80%;
   max-width: 300px;
   height: 100%;
-  background: var(--side-menu-bg);  // Usa la variabile per il background
+  background: var(--side-menu-bg);  // Use the variable for the background
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   z-index: 1000;
@@ -269,12 +270,12 @@
   gap: 1rem;
 }
 
-// Regola per far apparire la sidebar
+// Rule to show the sidebar
 .side-menu.open {
   transform: translateX(0);
 }
 
-// Header della sidebar (con pulsante di chiusura)
+// Sidebar header (with close button)
 .side-menu .side-menu-header {
   display: flex;
   align-items: center;
@@ -282,7 +283,7 @@
   margin-bottom: 1rem;
 }
 
-// Pulsante di chiusura della sidebar
+// Sidebar close button
 .close-menu {
   background: none;
   border: none;
@@ -297,7 +298,7 @@
   transform: rotate(90deg);
 }
 
-// Lista dei menu nella sidebar
+// Sidebar menu list
 .side-menu .menu {
   flex-direction: column;
   gap: 0;
@@ -305,18 +306,18 @@
   padding: 0;
 }
 
-// Stile per ogni elemento della lista
+// Style for each list item
 .side-menu .menu li {
-  border-bottom: 1px solid var(--side-menu-border); // Usa la variabile per il bordo
+  border-bottom: 1px solid var(--side-menu-border); // Use the variable for the border
   padding: 0.5rem 0;
 }
 
-// Rimuove il bordo dall'ultimo elemento
+// Remove the border from the last item
 .side-menu .menu li:last-child {
   border-bottom: none;
 }
 
-// Stile per i link della sidebar
+// Style for sidebar links
 .side-menu .menu li a {
   display: block;
   padding: 1rem 0;
@@ -324,7 +325,7 @@
   font-weight: 600;
 }
 
-// Evidenziazione del menu attivo
+// Highlight the active menu
 .side-menu .menu li.active a {
   color: var(--primary-color);
   font-weight: 600;

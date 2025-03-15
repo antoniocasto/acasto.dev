@@ -1,26 +1,28 @@
 /*
-    Define base global styles using CSS custom properties
+  Define base global styles using CSS custom properties
 */
 
+// Base styles for the body element
 body {
-  font-family: var(--font-stack);
-  color: var(--text-color);
-  background-color: var(--background-color);
-  margin: 0;
+  font-family: var(--font-stack); // Use custom font stack
+  color: var(--text-color); // Use custom text color
+  background-color: var(--background-color); // Use custom background color
+  margin: 0; // Remove default margin
 }
 
+// Base styles for heading elements
 h1, h2, h3, h4 {
-  font-weight: 600;
-  margin-bottom: 0.5em;
+  font-weight: 600; // Set font weight to 600
+  margin-bottom: 0.5em; // Add margin below headings
 }
 
-// Links
+// Base styles for links
 a {
-  color: var(--primary-color);
-  text-decoration: none;
+  color: var(--primary-color); // Use custom primary color
+  text-decoration: none; // Remove default underline
 }
 
 // Hover effect for links
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline; // Add underline on hover
 }
