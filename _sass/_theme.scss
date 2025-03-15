@@ -7,6 +7,8 @@
   --glass-border: rgba(255, 255, 255, 0.3);
   --switch-bg: #4A4A4A;          /* Bottone in light mode */
   --switch-icon-color: #ffffff;  /* Icona in light mode */
+  --side-menu-bg: #fff;           /* Background sidebar in light mode */
+  --side-menu-border: #eee;       /* Bordo sidebar in light mode */
 }
 
 .dark-theme {
@@ -17,4 +19,6 @@
   --glass-border: rgba(28, 28, 30, 0.3);
   --switch-bg: #878787;          /* Bottone in dark mode */
   --switch-icon-color: #222222;  /* Icona in dark mode */
+  --side-menu-bg: #2c2c2e;        /* Background sidebar in dark mode */
+  --side-menu-border: #444;       /* Bordo sidebar in dark mode */
 }

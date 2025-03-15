@@ -191,15 +191,16 @@
 // ------------------------------
 // SIDE MENU STYLES (Mobile)
 // ------------------------------
+// Sidebar (Side Menu)
 .side-menu {
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateX(-100%); // Offscreen by default
+  transform: translateX(-100%); // Nasconde la sidebar di default
   width: 80%;
   max-width: 300px;
   height: 100%;
-  background: #fff;
+  background: var(--side-menu-bg);  // Usa la variabile per il background
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   z-index: 1000;
@@ -209,11 +210,12 @@
   gap: 1rem;
 }
 
+// Regola per far apparire la sidebar
 .side-menu.open {
   transform: translateX(0);
 }
 
-// Side menu header: contains close button
+// Header della sidebar (con pulsante di chiusura)
 .side-menu .side-menu-header {
   display: flex;
   align-items: center;
@@ -221,6 +223,7 @@
   margin-bottom: 1rem;
 }
 
+// Pulsante di chiusura della sidebar
 .close-menu {
   background: none;
   border: none;
@@ -228,7 +231,7 @@
   cursor: pointer;
 }
 
-// Side menu items styling
+// Lista dei menu nella sidebar
 .side-menu .menu {
   flex-direction: column;
   gap: 0;
@@ -236,15 +239,18 @@
   padding: 0;
 }
 
+// Stile per ogni elemento della lista
 .side-menu .menu li {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--side-menu-border); // Usa la variabile per il bordo
   padding: 0.5rem 0;
 }
 
+// Rimuove il bordo dall'ultimo elemento
 .side-menu .menu li:last-child {
   border-bottom: none;
 }
 
+// Stile per i link della sidebar
 .side-menu .menu li a {
   display: block;
   padding: 1rem 0;
@@ -252,6 +258,7 @@
   font-weight: 600;
 }
 
+// Evidenziazione del menu attivo
 .side-menu .menu li.active a {
   color: var(--primary-color);
   font-weight: 600;
