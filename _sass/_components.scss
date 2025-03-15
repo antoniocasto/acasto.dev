@@ -1,66 +1,144 @@
-// _sass/_components.scss
-
 .glass-panel {
-  @include glass(15px, 0.4);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  @include glass(15px); // Apply glass effect with 15px blur
+  border-radius: 8px; // Rounded corners
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Subtle shadow
 }
 
 .menu li.active a {
-  font-weight: bold;
-  color: $primary-color;
+  font-weight: bold; // Bold text for active menu item
+  color: var(--primary-color); // Primary color for active menu item
 }
 
-// Category filter tiles
+/* Category filter tiles */
 .tiles-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 1rem;
+  display: flex; // Flexbox layout
+  flex-wrap: wrap; // Wrap items to the next line
+  gap: 8px; // Space between items
+  margin-bottom: 1rem; // Bottom margin
 }
 
 .filter-tile {
-  cursor: pointer;
-  padding: 0.1rem 0.7rem;
-  border: 1px solid #ccc;
-  border-radius: 9999px;
-  font-weight: normal;
-  color: #333;
-  transition: all 0.2s ease;
+  cursor: pointer; // Pointer cursor on hover
+  padding: 0.1rem 0.7rem; // Padding inside the tile
+  border: 1px solid #ccc; // Light gray border
+  border-radius: 9999px; // Fully rounded corners
+  font-weight: normal; // Normal font weight
+  color: var(--text-color); // Text color from variable
+  transition: all 0.2s ease; // Smooth transition for all properties
 }
 
 .filter-tile.selected {
-  border: 2px solid $primary-color;
-  font-weight: bold;
-  color: $primary-color;
+  border: 2px solid var(--primary-color); // Thicker border for selected tile
+  font-weight: bold; // Bold text for selected tile
+  color: var(--primary-color); // Primary color for selected tile
 }
 
 .post-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 6px;
+  display: flex; // Flexbox layout
+  flex-wrap: wrap; // Wrap items to the next line
+  gap: 4px; // Space between items
+  margin-top: 6px; // Top margin
 }
 
 .post-date {
-  font-size: 0.7rem;
-  color: #666;
+  font-size: 0.7rem; // Small font size
+  color: #666; // Gray color
 }
 
 .category-tile {
-  display: inline-block;
-  padding: 2px 8px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #333;
-  background-color: #f5f7fa;
-  border: 1px solid #ccc;
-  border-radius: 9999px;
-  transition: all 0.2s ease-in-out;
+  display: inline-block; // Inline-block layout
+  padding: 2px 8px; // Padding inside the tile
+  font-size: 0.75rem; // Small font size
+  font-weight: 500; // Medium font weight
+  color: var(--text-color); // Text color from variable
+  background-color: var(--category-bg); // Background color from variable
+  border: 1px solid var(--category-border); // Border color from variable
+  border-radius: 9999px; // Fully rounded corners
+  transition: all 0.2s ease-in-out; // Smooth transition for all properties
 }
 
 .category-tile:hover {
-  background-color: #e3e8ee;
-  border-color: #0a84ff;
-  color: #0a84ff;
+  background-color: var(--category-hover-bg); // Background color on hover
+  border-color: var(--primary-color); // Border color on hover
+  color: var(--primary-color); // Text color on hover
+}
+
+// Styles for theme switch
+
+@keyframes rotate-animation {
+  from {
+    transform: rotate(0deg); // Start rotation at 0 degrees
+  }
+  to {
+    transform: rotate(360deg); // End rotation at 360 degrees
+  }
+}
+
+.rotate-animation {
+  animation: rotate-animation 0.5s ease-in-out; // Apply rotation animation
+}
+
+/* Floating button for theme switch */
+.theme-switch {
+  position: fixed; // Fixed position
+  bottom: 1rem; // 1rem from the bottom
+  right: 1rem; // 1rem from the right
+  z-index: 1100; // High z-index to be on top
+  width: 50px; // Fixed width
+  height: 50px; // Fixed height
+  background-color: var(--switch-bg); // Background color from variable
+  border-radius: 50%; // Fully rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Subtle shadow
+  cursor: pointer; // Pointer cursor on hover
+  display: flex; // Flexbox layout
+  align-items: center; // Center items vertically
+  justify-content: center; // Center items horizontally
+  transition: background-color 0.3s ease, transform 0.3s ease; // Smooth transition for background color and transform
+}
+
+.theme-switch:hover {
+  transform: scale(1.1); // Slightly enlarge on hover
+}
+
+/* Hide the checkbox */
+.theme-switch input {
+  display: none; // Hide input element
+}
+
+/* Label fills the entire button */
+.theme-switch label {
+  margin: 0; // Remove margin
+  width: 100%; // Full width
+  height: 100%; // Full height
+  display: flex; // Flexbox layout
+  align-items: center; // Center items vertically
+  justify-content: center; // Center items horizontally
+  cursor: pointer; // Pointer cursor on hover
+}
+
+/* Icon style */
+.theme-icon {
+  font-size: 24px; // Icon size
+  color: var(--switch-icon-color); // Icon color from variable
+  transition: color 0.3s ease; // Smooth transition for color
+}
+
+/* Overlay for expanding animation */
+.theme-overlay {
+  position: fixed; // Fixed position
+  bottom: 1rem; // Same position as the button
+  right: 1rem; // Same position as the button
+  width: 20px; // Initial small size
+  height: 20px; // Initial small size
+  background-color: var(--background-color); // Background color from variable
+  border-radius: 50%; // Fully rounded corners
+  z-index: 1000; // High z-index to be on top
+  transform: scale(0); // Initial scale
+  transform-origin: center center; // Scale from the center
+  transition: transform 0.6s ease-out; // Smooth transition for transform
+  pointer-events: none; // Disable pointer events
+}
+
+.theme-overlay.expand {
+  transform: scale(var(--overlay-scale, 100)); // Expand to full size
 }
