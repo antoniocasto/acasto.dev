@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Gestione del tema
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.querySelector('.theme-icon');
+  const overlay = document.querySelector('.theme-overlay');
   const currentTheme = localStorage.getItem('theme') || 'light';
 
   // Imposta il tema in base alla preferenza salvata
@@ -15,23 +16,34 @@ document.addEventListener('DOMContentLoaded', function () {
   
   if (themeToggle) {
     themeToggle.addEventListener('change', function () {
-      if (this.checked) {
-        document.body.classList.add('dark-theme');
-        localStorage.setItem('theme', 'dark');
-        if (themeIcon) {
-          themeIcon.textContent = '☀️';
-          themeIcon.classList.add('rotate-animation');
-          setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
-        }
-      } else {
-        document.body.classList.remove('dark-theme');
-        localStorage.setItem('theme', 'light');
-        if (themeIcon) {
-          themeIcon.textContent = '🌙';
-          themeIcon.classList.add('rotate-animation');
-          setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
-        }
+      // Attiva l'animazione espansiva
+      if (overlay) {
+        overlay.classList.add('expand');
       }
+      // Dopo 600ms (durata dell'animazione), applica il tema
+      setTimeout(() => {
+        if (this.checked) {
+          document.body.classList.add('dark-theme');
+          localStorage.setItem('theme', 'dark');
+          if (themeIcon) {
+            themeIcon.textContent = '☀️';
+            themeIcon.classList.add('rotate-animation');
+            setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
+          }
+        } else {
+          document.body.classList.remove('dark-theme');
+          localStorage.setItem('theme', 'light');
+          if (themeIcon) {
+            themeIcon.textContent = '🌙';
+            themeIcon.classList.add('rotate-animation');
+            setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
+          }
+        }
+        // Rimuove la classe per poter riutilizzare l'animazione al prossimo cambio
+        if (overlay) {
+          overlay.classList.remove('expand');
+        }
+      }, 600);
     });
   }
 
