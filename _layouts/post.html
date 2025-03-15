@@ -9,9 +9,9 @@ layout: default
       {% if page.lang == "en" %}
         {{ site.data.localization[page.lang].post.published_on }} {{ page.date | date: "%d %B %Y" }}
       {% elsif page.lang == "it" %}
-        {{ site.data.localization[page.lang].post.published_on }} 
-        {{ page.date | date: "%d %B %Y" 
-           | replace: "January", "Gennaio" 
+        {{ site.data.localization[page.lang].post.published_on }}
+        {{ page.date | date: "%d %B %Y"
+           | replace: "January", "Gennaio"
            | replace: "February", "Febbraio"
            | replace: "March", "Marzo"
            | replace: "April", "Aprile"
@@ -26,6 +26,15 @@ layout: default
       {% endif %}
     </small>
   </p>
+  
+  {% if page.categories %}
+  <div class="post-categories">
+    {% for cat in page.categories %}
+      <span class="category-tile">{{ cat | capitalize }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
   <div class="content">
     {{ content }}
   </div>
