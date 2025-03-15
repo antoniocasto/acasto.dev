@@ -1,0 +1,48 @@
+:root {
+  --primary-color: #0a84ff; /* Primary color */
+  --background-color: #f0f4f8; /* Background color */
+  --text-color: #333; /* Text color */
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Font stack */
+  --glass-bg: rgba(226, 226, 226, 0.2); /* Glass background */
+  --glass-border: rgba(255, 255, 255, 0.3); /* Glass border */
+  --switch-bg: #4A4A4A; /* Switch button background in light mode */
+  --switch-icon-color: #ffffff; /* Switch icon color in light mode */
+  --side-menu-bg: #fff; /* Sidebar background in light mode */
+  --side-menu-border: #eee; /* Sidebar border in light mode */
+  --dropdown-bg: #fff; /* Dropdown background in light mode */
+  --dropdown-border: #ddd; /* Dropdown border in light mode */
+  --dropdown-text: #0a84ff; /* Dropdown text color in light mode */
+  --dropdown-hover-bg: rgba(10,132,255,0.1); /* Dropdown hover effect */
+  --dropdown-option-bg: #efefef; /* Dropdown options background in light mode */
+  --logo-filter-light: invert(0%) sepia(24%) saturate(4853%) hue-rotate(189deg) brightness(90%) contrast(92%); /* Logo filter in light mode */
+  --collection-bg: #fff; /* Collection pages background in light mode */
+  --collection-text: var(--text-color); /* Collection pages text color */
+  --blog-tile-hover-bg: #f9f9f9; /* Blog tile hover background in light mode */
+  --category-bg: #f5f7fa; /* Category tile background in light mode */
+  --category-border: #ccc; /* Category tile border in light mode */
+  --category-hover-bg: #e3e8ee; /* Category tile hover background in light mode */
+}
+
+.dark-theme {
+  --primary-color: #0a84ff; /* Primary color */
+  --background-color: #1c1c1e; /* Background color */
+  --text-color: #f0f0f0; /* Text color */
+  --glass-bg: rgb(43, 43, 44); /* Glass background */
+  --glass-border: rgba(28, 28, 30, 0.3); /* Glass border */
+  --switch-bg: #878787; /* Switch button background in dark mode */
+  --switch-icon-color: #222222; /* Switch icon color in dark mode */
+  --side-menu-bg: #2c2c2e; /* Sidebar background in dark mode */
+  --side-menu-border: #444; /* Sidebar border in dark mode */
+  --dropdown-bg: #2c2c2e; /* Dropdown background in dark mode */
+  --dropdown-border: #444; /* Dropdown border in dark mode */
+  --dropdown-text: #0a84ff; /* Dropdown text color in dark mode */
+  --dropdown-hover-bg: rgba(10,132,255,0.2); /* Dropdown hover effect */
+  --dropdown-option-bg: #454545; /* Dropdown options background in dark mode */
+  --logo-filter-dark: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Logo filter in dark mode */
+  --collection-bg: #2c2c2e; /* Collection pages background in dark mode */
+  --collection-text: var(--text-color); /* Collection pages text color */
+  --blog-tile-hover-bg: #333333; /* Blog tile hover background in dark mode */
+  --category-bg: #3a3a3c; /* Category tile background in dark mode */
+  --category-border: #555; /* Category tile border in dark mode */
+  --category-hover-bg: #4a4a4c; /* Category tile hover background in dark mode */
+}

@@ -1,18 +1,23 @@
 // _sass/_variables.scss
 
 /*
-    Define colors, fonts, and a reusable mixin for the "glass" panel
+  Define mixin for the "glass" panel
 */
 
-$primary-color: #0a84ff;       // Primary color
-$background-color: #f0f4f8;    // Background color
-$text-color: #333;            // Text color
-$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
 // Mixin for glassmorphism effect
-@mixin glass($blur: 8px, $alpha: 0.2) {
+@mixin glass($blur: 8px, $alpha: null) {
+  // Check if alpha value is provided
+  @if $alpha == null {
+  // Use default glass background color
+  background: var(--glass-bg);
+  } @else {
+  // Use provided alpha value for background color
   background: rgba(255, 255, 255, $alpha);
+  }
+  // Apply blur effect for glassmorphism
   backdrop-filter: blur($blur);
-  -webkit-backdrop-filter: blur($blur); /* For iOS Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  // Apply blur effect for iOS Safari support
+  -webkit-backdrop-filter: blur($blur);
+  // Add border to the glass panel
+  border: 1px solid var(--glass-border);
 }

@@ -1,32 +1,41 @@
 ---
 layout: default
 ---
-
+<!-- This is the layout for individual blog posts -->
 <article class="collection_item">
-    <h1>{{ page.title }}</h1>
-    <p>
-      <small>
-        {% if page.lang == "en" %}
-          {{ site.data.localization[page.lang].post.published_on }}
-          {{ page.date | date: "%d %B %Y" }}
-        {% elsif page.lang == "it" %}
-          {{ site.data.localization[page.lang].post.published_on }} 
-          {{ page.date | date: "%d %B %Y" | replace: "January", "Gennaio" 
-                                           | replace: "February", "Febbraio"
-                                           | replace: "March", "Marzo"
-                                           | replace: "April", "Aprile"
-                                           | replace: "May", "Maggio"
-                                           | replace: "June", "Giugno"
-                                           | replace: "July", "Luglio"
-                                           | replace: "August", "Agosto"
-                                           | replace: "September", "Settembre"
-                                           | replace: "October", "Ottobre"
-                                           | replace: "November", "Novembre"
-                                           | replace: "December", "Dicembre" }}
-        {% endif %}
-      </small>
-    </p>
-    <div class="content">
-      {{ content }}
-    </div>
+  <h1>{{ page.title }}</h1>
+  <p>
+    <small>
+      {% if page.lang == "en" %}
+        {{ site.data.localization[page.lang].post.published_on }} {{ page.date | date: "%d %B %Y" }}
+      {% elsif page.lang == "it" %}
+        {{ site.data.localization[page.lang].post.published_on }}
+        {{ page.date | date: "%d %B %Y"
+           | replace: "January", "Gennaio"
+           | replace: "February", "Febbraio"
+           | replace: "March", "Marzo"
+           | replace: "April", "Aprile"
+           | replace: "May", "Maggio"
+           | replace: "June", "Giugno"
+           | replace: "July", "Luglio"
+           | replace: "August", "Agosto"
+           | replace: "September", "Settembre"
+           | replace: "October", "Ottobre"
+           | replace: "November", "Novembre"
+           | replace: "December", "Dicembre" }}
+      {% endif %}
+    </small>
+  </p>
+  
+  {% if page.categories %}
+  <div class="post-categories">
+    {% for cat in page.categories %}
+      <span class="category-tile">{{ cat | capitalize }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  <div class="content">
+    {{ content }}
+  </div>
 </article>
