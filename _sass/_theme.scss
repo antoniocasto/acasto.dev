@@ -18,6 +18,9 @@
   --collection-bg: #fff;       /* Background per le pagine dei progetti/post in light mode */
   --collection-text: var(--text-color);
   --blog-tile-hover-bg: #f9f9f9;       /* Background al passaggio per le tile in light mode */
+  --category-bg: #f5f7fa;           /* Sfondo delle category tile in light mode */
+  --category-border: #ccc;          /* Bordo delle category tile in light mode */
+  --category-hover-bg: #e3e8ee;      /* Sfondo al passaggio in light mode */
 }
 
 .dark-theme {
@@ -39,4 +42,7 @@
   --collection-bg: #2c2c2e;      /* Background scuro per i contenuti */
   --collection-text: var(--text-color);
   --blog-tile-hover-bg: #333333;       /* Hover background in dark mode */
+  --category-bg: #3a3a3c;           /* Sfondo delle category tile in dark mode */
+  --category-border: #555;          /* Bordo delle category tile in dark mode */
+  --category-hover-bg: #4a4a4c;      /* Sfondo al passaggio in dark mode */
 }

@@ -51,14 +51,14 @@
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-color);
-  background-color: #f5f7fa;
-  border: 1px solid #ccc;
+  background-color: var(--category-bg);
+  border: 1px solid var(--category-border);
   border-radius: 9999px;
   transition: all 0.2s ease-in-out;
 }
 
 .category-tile:hover {
-  background-color: #e3e8ee;
+  background-color: var(--category-hover-bg);
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
