@@ -65,50 +65,60 @@
 
 // Styles for theme switch
 
+@keyframes rotate-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate-animation 0.5s ease-in-out;
+}
+
+/* Floating button per il cambio tema */
 .theme-switch {
   position: fixed;
-  top: 1rem;
+  bottom: 1rem;
   right: 1rem;
   z-index: 1100;
+  width: 50px;
+  height: 50px;
+  background-color: var(--switch-bg);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.theme-switch:hover {
+  transform: scale(1.1);
+}
+
+/* Nascondo il checkbox */
 .theme-switch input {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 50px;
-  height: 28px;
-  background-color: #ccc;
-  border-radius: 14px;
-  position: relative;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  display: none;
 }
 
-.theme-switch input:checked {
-  background-color: var(--primary-color);
-}
-
-.theme-switch input::before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 22px;
-  height: 22px;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s;
-}
-
-.theme-switch input:checked::before {
-  transform: translateX(22px);
-}
-
+/* L'etichetta riempie l'intero bottone */
 .theme-switch label {
-  margin-left: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-color);
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Stile dell'icona */
+.theme-icon {
+  font-size: 24px;
+  color: var(--switch-icon-color);
+  transition: color 0.3s ease;
 }
