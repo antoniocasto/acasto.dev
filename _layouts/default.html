@@ -42,6 +42,11 @@
               {{ site.data.localization[page.lang].navigation.about }}
             </a>
           </li>
+          <li {% if page.ref == "skills" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ page.lang }}/skills/">
+              {{ site.data.localization[page.lang].navigation.skills }}
+            </a>
+          </li>
           <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
             <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
               {{ site.data.localization[page.lang].navigation.portfolio }}
@@ -108,6 +113,11 @@
       <li {% if page.ref == "about" %}class="active"{% endif %}>
         <a href="{{ site.baseurl }}/{{ page.lang }}/about/">
           {{ site.data.localization[page.lang].navigation.about }}
+        </a>
+      </li>
+      <li {% if page.ref == "skills" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ page.lang }}/skills/">
+          {{ site.data.localization[page.lang].navigation.skills }}
         </a>
       </li>
       <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>

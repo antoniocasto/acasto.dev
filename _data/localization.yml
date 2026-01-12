@@ -4,6 +4,7 @@ en:
   navigation:
     home: "Home"
     about: "About me"
+    skills: "Skills"
     portfolio: "Portfolio"
     blog: "Blog"
     contacts: "Contacts"
@@ -13,6 +14,7 @@ it:
   navigation:
     home: "Home"
     about: "Chi sono"
+    skills: "Skill"
     portfolio: "Portfolio"
     blog: "Blog"
     contacts: "Contatti"
