@@ -4,91 +4,101 @@ title: "Chi Sono"
 ref: "about"
 permalink: "/it/about/"
 ---
-# Chi Sono
-**Sviluppatore iOS Appassionato**  
-Appassionato di **informatica** sin da bambino, ho sempre nutrito una profonda curiosità per il funzionamento del **software**.  
-L'avvento degli **smartphone e delle app** ha ampliato i miei orizzonti, mostrandomi il potenziale di creare **soluzioni** che migliorano la vita quotidiana delle persone.  
+<section class="resume-intro">
+  <p class="eyebrow">Sviluppatore iOS</p>
+  <h1>Chi Sono</h1>
+  <p>Creo esperienze iOS pulite e ad alte prestazioni, con attenzione a chiarezza, modularità e scalabilità nel tempo. Ho esperienza tra mobile, cross-platform e backend, ma il mio focus resta lo sviluppo iOS.</p>
+  <ul class="chip-list">
+    <li>SwiftUI</li>
+    <li>UIKit</li>
+    <li>Swift Concurrency</li>
+    <li>SwiftData</li>
+    <li>Tuist</li>
+    <li>TCA · MVVM · VIPER</li>
+  </ul>
+</section>
 
-Lo **sviluppo mobile** è sempre stato il mio principale interesse, e ho soddisfatto la mia curiosità frequentando corsi universitari e attività extracurriculari.  
-Ho iniziato con lo sviluppo per **Android**, poi sono passato allo sviluppo cross-platform con **Flutter**, ed infine mi sono dedicato allo sviluppo iOS con **SwiftUI**.  
+<section class="resume-section">
+  <h2 class="section-title">Focus iOS</h2>
+  <div class="resume-grid">
+    <div class="resume-card">
+      <h3>UI orientata al prodotto</h3>
+      <p>Interfacce progettate per leggibilità, accessibilità e una navigazione lineare.</p>
+      <ul class="tag-list">
+        <li>SwiftUI</li>
+        <li>UIKit</li>
+        <li>Design system</li>
+      </ul>
+    </div>
+    <div class="resume-card">
+      <h3>Dati &amp; Concurrency</h3>
+      <p>Persistenza moderna e pattern di concurrency per app veloci e affidabili.</p>
+      <ul class="tag-list">
+        <li>SwiftData</li>
+        <li>Core Data</li>
+        <li>async/await</li>
+        <li>Actors</li>
+      </ul>
+    </div>
+    <div class="resume-card">
+      <h3>Architettura &amp; Tooling</h3>
+      <p>Setup modulari e scalabili con solide basi di CI/CD e testabilità.</p>
+      <ul class="tag-list">
+        <li>Tuist</li>
+        <li>TCA</li>
+        <li>Fastlane</li>
+        <li>SwiftLint</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-Ho trasformato la mia passione in una **carriera professionale**, ampliando le mie competenze imparando **UIKit**, pattern architetturali come **VIPER, MVVM e TCA**, tecnologie di realtà aumentata come **ARKit e SceneKit** e pratiche di **CI/CD**, utilizzando strumenti come **SwiftLint e Fastlane**.  
+<section class="resume-section">
+  <h2 class="section-title">Esperienza</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Sviluppatore iOS · Hidonix</h3>
+      <p class="timeline-meta">Ottobre 2023 – Presente · Catania, Italia</p>
+      <p>Progettazione, sviluppo, test e manutenzione di applicazioni iOS con attività continue di ricerca su framework e performance.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Sviluppatore – Borsa di Ricerca · Nexa Center (Politecnico di Torino)</h3>
+      <p class="timeline-meta">Ottobre 2021 – Ottobre 2022 · Remote</p>
+      <p>Sviluppo di un sistema di raccomandazione per il progetto Erasmus+ CLIKC basato su tecnologie semantiche.</p>
+    </div>
+  </div>
+</section>
 
-Attualmente, mi sto concentrando nel migliorare il mio approccio alla creazione di applicazioni **modulari, testabili e altamente scalabili**.  
-Mi piace **condividere le sfide** con il mio team e collaborare per trovare le soluzioni più **efficaci**.  
-Penso sempre **prima di scrivere codice**. Se non so come fare qualcosa, mi informo e consulto sviluppatori con maggiore esperienza.
+<section class="resume-section">
+  <h2 class="section-title">Highlight</h2>
+  <div class="resume-grid">
+    <div class="resume-card">
+      <h3>Sviluppo iOS</h3>
+      <p>Swift, Objective-C, ARKit, SceneKit, Core Location, MapKit, XCTest, UI Testing.</p>
+    </div>
+    <div class="resume-card">
+      <h3>Backend &amp; Cloud</h3>
+      <p>REST API, FastAPI, Firebase, MongoDB, GitLab CI/CD.</p>
+    </div>
+    <div class="resume-card">
+      <h3>Strumenti</h3>
+      <p>Xcode, Tuist, Proxyman, Postman, Swagger, GitHub/GitLab.</p>
+    </div>
+  </div>
+</section>
 
-## Esperienza Lavorativa
-
-### Sviluppatore iOS
-**Hidonix** - *Catania, Italia*  
-📅 **9 ottobre 2023 – Presente** 
-
-- **Progettazione, sviluppo, test, distribuzione e manutenzione** di applicazioni iOS all'interno dell'azienda.  
-- Attività di **ricerca e sviluppo** per esplorare nuove tecnologie e migliorare le soluzioni esistenti.  
-
-### Sviluppatore – Borsa di Studio di Ricerca  
-**Nexa Center for Internet & Society – Politecnico di Torino – DAUIN**  
-📅 **ottobre 2021 – ottobre 2022** *(Remoto – Torino, Italia)*  
-
-- Ho contribuito allo sviluppo di un **sistema di raccomandazione** per il progetto europeo **Erasmus+ CLIKC** (*Content and Language Integrated Learning for Key Competences*).  
-- Ho lavorato a un **sistema di apprendimento adattivo** che sfrutta tecnologie semantiche per migliorare le raccomandazioni di contenuti personalizzati.  
-
-## Competenze nello Sviluppo
-
-### Sviluppo iOS
-- **Framework e Tecnologie:** SwiftUI, UIKit, ARKit, SceneKit, Core Data, MapKit, Core Location, User Defaults  
-- **Architetture e Pattern:** MVVM, VIPER, The Composable Architecture (TCA), Coordinator  
-- **Networking e Gestione dei Dati:** REST API, FastAPI, Firebase, MongoDB  
-- **Gestione delle Dipendenze e CI/CD:** Swift Package Manager (SPM), CocoaPods, Fastlane, GitLab CI/CD  
-- **Qualità del Codice e Testing:** SwiftLint, XCTest, UI Testing, TDD, Mocking  
-
-### Tecnologie Aggiuntive
-- **Sviluppo Cross-Platform:** Flutter, Kotlin Multiplatform  
-- **Frontend e Backend:** React, Angular, Spring Boot  
-- **Linguaggi di Programmazione:** Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript  
-
-### Strumenti
-- **Sviluppo:** Xcode, Visual Studio Code, Android Studio  
-- **Debugging e Test delle API:** Proxyman, Postman, Swagger  
-- **Controllo Versione e Collaborazione:** Git, GitHub, GitLab  
-
-## Formazione
-
-### Ingegneria Informatica - Software | Laurea Magistrale
-*Politecnico di Torino*  
-📅 09/2018 – 06/2022  
-📍 Torino, Italia  
-
-### Ingegneria Informatica | Laurea Triennale
-*Politecnico di Torino*  
-📅 09/2014 – 09/2018  
-📍 Torino, Italia  
-
-### Liceo Scientifico P.N.I.
-*Istituto di Istruzione Superiore "Matteo Raeli" in Noto*  
-📅 2008 – 2013  
-📍 Noto, Italia  
-
-### Certificazione IELTS - 5.5
-*British Council (richiesto dal Politecnico di Torino)*  
-
-## Fonti di Apprendimento per lo Sviluppo iOS
-### 100 Days of SwiftUI - Punto di Partenza per lo Sviluppo iOS
-*Hacking with Swift - Paul Hudson*  
-🔗 [Sito Web](https://www.hackingwithswift.com/100/swiftui)  
-
-### Apprendimento Continuo
-- Studi approfonditi di SwiftUI tramite Hacking With Swift, [Design+Code](https://www.designcode.io/) e mentori su YouTube  
-- Concetti avanzati di iOS da Point-Free, altre risorse online, documentazioni e libri
-
-## Competenze Trasversali
-
-### Lavoro di Squadra e Comunicazione
-- Forte capacità di **collaborare in team multidisciplinari**.  
-- Esperienza in ambienti internazionali, lavorando con colleghi della filiale statunitense.  
-- Eccellenti capacità di **problem-solving** e adattabilità in progetti dinamici.
-
-### Pensiero Critico e Decision Making
-- Approccio strategico alla **progettazione e allo sviluppo** per una scalabilità a lungo termine.  
-- Capacità di dare **priorità alle attività** in modo efficace e identificare le principali sfide tecniche.
+<section class="resume-section details-group">
+  <details>
+    <summary>Formazione</summary>
+    <p>Laurea Magistrale in Ingegneria Informatica (Software) · Politecnico di Torino (2018–2022)</p>
+    <p>Laurea Triennale in Ingegneria Informatica · Politecnico di Torino (2014–2018)</p>
+  </details>
+  <details>
+    <summary>Apprendimento continuo</summary>
+    <p>100 Days of SwiftUI, Design+Code, approfondimenti Point-Free, documentazione e libri tecnici.</p>
+  </details>
+  <details>
+    <summary>Soft skills</summary>
+    <p>Collaborazione in team cross-funzionali, pensiero critico e prioritizzazione strategica.</p>
+  </details>
+</section>

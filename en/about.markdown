@@ -4,92 +4,101 @@ title: "About"
 ref: "about"
 permalink: "/en/about/"
 ---
-# About Me
+<section class="resume-intro">
+  <p class="eyebrow">iOS Developer</p>
+  <h1>About Me</h1>
+  <p>I build calm, high-performance iOS experiences with a focus on clarity, modularity, and long-term scalability. My background spans native iOS, cross-platform, and backend collaboration, but iOS remains my core craft.</p>
+  <ul class="chip-list">
+    <li>SwiftUI</li>
+    <li>UIKit</li>
+    <li>Swift Concurrency</li>
+    <li>SwiftData</li>
+    <li>Tuist</li>
+    <li>TCA · MVVM · VIPER</li>
+  </ul>
+</section>
 
-**Passionate iOS Developer**  
-Passionate about **computer science** since childhood, I have always been deeply curious about how **software** works.  
-The advent of **smartphones and apps** broadened my horizons, showing me the potential to create **solutions** that improve people’s daily lives.  
+<section class="resume-section">
+  <h2 class="section-title">iOS Focus</h2>
+  <div class="resume-grid">
+    <div class="resume-card">
+      <h3>Product-minded UI</h3>
+      <p>Interfaces designed for readability, accessibility, and a clean navigation flow.</p>
+      <ul class="tag-list">
+        <li>SwiftUI</li>
+        <li>UIKit</li>
+        <li>Design systems</li>
+      </ul>
+    </div>
+    <div class="resume-card">
+      <h3>Data &amp; Concurrency</h3>
+      <p>Modern persistence and concurrency patterns to keep the app fast and resilient.</p>
+      <ul class="tag-list">
+        <li>SwiftData</li>
+        <li>Core Data</li>
+        <li>async/await</li>
+        <li>Actors</li>
+      </ul>
+    </div>
+    <div class="resume-card">
+      <h3>Architecture &amp; Tooling</h3>
+      <p>Scalable modular setups with strong CI/CD foundations and testability.</p>
+      <ul class="tag-list">
+        <li>Tuist</li>
+        <li>TCA</li>
+        <li>Fastlane</li>
+        <li>SwiftLint</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-**Mobile development** has always been my main interest, and I satisfied my curiosity by taking both **university** and **extracurricular courses**.  
-I started with **Android development**, then moved to **cross-platform development** with **Flutter**, and eventually transitioned to **iOS development** with **SwiftUI**.  
+<section class="resume-section">
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>iOS Developer · Hidonix</h3>
+      <p class="timeline-meta">October 2023 – Present · Catania, Italy</p>
+      <p>Design, development, testing, and maintenance of iOS applications with continuous R&amp;D on new frameworks and performance improvements.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Developer – Research Scholarship · Nexa Center (Politecnico di Torino)</h3>
+      <p class="timeline-meta">October 2021 – October 2022 · Remote</p>
+      <p>Built an adaptive learning recommender system for the Erasmus+ CLIKC project with a focus on semantic technologies.</p>
+    </div>
+  </div>
+</section>
 
-I turned my passion into a **professional career**, expanding my skill set by learning **UIKit**, architectural patterns such as **VIPER, MVVM, and TCA**, **AR technologies** like **ARKit and SceneKit**, and **CI/CD practices**, including tools like **SwiftLint and Fastlane**.  
+<section class="resume-section">
+  <h2 class="section-title">Highlights</h2>
+  <div class="resume-grid">
+    <div class="resume-card">
+      <h3>iOS Development</h3>
+      <p>Swift, Objective-C, ARKit, SceneKit, Core Location, MapKit, XCTest, UI Testing.</p>
+    </div>
+    <div class="resume-card">
+      <h3>Backend &amp; Cloud</h3>
+      <p>REST APIs, FastAPI, Firebase, MongoDB, GitLab CI/CD.</p>
+    </div>
+    <div class="resume-card">
+      <h3>Tooling</h3>
+      <p>Xcode, Tuist, Proxyman, Postman, Swagger, GitHub/GitLab.</p>
+    </div>
+  </div>
+</section>
 
-Currently, I am focused on improving my approach to **building modular, testable, and highly scalable applications**.  
-I enjoy **sharing challenges** with my team and collaborating to find the most **effective solutions**.  
-I always **think before I code**. If I don’t know how to do something, I **research** and consult with more **experienced developers**.
-
-## Work Experience
-
-### iOS Developer
-**Hidonix** - *Catania, Italy*  
-📅 **October 9, 2023 – Present** 
-
-- **Design, development, testing, deployment, and maintenance** of iOS applications within the company.  
-- **Research and development** activities to explore new technologies and improve existing solutions.  
-
-### Developer – Research Scholarship  
-**Nexa Center for Internet & Society – Politecnico di Torino – DAUIN**  
-📅 **October 2021 – October 2022** *(Remote – Turin, Italy)*  
-
-- Contributed to the development of a **recommender system** for the European **Erasmus+ CLIKC project** (*Content and Language Integrated Learning for Key Competences*).  
-- Worked on an **adaptive learning system** leveraging **semantic technologies** to enhance personalized content recommendations.  
-
-## Development Skills
-
-### iOS Development
-- **Frameworks & Technologies:** SwiftUI, UIKit, ARKit, SceneKit, Core Data, MapKit, Core Location, User Defaults  
-- **Architectures & Patterns:** MVVM, VIPER, The Composable Architecture (TCA), Coordinator  
-- **Networking & Data Handling:** REST API, FastAPI, Firebase, MongoDB  
-- **Dependency Management & CI/CD:** Swift Package Manager (SPM), CocoaPods, Fastlane, GitLab CI/CD  
-- **Code Quality & Testing:** SwiftLint, XCTest, UI Testing, TDD, Mocking  
-
-### Additional Technologies
-- **Cross-Platform Development:** Flutter, Kotlin Multiplatform  
-- **Frontend & Backend:** React, Angular, Spring Boot  
-- **Programming Languages:** Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript  
-
-### Tools
-- **Development:** Xcode, Visual Studio Code, Android Studio  
-- **Debugging & API Testing:** Proxyman, Postman, Swagger  
-- **Version Control & Collaboration:** Git, GitHub, GitLab  
-
-## Education
-
-### Computer Engineering - Software | Master’s Degree
-*Politecnico di Torino*  
-📅 09/2018 – 06/2022  
-📍 Turin, Italy  
-
-### Computer Engineering | Bachelor’s Degree
-*Politecnico di Torino*  
-📅 09/2014 – 09/2018  
-📍 Turin, Italy  
-
-### Liceo Scientifico P.N.I.
-*Istituto di Istruzione Superiore "Matteo Raeli" in Noto*  
-📅 2008 – 2013  
-📍 Noto, Italy  
-
-### IELTS - 5.5 Certification
-*British Council (required by Politecnico di Torino)*  
-
-## iOS Development Learning Sources
-### 100 Days of SwiftUI - iOS development starting point
-*Hacking with Swift - Paul Hudson*  
-🔗 [Website](https://www.hackingwithswift.com/100/swiftui)  
-
-### Continuous Learning
-- In-depth studies of SwiftUI through Hacking With Swift, [Design+Code](https://www.designcode.io/), and YouTube mentors  
-- Advanced iOS concepts from Point-Free, other online resources, documentations and books
-
-## Soft Skills  
-
-### **Teamwork & Communication**  
-- Strong ability to **collaborate in cross-functional teams**.  
-- Experience in **international environments**, working with colleagues from the **U.S. branch**.  
-- Excellent **problem-solving and adaptability skills** in fast-paced projects.  
-
-### **Critical Thinking & Decision-Making**  
-- Strategic approach to **design and development** for long-term scalability.  
-- Ability to **prioritize tasks effectively** and **identify key technical challenges**.  
+<section class="resume-section details-group">
+  <details>
+    <summary>Education</summary>
+    <p>Master’s Degree in Computer Engineering (Software) · Politecnico di Torino (2018–2022)</p>
+    <p>Bachelor’s Degree in Computer Engineering · Politecnico di Torino (2014–2018)</p>
+  </details>
+  <details>
+    <summary>Continuous Learning</summary>
+    <p>100 Days of SwiftUI, Design+Code, Point-Free deep dives, documentation, and technical books.</p>
+  </details>
+  <details>
+    <summary>Soft Skills</summary>
+    <p>Cross-functional collaboration, critical thinking, and strategic prioritization in fast-paced teams.</p>
+  </details>
+</section>

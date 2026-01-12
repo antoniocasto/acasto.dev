@@ -51,11 +51,13 @@
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
+  padding-bottom: 0.2rem;
 }
 
 .desktop-menu li.active a {
   color: var(--primary-color);
   font-weight: 600;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 // ------------------------------
@@ -83,7 +85,7 @@
   font-size: 0.9rem;
   font-weight: bold;
   /* Only round the top corners for continuity with the menu */
-  border-radius: 4px 4px 4px 4px;
+  border-radius: 999px;
   transition: background-color 0.3s, border-color 0.3s;
   /* Space on the left for the icon */
   padding-left: 2rem;
@@ -108,7 +110,7 @@
 }
 
 .language-dropdown[open] summary {
-  border-radius: 4px 4px 0px 0;
+  border-radius: 16px 16px 0 0;
 }
 
 /* Remove the default marker */
@@ -129,7 +131,7 @@
   border: 1px solid var(--dropdown-border);
   border-top: none;  // Visually connect to the summary
   /* Only round the bottom corners */
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 16px 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 100;
   /* Initially hidden, with a sliding effect */

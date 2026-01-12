@@ -6,15 +6,20 @@
 
 // Container class for setting the maximum width and centering the content
 .container {
-    max-width: 800px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem 1.5rem;
 }
 
 // Site header class with padding and a glass effect
 .site-header {
-    padding: 1rem 0;
-    @include glass(10px); // Applying glass effect with 10px blur
+    padding: 0.75rem 0;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0;
 }
 
 /* Basic rules for the menu inside the site header */
@@ -29,4 +34,12 @@
 // Styling for links inside the menu
 .site-header .menu li a {
     font-weight: 500; // Setting font weight to 500
+}
+
+.site-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--muted-text);
+    font-size: 0.9rem;
 }

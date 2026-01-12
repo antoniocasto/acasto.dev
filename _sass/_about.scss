@@ -1,13 +1,18 @@
 .about-header {
-  padding: 2rem; // Adds padding around the header
-  border-bottom: 2px solid var(--primary-color); // Adds a bottom border with primary color
+  padding: 2.5rem 2rem; // Adds padding around the header
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
 }
 
 .about-container {
   display: flex; // Uses flexbox for layout
   align-items: center; // Centers items vertically
-  justify-content: center; // Centers items horizontally
+  justify-content: space-between; // Centers items horizontally
   gap: 2rem; // Adds space between flex items
+  flex-wrap: wrap;
 }
 
 .circular-border {
@@ -42,12 +47,17 @@
 
 .profile-name .cursive-name {
   font-family: var(--font-stack); // Sets the font family
-  font-style: italic; // Makes the text italic
-  font-size: 2rem; // Sets the font size
+  font-style: normal; // Makes the text italic
+  font-size: 2.3rem; // Sets the font size
   margin: 0; // Removes default margin
+  letter-spacing: -0.03em;
 }
 
 @media (max-width: 768px) {
+  .about-header {
+    padding: 2rem 1.5rem;
+  }
+
   .circular-border {
     width: 108px; // Sets the width of the element for smaller screens
     height: 108px; // Sets the height of the element for smaller screens

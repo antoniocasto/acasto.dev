@@ -2,18 +2,28 @@
   Define base global styles using CSS custom properties
 */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // Make sizing predictable
+}
+
 // Base styles for the body element
 body {
   font-family: var(--font-stack); // Use custom font stack
   color: var(--text-color); // Use custom text color
   background-color: var(--background-color); // Use custom background color
   margin: 0; // Remove default margin
+  line-height: 1.6; // Improve readability
+  letter-spacing: -0.01em; // Slight tightening for a modern look
+  -webkit-font-smoothing: antialiased; // Better font rendering
 }
 
 // Base styles for heading elements
 h1, h2, h3, h4 {
   font-weight: 600; // Set font weight to 600
   margin-bottom: 0.5em; // Add margin below headings
+  letter-spacing: -0.02em; // Modern heading spacing
 }
 
 // Base styles for links
@@ -25,4 +35,18 @@ a {
 // Hover effect for links
 a:hover {
   text-decoration: underline; // Add underline on hover
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+p {
+  margin-top: 0;
+  color: var(--muted-text);
+}
+
+strong {
+  color: var(--text-color);
 }

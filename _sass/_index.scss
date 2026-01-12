@@ -1,7 +1,8 @@
 // Styles for the terminal container
 .terminal {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--font-stack);
   text-align: left;
+  padding: 2rem 0 1rem;
 }
 
 // Styles for the typing animation
@@ -10,8 +11,10 @@
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  border-right: 0.15em solid var(--primary-color);
-  animation: typing 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
+  border-right: 0.12em solid var(--primary-color);
+  animation: typing 1.6s steps(40, end) forwards, blink-caret 0.6s step-end infinite 1.6s;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
 }
 
 // Styles for the dot in the typing animation
