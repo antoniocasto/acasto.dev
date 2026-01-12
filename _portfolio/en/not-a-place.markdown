@@ -21,7 +21,7 @@ published: true
 
 NotAPlace is an iPhone application built with **SwiftUI**, designed to track places around the world that evoke positive emotions in the user.
 
-**📌 Note:**  
+**<img src="{{ '/assets/images/icons/pin.svg' | relative_url }}" class="inline-icon" alt="Pin icon">Note:**  
 *This project represents an important step in my journey as an iOS developer. Since its development, I have improved my skills and adopted more advanced architectural patterns. While this code does not fully reflect my current level, it remains an example of my work and growth over time.*
 
 ### Key Features:

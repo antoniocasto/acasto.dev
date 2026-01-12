@@ -25,7 +25,7 @@ Sfrutta la versatilità di **SwiftUI** e la bellezza di **LottieFiles** per pres
 
 L'applicazione utilizza l'**API OpenWeather** per ottenere informazioni aggiornate sulle condizioni meteorologiche.
 
-**📌 Nota:**  
+**<img src="{{ '/assets/images/icons/pin.svg' | relative_url }}" class="inline-icon" alt="Pin icon">Nota:**  
 *Questo progetto rappresenta un'importante tappa del mio percorso come sviluppatore iOS. Da allora, ho affinato le mie competenze e adottato approcci più avanzati per la progettazione di app modulari e scalabili. Sebbene il codice non rifletta il mio attuale livello di sviluppo, resta un esempio significativo del mio lavoro e della mia evoluzione nel tempo.*
 
 ### Feature principali:

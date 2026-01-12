@@ -5,9 +5,9 @@ ref: "about"
 permalink: "/en/about/"
 ---
 <section class="resume-intro">
-  <p class="eyebrow">iOS Developer</p>
+  <p class="eyebrow">iOS Engineer</p>
   <h1>About Me</h1>
-  <p>I build calm, high-performance iOS experiences with a focus on clarity, modularity, and long-term scalability. My background spans native iOS, cross-platform, and backend collaboration, but iOS remains my core craft.</p>
+  <p>I am an iOS engineer with 2+ years of experience building reliable, user-friendly apps. I focus on clarity, modularity, and stable delivery across the full feature lifecycle.</p>
   <ul class="chip-list">
     <li>SwiftUI</li>
     <li>UIKit</li>
@@ -18,36 +18,51 @@ permalink: "/en/about/"
   </ul>
 </section>
 
-<section class="resume-section">
-  <h2 class="section-title">iOS Focus</h2>
-  <div class="resume-grid">
-    <div class="resume-card">
-      <h3>Product-minded UI</h3>
-      <p>Interfaces designed for readability, accessibility, and a clean navigation flow.</p>
-      <ul class="tag-list">
-        <li>SwiftUI</li>
-        <li>UIKit</li>
-        <li>Design systems</li>
-      </ul>
-    </div>
-    <div class="resume-card">
-      <h3>Data &amp; Concurrency</h3>
-      <p>Modern persistence and concurrency patterns to keep the app fast and resilient.</p>
-      <ul class="tag-list">
-        <li>SwiftData</li>
-        <li>Core Data</li>
-        <li>async/await</li>
-        <li>Actors</li>
-      </ul>
-    </div>
-    <div class="resume-card">
-      <h3>Architecture &amp; Tooling</h3>
-      <p>Scalable modular setups with strong CI/CD foundations and testability.</p>
-      <ul class="tag-list">
-        <li>Tuist</li>
-        <li>TCA</li>
-        <li>Fastlane</li>
+<section class="skills-section">
+  <h2>What I deliver (in practice)</h2>
+  <ul class="skills-bullets">
+    <li>Design feature flows with clear navigation and edge-case handling.</li>
+    <li>Break products into feature-based modules for faster iteration.</li>
+    <li>Keep memory usage healthy and hunt leaks early.</li>
+    <li>Integrate REST APIs with async/await and solid error paths.</li>
+    <li>Ship secure storage for user data and credentials.</li>
+    <li>Route deep links to the right screen without friction.</li>
+  </ul>
+</section>
+
+<section class="skills-section">
+  <h2>iOS Skills (Checklist)</h2>
+  <div class="skills-categories">
+    <div class="skills-card">
+      <h3>Architecture &amp; Quality</h3>
+      <ul>
+        <li>Protocol-Oriented Programming</li>
+        <li>Modularity feature-based</li>
+        <li>Applied SOLID principles</li>
         <li>SwiftLint</li>
+      </ul>
+    </div>
+    <div class="skills-card">
+      <h3>Performance &amp; Memory</h3>
+      <ul>
+        <li>ARC, memory management, retain cycles</li>
+        <li>Memory Graph Debugger</li>
+      </ul>
+    </div>
+    <div class="skills-card">
+      <h3>Data, Storage &amp; Delivery</h3>
+      <ul>
+        <li>Storage: File Storage, UserDefaults, Keychain</li>
+        <li>Feature flags</li>
+      </ul>
+    </div>
+    <div class="skills-card">
+      <h3>Networking &amp; Routing</h3>
+      <ul>
+        <li>REST API consumption with URLSession (async/await)</li>
+        <li>OAuth2 flows when needed</li>
+        <li>Deep Links (URL schemes / Universal Links) and feature routing</li>
+        <li>Combine basics: sink + cancellables (store(in:))</li>
       </ul>
     </div>
   </div>

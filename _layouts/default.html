@@ -42,11 +42,6 @@
               {{ site.data.localization[page.lang].navigation.about }}
             </a>
           </li>
-          <li {% if page.ref == "skills" %}class="active"{% endif %}>
-            <a href="{{ site.baseurl }}/{{ page.lang }}/skills/">
-              {{ site.data.localization[page.lang].navigation.skills }}
-            </a>
-          </li>
           <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
             <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
               {{ site.data.localization[page.lang].navigation.portfolio }}
@@ -115,11 +110,6 @@
           {{ site.data.localization[page.lang].navigation.about }}
         </a>
       </li>
-      <li {% if page.ref == "skills" %}class="active"{% endif %}>
-        <a href="{{ site.baseurl }}/{{ page.lang }}/skills/">
-          {{ site.data.localization[page.lang].navigation.skills }}
-        </a>
-      </li>
       <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
         <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
           {{ site.data.localization[page.lang].navigation.portfolio }}
@@ -145,14 +135,19 @@
 
   <!-- Footer -->
   <footer class="site-footer container">
-    <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥️.</p>
+    <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with care <img src="{{ '/assets/images/icons/heart.svg' | relative_url }}" class="inline-icon inline-icon--end" alt="Heart icon">.</p>
   </footer>
 
   <!-- Floating theme switch button -->
   <div class="theme-switch">
     <input type="checkbox" id="theme-toggle">
     <label for="theme-toggle" class="theme-toggle-label">
-      <span class="theme-icon">🌙</span>
+      <span class="theme-icon theme-icon-light">
+        <img src="{{ '/assets/images/icons/moon.svg' | relative_url }}" alt="Dark mode" />
+      </span>
+      <span class="theme-icon theme-icon-dark">
+        <img src="{{ '/assets/images/icons/sun.svg' | relative_url }}" alt="Light mode" />
+      </span>
     </label>
   </div>
   <!-- Theme overlay for expansion animation on theme change -->
