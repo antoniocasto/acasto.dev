@@ -25,7 +25,7 @@ It leverages the versatility of **SwiftUI** and the visual appeal of **LottieFil
 
 The application uses the **OpenWeather API** to fetch real-time weather data.
 
-**<img src="{{ '/assets/images/icons/pin.svg' | relative_url }}" class="inline-icon" alt="Pin icon">Note:**  
+**📌 Note:**  
 *This project represents an important milestone in my journey as an iOS developer. Since then, I have refined my skills and adopted more advanced approaches to designing modular and scalable apps. While the code does not fully reflect my current development level, it remains a valuable example of my work and professional growth over time.*
 
 ### Key Features:

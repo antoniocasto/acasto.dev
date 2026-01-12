@@ -21,7 +21,7 @@ published: true
 
 NotAPlace è un'applicazione per iPhone sviluppata in **SwiftUI**, progettata per tracciare i luoghi nel mondo che suscitano emozioni positive negli utenti.
 
-**<img src="{{ '/assets/images/icons/pin.svg' | relative_url }}" class="inline-icon" alt="Pin icon">Nota:**  
+**📌 Nota:**  
 *Questo progetto rappresenta un'importante tappa del mio percorso come sviluppatore iOS. Da allora, ho affinato le mie competenze e adottato approcci più avanzati per la progettazione di app modulari e scalabili. Sebbene il codice non rifletta il mio attuale livello di sviluppo, resta un esempio significativo della mia evoluzione professionale nel tempo.*
 
 ### Caratteristiche principali:

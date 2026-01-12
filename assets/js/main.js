@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Theme management
   const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.querySelector('.theme-icon');
   const overlay = document.querySelector('.theme-overlay');
   const currentTheme = localStorage.getItem('theme') || 'light';
 
@@ -8,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (currentTheme === 'dark') {
     document.body.classList.add('dark-theme');
     if (themeToggle) themeToggle.checked = true;
+    if (themeIcon) themeIcon.textContent = '☀️';
+  } else {
+    if (themeIcon) themeIcon.textContent = '🌙';
   }
 
   // Theme toggle event listener
@@ -25,9 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (this.checked) {
           document.body.classList.add('dark-theme');
           localStorage.setItem('theme', 'dark');
+          if (themeIcon) {
+            themeIcon.textContent = '☀️';
+            themeIcon.classList.add('rotate-animation');
+            setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
+          }
         } else {
           document.body.classList.remove('dark-theme');
           localStorage.setItem('theme', 'light');
+          if (themeIcon) {
+            themeIcon.textContent = '🌙';
+            themeIcon.classList.add('rotate-animation');
+            setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
+          }
         }
         // Remove class to reuse animation on next change
         if (overlay) {
