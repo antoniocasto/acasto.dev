@@ -7,10 +7,12 @@ permalink: "/en/about/"
 
 <section class="about-hero">
   <div class="about-hero__identity">
-    <div class="avatar-ring">
-      <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image">
+    <div class="avatar-block">
+      <div class="avatar-ring">
+        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image">
+      </div>
+      <span class="role-badge">iOS Developer</span>
     </div>
-    <span class="role-badge">iOS Developer</span>
     <h1>Antonio Casto — iOS Developer (SwiftUI &amp; UIKit)</h1>
     <p class="role-line">Based in Italy · Fully bilingual (English/Italian)</p>
     <div class="cta-row">
