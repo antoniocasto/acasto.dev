@@ -1,107 +1,209 @@
-.about-header {
-  padding: 2rem; // Adds padding around the header
-  border-bottom: 2px solid var(--primary-color); // Adds a bottom border with primary color
+.about-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.about-container {
-  display: flex; // Uses flexbox for layout
-  align-items: center; // Centers items vertically
-  justify-content: center; // Centers items horizontally
-  gap: 2rem; // Adds space between flex items
+.about-hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: var(--hero-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  animation: fadeUp 0.6s ease both;
 }
 
-.circular-border {
-  display: flex; // Uses flexbox for layout
-  align-items: center; // Centers items vertically
-  justify-content: center; // Centers items horizontally
-  width: 125px; // Sets the width of the element
-  height: 125px; // Sets the height of the element
-  border-radius: 50%; // Makes the element circular
-  border: 2px solid var(--primary-color); // Adds a border with primary color
-  box-sizing: content-box; // Ensures padding and border are not included in the element's width and height
-  aspect-ratio: 1 / 1; // Maintains a 1:1 aspect ratio
+.about-hero__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.circular-container {
-  width: 120px; // Sets the width of the element
-  height: 120px; // Sets the height of the element
-  border-radius: 50%; // Makes the element circular
-  overflow: hidden; // Hides overflow content
-  display: flex; // Uses flexbox for layout
-  align-items: center; // Centers items vertically
-  justify-content: center; // Centers items horizontally
-  aspect-ratio: 1 / 1; // Maintains a 1:1 aspect ratio
+.avatar-ring {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  padding: 4px;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.circular-image {
-  width: 100%; // Sets the width to 100% of the parent element
-  height: 100%; // Sets the height to 100% of the parent element
-  object-fit: cover; // Ensures the image covers the entire element
-  border-radius: 50%; // Makes the image circular
+.avatar-ring:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(37, 99, 235, 0.25);
 }
 
-.profile-name .cursive-name {
-  font-family: var(--font-stack); // Sets the font family
-  font-style: italic; // Makes the text italic
-  font-size: 2rem; // Sets the font size
-  margin: 0; // Removes default margin
+.avatar-ring__inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--surface-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
 }
 
-.experience-list,
-.education-list {
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.role-badge {
+  align-self: flex-start;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+}
+
+.role-line {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.highlights-list {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+  color: var(--text-muted);
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-grid {
   display: grid;
   gap: 1.5rem;
-  margin-top: 1.5rem;
 }
 
-.experience-item,
-.education-item {
+.about-card {
   background-color: var(--surface-color);
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: fadeUp 0.6s ease both;
+}
+
+.about-card ul {
+  margin: 0.5rem 0 0 1.2rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.meta {
+  margin: 0.2rem 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--text-muted);
+}
+
+.about-details {
+  background: var(--surface-color);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+
+.about-details summary {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.about-details__content {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--text-muted);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cta-row--full {
+  justify-content: flex-start;
+}
+
+.cta-button {
+  background: var(--accent-gradient);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.25);
+}
+
+.cta-button--ghost {
+  background: var(--surface-color);
+  color: var(--primary-color);
   border: 1px solid var(--border-color);
 }
 
-.experience-item__heading,
-.education-item__heading {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.75rem;
+@media (min-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr 1.2fr;
+  }
 }
 
-.experience-item__heading h3,
-.education-item__heading h3 {
-  margin: 0;
-}
-
-.experience-item__icon,
-.education-item__icon {
-  font-size: 1.25rem;
-}
-
-.experience-item ul,
-.education-item ul {
-  margin: 0.75rem 0 0 1.25rem;
-}
-
-.experience-item p,
-.education-item p {
-  margin: 0.5rem 0 0;
-}
-
-@media (max-width: 768px) {
-  .circular-border {
-    width: 108px; // Sets the width of the element for smaller screens
-    height: 108px; // Sets the height of the element for smaller screens
-    border-width: 2px; // Sets the border width for smaller screens
-    aspect-ratio: 1 / 1; // Maintains a 1:1 aspect ratio
+@media (prefers-reduced-motion: reduce) {
+  .about-hero,
+  .about-card {
+    animation: none;
   }
 
-  .circular-container {
-    width: 104px; // Sets the width of the element for smaller screens
-    height: 104px; // Sets the height of the element for smaller screens
-    aspect-ratio: 1 / 1; // Maintains a 1:1 aspect ratio
+  .avatar-ring,
+  .cta-button {
+    transition: none;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
