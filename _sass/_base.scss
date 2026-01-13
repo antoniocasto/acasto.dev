@@ -7,34 +7,43 @@ body {
   font-family: var(--font-stack); // Use custom font stack
   color: var(--text-color); // Use custom text color
   background-color: var(--background-color); // Use custom background color
+  background-image: var(--page-gradient);
   margin: 0; // Remove default margin
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 // Base styles for heading elements
 h1, h2, h3, h4 {
   font-weight: 600; // Set font weight to 600
   margin-bottom: 0.5em; // Add margin below headings
-  color: var(--primary-color); // Accent color for headings
+  color: var(--text-color);
+  font-family: var(--font-display);
 }
 
 h2,
 h3 {
-  border-bottom: 2px solid rgba(10, 132, 255, 0.2);
+  border-bottom: 2px solid rgba(37, 99, 235, 0.2);
   display: inline-block;
   padding-bottom: 0.25rem;
 }
 
 p {
   line-height: 1.7;
+  color: var(--text-muted);
 }
 
 // Base styles for links
 a {
   color: var(--primary-color); // Use custom primary color
   text-decoration: none; // Remove default underline
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 // Hover effect for links
 a:hover {
   text-decoration: underline; // Add underline on hover
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.2);
 }

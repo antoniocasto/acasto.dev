@@ -51,11 +51,29 @@
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
+  position: relative;
+  padding-bottom: 0.25rem;
+  transition: color 0.2s ease;
 }
 
 .desktop-menu li.active a {
   color: var(--primary-color);
   font-weight: 600;
+}
+
+.desktop-menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-gradient);
+  transition: width 0.2s ease;
+}
+
+.desktop-menu li a:hover::after {
+  width: 100%;
 }
 
 // ------------------------------
@@ -83,11 +101,15 @@
   font-size: 0.9rem;
   font-weight: bold;
   /* Only round the top corners for continuity with the menu */
-  border-radius: 4px 4px 4px 4px;
-  transition: background-color 0.3s, border-color 0.3s;
+  border-radius: 8px;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
   /* Space on the left for the icon */
   padding-left: 2rem;
   position: relative;
+}
+
+.language-dropdown summary:hover {
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
 }
 
 /* Icon positioned on the left */
@@ -129,8 +151,8 @@
   border: 1px solid var(--dropdown-border);
   border-top: none;  // Visually connect to the summary
   /* Only round the bottom corners */
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
   z-index: 100;
   /* Initially hidden, with a sliding effect */
   opacity: 0;
@@ -261,7 +283,7 @@
   max-width: 300px;
   height: 100%;
   background: var(--side-menu-bg);  // Use the variable for the background
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 10px 0 30px rgba(15, 23, 42, 0.2);
   transition: transform 0.3s ease;
   z-index: 1000;
   padding: 2rem 1.5rem;
@@ -323,6 +345,7 @@
   padding: 1rem 0;
   color: var(--text-color);
   font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 // Highlight the active menu

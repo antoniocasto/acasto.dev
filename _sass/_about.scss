@@ -56,11 +56,11 @@
 
 .experience-item,
 .education-item {
-  background-color: var(--collection-bg);
-  border-radius: 12px;
+  background-color: var(--surface-color);
+  border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--border-color);
 }
 
 .experience-item__heading,
