@@ -47,6 +47,50 @@
   margin: 0; // Removes default margin
 }
 
+.experience-list,
+.education-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.experience-item,
+.education-item {
+  background-color: var(--collection-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.experience-item__heading,
+.education-item__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.experience-item__heading h3,
+.education-item__heading h3 {
+  margin: 0;
+}
+
+.experience-item__icon,
+.education-item__icon {
+  font-size: 1.25rem;
+}
+
+.experience-item ul,
+.education-item ul {
+  margin: 0.75rem 0 0 1.25rem;
+}
+
+.experience-item p,
+.education-item p {
+  margin: 0.5rem 0 0;
+}
+
 @media (max-width: 768px) {
   .circular-border {
     width: 108px; // Sets the width of the element for smaller screens

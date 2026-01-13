@@ -20,19 +20,33 @@ Penso sempre **prima di scrivere codice**. Se non so come fare qualcosa, mi info
 
 ## Esperienza Lavorativa
 
-### Sviluppatore iOS
-**Hidonix** - *Catania, Italia*  
-📅 **9 ottobre 2023 – Presente** 
+<div class="experience-list">
+  <div class="experience-item">
+    <div class="experience-item__heading">
+      <span class="experience-item__icon" aria-hidden="true">💼</span>
+      <h3>Sviluppatore iOS</h3>
+    </div>
+    <p><strong>Hidonix</strong> - <em>Catania, Italia</em><br>
+    📅 <strong>9 ottobre 2023 – Presente</strong></p>
+    <ul>
+      <li><strong>Progettazione, sviluppo, test, distribuzione e manutenzione</strong> di applicazioni iOS all'interno dell'azienda.</li>
+      <li>Attività di <strong>ricerca e sviluppo</strong> per esplorare nuove tecnologie e migliorare le soluzioni esistenti.</li>
+    </ul>
+  </div>
 
-- **Progettazione, sviluppo, test, distribuzione e manutenzione** di applicazioni iOS all'interno dell'azienda.  
-- Attività di **ricerca e sviluppo** per esplorare nuove tecnologie e migliorare le soluzioni esistenti.  
-
-### Sviluppatore – Borsa di Studio di Ricerca  
-**Nexa Center for Internet & Society – Politecnico di Torino – DAUIN**  
-📅 **ottobre 2021 – ottobre 2022** *(Remoto – Torino, Italia)*  
-
-- Ho contribuito allo sviluppo di un **sistema di raccomandazione** per il progetto europeo **Erasmus+ CLIKC** (*Content and Language Integrated Learning for Key Competences*).  
-- Ho lavorato a un **sistema di apprendimento adattivo** che sfrutta tecnologie semantiche per migliorare le raccomandazioni di contenuti personalizzati.  
+  <div class="experience-item">
+    <div class="experience-item__heading">
+      <span class="experience-item__icon" aria-hidden="true">💼</span>
+      <h3>Sviluppatore – Borsa di Studio di Ricerca</h3>
+    </div>
+    <p><strong>Nexa Center for Internet &amp; Society – Politecnico di Torino – DAUIN</strong><br>
+    📅 <strong>ottobre 2021 – ottobre 2022</strong> <em>(Remoto – Torino, Italia)</em></p>
+    <ul>
+      <li>Ho contribuito allo sviluppo di un <strong>sistema di raccomandazione</strong> per il progetto europeo <strong>Erasmus+ CLIKC</strong> (<em>Content and Language Integrated Learning for Key Competences</em>).</li>
+      <li>Ho lavorato a un <strong>sistema di apprendimento adattivo</strong> che sfrutta tecnologie semantiche per migliorare le raccomandazioni di contenuti personalizzati.</li>
+    </ul>
+  </div>
+</div>
 
 ## Competenze nello Sviluppo
 
@@ -55,23 +69,45 @@ Penso sempre **prima di scrivere codice**. Se non so come fare qualcosa, mi info
 
 ## Formazione
 
-### Ingegneria Informatica - Software | Laurea Magistrale
-*Politecnico di Torino*  
-📅 09/2018 – 06/2022  
-📍 Torino, Italia  
+<div class="education-list">
+  <div class="education-item">
+    <div class="education-item__heading">
+      <span class="education-item__icon" aria-hidden="true">🎓</span>
+      <h3>Ingegneria Informatica - Software | Laurea Magistrale</h3>
+    </div>
+    <p><em>Politecnico di Torino</em><br>
+    📅 09/2018 – 06/2022<br>
+    📍 Torino, Italia</p>
+  </div>
 
-### Ingegneria Informatica | Laurea Triennale
-*Politecnico di Torino*  
-📅 09/2014 – 09/2018  
-📍 Torino, Italia  
+  <div class="education-item">
+    <div class="education-item__heading">
+      <span class="education-item__icon" aria-hidden="true">🎓</span>
+      <h3>Ingegneria Informatica | Laurea Triennale</h3>
+    </div>
+    <p><em>Politecnico di Torino</em><br>
+    📅 09/2014 – 09/2018<br>
+    📍 Torino, Italia</p>
+  </div>
 
-### Liceo Scientifico P.N.I.
-*Istituto di Istruzione Superiore "Matteo Raeli" in Noto*  
-📅 2008 – 2013  
-📍 Noto, Italia  
+  <div class="education-item">
+    <div class="education-item__heading">
+      <span class="education-item__icon" aria-hidden="true">🎓</span>
+      <h3>Liceo Scientifico P.N.I.</h3>
+    </div>
+    <p><em>Istituto di Istruzione Superiore "Matteo Raeli" in Noto</em><br>
+    📅 2008 – 2013<br>
+    📍 Noto, Italia</p>
+  </div>
 
-### Certificazione IELTS - 5.5
-*British Council (richiesto dal Politecnico di Torino)*  
+  <div class="education-item">
+    <div class="education-item__heading">
+      <span class="education-item__icon" aria-hidden="true">🎓</span>
+      <h3>Certificazione IELTS - 5.5</h3>
+    </div>
+    <p><em>British Council (richiesto dal Politecnico di Torino)</em></p>
+  </div>
+</div>
 
 ## Fonti di Apprendimento per lo Sviluppo iOS
 ### 100 Days of SwiftUI - Punto di Partenza per lo Sviluppo iOS
@@ -87,6 +123,7 @@ Penso sempre **prima di scrivere codice**. Se non so come fare qualcosa, mi info
 ### Lavoro di Squadra e Comunicazione
 - Forte capacità di **collaborare in team multidisciplinari**.  
 - Esperienza in ambienti internazionali, lavorando con colleghi della filiale statunitense.  
+- **Bilingue (italiano e inglese)**, in grado di comunicare efficacemente in contesti internazionali.  
 - Eccellenti capacità di **problem-solving** e adattabilità in progetti dinamici.
 
 ### Pensiero Critico e Decision Making
