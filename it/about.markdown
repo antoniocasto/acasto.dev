@@ -67,7 +67,8 @@ permalink: "/it/about/"
     <ul class="skill-list">
       <li><strong>Framework:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
       <li><strong>Architettura:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator.</li>
-      <li><strong>Concorrenza &amp; comunicazione:</strong> Swift Concurrency fino a Swift 6.2 (Approachable Concurrency), AsyncStream, delegate, callback, completion handler.</li>
+      <li><strong>Concorrenza:</strong> Swift Concurrency fino a Swift 6.2 (Approachable Concurrency): async/await, structured concurrency (Task, TaskGroup), actor; Grand Central Dispatch (GCD): code, coordinamento sync/async; bridge di API legacy verso async/await tramite continuations (checked/unsafe quando serve).</li>
+      <li><strong>Comunicazione e flussi di eventi:</strong> AsyncStream / AsyncSequence avanzato: consumo di stream prodotti via AsyncStream.Continuation; gestione della cancellazione; progettazione di pipeline di eventi; Combine (base): osservazione di @Published e reazione ai cambiamenti di valore; pattern Delegate; callback e completion handler.</li>
       <li><strong>Localizzazione:</strong> String Catalogs per i flussi di localizzazione iOS.</li>
       <li><strong>Networking &amp; dati:</strong> REST API, Firebase (esperienza), MongoDB (esperienza), FastAPI (esperienza).</li>
     </ul>
