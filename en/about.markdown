@@ -68,6 +68,8 @@ permalink: "/en/about/"
     <ul class="skill-list">
       <li><strong>Frameworks:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
       <li><strong>Architecture:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator.</li>
+      <li><strong>Concurrency &amp; communication:</strong> Swift Concurrency up to Swift 6.2 (Approachable Concurrency), AsyncStream, delegates, callbacks, completion handlers.</li>
+      <li><strong>Localization:</strong> String Catalogs for iOS localization workflows.</li>
       <li><strong>Networking &amp; Data:</strong> REST APIs, Firebase (experience), MongoDB (experience), FastAPI (experience).</li>
     </ul>
   </div>
@@ -77,8 +79,10 @@ permalink: "/en/about/"
   <h2>Quality &amp; Delivery</h2>
   <div class="about-card">
     <ul class="skill-list">
-      <li><strong>Dependency management:</strong> Swift Package Manager, CocoaPods.</li>
+      <li><strong>Dependency management:</strong> Swift Package Manager (adding dependencies and reusable internal packages), CocoaPods.</li>
       <li><strong>CI/CD and automation:</strong> Fastlane, GitLab CI/CD.</li>
+      <li><strong>Project configuration:</strong> multiple environments (development, staging, release) using targets, schemes, and build configurations; Tuist.</li>
+      <li><strong>Monitoring:</strong> Firebase Crashlytics.</li>
       <li><strong>Testing and quality:</strong> XCTest, UI Testing, TDD, Mocking, SwiftLint.</li>
     </ul>
   </div>
