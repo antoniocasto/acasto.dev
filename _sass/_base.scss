@@ -2,28 +2,21 @@
   Define base global styles using CSS custom properties
 */
 
-html,
-body {
-  height: 100%;
-}
-
 // Base styles for the body element
 body {
   font-family: var(--font-stack); // Use custom font stack
-  color: var(--text); // Use custom text color
-  background-color: var(--bg); // Use custom background color
+  color: var(--text-color); // Use custom text color
+  background-color: var(--background-color); // Use custom background color
   background-image: var(--page-gradient);
   margin: 0; // Remove default margin
   transition: background-color 0.3s ease, color 0.3s ease;
-  display: flex;
-  flex-direction: column;
 }
 
 // Base styles for heading elements
 h1, h2, h3, h4 {
   font-weight: 600; // Set font weight to 600
   margin-bottom: 0.5em; // Add margin below headings
-  color: var(--text);
+  color: var(--text-color);
   font-family: var(--font-display);
 }
 
@@ -36,7 +29,7 @@ h3 {
 
 p {
   line-height: 1.7;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 // Base styles for links

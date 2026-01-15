@@ -6,11 +6,6 @@ permalink: "/en/blog/"
 ---
 # Blog  
 
-<header class="page-header">
-  <h1 class="page-header__title">Blog</h1>
-  <p class="page-header__subtitle">Notes and tutorials on iOS development, architecture, and tooling.</p>
-</header>
-
 In this section, I will publish articles and tutorials about iOS development and technology.
 
 {% assign localized_posts = site.posts | where: "lang", page.lang %}

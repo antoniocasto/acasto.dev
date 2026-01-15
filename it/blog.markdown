@@ -7,11 +7,6 @@ permalink: "/it/blog/"
 
 # Blog  
 
-<header class="page-header">
-  <h1 class="page-header__title">Blog</h1>
-  <p class="page-header__subtitle">Note e tutorial su sviluppo iOS, architetture e strumenti.</p>
-</header>
-
 In questa sezione pubblicherò articoli e tutorial sullo sviluppo iOS e tecnologia.
 
 {% assign localized_posts = site.posts | where: "lang", page.lang %}

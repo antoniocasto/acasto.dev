@@ -6,11 +6,6 @@ permalink: "/it/portfolio/"
 ---
 # Portfolio  
 
-<header class="page-header">
-  <h1 class="page-header__title">Portfolio</h1>
-  <p class="page-header__subtitle">Progetti selezionati che raccontano il mio focus iOS e l’approccio ingegneristico.</p>
-</header>
-
 {% assign localized_projects = site.portfolio | where: "lang", page.lang %}
 
 {% if localized_projects.size == 0 %}
