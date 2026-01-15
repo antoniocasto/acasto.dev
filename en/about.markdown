@@ -27,7 +27,7 @@ permalink: "/en/about/"
     <ul class="highlights-list">
       <li>iOS development with SwiftUI and UIKit, with maintainable architectures (MVVM, VIPER, TCA, Coordinator).</li>
       <li>Experience with CI/CD and code quality practices (Fastlane, GitLab CI/CD, SwiftLint).</li>
-      <li>Background in R&amp;D and exploratory work (including ARKit/SceneKit).</li>
+      <li>Background in R&amp;D and exploratory work (including ARKit/SceneKit and CoreML).</li>
       <li>Worked in distributed teams across time zones.</li>
     </ul>
   </div>
@@ -66,7 +66,7 @@ permalink: "/en/about/"
   <h2>Core iOS Skills</h2>
   <div class="about-card">
     <ul class="skill-list">
-      <li><strong>Frameworks:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit.</li>
+      <li><strong>Frameworks:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
       <li><strong>Architecture:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator.</li>
       <li><strong>Networking &amp; Data:</strong> REST APIs, Firebase (experience), MongoDB (experience), FastAPI (experience).</li>
     </ul>
