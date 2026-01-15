@@ -114,7 +114,7 @@
 
 /* Icon positioned on the left */
 .language-dropdown summary::before {
-  content: "▶";
+  content: "▾";
   position: absolute;
   left: 0.5rem;
   top: 50%;
@@ -126,7 +126,7 @@
 
 /* When the dropdown is open, rotate the arrow to point down */
 .language-dropdown[open] summary::before {
-  transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .language-dropdown[open] summary {

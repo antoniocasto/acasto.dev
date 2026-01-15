@@ -16,19 +16,20 @@ permalink: "/en/about/"
     <h1>Antonio Casto — iOS Developer (SwiftUI &amp; UIKit)</h1>
     <p class="role-line">Based in Italy · Fully bilingual (English/Italian)</p>
     <div class="cta-row">
-      <a class="cta-button" href="/en/portfolio/">View Portfolio</a>
-      <a class="cta-button cta-button--ghost" href="/en/contacts/">Contact Me</a>
-      <a class="cta-button cta-button--ghost" href="/assets/cv/antonio-casto-cv.pdf">Download CV (PDF)</a>
+      <a class="cta-button" href="/assets/cv/antonio-casto-cv.pdf">Download CV (PDF)</a>
+      <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
+      <a class="cta-link" href="/en/contacts/">Contact Me</a>
     </div>
   </div>
   <div class="about-hero__summary">
-    <p>I’m an iOS Developer based in Italy, fully bilingual (English/Italian). I design and build apps with a focus on modularity, scalability, and testability, following industry best practices.</p>
-    <p>I enjoy working end-to-end: architecture, implementation, quality, delivery, and iteration. I collaborate closely with my team, I think before I code, and I research thoroughly when I face new challenges.</p>
+    <p>I design and build iOS apps with a focus on modularity, scalability, and testability.</p>
+    <p>From architecture to delivery, I collaborate closely with teams and ship reliable features with clear ownership.</p>
     <ul class="highlights-list">
-      <li>iOS development with SwiftUI and UIKit, with maintainable architectures (MVVM, VIPER, TCA, Coordinator).</li>
-      <li>Experience with CI/CD and code quality practices (Fastlane, GitLab CI/CD, SwiftLint).</li>
-      <li>Background in R&amp;D and exploratory work (including ARKit/SceneKit and CoreML).</li>
-      <li>Worked in distributed teams across time zones.</li>
+      <li>SwiftUI &amp; UIKit with maintainable architectures (MVVM, VIPER, TCA, Coordinator).</li>
+      <li>CI/CD: Fastlane + GitLab CI/CD, SwiftLint, automated tests.</li>
+      <li>R&amp;D work with ARKit, SceneKit, CoreML.</li>
+      <li>Multiple environments with targets/schemes/build configs; Tuist.</li>
+      <li>Distributed team collaboration across time zones.</li>
     </ul>
   </div>
 </section>
@@ -122,8 +123,8 @@ permalink: "/en/about/"
 
 <section class="about-section">
   <div class="cta-row cta-row--full">
-    <a class="cta-button" href="/en/portfolio/">View Portfolio</a>
-    <a class="cta-button cta-button--ghost" href="/en/contacts/">Contact Me</a>
-    <a class="cta-button cta-button--ghost" href="/assets/cv/antonio-casto-cv.pdf">Download CV (PDF)</a>
+    <a class="cta-button" href="/assets/cv/antonio-casto-cv.pdf">Download CV (PDF)</a>
+    <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
+    <a class="cta-link" href="/en/contacts/">Contact Me</a>
   </div>
 </section>

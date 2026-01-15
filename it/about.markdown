@@ -15,19 +15,20 @@ permalink: "/it/about/"
     <h1>Antonio Casto — iOS Developer (SwiftUI &amp; UIKit)</h1>
     <p class="role-line">In Italia · Bilingue (italiano/inglese)</p>
     <div class="cta-row">
-      <a class="cta-button" href="/it/portfolio/">Guarda il Portfolio</a>
-      <a class="cta-button cta-button--ghost" href="/it/contacts/">Contattami</a>
-      <a class="cta-button cta-button--ghost" href="/assets/cv/antonio-casto-cv.pdf">Scarica il CV (PDF)</a>
+      <a class="cta-button" href="/assets/cv/antonio-casto-cv.pdf">Scarica il CV (PDF)</a>
+      <a class="cta-button cta-button--ghost" href="/it/portfolio/">Guarda il Portfolio</a>
+      <a class="cta-link" href="/it/contacts/">Contattami</a>
     </div>
   </div>
   <div class="about-hero__summary">
-    <p>Sono uno sviluppatore iOS in Italia, bilingue (italiano/inglese). Progetto e sviluppo app con focus su modularità, scalabilità e testabilità, seguendo le migliori pratiche del settore.</p>
-    <p>Mi piace lavorare end-to-end: architettura, implementazione, qualità, delivery e iterazione. Collaboro a stretto contatto con il team, penso prima di scrivere codice e approfondisco quando incontro nuove sfide.</p>
+    <p>Progetto e sviluppo app iOS con focus su modularità, scalabilità e testabilità.</p>
+    <p>Dall’architettura al delivery, collaboro con il team e porto in produzione funzionalità affidabili.</p>
     <ul class="highlights-list">
-      <li>Sviluppo iOS con SwiftUI e UIKit, con architetture manutenibili (MVVM, VIPER, TCA, Coordinator).</li>
-      <li>Esperienza con CI/CD e pratiche di qualità del codice (Fastlane, GitLab CI/CD, SwiftLint).</li>
-      <li>Background in R&amp;D e attività esplorative (inclusi ARKit/SceneKit e CoreML).</li>
-      <li>Esperienza in team distribuiti su più fusi orari.</li>
+      <li>SwiftUI &amp; UIKit con architetture manutenibili (MVVM, VIPER, TCA, Coordinator).</li>
+      <li>CI/CD: Fastlane + GitLab CI/CD, SwiftLint, test automatizzati.</li>
+      <li>R&amp;D con ARKit, SceneKit, CoreML.</li>
+      <li>Ambienti multipli con target/scheme/build config; Tuist.</li>
+      <li>Collaborazione con team distribuiti su più fusi orari.</li>
     </ul>
   </div>
 </section>
@@ -121,8 +122,8 @@ permalink: "/it/about/"
 
 <section class="about-section">
   <div class="cta-row cta-row--full">
-    <a class="cta-button" href="/it/portfolio/">Guarda il Portfolio</a>
-    <a class="cta-button cta-button--ghost" href="/it/contacts/">Contattami</a>
-    <a class="cta-button cta-button--ghost" href="/assets/cv/antonio-casto-cv.pdf">Scarica il CV (PDF)</a>
+    <a class="cta-button" href="/assets/cv/antonio-casto-cv.pdf">Scarica il CV (PDF)</a>
+    <a class="cta-button cta-button--ghost" href="/it/portfolio/">Guarda il Portfolio</a>
+    <a class="cta-link" href="/it/contacts/">Contattami</a>
   </div>
 </section>
