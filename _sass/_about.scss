@@ -39,26 +39,21 @@
   place-items: center;
   box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: visible;
+  overflow: hidden;
   box-sizing: border-box;
+  z-index: 0;
+  isolation: isolate;
 }
 
-.avatar-ring::before,
 .avatar-ring::after {
   content: "";
   position: absolute;
-  inset: -4px;
+  inset: -6px;
   border-radius: inherit;
-  pointer-events: none;
-}
-
-.avatar-ring::before {
   background: var(--accent-gradient);
-}
-
-.avatar-ring::after {
-  inset: -1px;
-  background: var(--surface-color);
+  transform: translate(6px, 6px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .avatar-ring:hover {
@@ -67,9 +62,9 @@
 }
 
 .avatar-image {
-  inline-size: calc(100% - 8px);
-  block-size: calc(100% - 8px);
-  border-radius: 16px;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: inherit;
   object-fit: cover;
   display: block;
   position: relative;
