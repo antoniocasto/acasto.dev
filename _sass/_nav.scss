@@ -83,7 +83,7 @@
 .language-dropdown {
   position: relative;
   display: inline-block;
-  width: 50px; // reduced width for compactness
+  min-width: 72px;
   cursor: pointer;
 }
 
@@ -104,7 +104,8 @@
   border-radius: 8px;
   transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
   /* Space on the left for the icon */
-  padding-left: 2rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
   position: relative;
 }
 
@@ -114,7 +115,7 @@
 
 /* Icon positioned on the left */
 .language-dropdown summary::before {
-  content: "▾";
+  content: "🌐";
   position: absolute;
   left: 0.5rem;
   top: 50%;
@@ -124,8 +125,20 @@
   transition: transform 0.3s ease;
 }
 
-/* When the dropdown is open, rotate the arrow to point down */
-.language-dropdown[open] summary::before {
+/* Chevron on the right */
+.language-dropdown summary::after {
+  content: "⌄";
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: var(--dropdown-text);
+  transition: transform 0.3s ease;
+}
+
+/* When the dropdown is open, rotate the chevron */
+.language-dropdown[open] summary::after {
   transform: translateY(-50%) rotate(180deg);
 }
 

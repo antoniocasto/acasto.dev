@@ -75,7 +75,9 @@
       <!-- Nav Right: Language selector (always visible) -->
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary>{{ page.lang | upcase }}</summary>
+          <summary>
+            <span class="language-label">{{ page.lang | upcase }}</span>
+          </summary>
           <ul class="language-options">
             {% for lang in site.languages %}
               {%- assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first -%}
