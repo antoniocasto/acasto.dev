@@ -2,6 +2,11 @@
   Define base global styles using CSS custom properties
 */
 
+html,
+body {
+  height: 100%;
+}
+
 // Base styles for the body element
 body {
   font-family: var(--font-stack); // Use custom font stack
@@ -10,6 +15,9 @@ body {
   background-image: var(--page-gradient);
   margin: 0; // Remove default margin
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 // Base styles for heading elements
