@@ -30,8 +30,8 @@
 }
 
 .avatar-ring {
-  width: 150px;
-  height: 150px;
+  inline-size: 150px;
+  block-size: 150px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   position: relative;
@@ -40,6 +40,7 @@
   box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: visible;
+  box-sizing: border-box;
 }
 
 .avatar-ring::before,
@@ -66,14 +67,15 @@
 }
 
 .avatar-image {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   position: relative;
   z-index: 1;
   border: 4px solid var(--surface-color);
+  box-sizing: border-box;
 }
 
 .role-badge {
