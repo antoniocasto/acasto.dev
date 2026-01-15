@@ -13,7 +13,7 @@ permalink: "/it/about/"
       <span class="role-badge">iOS Developer</span>
     </div>
     <h1>Antonio Casto — iOS Developer (SwiftUI &amp; UIKit)</h1>
-    <p class="role-line">Basato in Italia · Bilingue (italiano/inglese)</p>
+    <p class="role-line">In Italia · Bilingue (italiano/inglese)</p>
     <div class="cta-row">
       <a class="cta-button" href="/it/portfolio/">Guarda il Portfolio</a>
       <a class="cta-button cta-button--ghost" href="/it/contacts/">Contattami</a>
@@ -21,8 +21,8 @@ permalink: "/it/about/"
     </div>
   </div>
   <div class="about-hero__summary">
-    <p>Sono uno sviluppatore iOS basato in Italia, bilingue (italiano/inglese). Progetto e sviluppo app con un focus su modularità, scalabilità e testabilità, seguendo le migliori pratiche del settore.</p>
-    <p>Mi piace lavorare end-to-end: architettura, implementazione, qualità, delivery e iterazione. Collaboro da vicino con il team, penso prima di scrivere codice e approfondisco quando incontro nuove sfide.</p>
+    <p>Sono uno sviluppatore iOS in Italia, bilingue (italiano/inglese). Progetto e sviluppo app con focus su modularità, scalabilità e testabilità, seguendo le migliori pratiche del settore.</p>
+    <p>Mi piace lavorare end-to-end: architettura, implementazione, qualità, delivery e iterazione. Collaboro a stretto contatto con il team, penso prima di scrivere codice e approfondisco quando incontro nuove sfide.</p>
     <ul class="highlights-list">
       <li>Sviluppo iOS con SwiftUI e UIKit, con architetture manutenibili (MVVM, VIPER, TCA, Coordinator).</li>
       <li>Esperienza con CI/CD e pratiche di qualità del codice (Fastlane, GitLab CI/CD, SwiftLint).</li>
@@ -38,7 +38,7 @@ permalink: "/it/about/"
     <article class="about-card">
       <header>
         <h3>iOS Developer — Hidonix</h3>
-        <p class="meta">Catania, Italia · 9 Ottobre 2023 — Presente</p>
+        <p class="meta">Catania, Italia · 9 ottobre 2023 — Presente</p>
       </header>
       <ul>
         <li>Progettazione e sviluppo di applicazioni iOS con SwiftUI e UIKit.</li>
@@ -67,7 +67,7 @@ permalink: "/it/about/"
     <ul class="skill-list">
       <li><strong>Framework:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit.</li>
       <li><strong>Architettura:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator.</li>
-      <li><strong>Networking &amp; Dati:</strong> REST API, Firebase (esperienza), MongoDB (esperienza), FastAPI (esperienza).</li>
+      <li><strong>Networking &amp; dati:</strong> REST API, Firebase (esperienza), MongoDB (esperienza), FastAPI (esperienza).</li>
     </ul>
   </div>
 </section>
@@ -89,7 +89,7 @@ permalink: "/it/about/"
     <ul class="skill-list">
       <li>Laurea Magistrale in Ingegneria Informatica (Software) — Politecnico di Torino (2018–2022).</li>
       <li>Laurea Triennale in Ingegneria Informatica — Politecnico di Torino (2014–2018).</li>
-      <li>Liceo Scientifico (P.N.I.) — I.I.S. “Matteo Raeli”, Noto (2008–2013).</li>
+      <li>Liceo scientifico (P.N.I.) — I.I.S. “Matteo Raeli”, Noto (2008–2013).</li>
       <li>IELTS 5.5 — British Council.</li>
     </ul>
   </div>
