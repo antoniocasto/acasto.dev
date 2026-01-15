@@ -6,6 +6,11 @@ permalink: "/en/contacts/"
 ---
 # Contacts  
 
+<header class="page-header">
+  <h1 class="page-header__title">Contacts</h1>
+  <p class="page-header__subtitle">Open to collaboration, roles, and iOS conversations.</p>
+</header>
+
 Feel free to send me a message, or reach out to me through my social profiles.  
 
 ## Email  

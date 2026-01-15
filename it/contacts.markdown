@@ -6,6 +6,11 @@ permalink: "/it/contacts/"
 ---
 # Contatti  
 
+<header class="page-header">
+  <h1 class="page-header__title">Contatti</h1>
+  <p class="page-header__subtitle">Disponibile per collaborazioni, ruoli e conversazioni iOS.</p>
+</header>
+
 Sentiti libero di inviarmi un messaggio oppure di contattarmi attraverso i miei profili social.  
 
 ## Email  

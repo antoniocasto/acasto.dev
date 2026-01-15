@@ -1,4 +1,18 @@
 :root {
+  --bg: var(--background-color);
+  --surface: var(--surface-color);
+  --surface-2: var(--surface-muted);
+  --text: var(--text-color);
+  --muted: var(--text-muted);
+  --border: var(--border-color);
+  --accent: var(--primary-color);
+  --shadow-1: 0 10px 24px rgba(15, 23, 42, 0.08);
+  --shadow-2: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --radius: 16px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
   --primary-color: #2563eb; /* Primary color */
   --secondary-color: #38bdf8; /* Secondary accent */
   --background-color: #f5f7fb; /* Background color */
@@ -33,6 +47,15 @@
 }
 
 .dark-theme {
+  --bg: var(--background-color);
+  --surface: var(--surface-color);
+  --surface-2: var(--surface-muted);
+  --text: var(--text-color);
+  --muted: var(--text-muted);
+  --border: var(--border-color);
+  --accent: var(--primary-color);
+  --shadow-1: 0 10px 24px rgba(2, 6, 23, 0.45);
+  --shadow-2: 0 20px 45px rgba(2, 6, 23, 0.55);
   --primary-color: #60a5fa; /* Primary color */
   --secondary-color: #38bdf8; /* Secondary accent */
   --background-color: #0b1120; /* Background color */
