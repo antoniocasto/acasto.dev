@@ -100,10 +100,8 @@
   color: var(--dropdown-text);
   font-size: 0.9rem;
   font-weight: bold;
-  /* Only round the top corners for continuity with the menu */
   border-radius: 8px;
   transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-  /* Space on the left for the icon */
   padding-left: 2.4rem;
   padding-right: 2.4rem;
   position: relative;
@@ -122,24 +120,6 @@
   transform: translateY(-50%);
   font-size: 0.8rem;
   color: var(--dropdown-text);
-  transition: transform 0.3s ease;
-}
-
-/* Chevron on the right */
-.language-dropdown summary::after {
-  content: "⌄";
-  position: absolute;
-  right: 0.6rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-  color: var(--dropdown-text);
-  transition: transform 0.3s ease;
-}
-
-/* When the dropdown is open, rotate the chevron */
-.language-dropdown[open] summary::after {
-  transform: translateY(-50%) rotate(180deg);
 }
 
 .language-dropdown[open] summary {
@@ -159,7 +139,7 @@
   position: absolute;
   top: calc(100% - 1px);  // Attach to the summary
   left: 0;
-  width: 96%;
+  width: 100%;
   background: var(--dropdown-option-bg);  // Slightly different color from selected options
   border: 1px solid var(--dropdown-border);
   border-top: none;  // Visually connect to the summary
