@@ -123,7 +123,8 @@
 }
 
 .language-dropdown[open] summary {
-  border-radius: 4px 4px 0px 0;
+  border-radius: 8px 8px 0 0;
+  border-bottom-color: transparent;
 }
 
 /* Remove the default marker */
@@ -140,11 +141,12 @@
   top: calc(100% - 1px);  // Attach to the summary
   left: 0;
   width: 100%;
+  box-sizing: border-box;
   background: var(--dropdown-option-bg);  // Slightly different color from selected options
   border: 1px solid var(--dropdown-border);
   border-top: none;  // Visually connect to the summary
   /* Only round the bottom corners */
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 8px 8px;
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
   z-index: 100;
   /* Initially hidden, with a sliding effect */
@@ -167,6 +169,7 @@
   padding: 0.5rem 1rem;
   text-decoration: none;
   color: var(--dropdown-text);
+  text-align: center;
   transition: background-color 0.3s ease;
 }
 
