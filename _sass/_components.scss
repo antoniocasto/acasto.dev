@@ -1,7 +1,7 @@
 .glass-panel {
   @include glass(15px); // Apply glass effect with 15px blur
   border-radius: 8px; // Rounded corners
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Subtle shadow
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1); // Subtle shadow
 }
 
 .menu li.active a {
@@ -20,7 +20,7 @@
 .filter-tile {
   cursor: pointer; // Pointer cursor on hover
   padding: 0.1rem 0.7rem; // Padding inside the tile
-  border: 1px solid #ccc; // Light gray border
+  border: 1px solid var(--border-color); // Light gray border
   border-radius: 9999px; // Fully rounded corners
   font-weight: normal; // Normal font weight
   color: var(--text-color); // Text color from variable
@@ -42,7 +42,7 @@
 
 .post-date {
   font-size: 0.7rem; // Small font size
-  color: #666; // Gray color
+  color: var(--text-muted); // Muted color
 }
 
 .category-tile {
@@ -141,4 +141,77 @@
 
 .theme-overlay.expand {
   transform: scale(var(--overlay-scale, 100)); // Expand to full size
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.14);
+  text-decoration: none;
+}
+
+.portfolio-card__media {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-muted);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.portfolio-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-card__icon {
+  font-size: 2.5rem;
+}
+
+.portfolio-card__body h2 {
+  margin: 0 0 0.5rem;
+  border-bottom: none;
+}
+
+.portfolio-card__body p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--surface-color);
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.contact-icon {
+  font-size: 1rem;
 }

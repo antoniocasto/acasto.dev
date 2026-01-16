@@ -6,6 +6,8 @@ permalink: "/en/portfolio/notaplace/"
 date: 2025-03-09
 github: "https://github.com/antoniocasto/NotAPlace"
 description: "An iOS app built with SwiftUI to track places that evoke positive emotions."
+thumbnail: "https://raw.githubusercontent.com/antoniocasto/NotAPlace/refs/heads/main/doc/56.PNG"
+thumbnail_alt: "NotAPlace map view"
 technologies: ["SwiftUI", "MapKit", "CoreLocation", "UserDefaults", "DocumentDirectory", "Keychain", "LocalAuthentication", "PhotosUI", "Camera", "@StateObject", "@EnvironmentObject"]
 published: true
 ---

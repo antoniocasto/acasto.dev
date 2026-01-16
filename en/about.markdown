@@ -4,92 +4,127 @@ title: "About"
 ref: "about"
 permalink: "/en/about/"
 ---
-# About Me
 
-**Passionate iOS Developer**  
-Passionate about **computer science** since childhood, I have always been deeply curious about how **software** works.  
-The advent of **smartphones and apps** broadened my horizons, showing me the potential to create **solutions** that improve people’s daily lives.  
+<section class="about-hero">
+  <div class="about-hero__identity">
+    <div class="avatar-block">
+      <div class="avatar-ring">
+        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image">
+      </div>
+      <span class="role-badge">iOS Developer</span>
+    </div>
+    <h1>Antonio Casto — iOS Developer (SwiftUI &amp; UIKit)</h1>
+    <p class="role-line">Based in Italy · Fully bilingual (English/Italian)</p>
+    <div class="cta-row">
+      <a class="cta-button" href="/assets/cv/antonio-casto-cv.pdf">Download CV (PDF)</a>
+      <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
+      <a class="cta-link" href="/en/contacts/">Contact Me</a>
+    </div>
+  </div>
+  <div class="about-hero__summary">
+    <p>I design and build iOS apps with a focus on modularity, scalability, and testability.</p>
+    <p>From architecture to delivery, I collaborate closely with teams and ship reliable features with clear ownership.</p>
+    <ul class="highlights-list">
+      <li>SwiftUI &amp; UIKit with maintainable architectures (MVVM, VIPER, TCA, Coordinator).</li>
+      <li>CI/CD: Fastlane + GitLab CI/CD, SwiftLint, automated tests.</li>
+      <li>R&amp;D work with ARKit, SceneKit, CoreML.</li>
+      <li>Multiple environments with targets/schemes/build configs; Tuist.</li>
+      <li>Distributed team collaboration across time zones.</li>
+    </ul>
+  </div>
+</section>
 
-**Mobile development** has always been my main interest, and I satisfied my curiosity by taking both **university** and **extracurricular courses**.  
-I started with **Android development**, then moved to **cross-platform development** with **Flutter**, and eventually transitioned to **iOS development** with **SwiftUI**.  
+<section class="about-section">
+  <h2>Work Experience</h2>
+  <div class="about-grid">
+    <article class="about-card">
+      <header>
+        <h3>iOS Developer — Hidonix</h3>
+        <p class="meta">Catania, Italy · Oct 9, 2023 — Present</p>
+      </header>
+      <ul>
+        <li>Design and development of iOS applications using SwiftUI and UIKit.</li>
+        <li>Maintenance and iterative improvement of existing features and codebases.</li>
+        <li>Research and development activities to evaluate new technologies and improve current solutions.</li>
+        <li>Collaboration within the team to solve technical challenges and align on effective approaches.</li>
+      </ul>
+    </article>
+    <article class="about-card">
+      <header>
+        <h3>Developer — Research Scholarship</h3>
+        <p class="meta">Nexa Center for Internet &amp; Society — Politecnico di Torino (DAUIN)</p>
+        <p class="meta">Oct 2021 — Oct 2022 (Remote — Turin, Italy)</p>
+      </header>
+      <ul>
+        <li>Contributed to a recommender system for the European Erasmus+ project CLIKC.</li>
+        <li>Worked on an adaptive learning system leveraging semantic technologies to improve personalized content recommendations.</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
-I turned my passion into a **professional career**, expanding my skill set by learning **UIKit**, architectural patterns such as **VIPER, MVVM, and TCA**, **AR technologies** like **ARKit and SceneKit**, and **CI/CD practices**, including tools like **SwiftLint and Fastlane**.  
+<section class="about-section">
+  <h2>Core iOS Skills</h2>
+  <div class="about-card">
+    <ul class="skill-list">
+      <li><strong>Frameworks:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
+      <li><strong>Architecture:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator.</li>
+      <li><strong>Concurrency:</strong> Swift Concurrency up to Swift 6.2 (Approachable Concurrency): async/await, structured concurrency (Task, TaskGroup), actors; Grand Central Dispatch (GCD): queues, sync/async coordination; bridging legacy APIs to async/await with continuations (checked/unsafe when needed).</li>
+      <li><strong>Communication &amp; event streams:</strong> Advanced AsyncStream / AsyncSequence: consuming streams produced via AsyncStream.Continuation; handling cancellation; designing event pipelines; Combine (basic): observing @Published and reacting to value changes; delegate pattern; callbacks and completion handlers.</li>
+      <li><strong>Localization:</strong> String Catalogs for iOS localization workflows.</li>
+      <li><strong>Networking &amp; Data:</strong> REST APIs, Firebase (experience), MongoDB (experience), FastAPI (experience).</li>
+    </ul>
+  </div>
+</section>
 
-Currently, I am focused on improving my approach to **building modular, testable, and highly scalable applications**.  
-I enjoy **sharing challenges** with my team and collaborating to find the most **effective solutions**.  
-I always **think before I code**. If I don’t know how to do something, I **research** and consult with more **experienced developers**.
+<section class="about-section">
+  <h2>Quality &amp; Delivery</h2>
+  <div class="about-card">
+    <ul class="skill-list">
+      <li><strong>Dependency management:</strong> Swift Package Manager (adding dependencies and reusable internal packages), CocoaPods.</li>
+      <li><strong>CI/CD and automation:</strong> Fastlane, GitLab CI/CD.</li>
+      <li><strong>Project configuration:</strong> multiple environments (development, staging, release) using targets, schemes, and build configurations; Tuist.</li>
+      <li><strong>Monitoring:</strong> Firebase Crashlytics.</li>
+      <li><strong>Testing and quality:</strong> XCTest, UI Testing, TDD, Mocking, SwiftLint.</li>
+    </ul>
+  </div>
+</section>
 
-## Work Experience
+<section class="about-section">
+  <h2>Education</h2>
+  <div class="about-card">
+    <ul class="skill-list">
+      <li>M.Sc. Computer Engineering (Software) — Politecnico di Torino (2018–2022).</li>
+      <li>B.Sc. Computer Engineering — Politecnico di Torino (2014–2018).</li>
+      <li>Scientific High School (P.N.I.) — I.I.S. “Matteo Raeli”, Noto (2008–2013).</li>
+      <li>IELTS 5.5 — British Council.</li>
+    </ul>
+  </div>
+</section>
 
-### iOS Developer
-**Hidonix** - *Catania, Italy*  
-📅 **October 9, 2023 – Present** 
+<section class="about-section">
+  <h2>Continuous Learning</h2>
+  <div class="about-card">
+    <p>I keep my skills current through Hacking with Swift, Design+Code, and Point-Free, alongside official documentation and books.</p>
+  </div>
+</section>
 
-- **Design, development, testing, deployment, and maintenance** of iOS applications within the company.  
-- **Research and development** activities to explore new technologies and improve existing solutions.  
+<section class="about-section">
+  <h2>Additional Technologies</h2>
+  <details class="about-details">
+    <summary>View supporting tools and platforms</summary>
+    <div class="about-details__content">
+      <p><strong>Platforms:</strong> Flutter, Kotlin Multiplatform, React, Angular, Spring Boot.</p>
+      <p><strong>Languages:</strong> Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript.</p>
+      <p><strong>Tools:</strong> Xcode, VS Code, Android Studio — Postman, Proxyman, Swagger — GitHub, GitLab.</p>
+    </div>
+  </details>
+</section>
 
-### Developer – Research Scholarship  
-**Nexa Center for Internet & Society – Politecnico di Torino – DAUIN**  
-📅 **October 2021 – October 2022** *(Remote – Turin, Italy)*  
-
-- Contributed to the development of a **recommender system** for the European **Erasmus+ CLIKC project** (*Content and Language Integrated Learning for Key Competences*).  
-- Worked on an **adaptive learning system** leveraging **semantic technologies** to enhance personalized content recommendations.  
-
-## Development Skills
-
-### iOS Development
-- **Frameworks & Technologies:** SwiftUI, UIKit, ARKit, SceneKit, Core Data, MapKit, Core Location, User Defaults  
-- **Architectures & Patterns:** MVVM, VIPER, The Composable Architecture (TCA), Coordinator  
-- **Networking & Data Handling:** REST API, FastAPI, Firebase, MongoDB  
-- **Dependency Management & CI/CD:** Swift Package Manager (SPM), CocoaPods, Fastlane, GitLab CI/CD  
-- **Code Quality & Testing:** SwiftLint, XCTest, UI Testing, TDD, Mocking  
-
-### Additional Technologies
-- **Cross-Platform Development:** Flutter, Kotlin Multiplatform  
-- **Frontend & Backend:** React, Angular, Spring Boot  
-- **Programming Languages:** Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript  
-
-### Tools
-- **Development:** Xcode, Visual Studio Code, Android Studio  
-- **Debugging & API Testing:** Proxyman, Postman, Swagger  
-- **Version Control & Collaboration:** Git, GitHub, GitLab  
-
-## Education
-
-### Computer Engineering - Software | Master’s Degree
-*Politecnico di Torino*  
-📅 09/2018 – 06/2022  
-📍 Turin, Italy  
-
-### Computer Engineering | Bachelor’s Degree
-*Politecnico di Torino*  
-📅 09/2014 – 09/2018  
-📍 Turin, Italy  
-
-### Liceo Scientifico P.N.I.
-*Istituto di Istruzione Superiore "Matteo Raeli" in Noto*  
-📅 2008 – 2013  
-📍 Noto, Italy  
-
-### IELTS - 5.5 Certification
-*British Council (required by Politecnico di Torino)*  
-
-## iOS Development Learning Sources
-### 100 Days of SwiftUI - iOS development starting point
-*Hacking with Swift - Paul Hudson*  
-🔗 [Website](https://www.hackingwithswift.com/100/swiftui)  
-
-### Continuous Learning
-- In-depth studies of SwiftUI through Hacking With Swift, [Design+Code](https://www.designcode.io/), and YouTube mentors  
-- Advanced iOS concepts from Point-Free, other online resources, documentations and books
-
-## Soft Skills  
-
-### **Teamwork & Communication**  
-- Strong ability to **collaborate in cross-functional teams**.  
-- Experience in **international environments**, working with colleagues from the **U.S. branch**.  
-- Excellent **problem-solving and adaptability skills** in fast-paced projects.  
-
-### **Critical Thinking & Decision-Making**  
-- Strategic approach to **design and development** for long-term scalability.  
-- Ability to **prioritize tasks effectively** and **identify key technical challenges**.  
+<section class="about-section">
+  <div class="cta-row cta-row--full">
+    <a class="cta-button" href="/assets/cv/antonio-casto-cv.pdf">Download CV (PDF)</a>
+    <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
+    <a class="cta-link" href="/en/contacts/">Contact Me</a>
+  </div>
+</section>

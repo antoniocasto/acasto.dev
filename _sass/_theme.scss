@@ -1,48 +1,65 @@
 :root {
-  --primary-color: #0a84ff; /* Primary color */
-  --background-color: #f0f4f8; /* Background color */
-  --text-color: #333; /* Text color */
-  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Font stack */
-  --glass-bg: rgba(226, 226, 226, 0.2); /* Glass background */
-  --glass-border: rgba(255, 255, 255, 0.3); /* Glass border */
-  --switch-bg: #4A4A4A; /* Switch button background in light mode */
+  --primary-color: #2563eb; /* Primary color */
+  --secondary-color: #38bdf8; /* Secondary accent */
+  --background-color: #f5f7fb; /* Background color */
+  --surface-color: #ffffff; /* Surface color */
+  --surface-muted: #eef2ff; /* Muted surface */
+  --text-color: #101828; /* Text color */
+  --text-muted: #475467; /* Muted text */
+  --border-color: rgba(16, 24, 40, 0.08); /* Subtle borders */
+  --font-stack: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Body font */
+  --font-display: "Space Grotesk", "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; /* Display font */
+  --accent-gradient: linear-gradient(135deg, #2563eb, #38bdf8); /* Accent gradient */
+  --page-gradient: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 50%); /* Background glow */
+  --hero-bg: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(56, 189, 248, 0.12)); /* Hero background */
+  --glass-bg: rgba(255, 255, 255, 0.7); /* Glass background */
+  --glass-border: rgba(37, 99, 235, 0.12); /* Glass border */
+  --switch-bg: #0f172a; /* Switch button background in light mode */
   --switch-icon-color: #ffffff; /* Switch icon color in light mode */
-  --side-menu-bg: #fff; /* Sidebar background in light mode */
-  --side-menu-border: #eee; /* Sidebar border in light mode */
-  --dropdown-bg: #fff; /* Dropdown background in light mode */
-  --dropdown-border: #ddd; /* Dropdown border in light mode */
-  --dropdown-text: #0a84ff; /* Dropdown text color in light mode */
-  --dropdown-hover-bg: rgba(10,132,255,0.1); /* Dropdown hover effect */
-  --dropdown-option-bg: #efefef; /* Dropdown options background in light mode */
-  --logo-filter-light: invert(0%) sepia(24%) saturate(4853%) hue-rotate(189deg) brightness(90%) contrast(92%); /* Logo filter in light mode */
-  --collection-bg: #fff; /* Collection pages background in light mode */
+  --side-menu-bg: #ffffff; /* Sidebar background in light mode */
+  --side-menu-border: rgba(16, 24, 40, 0.08); /* Sidebar border in light mode */
+  --dropdown-bg: #ffffff; /* Dropdown background in light mode */
+  --dropdown-border: rgba(16, 24, 40, 0.12); /* Dropdown border in light mode */
+  --dropdown-text: #2563eb; /* Dropdown text color in light mode */
+  --dropdown-hover-bg: rgba(37, 99, 235, 0.12); /* Dropdown hover effect */
+  --dropdown-option-bg: #f0f4ff; /* Dropdown options background in light mode */
+  --logo-filter-light: invert(18%) sepia(85%) saturate(2741%) hue-rotate(213deg) brightness(95%) contrast(100%); /* Logo filter in light mode */
+  --collection-bg: var(--surface-color); /* Collection pages background in light mode */
   --collection-text: var(--text-color); /* Collection pages text color */
-  --blog-tile-hover-bg: #f9f9f9; /* Blog tile hover background in light mode */
-  --category-bg: #f5f7fa; /* Category tile background in light mode */
-  --category-border: #ccc; /* Category tile border in light mode */
-  --category-hover-bg: #e3e8ee; /* Category tile hover background in light mode */
+  --blog-tile-hover-bg: #eef2ff; /* Blog tile hover background in light mode */
+  --category-bg: #eef2ff; /* Category tile background in light mode */
+  --category-border: rgba(37, 99, 235, 0.2); /* Category tile border in light mode */
+  --category-hover-bg: rgba(37, 99, 235, 0.15); /* Category tile hover background in light mode */
 }
 
 .dark-theme {
-  --primary-color: #0a84ff; /* Primary color */
-  --background-color: #1c1c1e; /* Background color */
-  --text-color: #f0f0f0; /* Text color */
-  --glass-bg: rgb(43, 43, 44); /* Glass background */
-  --glass-border: rgba(28, 28, 30, 0.3); /* Glass border */
-  --switch-bg: #878787; /* Switch button background in dark mode */
-  --switch-icon-color: #222222; /* Switch icon color in dark mode */
-  --side-menu-bg: #2c2c2e; /* Sidebar background in dark mode */
-  --side-menu-border: #444; /* Sidebar border in dark mode */
-  --dropdown-bg: #2c2c2e; /* Dropdown background in dark mode */
-  --dropdown-border: #444; /* Dropdown border in dark mode */
-  --dropdown-text: #0a84ff; /* Dropdown text color in dark mode */
-  --dropdown-hover-bg: rgba(10,132,255,0.2); /* Dropdown hover effect */
-  --dropdown-option-bg: #454545; /* Dropdown options background in dark mode */
+  --primary-color: #60a5fa; /* Primary color */
+  --secondary-color: #38bdf8; /* Secondary accent */
+  --background-color: #0b1120; /* Background color */
+  --surface-color: #111827; /* Surface color */
+  --surface-muted: #1f2937; /* Muted surface */
+  --text-color: #e5e7eb; /* Text color */
+  --text-muted: #94a3b8; /* Muted text */
+  --border-color: rgba(148, 163, 184, 0.18); /* Subtle borders */
+  --accent-gradient: linear-gradient(135deg, #60a5fa, #38bdf8); /* Accent gradient */
+  --page-gradient: radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 55%); /* Background glow */
+  --hero-bg: linear-gradient(135deg, rgba(96, 165, 250, 0.18), rgba(56, 189, 248, 0.12)); /* Hero background */
+  --glass-bg: rgba(17, 24, 39, 0.72); /* Glass background */
+  --glass-border: rgba(96, 165, 250, 0.18); /* Glass border */
+  --switch-bg: #e2e8f0; /* Switch button background in dark mode */
+  --switch-icon-color: #0b1120; /* Switch icon color in dark mode */
+  --side-menu-bg: #0f172a; /* Sidebar background in dark mode */
+  --side-menu-border: rgba(148, 163, 184, 0.2); /* Sidebar border in dark mode */
+  --dropdown-bg: #0f172a; /* Dropdown background in dark mode */
+  --dropdown-border: rgba(148, 163, 184, 0.3); /* Dropdown border in dark mode */
+  --dropdown-text: #93c5fd; /* Dropdown text color in dark mode */
+  --dropdown-hover-bg: rgba(96, 165, 250, 0.2); /* Dropdown hover effect */
+  --dropdown-option-bg: #111827; /* Dropdown options background in dark mode */
   --logo-filter-dark: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* Logo filter in dark mode */
-  --collection-bg: #2c2c2e; /* Collection pages background in dark mode */
+  --collection-bg: var(--surface-color); /* Collection pages background in dark mode */
   --collection-text: var(--text-color); /* Collection pages text color */
-  --blog-tile-hover-bg: #333333; /* Blog tile hover background in dark mode */
-  --category-bg: #3a3a3c; /* Category tile background in dark mode */
-  --category-border: #555; /* Category tile border in dark mode */
-  --category-hover-bg: #4a4a4c; /* Category tile hover background in dark mode */
+  --blog-tile-hover-bg: #1f2937; /* Blog tile hover background in dark mode */
+  --category-bg: #1f2937; /* Category tile background in dark mode */
+  --category-border: rgba(96, 165, 250, 0.3); /* Category tile border in dark mode */
+  --category-hover-bg: rgba(96, 165, 250, 0.18); /* Category tile hover background in dark mode */
 }
