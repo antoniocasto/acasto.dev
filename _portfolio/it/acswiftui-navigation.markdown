@@ -6,8 +6,8 @@ permalink: "/it/portfolio/acswiftui-navigation/"
 date: 2025-03-16
 github: "https://github.com/antoniocasto/ACSwiftUINavigation"
 description: "Un pacchetto Swift (Swift Package Manager) per implementare una navigazione pulita e modulare nelle app SwiftUI."
-thumbnail: "/assets/images/portfolio/acswiftui-navigation.svg"
-thumbnail_alt: "Icona di navigazione ACSwiftUINavigation"
+thumbnail: "/assets/images/portfolio/acswiftui-navigation.png"
+thumbnail_alt: "Anteprima di ACSwiftUINavigation"
 technologies: ["SwiftUI", "Swift Package Manager", "Navigazione", "Gestione dello stato"]
 published: true
 ---

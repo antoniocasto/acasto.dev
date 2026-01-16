@@ -6,8 +6,8 @@ permalink: "/en/portfolio/acswiftui-navigation/"
 date: 2025-03-16
 github: "https://github.com/antoniocasto/ACSwiftUINavigation"
 description: "A Swift Package (SPM) for implementing clean, modular navigation flows in SwiftUI apps."
-thumbnail: "/assets/images/portfolio/acswiftui-navigation.svg"
-thumbnail_alt: "ACSwiftUINavigation navigation icon"
+thumbnail: "/assets/images/portfolio/acswiftui-navigation.png"
+thumbnail_alt: "ACSwiftUINavigation preview"
 technologies: ["SwiftUI", "Swift Package Manager", "Navigation", "State Management"]
 published: true
 ---
