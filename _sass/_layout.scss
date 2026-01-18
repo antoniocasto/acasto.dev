@@ -24,6 +24,23 @@ main.container {
     flex: 1;
 }
 
+.page-content--blog,
+.page-content--contacts {
+    width: 100%;
+    align-self: stretch;
+    text-align: left;
+}
+
+.page-content--blog > *,
+.page-content--contacts > * {
+    width: 100%;
+    max-width: 100%;
+}
+
+.page-content--blog #category-filters h3 {
+    display: block;
+}
+
 .site-footer {
     color: var(--text-muted);
     font-size: 0.9rem;
