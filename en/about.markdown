@@ -25,7 +25,7 @@ permalink: "/en/about/"
     <p>I design and build iOS apps with a focus on modularity, scalability, and testability.</p>
     <p>From architecture to delivery, I collaborate closely with teams and ship reliable features with clear ownership.</p>
     <ul class="highlights-list">
-      <li>SwiftUI &amp; UIKit with maintainable architectures (MVVM, VIPER, TCA, Coordinator).</li>
+      <li>SwiftUI &amp; UIKit with maintainable architectures (MVVM, VIPER, TCA, Coordinator, Repository pattern).</li>
       <li>CI/CD: Fastlane + GitLab CI/CD, SwiftLint, automated tests.</li>
       <li>R&amp;D work with ARKit, SceneKit, CoreML.</li>
       <li>Multiple environments with targets/schemes/build configs; Tuist.</li>
@@ -68,7 +68,7 @@ permalink: "/en/about/"
   <div class="about-card">
     <ul class="skill-list">
       <li><strong>Frameworks:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
-      <li><strong>Architecture:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator.</li>
+      <li><strong>Architecture:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator, Repository pattern.</li>
       <li><strong>Concurrency:</strong> Swift Concurrency up to Swift 6.2 (Approachable Concurrency): async/await, structured concurrency (Task, TaskGroup), actors; Grand Central Dispatch (GCD): queues, sync/async coordination; bridging legacy APIs to async/await with continuations (checked/unsafe when needed).</li>
       <li><strong>Communication &amp; event streams:</strong> Advanced AsyncStream / AsyncSequence: consuming streams produced via AsyncStream.Continuation; handling cancellation; designing event pipelines; Combine (basic): observing @Published and reacting to value changes; delegate pattern; callbacks and completion handlers.</li>
       <li><strong>Localization:</strong> String Catalogs for iOS localization workflows.</li>

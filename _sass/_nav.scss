@@ -1,12 +1,17 @@
+:root {
+  --nav-logo-size: 40px;
+  --nav-logo-gap: 1rem;
+}
+
 // Desktop Logo dimensions (visible on desktop)
 .desktop-logo .logo-img {
-  height: 40px;  // Adjust height as desired
+  height: var(--nav-logo-size);  // Adjust height as desired
   width: auto;
 }
 
 // Mobile Logo dimensions (visible on mobile, centered in nav-center)
 .mobile-logo .logo-img {
-  height: 40px;  // Adjust height for mobile if needed
+  height: var(--nav-logo-size);  // Adjust height for mobile if needed
   width: auto;
 }
 
@@ -192,7 +197,7 @@
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--nav-logo-gap);
 }
 
 // Desktop Logo (visible on desktop)

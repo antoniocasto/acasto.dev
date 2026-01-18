@@ -136,7 +136,7 @@
   </div>
 
   <!-- Main content area -->
-  <main class="container">
+  <main class="container{% if page.ref %} page-content--{{ page.ref }}{% endif %}">
     {{ content }}
   </main>
 
