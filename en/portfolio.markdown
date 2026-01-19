@@ -14,6 +14,20 @@ Here you will find some personal projects I worked on. Stay tuned!
 Here are some personal projects I worked on:
 {% endif %}
 
+<div class="portfolio-grid">
 {% for project in localized_projects %}
-**[{{ project.title }}]({{ project.url | relative_url }})** – {{ project.description }}
+  <a class="portfolio-card" href="{{ project.url | relative_url }}">
+    <div class="portfolio-card__media">
+      {% if project.thumbnail %}
+      <img src="{{ project.thumbnail }}" alt="{{ project.thumbnail_alt | default: project.title }}">
+      {% else %}
+      <span class="portfolio-card__icon" aria-hidden="true">📦</span>
+      {% endif %}
+    </div>
+    <div class="portfolio-card__body">
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
+    </div>
+  </a>
 {% endfor %}
+</div>

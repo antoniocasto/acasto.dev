@@ -6,6 +6,8 @@ permalink: "/it/portfolio/swiftui-clima/"
 date: 2025-03-09
 github: "https://github.com/antoniocasto/SwiftUIClima"
 description: "Un'app iOS per il meteo scritta in SwiftUI."
+thumbnail: "https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png"
+thumbnail_alt: "Schermata meteo di SwiftUIClima"
 technologies: ["SwiftUI", "LottieFiles", "OpenWeather API", "MVVM", "CoreData", "CoreLocation", "UserDefaults", "URLSession"]
 published: true
 ---

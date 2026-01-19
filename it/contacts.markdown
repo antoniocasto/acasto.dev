@@ -9,10 +9,10 @@ permalink: "/it/contacts/"
 Sentiti libero di inviarmi un messaggio oppure di contattarmi attraverso i miei profili social.  
 
 ## Email  
-Puoi contattarmi via email a [{{ site.email }}](mailto:{{ site.email }}).
+Puoi contattarmi via email a <span class="contact-item"><span class="contact-icon" aria-hidden="true">✉️</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>.
 
 ## Social  
-[LinkedIn]({{ site.linkedin_link }})
+<span class="contact-item"><span class="contact-icon" aria-hidden="true">💼</span><a href="{{ site.linkedin_link }}" target="_blank" rel="noopener">LinkedIn</a></span>
 
 ## Sviluppo  
-[GitHub]({{ site.github_link }})
+<span class="contact-item"><span class="contact-icon" aria-hidden="true">🐙</span><a href="{{ site.github_link }}" target="_blank" rel="noopener">GitHub</a></span>

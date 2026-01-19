@@ -6,15 +6,47 @@
 
 // Container class for setting the maximum width and centering the content
 .container {
-    max-width: 800px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 // Site header class with padding and a glass effect
 .site-header {
     padding: 1rem 0;
-    @include glass(10px); // Applying glass effect with 10px blur
+    @include glass(16px); // Applying glass effect with 16px blur
+    border-bottom: 1px solid var(--border-color);
+}
+
+main.container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    flex: 1;
+}
+
+.page-content--blog,
+.page-content--contacts {
+    width: 100%;
+    align-self: stretch;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.page-content--blog > *,
+.page-content--contacts > * {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.page-content--blog #category-filters h3 {
+    display: block;
+}
+
+.site-footer {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding-bottom: 2rem;
 }
 
 /* Basic rules for the menu inside the site header */
