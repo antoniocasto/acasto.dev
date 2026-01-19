@@ -9,17 +9,16 @@ body {
 
 html {
   background-color: var(--background-color);
+  background-image: var(--page-gradient);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 // Base styles for the body element
 body {
   font-family: var(--font-stack); // Use custom font stack
   color: var(--text-color); // Use custom text color
-  background-color: var(--background-color); // Use custom background color
-  background-image: var(--page-gradient);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: transparent; // Use custom background color
   margin: 0; // Remove default margin
   transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
