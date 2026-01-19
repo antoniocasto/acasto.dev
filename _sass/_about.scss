@@ -1,16 +1,16 @@
 .about-page {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--space-xl);
   line-height: 1.7;
 }
 
 .about-hero {
   display: grid;
-  gap: 2rem;
+  gap: var(--space-xl);
   align-items: start;
-  padding: 2.5rem;
-  border-radius: 20px;
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
   background: var(--hero-bg);
   border: 1px solid var(--border-color);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
@@ -43,7 +43,7 @@
   inline-size: 150px;
   block-size: 150px;
   aspect-ratio: 1 / 1;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   position: relative;
   display: grid;
   place-items: center;
@@ -84,8 +84,8 @@
 }
 
 .role-badge {
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-pill);
   font-size: 0.85rem;
   font-weight: 600;
   background: var(--surface-color);
@@ -101,8 +101,8 @@
 .about-hero__summary {
   background: color-mix(in srgb, var(--surface-color) 85%, transparent);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
@@ -117,23 +117,23 @@
 .about-section {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-md);
 }
 
 .about-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: var(--space-lg);
 }
 
 .about-card {
   background-color: var(--surface-color);
-  border-radius: 16px;
-  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
   border: 1px solid var(--border-color);
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: var(--space-sm);
   animation: fadeUp 0.6s ease both;
 }
 
@@ -144,7 +144,7 @@
 .about-card ul {
   margin: 0.5rem 0 0 1.2rem;
   display: grid;
-  gap: 0.5rem;
+  gap: var(--space-xs);
 }
 
 .meta {
@@ -158,24 +158,24 @@
   padding-left: 0;
   margin: 0;
   display: grid;
-  gap: 0.75rem;
+  gap: var(--space-sm);
   color: var(--text-muted);
 }
 
 .about-details {
   background: var(--surface-color);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
 }
 
 .about-details summary {
   cursor: pointer;
-  padding: 1rem 1.5rem;
+  padding: var(--space-md) var(--space-lg);
   font-weight: 600;
   color: var(--text-color);
   position: relative;
-  padding-right: 2.75rem;
+  padding-right: var(--space-2xl);
   list-style: none;
 }
 
@@ -186,7 +186,7 @@
 .about-details summary::after {
   content: "";
   position: absolute;
-  right: 1.5rem;
+  right: var(--space-lg);
   top: 50%;
   width: 14px;
   height: 10px;
@@ -208,10 +208,10 @@
 }
 
 .about-details > .about-details__content {
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 var(--space-lg) var(--space-lg);
   color: var(--text-muted);
   display: grid;
-  gap: 0.75rem;
+  gap: var(--space-sm);
   max-height: 0;
   opacity: 0;
   transform: translateY(-6px);
@@ -233,7 +233,7 @@
 .cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: var(--space-sm);
   align-items: baseline;
   margin-top: 0.35rem;
   justify-content: center;
@@ -246,8 +246,8 @@
 .cta-button {
   background: var(--accent-gradient);
   color: #fff;
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-pill);
   font-weight: 600;
   border: none;
   display: inline-flex;
@@ -272,8 +272,8 @@
   font-weight: 600;
   color: var(--primary-color);
   text-decoration: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
   background: var(--surface-color);
   display: inline-flex;
