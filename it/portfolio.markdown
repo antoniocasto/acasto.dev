@@ -11,7 +11,7 @@ permalink: "/it/portfolio/"
 {% if localized_projects.size == 0 %}
 Qui troverai alcuni progetti personali su cui ho lavorato. Resta sintonizzato!
 {% else %}
-Ecco alcuni progetti personali su cui ho lavorato:
+Ecco alcuni progetti personali su cui ho lavorato. Sono tappe della mia crescita e non riflettono completamente il mio livello attuale.
 {% endif %}
 
 <div class="portfolio-grid">

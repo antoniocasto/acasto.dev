@@ -11,7 +11,7 @@ permalink: "/en/portfolio/"
 {% if localized_projects.size == 0 %}
 Here you will find some personal projects I worked on. Stay tuned!
 {% else %}
-Here are some personal projects I worked on:
+Here are some personal projects I worked on. They mark stages of my growth and don’t fully reflect where I am today.
 {% endif %}
 
 <div class="portfolio-grid">
