@@ -13,7 +13,7 @@ permalink: "/en/about/"
       </div>
       <span class="role-badge">iOS Developer</span>
     </div>
-    <h1>Antonio Casto — iOS Developer (SwiftUI &amp; UIKit)</h1>
+    <h1>Antonio Casto</h1>
     <p class="role-line">Based in Italy · Fully bilingual (English/Italian)</p>
     <div class="cta-row">
       <a class="cta-button" href="/assets/cv/antonio-casto-cv-en.pdf">Download CV (PDF)</a>
