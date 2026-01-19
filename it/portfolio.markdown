@@ -11,13 +11,13 @@ permalink: "/it/portfolio/"
 {% if localized_projects.size == 0 %}
 Qui troverai alcuni progetti personali su cui ho lavorato. Resta sintonizzato!
 {% else %}
-Ecco alcuni progetti personali su cui ho lavorato:
+Ecco alcuni progetti personali su cui ho lavorato. Sono tappe della mia crescita e non riflettono completamente il mio livello attuale.
 {% endif %}
 
 <div class="portfolio-grid">
 {% for project in localized_projects %}
   <a class="portfolio-card" href="{{ project.url | relative_url }}">
-    <div class="portfolio-card__media">
+    <div class="portfolio-card__media"{% if project.thumbnail_bg %} style="--portfolio-thumb-bg: {{ project.thumbnail_bg }};"{% endif %}>
       {% if project.thumbnail %}
       <img src="{{ project.thumbnail }}" alt="{{ project.thumbnail_alt | default: project.title }}">
       {% else %}
