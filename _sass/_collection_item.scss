@@ -2,16 +2,25 @@
   background-color: var(--collection-bg); // Background color for collection items
   padding: 2rem; // Padding around collection items
   margin-bottom: 2rem; // Space below each collection item
+<<<<<<< HEAD
   border-radius: 16px; // Rounded corners for collection items
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08); // Subtle shadow for collection items
   border: 1px solid var(--border-color);
+=======
+  border-radius: 8px; // Rounded corners for collection items
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for collection items
+>>>>>>> main
   color: var(--text-color); // Text color for collection items
 }
 
 .collection_item h1 {
   margin-top: 0; // No margin at the top of h1 in collection items
   margin-bottom: 1rem; // Space below h1 in collection items
+<<<<<<< HEAD
   font-size: 2.1rem; // Font size for h1 in collection items
+=======
+  font-size: 2rem; // Font size for h1 in collection items
+>>>>>>> main
   color: var(--text-color); // Text color for h1 in collection items
 }
 
@@ -26,16 +35,25 @@
   background-color: var(--collection-bg); // Background color for post items
   padding: 1rem; // Padding around post items
   margin-bottom: 1rem; // Space below each post item
+<<<<<<< HEAD
   border-radius: 12px; // Rounded corners for post items
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08); // Subtle shadow for post items
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; // Smooth transition for background color on hover
   border: 1px solid var(--border-color);
+=======
+  border-radius: 8px; // Rounded corners for post items
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow for post items
+  transition: background-color 0.3s ease; // Smooth transition for background color on hover
+>>>>>>> main
 }
 
 .post-item:hover {
   background-color: var(--blog-tile-hover-bg); // Background color for post items on hover
+<<<<<<< HEAD
   transform: translateY(-2px);
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+=======
+>>>>>>> main
 }
 
 .post-item strong a {
@@ -55,4 +73,8 @@
 .post-date {
   color: var(--text-color); // Text color for post dates
   font-size: 0.8rem; // Font size for post dates
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

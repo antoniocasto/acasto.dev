@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Theme management
   const themeToggle = document.getElementById('theme-toggle');
+<<<<<<< HEAD
   const themeIconSvg = document.querySelector('.theme-icon');
   const themeIconUse = document.querySelector('.theme-icon use');
   const overlay = document.querySelector('.theme-overlay');
@@ -14,14 +15,25 @@ document.addEventListener('DOMContentLoaded', function () {
     themeIconUse.setAttribute('href', href);
     themeIconUse.setAttribute('xlink:href', href);
   };
+=======
+  const themeIcon = document.querySelector('.theme-icon');
+  const overlay = document.querySelector('.theme-overlay');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+>>>>>>> main
 
   // Set theme based on saved preference
   if (currentTheme === 'dark') {
     document.body.classList.add('dark-theme');
     if (themeToggle) themeToggle.checked = true;
+<<<<<<< HEAD
     setThemeIcon('dark');
   } else {
     setThemeIcon('light');
+=======
+    if (themeIcon) themeIcon.textContent = '☀️';
+  } else {
+    if (themeIcon) themeIcon.textContent = '🌙';
+>>>>>>> main
   }
 
   // Theme toggle event listener
@@ -39,18 +51,32 @@ document.addEventListener('DOMContentLoaded', function () {
         if (this.checked) {
           document.body.classList.add('dark-theme');
           localStorage.setItem('theme', 'dark');
+<<<<<<< HEAD
           setThemeIcon('dark');
           if (themeIconSvg) {
             themeIconSvg.classList.add('rotate-animation');
             setTimeout(() => themeIconSvg.classList.remove('rotate-animation'), 500);
+=======
+          if (themeIcon) {
+            themeIcon.textContent = '☀️';
+            themeIcon.classList.add('rotate-animation');
+            setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
+>>>>>>> main
           }
         } else {
           document.body.classList.remove('dark-theme');
           localStorage.setItem('theme', 'light');
+<<<<<<< HEAD
           setThemeIcon('light');
           if (themeIconSvg) {
             themeIconSvg.classList.add('rotate-animation');
             setTimeout(() => themeIconSvg.classList.remove('rotate-animation'), 500);
+=======
+          if (themeIcon) {
+            themeIcon.textContent = '🌙';
+            themeIcon.classList.add('rotate-animation');
+            setTimeout(() => themeIcon.classList.remove('rotate-animation'), 500);
+>>>>>>> main
           }
         }
         // Remove class to reuse animation on next change

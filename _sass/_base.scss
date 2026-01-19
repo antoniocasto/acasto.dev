@@ -2,6 +2,7 @@
   Define base global styles using CSS custom properties
 */
 
+<<<<<<< HEAD
 html,
 body {
   height: 100%;
@@ -21,12 +22,21 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+=======
+// Base styles for the body element
+body {
+  font-family: var(--font-stack); // Use custom font stack
+  color: var(--text-color); // Use custom text color
+  background-color: var(--background-color); // Use custom background color
+  margin: 0; // Remove default margin
+>>>>>>> main
 }
 
 // Base styles for heading elements
 h1, h2, h3, h4 {
   font-weight: 600; // Set font weight to 600
   margin-bottom: 0.5em; // Add margin below headings
+<<<<<<< HEAD
   color: var(--text-color);
   font-family: var(--font-display);
 }
@@ -41,20 +51,29 @@ h3 {
 p {
   line-height: 1.7;
   color: var(--text-muted);
+=======
+>>>>>>> main
 }
 
 // Base styles for links
 a {
   color: var(--primary-color); // Use custom primary color
   text-decoration: none; // Remove default underline
+<<<<<<< HEAD
   transition: color 0.2s ease, opacity 0.2s ease;
+=======
+>>>>>>> main
 }
 
 // Hover effect for links
 a:hover {
   text-decoration: underline; // Add underline on hover
+<<<<<<< HEAD
 }
 
 ::selection {
   background: rgba(37, 99, 235, 0.2);
 }
+=======
+}
+>>>>>>> main

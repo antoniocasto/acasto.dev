@@ -1,7 +1,11 @@
 .glass-panel {
   @include glass(15px); // Apply glass effect with 15px blur
   border-radius: 8px; // Rounded corners
+<<<<<<< HEAD
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1); // Subtle shadow
+=======
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Subtle shadow
+>>>>>>> main
 }
 
 .menu li.active a {
@@ -9,6 +13,7 @@
   color: var(--primary-color); // Primary color for active menu item
 }
 
+<<<<<<< HEAD
 .icon {
   width: 1em;
   height: 1em;
@@ -35,6 +40,8 @@
   margin-right: 0.35rem;
 }
 
+=======
+>>>>>>> main
 /* Category filter tiles */
 .tiles-container {
   display: flex; // Flexbox layout
@@ -46,7 +53,11 @@
 .filter-tile {
   cursor: pointer; // Pointer cursor on hover
   padding: 0.1rem 0.7rem; // Padding inside the tile
+<<<<<<< HEAD
   border: 1px solid var(--border-color); // Light gray border
+=======
+  border: 1px solid #ccc; // Light gray border
+>>>>>>> main
   border-radius: 9999px; // Fully rounded corners
   font-weight: normal; // Normal font weight
   color: var(--text-color); // Text color from variable
@@ -68,7 +79,11 @@
 
 .post-date {
   font-size: 0.7rem; // Small font size
+<<<<<<< HEAD
   color: var(--text-muted); // Muted color
+=======
+  color: #666; // Gray color
+>>>>>>> main
 }
 
 .category-tile {
@@ -112,7 +127,11 @@
   z-index: 1100; // High z-index to be on top
   width: 50px; // Fixed width
   height: 50px; // Fixed height
+<<<<<<< HEAD
   background: var(--switch-bg); // Background from variable
+=======
+  background-color: var(--switch-bg); // Background color from variable
+>>>>>>> main
   border-radius: 50%; // Fully rounded corners
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Subtle shadow
   cursor: pointer; // Pointer cursor on hover
@@ -144,9 +163,13 @@
 
 /* Icon style */
 .theme-icon {
+<<<<<<< HEAD
   width: 24px; // Icon size
   height: 24px;
   display: block;
+=======
+  font-size: 24px; // Icon size
+>>>>>>> main
   color: var(--switch-icon-color); // Icon color from variable
   transition: color 0.3s ease; // Smooth transition for color
 }
@@ -169,6 +192,7 @@
 
 .theme-overlay.expand {
   transform: scale(var(--overlay-scale, 100)); // Expand to full size
+<<<<<<< HEAD
 }
 
 .portfolio-grid {
@@ -243,3 +267,6 @@
 .contact-icon {
   font-size: 1rem;
 }
+=======
+}
+>>>>>>> main

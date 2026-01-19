@@ -14,6 +14,7 @@
 // Site header class with padding and a glass effect
 .site-header {
     padding: 1rem 0;
+<<<<<<< HEAD
     @include glass(16px); // Applying glass effect with 16px blur
     border-bottom: 1px solid var(--border-color);
 }
@@ -62,3 +63,21 @@ main.container {
 .site-header .menu li a {
     font-weight: 500; // Setting font weight to 500
 }
+=======
+    @include glass(10px); // Applying glass effect with 10px blur
+}
+
+/* Basic rules for the menu inside the site header */
+.site-header .menu {
+    list-style: none; // Removing default list styling
+    margin: 0; // Removing default margin
+    padding: 0; // Removing default padding
+    display: flex; // Using flexbox for layout
+    gap: 1rem; // Adding space between menu items
+}
+
+// Styling for links inside the menu
+.site-header .menu li a {
+    font-weight: 500; // Setting font weight to 500
+}
+>>>>>>> main
