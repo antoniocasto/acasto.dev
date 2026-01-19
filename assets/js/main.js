@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const openSideMenu = () => {
     if (!sideMenu) return;
     sideMenu.classList.add('open');
+    sideMenu.setAttribute('aria-hidden', 'false');
     if (menuOverlay) menuOverlay.classList.add('open');
     document.body.classList.add('menu-open');
     if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeSideMenu = () => {
     if (!sideMenu) return;
     sideMenu.classList.remove('open');
+    sideMenu.setAttribute('aria-hidden', 'true');
     if (menuOverlay) menuOverlay.classList.remove('open');
     document.body.classList.remove('menu-open');
     if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');

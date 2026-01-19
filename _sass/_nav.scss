@@ -298,32 +298,57 @@
 // Sidebar (Side Menu)
 .side-menu {
   position: fixed;
-  top: 0;
+  top: 50%;
+  left: 50%;
   right: auto;
-  bottom: 0;
-  left: 0;
-  transform: translateX(-100%); // Hide the sidebar by default
-  width: 80%;
-  max-width: 300px;
-  height: 100vh;
-  height: 100dvh;
+  bottom: auto;
+  transform: translate(-50%, -48%) scale(0.98); // Hidden modal state
+  width: 90vw;
+  max-width: 420px;
+  height: auto;
+  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - var(--space-xl));
   box-sizing: border-box;
   background-color: rgba(var(--side-menu-bg-rgb) / 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 10px 0 30px rgba(15, 23, 42, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s ease, opacity 0.3s ease;
   z-index: 1300;
-  padding: calc(2rem + env(safe-area-inset-top)) calc(1.5rem + env(safe-area-inset-right)) calc(2rem + env(safe-area-inset-bottom)) calc(1.5rem + env(safe-area-inset-left));
+  padding: calc(var(--space-xl) + env(safe-area-inset-top, 0px))
+    calc(var(--space-xl) + env(safe-area-inset-right, 0px))
+    calc(var(--space-lg) + env(safe-area-inset-bottom, 0px))
+    calc(var(--space-xl) + env(safe-area-inset-left, 0px));
   display: flex;
   flex-direction: column;
   gap: 1rem;
   overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
 }
 
 // Rule to show the sidebar
 .side-menu.open {
-  transform: translateX(0);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.38);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1200;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .menu-overlay {
@@ -345,7 +370,7 @@
 .side-menu .side-menu-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 1rem;
 }
 
@@ -361,7 +386,6 @@
 
 .close-menu:hover {
   color: var(--primary-color);
-  transform: rotate(90deg);
 }
 
 // Sidebar menu list
