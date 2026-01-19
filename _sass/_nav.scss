@@ -351,6 +351,21 @@
   pointer-events: auto;
 }
 
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.38);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1200;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 // Sidebar header (with close button)
 .side-menu .side-menu-header {
   display: flex;
