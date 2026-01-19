@@ -1,8 +1,8 @@
 .collection_item {
   background-color: var(--collection-bg); // Background color for collection items
-  padding: 2rem; // Padding around collection items
-  margin-bottom: 2rem; // Space below each collection item
-  border-radius: 16px; // Rounded corners for collection items
+  padding: var(--space-xl); // Padding around collection items
+  margin-bottom: var(--space-xl); // Space below each collection item
+  border-radius: var(--radius-lg); // Rounded corners for collection items
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08); // Subtle shadow for collection items
   border: 1px solid var(--border-color);
   color: var(--text-color); // Text color for collection items
@@ -24,9 +24,9 @@
 /* Specific style for blog tiles (post-item) */
 .post-item {
   background-color: var(--collection-bg); // Background color for post items
-  padding: 1rem; // Padding around post items
-  margin-bottom: 1rem; // Space below each post item
-  border-radius: 12px; // Rounded corners for post items
+  padding: var(--space-md); // Padding around post items
+  margin-bottom: var(--space-md); // Space below each post item
+  border-radius: var(--radius-md); // Rounded corners for post items
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08); // Subtle shadow for post items
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; // Smooth transition for background color on hover
   border: 1px solid var(--border-color);
