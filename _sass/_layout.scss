@@ -29,12 +29,14 @@ main.container {
     width: 100%;
     align-self: stretch;
     text-align: left;
+    box-sizing: border-box;
 }
 
 .page-content--blog > *,
 .page-content--contacts > * {
     width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
 }
 
 .page-content--blog #category-filters h3 {
