@@ -12,6 +12,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="acasto" />
   <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   
   <!-- Link to the main CSS file -->
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -70,7 +75,14 @@
       <!-- Nav Right: Language selector (always visible) -->
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary>IT</summary>
+          <summary>
+            <span class="language-icon" aria-hidden="true">
+              <svg class="icon icon--sm">
+                <use href="/assets/images/icons.svg#icon-globe"></use>
+              </svg>
+            </span>
+            <span class="language-label">IT</span>
+          </summary>
           <ul class="language-options">
             <li>
                   <a href="/en/about/">EN</a>
@@ -118,127 +130,138 @@
   </div>
 
   <!-- Main content area -->
-  <main class="container">
-    <!-- This is the about page layout for Antonio Casto's personal website. 
-  It includes a header section with a profile image and name, 
-  followed by the main content of the page. -->
-<div class="about-header">
-  <div class="about-container">
-    <div class="circular-border">
-   <div class="circular-container">
-     <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="circular-image">
-   </div>
+  <main class="container page-content--about">
+    <!-- This is the about page layout for Antonio Casto's personal website. -->
+<div class="about-page">
+  <section class="about-hero">
+  <div class="about-hero__identity">
+    <div class="avatar-block">
+      <div class="avatar-ring">
+        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image" />
+      </div>
+      <span class="role-badge">iOS Developer</span>
     </div>
-    <div class="profile-name">
-   <p class="cursive-name">Antonio Casto</p>
+    <h1>Antonio Casto</h1>
+    <p class="role-line">In Italia · Bilingue (italiano/inglese)</p>
+    <div class="cta-row">
+      <a class="cta-button" href="/assets/cv/antonio-casto-cv-it.pdf">Scarica il CV (PDF)</a>
+      <a class="cta-button cta-button--ghost" href="/it/portfolio/">Guarda il Portfolio</a>
+      <a class="cta-link" href="/it/contacts/">Contattami</a>
     </div>
   </div>
+  <div class="about-hero__summary">
+    <p>Progetto e sviluppo app iOS con focus su modularità, scalabilità e testabilità.</p>
+    <p>Dall’architettura al delivery, collaboro con il team e porto in produzione funzionalità affidabili.</p>
+    <ul class="highlights-list">
+      <li>SwiftUI &amp; UIKit con architetture manutenibili (MVVM, VIPER, TCA, Coordinator, Repository pattern).</li>
+      <li>CI/CD: Fastlane + GitLab CI/CD, SwiftLint, test automatizzati.</li>
+      <li>R&amp;D con ARKit, SceneKit, CoreML.</li>
+      <li>Ambienti multipli con target/scheme/build config; Tuist.</li>
+      <li>Collaborazione con team distribuiti su più fusi orari.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about-section">
+  <h2>Esperienza Lavorativa</h2>
+  <div class="about-grid">
+    <article class="about-card">
+      <header>
+        <h3>iOS Developer — Hidonix</h3>
+        <p class="meta">Catania, Italia · 9 ottobre 2023 — Presente</p>
+      </header>
+      <ul>
+        <li>Progettazione e sviluppo di applicazioni iOS con SwiftUI e UIKit.</li>
+        <li>Manutenzione e miglioramento iterativo di funzionalità e codebase esistenti.</li>
+        <li>Attività di ricerca e sviluppo per valutare nuove tecnologie e migliorare le soluzioni attuali.</li>
+        <li>Collaborazione nel team per risolvere sfide tecniche e allinearsi su approcci efficaci.</li>
+      </ul>
+    </article>
+    <article class="about-card">
+      <header>
+        <h3>Developer — Borsa di Ricerca</h3>
+        <p class="meta">Nexa Center for Internet &amp; Society — Politecnico di Torino (DAUIN)</p>
+        <p class="meta">Ottobre 2021 — Ottobre 2022 (Remoto — Torino, Italia)</p>
+      </header>
+      <ul>
+        <li>Contributo a un sistema di raccomandazione per il progetto europeo Erasmus+ CLIKC.</li>
+        <li>Lavoro su un sistema di apprendimento adattivo che sfrutta tecnologie semantiche per migliorare le raccomandazioni di contenuti personalizzati.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="about-section">
+  <h2>Competenze iOS Principali</h2>
+  <div class="about-card">
+    <ul class="skill-list">
+      <li><strong>Framework:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
+      <li><strong>Architettura:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator, Repository pattern.</li>
+      <li><strong>Concorrenza:</strong> Swift Concurrency fino a Swift 6.2 (Approachable Concurrency): async/await, structured concurrency (Task, TaskGroup), actor; Grand Central Dispatch (GCD): code, coordinamento sync/async; bridge di API legacy verso async/await tramite continuations (checked/unsafe quando serve).</li>
+      <li><strong>Comunicazione e flussi di eventi:</strong> AsyncStream / AsyncSequence avanzato: consumo di stream prodotti via AsyncStream.Continuation; gestione della cancellazione; progettazione di pipeline di eventi; Combine (base): osservazione di @Published e reazione ai cambiamenti di valore; pattern Delegate; callback e completion handler.</li>
+      <li><strong>Localizzazione:</strong> String Catalogs per i flussi di localizzazione iOS.</li>
+      <li><strong>Networking &amp; dati:</strong> REST API, Firebase (esperienza), MongoDB (esperienza), FastAPI (esperienza).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about-section">
+  <h2>Qualità &amp; Delivery</h2>
+  <div class="about-card">
+    <ul class="skill-list">
+      <li><strong>Gestione dipendenze:</strong> Swift Package Manager (aggiunta di dipendenze e pacchetti interni riutilizzabili), CocoaPods.</li>
+      <li><strong>CI/CD e automazione:</strong> Fastlane, GitLab CI/CD.</li>
+      <li><strong>Configurazione progetto:</strong> ambienti multipli (sviluppo, staging, rilascio) con target, scheme e build configuration; Tuist.</li>
+      <li><strong>Pubblicazione:</strong> invio in App Store e distribuzione di beta via TestFlight.</li>
+      <li><strong>Monitoraggio:</strong> Firebase Crashlytics.</li>
+      <li><strong>Testing e qualità:</strong> XCTest, UI Testing, TDD, Mocking, SwiftLint.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about-section">
+  <h2>Formazione</h2>
+  <div class="about-card">
+    <ul class="skill-list">
+      <li>Laurea Magistrale in Ingegneria Informatica (Software) — Politecnico di Torino (2018–2022).</li>
+      <li>Laurea Triennale in Ingegneria Informatica — Politecnico di Torino (2014–2018).</li>
+      <li>Liceo scientifico (P.N.I.) — I.I.S. “Matteo Raeli”, Noto (2008–2013).</li>
+      <li>IELTS 5.5 — British Council.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about-section">
+  <h2>Formazione Continua</h2>
+  <div class="about-card">
+    <p>La formazione continua è parte integrante del mio lavoro: studio ogni settimana, sperimento e metto subito in pratica ciò che imparo.</p>
+    <p>Mi aggiorno con Hacking with Swift, Design+Code e Point-Free, insieme a documentazione ufficiale e libri.</p>
+    <p>Tra i mentors che seguo con costanza: Sean Allen, Donny Wals, Antoine van der Lee e Paul Hudson.</p>
+    <p>Resto allineato alle novità WWDC e alle discussioni della community iOS su Reddit e LinkedIn.</p>
+  </div>
+</section>
+
+<section class="about-section">
+  <h2>Tecnologie Aggiuntive</h2>
+  <details class="about-details">
+    <summary>Vedi strumenti e piattaforme di supporto</summary>
+    <div class="about-details__content">
+      <p><strong>Piattaforme:</strong> Flutter, Kotlin Multiplatform, React, Angular, Spring Boot.</p>
+      <p><strong>Linguaggi:</strong> Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript.</p>
+      <p><strong>Strumenti:</strong> Xcode, VS Code, Android Studio — Postman, Proxyman, Swagger — GitHub, GitLab.</p>
+    </div>
+  </details>
+</section>
+
+<section class="about-section">
+  <div class="cta-row cta-row--full">
+    <a class="cta-button" href="/assets/cv/antonio-casto-cv-it.pdf">Scarica il CV (PDF)</a>
+    <a class="cta-button cta-button--ghost" href="/it/portfolio/">Guarda il Portfolio</a>
+    <a class="cta-link" href="/it/contacts/">Contattami</a>
+  </div>
+</section>
+
 </div>
-  
-<h1 id="chi-sono">Chi Sono</h1>
-<p><strong>Sviluppatore iOS Appassionato</strong><br />
-Appassionato di <strong>informatica</strong> sin da bambino, ho sempre nutrito una profonda curiosità per il funzionamento del <strong>software</strong>.<br />
-L’avvento degli <strong>smartphone e delle app</strong> ha ampliato i miei orizzonti, mostrandomi il potenziale di creare <strong>soluzioni</strong> che migliorano la vita quotidiana delle persone.</p>
-
-<p>Lo <strong>sviluppo mobile</strong> è sempre stato il mio principale interesse, e ho soddisfatto la mia curiosità frequentando corsi universitari e attività extracurriculari.<br />
-Ho iniziato con lo sviluppo per <strong>Android</strong>, poi sono passato allo sviluppo cross-platform con <strong>Flutter</strong>, ed infine mi sono dedicato allo sviluppo iOS con <strong>SwiftUI</strong>.</p>
-
-<p>Ho trasformato la mia passione in una <strong>carriera professionale</strong>, ampliando le mie competenze imparando <strong>UIKit</strong>, pattern architetturali come <strong>VIPER, MVVM e TCA</strong>, tecnologie di realtà aumentata come <strong>ARKit e SceneKit</strong> e pratiche di <strong>CI/CD</strong>, utilizzando strumenti come <strong>SwiftLint e Fastlane</strong>.</p>
-
-<p>Attualmente, mi sto concentrando nel migliorare il mio approccio alla creazione di applicazioni <strong>modulari, testabili e altamente scalabili</strong>.<br />
-Mi piace <strong>condividere le sfide</strong> con il mio team e collaborare per trovare le soluzioni più <strong>efficaci</strong>.<br />
-Penso sempre <strong>prima di scrivere codice</strong>. Se non so come fare qualcosa, mi informo e consulto sviluppatori con maggiore esperienza.</p>
-
-<h2 id="esperienza-lavorativa">Esperienza Lavorativa</h2>
-
-<h3 id="sviluppatore-ios">Sviluppatore iOS</h3>
-<p><strong>Hidonix</strong> - <em>Catania, Italia</em><br />
-📅 <strong>9 ottobre 2023 – Presente</strong></p>
-
-<ul>
-  <li><strong>Progettazione, sviluppo, test, distribuzione e manutenzione</strong> di applicazioni iOS all’interno dell’azienda.</li>
-  <li>Attività di <strong>ricerca e sviluppo</strong> per esplorare nuove tecnologie e migliorare le soluzioni esistenti.</li>
-</ul>
-
-<h3 id="sviluppatore--borsa-di-studio-di-ricerca">Sviluppatore – Borsa di Studio di Ricerca</h3>
-<p><strong>Nexa Center for Internet &amp; Society – Politecnico di Torino – DAUIN</strong><br />
-📅 <strong>ottobre 2021 – ottobre 2022</strong> <em>(Remoto – Torino, Italia)</em></p>
-
-<ul>
-  <li>Ho contribuito allo sviluppo di un <strong>sistema di raccomandazione</strong> per il progetto europeo <strong>Erasmus+ CLIKC</strong> (<em>Content and Language Integrated Learning for Key Competences</em>).</li>
-  <li>Ho lavorato a un <strong>sistema di apprendimento adattivo</strong> che sfrutta tecnologie semantiche per migliorare le raccomandazioni di contenuti personalizzati.</li>
-</ul>
-
-<h2 id="competenze-nello-sviluppo">Competenze nello Sviluppo</h2>
-
-<h3 id="sviluppo-ios">Sviluppo iOS</h3>
-<ul>
-  <li><strong>Framework e Tecnologie:</strong> SwiftUI, UIKit, ARKit, SceneKit, Core Data, MapKit, Core Location, User Defaults</li>
-  <li><strong>Architetture e Pattern:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator</li>
-  <li><strong>Networking e Gestione dei Dati:</strong> REST API, FastAPI, Firebase, MongoDB</li>
-  <li><strong>Gestione delle Dipendenze e CI/CD:</strong> Swift Package Manager (SPM), CocoaPods, Fastlane, GitLab CI/CD</li>
-  <li><strong>Qualità del Codice e Testing:</strong> SwiftLint, XCTest, UI Testing, TDD, Mocking</li>
-</ul>
-
-<h3 id="tecnologie-aggiuntive">Tecnologie Aggiuntive</h3>
-<ul>
-  <li><strong>Sviluppo Cross-Platform:</strong> Flutter, Kotlin Multiplatform</li>
-  <li><strong>Frontend e Backend:</strong> React, Angular, Spring Boot</li>
-  <li><strong>Linguaggi di Programmazione:</strong> Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript</li>
-</ul>
-
-<h3 id="strumenti">Strumenti</h3>
-<ul>
-  <li><strong>Sviluppo:</strong> Xcode, Visual Studio Code, Android Studio</li>
-  <li><strong>Debugging e Test delle API:</strong> Proxyman, Postman, Swagger</li>
-  <li><strong>Controllo Versione e Collaborazione:</strong> Git, GitHub, GitLab</li>
-</ul>
-
-<h2 id="formazione">Formazione</h2>
-
-<h3 id="ingegneria-informatica---software--laurea-magistrale">Ingegneria Informatica - Software | Laurea Magistrale</h3>
-<p><em>Politecnico di Torino</em><br />
-📅 09/2018 – 06/2022<br />
-📍 Torino, Italia</p>
-
-<h3 id="ingegneria-informatica--laurea-triennale">Ingegneria Informatica | Laurea Triennale</h3>
-<p><em>Politecnico di Torino</em><br />
-📅 09/2014 – 09/2018<br />
-📍 Torino, Italia</p>
-
-<h3 id="liceo-scientifico-pni">Liceo Scientifico P.N.I.</h3>
-<p><em>Istituto di Istruzione Superiore “Matteo Raeli” in Noto</em><br />
-📅 2008 – 2013<br />
-📍 Noto, Italia</p>
-
-<h3 id="certificazione-ielts---55">Certificazione IELTS - 5.5</h3>
-<p><em>British Council (richiesto dal Politecnico di Torino)</em></p>
-
-<h2 id="fonti-di-apprendimento-per-lo-sviluppo-ios">Fonti di Apprendimento per lo Sviluppo iOS</h2>
-<h3 id="100-days-of-swiftui---punto-di-partenza-per-lo-sviluppo-ios">100 Days of SwiftUI - Punto di Partenza per lo Sviluppo iOS</h3>
-<p><em>Hacking with Swift - Paul Hudson</em><br />
-🔗 <a href="https://www.hackingwithswift.com/100/swiftui">Sito Web</a></p>
-
-<h3 id="apprendimento-continuo">Apprendimento Continuo</h3>
-<ul>
-  <li>Studi approfonditi di SwiftUI tramite Hacking With Swift, <a href="https://www.designcode.io/">Design+Code</a> e mentori su YouTube</li>
-  <li>Concetti avanzati di iOS da Point-Free, altre risorse online, documentazioni e libri</li>
-</ul>
-
-<h2 id="competenze-trasversali">Competenze Trasversali</h2>
-
-<h3 id="lavoro-di-squadra-e-comunicazione">Lavoro di Squadra e Comunicazione</h3>
-<ul>
-  <li>Forte capacità di <strong>collaborare in team multidisciplinari</strong>.</li>
-  <li>Esperienza in ambienti internazionali, lavorando con colleghi della filiale statunitense.</li>
-  <li>Eccellenti capacità di <strong>problem-solving</strong> e adattabilità in progetti dinamici.</li>
-</ul>
-
-<h3 id="pensiero-critico-e-decision-making">Pensiero Critico e Decision Making</h3>
-<ul>
-  <li>Approccio strategico alla <strong>progettazione e allo sviluppo</strong> per una scalabilità a lungo termine.</li>
-  <li>Capacità di dare <strong>priorità alle attività</strong> in modo efficace e identificare le principali sfide tecniche.</li>
-</ul>
 
   </main>
 
@@ -251,7 +274,9 @@ Penso sempre <strong>prima di scrivere codice</strong>. Se non so come fare qual
   <div class="theme-switch">
     <input type="checkbox" id="theme-toggle">
     <label for="theme-toggle" class="theme-toggle-label">
-      <span class="theme-icon">🌙</span>
+      <svg class="theme-icon icon" aria-hidden="true">
+        <use href="/assets/images/icons.svg#icon-moon"></use>
+      </svg>
     </label>
   </div>
   <!-- Theme overlay for expansion animation on theme change -->

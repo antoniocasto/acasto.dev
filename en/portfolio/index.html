@@ -12,6 +12,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="acasto" />
   <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   
   <!-- Link to the main CSS file -->
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -70,7 +75,14 @@
       <!-- Nav Right: Language selector (always visible) -->
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary>EN</summary>
+          <summary>
+            <span class="language-icon" aria-hidden="true">
+              <svg class="icon icon--sm">
+                <use href="/assets/images/icons.svg#icon-globe"></use>
+              </svg>
+            </span>
+            <span class="language-label">EN</span>
+          </summary>
           <ul class="language-options">
             <li>
                   <a href="/it/portfolio/">IT</a>
@@ -118,14 +130,50 @@
   </div>
 
   <!-- Main content area -->
-  <main class="container">
+  <main class="container page-content--portfolio">
     <h1 id="portfolio">Portfolio</h1>
 
 <p>Here are some personal projects I worked on:</p>
 
-<p><strong><a href="/en/portfolio/notaplace/">NotAPlace</a></strong> – An iOS app built with SwiftUI to track places that evoke positive emotions.</p>
+<div class="portfolio-grid">
 
-<p><strong><a href="/en/portfolio/swiftui-clima/">SwiftUIClima</a></strong> – An iOS weather app built with SwiftUI.</p>
+  <a class="portfolio-card" href="/en/portfolio/notaplace/">
+    <div class="portfolio-card__media">
+      
+      <img src="https://raw.githubusercontent.com/antoniocasto/NotAPlace/refs/heads/main/doc/56.PNG" alt="NotAPlace map view" />
+      
+    </div>
+    <div class="portfolio-card__body">
+      <h2>NotAPlace</h2>
+      <p>An iOS app built with SwiftUI to track places that evoke positive emotions.</p>
+    </div>
+  </a>
+
+  <a class="portfolio-card" href="/en/portfolio/swiftui-clima/">
+    <div class="portfolio-card__media">
+      
+      <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png" alt="SwiftUIClima weather screen" />
+      
+    </div>
+    <div class="portfolio-card__body">
+      <h2>SwiftUIClima</h2>
+      <p>An iOS weather app built with SwiftUI.</p>
+    </div>
+  </a>
+
+  <a class="portfolio-card" href="/en/portfolio/acswiftui-navigation/">
+    <div class="portfolio-card__media">
+      
+      <img src="/assets/images/portfolio/acswiftui-navigation.png" alt="ACSwiftUINavigation preview" />
+      
+    </div>
+    <div class="portfolio-card__body">
+      <h2>ACSwiftUINavigation</h2>
+      <p>A Swift Package (SPM) for implementing clean, modular navigation flows in SwiftUI apps.</p>
+    </div>
+  </a>
+
+</div>
 
   </main>
 
@@ -138,7 +186,9 @@
   <div class="theme-switch">
     <input type="checkbox" id="theme-toggle">
     <label for="theme-toggle" class="theme-toggle-label">
-      <span class="theme-icon">🌙</span>
+      <svg class="theme-icon icon" aria-hidden="true">
+        <use href="/assets/images/icons.svg#icon-moon"></use>
+      </svg>
     </label>
   </div>
   <!-- Theme overlay for expansion animation on theme change -->
