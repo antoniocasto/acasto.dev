@@ -105,7 +105,10 @@ permalink: "/it/about/"
 <section class="about-section">
   <h2>Formazione Continua</h2>
   <div class="about-card">
-    <p>Aggiorno costantemente le mie competenze con Hacking with Swift, Design+Code e Point-Free, oltre a documentazione ufficiale e libri.</p>
+    <p>La formazione continua è parte integrante del mio lavoro: studio ogni settimana, sperimento e metto subito in pratica ciò che imparo.</p>
+    <p>Mi aggiorno con Hacking with Swift, Design+Code e Point-Free, insieme a documentazione ufficiale e libri.</p>
+    <p>Tra i mentors che seguo con costanza: Sean Allen, Donny Wals, Antoine van der Lee e Paul Hudson.</p>
+    <p>Resto allineato alle novità WWDC e alle discussioni della community iOS su Reddit e LinkedIn.</p>
   </div>
 </section>
 

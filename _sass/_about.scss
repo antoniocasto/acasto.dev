@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  line-height: 1.7;
 }
 
 .about-hero {
@@ -134,6 +135,10 @@
   flex-direction: column;
   gap: 0.75rem;
   animation: fadeUp 0.6s ease both;
+}
+
+.about-card p {
+  margin: 0.4rem 0;
 }
 
 .about-card ul {

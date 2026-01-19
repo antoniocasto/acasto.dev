@@ -106,7 +106,10 @@ permalink: "/en/about/"
 <section class="about-section">
   <h2>Continuous Learning</h2>
   <div class="about-card">
-    <p>I keep my skills current through Hacking with Swift, Design+Code, and Point-Free, alongside official documentation and books.</p>
+    <p>Continuous learning is part of my daily routine: I study every week, experiment, and apply new ideas immediately.</p>
+    <p>I stay sharp through Hacking with Swift, Design+Code, and Point-Free, alongside official documentation and books.</p>
+    <p>Mentors I follow consistently include Sean Allen, Donny Wals, Antoine van der Lee, and Paul Hudson.</p>
+    <p>I track WWDC updates closely and follow iOS community discussions on Reddit and LinkedIn.</p>
   </div>
 </section>
 
