@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const setViewportHeight = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+
+  setViewportHeight();
+
   // Theme management
   const themeToggle = document.getElementById('theme-toggle');
   const themeIconSvg = document.querySelector('.theme-icon');
@@ -93,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Close side menu on window resize if width >= 769px
   window.addEventListener('resize', function () {
+    setViewportHeight();
     if (window.innerWidth >= 769 && sideMenu.classList.contains('open')) {
       sideMenu.classList.remove('open');
     }
