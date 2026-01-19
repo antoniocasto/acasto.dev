@@ -9,6 +9,32 @@
   color: var(--primary-color); // Primary color for active menu item
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon--sm {
+  width: 0.9em;
+  height: 0.9em;
+}
+
+.icon--md {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.icon--inline {
+  margin-right: 0.35rem;
+}
+
 /* Category filter tiles */
 .tiles-container {
   display: flex; // Flexbox layout
@@ -86,7 +112,7 @@
   z-index: 1100; // High z-index to be on top
   width: 50px; // Fixed width
   height: 50px; // Fixed height
-  background-color: var(--switch-bg); // Background color from variable
+  background: var(--switch-bg); // Background from variable
   border-radius: 50%; // Fully rounded corners
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Subtle shadow
   cursor: pointer; // Pointer cursor on hover
@@ -118,7 +144,9 @@
 
 /* Icon style */
 .theme-icon {
-  font-size: 24px; // Icon size
+  width: 24px; // Icon size
+  height: 24px;
+  display: block;
   color: var(--switch-icon-color); // Icon color from variable
   transition: color 0.3s ease; // Smooth transition for color
 }

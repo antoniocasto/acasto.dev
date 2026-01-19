@@ -13,10 +13,10 @@ permalink: "/en/about/"
       </div>
       <span class="role-badge">iOS Developer</span>
     </div>
-    <h1>Antonio Casto — iOS Developer (SwiftUI &amp; UIKit)</h1>
+    <h1>Antonio Casto</h1>
     <p class="role-line">Based in Italy · Fully bilingual (English/Italian)</p>
     <div class="cta-row">
-      <a class="cta-button" href="/assets/cv/antonio-casto-cv.pdf">Download CV (PDF)</a>
+      <a class="cta-button" href="/assets/cv/antonio-casto-cv-en.pdf">Download CV (PDF)</a>
       <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
       <a class="cta-link" href="/en/contacts/">Contact Me</a>
     </div>
@@ -25,7 +25,7 @@ permalink: "/en/about/"
     <p>I design and build iOS apps with a focus on modularity, scalability, and testability.</p>
     <p>From architecture to delivery, I collaborate closely with teams and ship reliable features with clear ownership.</p>
     <ul class="highlights-list">
-      <li>SwiftUI &amp; UIKit with maintainable architectures (MVVM, VIPER, TCA, Coordinator).</li>
+      <li>SwiftUI &amp; UIKit with maintainable architectures (MVVM, VIPER, TCA, Coordinator, Repository pattern).</li>
       <li>CI/CD: Fastlane + GitLab CI/CD, SwiftLint, automated tests.</li>
       <li>R&amp;D work with ARKit, SceneKit, CoreML.</li>
       <li>Multiple environments with targets/schemes/build configs; Tuist.</li>
@@ -68,7 +68,7 @@ permalink: "/en/about/"
   <div class="about-card">
     <ul class="skill-list">
       <li><strong>Frameworks:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
-      <li><strong>Architecture:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator.</li>
+      <li><strong>Architecture:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator, Repository pattern.</li>
       <li><strong>Concurrency:</strong> Swift Concurrency up to Swift 6.2 (Approachable Concurrency): async/await, structured concurrency (Task, TaskGroup), actors; Grand Central Dispatch (GCD): queues, sync/async coordination; bridging legacy APIs to async/await with continuations (checked/unsafe when needed).</li>
       <li><strong>Communication &amp; event streams:</strong> Advanced AsyncStream / AsyncSequence: consuming streams produced via AsyncStream.Continuation; handling cancellation; designing event pipelines; Combine (basic): observing @Published and reacting to value changes; delegate pattern; callbacks and completion handlers.</li>
       <li><strong>Localization:</strong> String Catalogs for iOS localization workflows.</li>
@@ -84,6 +84,7 @@ permalink: "/en/about/"
       <li><strong>Dependency management:</strong> Swift Package Manager (adding dependencies and reusable internal packages), CocoaPods.</li>
       <li><strong>CI/CD and automation:</strong> Fastlane, GitLab CI/CD.</li>
       <li><strong>Project configuration:</strong> multiple environments (development, staging, release) using targets, schemes, and build configurations; Tuist.</li>
+      <li><strong>Release:</strong> App Store submissions and TestFlight beta distribution.</li>
       <li><strong>Monitoring:</strong> Firebase Crashlytics.</li>
       <li><strong>Testing and quality:</strong> XCTest, UI Testing, TDD, Mocking, SwiftLint.</li>
     </ul>
@@ -105,7 +106,10 @@ permalink: "/en/about/"
 <section class="about-section">
   <h2>Continuous Learning</h2>
   <div class="about-card">
-    <p>I keep my skills current through Hacking with Swift, Design+Code, and Point-Free, alongside official documentation and books.</p>
+    <p>Continuous learning is part of my daily routine: I study every week, experiment, and apply new ideas immediately.</p>
+    <p>I stay sharp through Hacking with Swift, Design+Code, and Point-Free, alongside official documentation and books.</p>
+    <p>Mentors I follow consistently include Sean Allen, Donny Wals, Antoine van der Lee, and Paul Hudson.</p>
+    <p>I track WWDC updates closely and follow iOS community discussions on Reddit and LinkedIn.</p>
   </div>
 </section>
 
@@ -123,7 +127,7 @@ permalink: "/en/about/"
 
 <section class="about-section">
   <div class="cta-row cta-row--full">
-    <a class="cta-button" href="/assets/cv/antonio-casto-cv.pdf">Download CV (PDF)</a>
+    <a class="cta-button" href="/assets/cv/antonio-casto-cv-en.pdf">Download CV (PDF)</a>
     <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
     <a class="cta-link" href="/en/contacts/">Contact Me</a>
   </div>

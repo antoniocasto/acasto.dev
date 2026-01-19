@@ -9,7 +9,6 @@
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  width: 0;
   border-right: 0.15em solid var(--primary-color);
   animation: typing 1.5s steps(40, end) forwards, blink-caret 0.5s step-end infinite 1.5s;
   font-family: var(--font-display);
@@ -20,6 +19,9 @@
   background-clip: text;
   color: transparent;
   opacity: 0.85;
+  width: max-content;
+  max-width: 100%;
+  clip-path: inset(0 100% 0 0);
 }
 
 // Styles for the dot in the typing animation
@@ -27,13 +29,24 @@
   color: var(--primary-color);
 }
 
+.typing-animation .icon {
+  color: var(--primary-color);
+}
+
 // Keyframes for the typing animation
 @keyframes typing {
   from {
-    width: 0;
+    clip-path: inset(0 100% 0 0);
   }
   to {
-    width: 13ch;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-animation {
+    animation: none;
+    clip-path: inset(0 0 0 0);
   }
 }
 
