@@ -17,7 +17,7 @@ Here are some personal projects I worked on:
 <div class="portfolio-grid">
 {% for project in localized_projects %}
   <a class="portfolio-card" href="{{ project.url | relative_url }}">
-    <div class="portfolio-card__media">
+    <div class="portfolio-card__media"{% if project.thumbnail_bg %} style="--portfolio-thumb-bg: {{ project.thumbnail_bg }};"{% endif %}>
       {% if project.thumbnail %}
       <img src="{{ project.thumbnail }}" alt="{{ project.thumbnail_alt | default: project.title }}">
       {% else %}
