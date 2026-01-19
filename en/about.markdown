@@ -16,7 +16,6 @@ permalink: "/en/about/"
     <h1>Antonio Casto</h1>
     <p class="role-line">Based in Italy · Fully bilingual (English/Italian)</p>
     <div class="cta-row">
-      <a class="cta-button" href="/assets/cv/antonio-casto-cv-en.pdf">Download CV (PDF)</a>
       <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
       <a class="cta-link" href="/en/contacts/">Contact Me</a>
     </div>
@@ -127,7 +126,6 @@ permalink: "/en/about/"
 
 <section class="about-section">
   <div class="cta-row cta-row--full">
-    <a class="cta-button" href="/assets/cv/antonio-casto-cv-en.pdf">Download CV (PDF)</a>
     <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
     <a class="cta-link" href="/en/contacts/">Contact Me</a>
   </div>
