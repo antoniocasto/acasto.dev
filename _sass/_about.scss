@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .about-page {
   display: flex;
   flex-direction: column;
@@ -308,69 +307,6 @@
   .avatar-ring,
   .cta-button {
     transition: none;
-=======
-.about-header {
-  padding: 2rem; // Adds padding around the header
-  border-bottom: 2px solid var(--primary-color); // Adds a bottom border with primary color
-}
-
-.about-container {
-  display: flex; // Uses flexbox for layout
-  align-items: center; // Centers items vertically
-  justify-content: center; // Centers items horizontally
-  gap: 2rem; // Adds space between flex items
-}
-
-.circular-border {
-  display: flex; // Uses flexbox for layout
-  align-items: center; // Centers items vertically
-  justify-content: center; // Centers items horizontally
-  width: 125px; // Sets the width of the element
-  height: 125px; // Sets the height of the element
-  border-radius: 50%; // Makes the element circular
-  border: 2px solid var(--primary-color); // Adds a border with primary color
-  box-sizing: content-box; // Ensures padding and border are not included in the element's width and height
-  aspect-ratio: 1 / 1; // Maintains a 1:1 aspect ratio
-}
-
-.circular-container {
-  width: 120px; // Sets the width of the element
-  height: 120px; // Sets the height of the element
-  border-radius: 50%; // Makes the element circular
-  overflow: hidden; // Hides overflow content
-  display: flex; // Uses flexbox for layout
-  align-items: center; // Centers items vertically
-  justify-content: center; // Centers items horizontally
-  aspect-ratio: 1 / 1; // Maintains a 1:1 aspect ratio
-}
-
-.circular-image {
-  width: 100%; // Sets the width to 100% of the parent element
-  height: 100%; // Sets the height to 100% of the parent element
-  object-fit: cover; // Ensures the image covers the entire element
-  border-radius: 50%; // Makes the image circular
-}
-
-.profile-name .cursive-name {
-  font-family: var(--font-stack); // Sets the font family
-  font-style: italic; // Makes the text italic
-  font-size: 2rem; // Sets the font size
-  margin: 0; // Removes default margin
-}
-
-@media (max-width: 768px) {
-  .circular-border {
-    width: 108px; // Sets the width of the element for smaller screens
-    height: 108px; // Sets the height of the element for smaller screens
-    border-width: 2px; // Sets the border width for smaller screens
-    aspect-ratio: 1 / 1; // Maintains a 1:1 aspect ratio
-  }
-
-  .circular-container {
-    width: 104px; // Sets the width of the element for smaller screens
-    height: 104px; // Sets the height of the element for smaller screens
-    aspect-ratio: 1 / 1; // Maintains a 1:1 aspect ratio
->>>>>>> main
   }
 }
 
