@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const overlay = document.querySelector('.theme-overlay');
   const currentTheme = localStorage.getItem('theme') || 'light';
   const iconSprite = themeIconUse ? themeIconUse.getAttribute('href').split('#')[0] : '';
+  const rootElement = document.documentElement;
+
+  const applyThemeClass = (isDark) => {
+    if (rootElement) {
+      rootElement.classList.toggle('dark-theme', isDark);
+    }
+    document.body.classList.toggle('dark-theme', isDark);
+  };
 
   const setThemeIcon = (theme) => {
     if (!themeIconUse) return;
@@ -24,10 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Set theme based on saved preference
   if (currentTheme === 'dark') {
-    document.body.classList.add('dark-theme');
+    applyThemeClass(true);
     if (themeToggle) themeToggle.checked = true;
     setThemeIcon('dark');
   } else {
+    applyThemeClass(false);
     setThemeIcon('light');
   }
 
@@ -44,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Apply theme after 600ms (animation duration)
       setTimeout(() => {
         if (this.checked) {
-          document.body.classList.add('dark-theme');
+          applyThemeClass(true);
           localStorage.setItem('theme', 'dark');
           setThemeIcon('dark');
           if (themeIconSvg) {
@@ -52,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => themeIconSvg.classList.remove('rotate-animation'), 500);
           }
         } else {
-          document.body.classList.remove('dark-theme');
+          applyThemeClass(false);
           localStorage.setItem('theme', 'light');
           setThemeIcon('light');
           if (themeIconSvg) {
