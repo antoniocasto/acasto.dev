@@ -13,7 +13,7 @@
 
 // Site header class with padding and a glass effect
 .site-header {
-    padding: var(--space-md) 0;
+    padding: calc(var(--space-md) + env(safe-area-inset-top, 0px)) 0 var(--space-md);
     @include glass(16px); // Applying glass effect with 16px blur
     border-bottom: 1px solid var(--border-color);
 }
