@@ -396,13 +396,16 @@
   }
   .nav-center {
     display: flex;
-    position: relative;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
   }
   .mobile-logo {
     display: inline-block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    pointer-events: auto;
   }
 }
 
