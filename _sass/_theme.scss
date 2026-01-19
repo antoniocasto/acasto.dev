@@ -17,6 +17,7 @@
   --switch-bg: #0b1120; /* Switch button background hints dark mode */
   --switch-icon-color: #e2e8f0; /* Switch icon color in light mode */
   --side-menu-bg: #ffffff; /* Sidebar background in light mode */
+  --side-menu-bg-rgb: 255 255 255; /* Sidebar background RGB in light mode */
   --side-menu-border: rgba(16, 24, 40, 0.08); /* Sidebar border in light mode */
   --dropdown-bg: #ffffff; /* Dropdown background in light mode */
   --dropdown-border: rgba(16, 24, 40, 0.12); /* Dropdown border in light mode */
@@ -49,6 +50,7 @@
   --switch-bg: #f5f7fb; /* Switch button background hints light mode */
   --switch-icon-color: #0f172a; /* Switch icon color in dark mode */
   --side-menu-bg: #0f172a; /* Sidebar background in dark mode */
+  --side-menu-bg-rgb: 15 23 42; /* Sidebar background RGB in dark mode */
   --side-menu-border: rgba(148, 163, 184, 0.2); /* Sidebar border in dark mode */
   --dropdown-bg: #0f172a; /* Dropdown background in dark mode */
   --dropdown-border: rgba(148, 163, 184, 0.3); /* Dropdown border in dark mode */

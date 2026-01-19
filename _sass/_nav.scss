@@ -304,7 +304,9 @@
   width: 80%;
   max-width: 300px;
   height: 100%;
-  background: var(--side-menu-bg);  // Use the variable for the background
+  background-color: rgba(var(--side-menu-bg-rgb) / 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: 10px 0 30px rgba(15, 23, 42, 0.2);
   transition: transform 0.3s ease;
   z-index: 1000;
