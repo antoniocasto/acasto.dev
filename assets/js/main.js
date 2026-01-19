@@ -65,14 +65,31 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const sideMenu = document.querySelector('.side-menu');
   const closeMenu = document.querySelector('.close-menu');
+  const menuOverlay = document.querySelector('.menu-overlay');
   const filterTiles = document.querySelectorAll('.filter-tile');
   const postItems = document.querySelectorAll('.post-item');
+
+  const openSideMenu = () => {
+    if (!sideMenu) return;
+    sideMenu.classList.add('open');
+    if (menuOverlay) menuOverlay.classList.add('open');
+    document.body.classList.add('menu-open');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
+  };
+
+  const closeSideMenu = () => {
+    if (!sideMenu) return;
+    sideMenu.classList.remove('open');
+    if (menuOverlay) menuOverlay.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+  };
 
   // Menu toggle event listener
   if (menuToggle) {
     menuToggle.addEventListener('click', function (e) {
       e.stopPropagation();
-      sideMenu.classList.add('open');
+      openSideMenu();
     });
   }
 
@@ -80,21 +97,28 @@ document.addEventListener('DOMContentLoaded', function () {
   if (closeMenu) {
     closeMenu.addEventListener('click', function (e) {
       e.stopPropagation();
-      sideMenu.classList.remove('open');
+      closeSideMenu();
+    });
+  }
+
+  if (menuOverlay) {
+    menuOverlay.addEventListener('click', function () {
+      closeSideMenu();
     });
   }
 
   // Close side menu when clicking outside
   document.addEventListener('click', function (e) {
+    if (!sideMenu || !menuToggle) return;
     if (sideMenu.classList.contains('open') && !sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-      sideMenu.classList.remove('open');
+      closeSideMenu();
     }
   });
 
   // Close side menu on window resize if width >= 769px
   window.addEventListener('resize', function () {
-    if (window.innerWidth >= 769 && sideMenu.classList.contains('open')) {
-      sideMenu.classList.remove('open');
+    if (window.innerWidth >= 769 && sideMenu && sideMenu.classList.contains('open')) {
+      closeSideMenu();
     }
   });
 
