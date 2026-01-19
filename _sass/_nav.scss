@@ -37,6 +37,16 @@
   position: relative;
 }
 
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.brand-logo .logo-img {
+  display: block;
+}
+
 // ------------------------------
 // Desktop Horizontal Menu
 // ------------------------------
@@ -289,6 +299,8 @@
 // ------------------------------
 .nav-right {
   /* Always visible on all screen sizes */
+  display: flex;
+  align-items: center;
   margin: 0;
 }
 

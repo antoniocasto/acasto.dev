@@ -117,7 +117,7 @@ permalink: "/en/about/"
   <details class="about-details">
     <summary>View supporting tools and platforms</summary>
     <div class="about-details__content">
-      <p><strong>Platforms:</strong> Flutter, Kotlin Multiplatform, React, Angular, Spring Boot.</p>
+      <p><strong>Platforms (past experience):</strong> Flutter, React, Angular, Spring Boot.</p>
       <p><strong>Languages:</strong> Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript.</p>
       <p><strong>Tools:</strong> Xcode, VS Code, Android Studio — Postman, Proxyman, Swagger — GitHub, GitLab.</p>
     </div>

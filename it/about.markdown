@@ -116,7 +116,7 @@ permalink: "/it/about/"
   <details class="about-details">
     <summary>Vedi strumenti e piattaforme di supporto</summary>
     <div class="about-details__content">
-      <p><strong>Piattaforme:</strong> Flutter, Kotlin Multiplatform, React, Angular, Spring Boot.</p>
+      <p><strong>Piattaforme (esperienze passate):</strong> Flutter, React, Angular, Spring Boot.</p>
       <p><strong>Linguaggi:</strong> Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript.</p>
       <p><strong>Strumenti:</strong> Xcode, VS Code, Android Studio — Postman, Proxyman, Swagger — GitHub, GitLab.</p>
     </div>
