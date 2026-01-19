@@ -27,6 +27,11 @@ body {
   flex-direction: column;
 }
 
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
 // Base styles for heading elements
 h1, h2, h3, h4 {
   font-weight: 600; // Set font weight to 600
