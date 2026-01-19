@@ -83,6 +83,7 @@ permalink: "/it/about/"
       <li><strong>Gestione dipendenze:</strong> Swift Package Manager (aggiunta di dipendenze e pacchetti interni riutilizzabili), CocoaPods.</li>
       <li><strong>CI/CD e automazione:</strong> Fastlane, GitLab CI/CD.</li>
       <li><strong>Configurazione progetto:</strong> ambienti multipli (sviluppo, staging, rilascio) con target, scheme e build configuration; Tuist.</li>
+      <li><strong>Pubblicazione:</strong> invio in App Store e distribuzione di beta via TestFlight.</li>
       <li><strong>Monitoraggio:</strong> Firebase Crashlytics.</li>
       <li><strong>Testing e qualità:</strong> XCTest, UI Testing, TDD, Mocking, SwiftLint.</li>
     </ul>

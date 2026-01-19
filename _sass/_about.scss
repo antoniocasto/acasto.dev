@@ -169,13 +169,60 @@
   padding: 1rem 1.5rem;
   font-weight: 600;
   color: var(--text-color);
+  position: relative;
+  padding-right: 2.75rem;
+  list-style: none;
 }
 
-.about-details__content {
+.about-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-details summary::after {
+  content: "";
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  width: 14px;
+  height: 10px;
+  background-color: var(--text-color);
+  transform: translateY(-50%);
+  transition: transform 0.2s ease;
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.2 1.2L6 6l4.8-4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.2 1.2L6 6l4.8-4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.about-details[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.about-details > .about-details__content {
   padding: 0 1.5rem 1.5rem;
   color: var(--text-muted);
   display: grid;
   gap: 0.75rem;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.about-details:not([open]) > .about-details__content {
+  pointer-events: none;
+}
+
+.about-details[open] .about-details__content {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .cta-row {
@@ -266,5 +313,14 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-details__content {
+    transition: none;
+    max-height: none;
+    opacity: 1;
+    transform: none;
   }
 }
