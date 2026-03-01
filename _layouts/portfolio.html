@@ -8,6 +8,19 @@ layout: default
 -->
 
 <article class="collection_item">
+  {% assign project_thumbnail = page.thumbnail %}
+  {% if page.thumbnail and page.thumbnail contains "://" %}
+    {% assign project_thumbnail = page.thumbnail %}
+  {% elsif page.thumbnail %}
+    {% assign project_thumbnail = page.thumbnail | relative_url %}
+  {% endif %}
+
+  {% if project_thumbnail %}
+    <div class="collection_item__hero"{% if page.thumbnail_bg %} style="--portfolio-thumb-bg: {{ page.thumbnail_bg }};"{% endif %}>
+      <img src="{{ project_thumbnail }}" alt="{{ page.thumbnail_alt | default: page.title }}" loading="lazy" decoding="async">
+    </div>
+  {% endif %}
+
   <h1>{{ page.title }}</h1>
   <div class="content">
     {{ content }}
