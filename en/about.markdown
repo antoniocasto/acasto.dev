@@ -127,6 +127,7 @@ permalink: "/en/about/"
 <section class="about-section">
   <div class="cta-row cta-row--full">
     <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
+    <a class="cta-button cta-button--ghost" href="/en/certificates/">View Certificates</a>
     <a class="cta-link" href="/en/contacts/">Contact Me</a>
   </div>
 </section>

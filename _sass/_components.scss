@@ -267,7 +267,7 @@
 }
 
 .certificates {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-xs);
 }
 
 .certificates__header {
@@ -282,6 +282,14 @@
   margin: 0;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+.page-content--certificates > p {
+  margin-bottom: var(--space-xs);
+}
+
+.page-content--certificates > p + .certificates {
+  margin-top: 0;
 }
 
 .certificates__controls {

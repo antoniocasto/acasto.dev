@@ -126,6 +126,7 @@ permalink: "/it/about/"
 <section class="about-section">
   <div class="cta-row cta-row--full">
     <a class="cta-button cta-button--ghost" href="/it/portfolio/">Guarda il Portfolio</a>
+    <a class="cta-button cta-button--ghost" href="/it/certificates/">Guarda i Certificati</a>
     <a class="cta-link" href="/it/contacts/">Contattami</a>
   </div>
 </section>
