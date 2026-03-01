@@ -15,7 +15,7 @@ In questa sezione pubblicherò articoli e tutorial sullo sviluppo iOS e tecnolog
 _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
 {% else %}
 <div id="category-filters">
-  <h3>Filtra per categoria</h3>
+  <h3>{{ site.data.localization[page.lang].a11y.filter_by_category }}</h3>
   <div class="tiles-container">
     {% assign categories = "" %}
     {% for post in localized_posts %}
@@ -28,14 +28,13 @@ _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
     {% assign categories = categories | split: "," | uniq %}
     {% for normCat in categories %}
       {% if normCat != "" %}
-        <div class="filter-tile" data-value="{{ normCat }}">
+        <button type="button" class="filter-tile" data-value="{{ normCat }}" aria-pressed="false">
           {{ normCat | capitalize }}
-        </div>
+        </button>
       {% endif %}
     {% endfor %}
   </div>
 </div>
-<br>
 {% endif %}
 
 
@@ -48,16 +47,14 @@ _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
         {% assign postCategories = postCategories | append: "," %}
       {% endunless %}
     {% endfor %}
-    <p>
     <div class="post-item" data-categories="{{ postCategories }}">
-        <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
+      <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
       <div class="post-categories">
         {% for cat in post.categories %}
           <span class="category-tile">{{ cat | capitalize }}</span>
         {% endfor %}
       </div>
-      <small class="post-date"><i>{% if page.lang == "it" %}
-    ({{ site.data.localization[page.lang].post.published_on }} {{ post.date | date: "%d %B %Y" 
+      <small class="post-date"><i>({{ site.data.localization[page.lang].post.published_on }} {{ post.date | date: "%d %B %Y" 
        | replace: "January", "Gennaio" 
        | replace: "February", "Febbraio" 
        | replace: "March", "Marzo" 
@@ -69,9 +66,7 @@ _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
        | replace: "September", "Settembre" 
        | replace: "October", "Ottobre" 
        | replace: "November", "Novembre" 
-       | replace: "December", "Dicembre" }})
-  {% endif %}</i></small>
+       | replace: "December", "Dicembre" }})</i></small>
     </div>
-    </p>
   {% endfor %}
 </div>

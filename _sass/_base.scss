@@ -63,6 +63,30 @@ a:hover {
   text-decoration: underline; // Add underline on hover
 }
 
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-md);
+  z-index: 1500;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.skip-link:focus-visible {
+  top: var(--space-md);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
+  outline-offset: 2px;
+}
+
 ::selection {
   background: rgba(37, 99, 235, 0.2);
 }

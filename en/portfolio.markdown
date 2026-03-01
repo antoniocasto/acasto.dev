@@ -19,7 +19,7 @@ Here are some personal projects I worked on. They mark stages of my growth and d
   <a class="portfolio-card" href="{{ project.url | relative_url }}">
     <div class="portfolio-card__media"{% if project.thumbnail_bg %} style="--portfolio-thumb-bg: {{ project.thumbnail_bg }};"{% endif %}>
       {% if project.thumbnail %}
-      <img src="{{ project.thumbnail }}" alt="{{ project.thumbnail_alt | default: project.title }}">
+      <img src="{{ project.thumbnail }}" alt="{{ project.thumbnail_alt | default: project.title }}" loading="lazy" decoding="async">
       {% else %}
       <span class="portfolio-card__icon" aria-hidden="true">📦</span>
       {% endif %}

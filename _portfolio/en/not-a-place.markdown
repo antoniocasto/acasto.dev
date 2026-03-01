@@ -6,20 +6,12 @@ permalink: "/en/portfolio/notaplace/"
 date: 2025-03-09
 github: "https://github.com/antoniocasto/NotAPlace"
 description: "An iOS app built with SwiftUI to track places that evoke positive emotions."
-thumbnail: "https://raw.githubusercontent.com/antoniocasto/NotAPlace/refs/heads/main/doc/56.PNG"
-thumbnail_alt: "NotAPlace map view"
+thumbnail_bg: "linear-gradient(135deg, #111827, #334155)"
 technologies: ["SwiftUI", "MapKit", "CoreLocation", "UserDefaults", "DocumentDirectory", "Keychain", "LocalAuthentication", "PhotosUI", "Camera", "@StateObject", "@EnvironmentObject"]
 published: true
 ---
 
 *{{ page.description }}*
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/antoniocasto/NotAPlace/refs/heads/main/doc/56.PNG" width="180" alt="Map View">
-  <img src="https://github.com/antoniocasto/NotAPlace/blob/main/doc/54.PNG?raw=true" width="180" alt="Location Details">
-  <img src="https://github.com/antoniocasto/NotAPlace/blob/main/doc/39.PNG?raw=true" width="180" alt="User Settings">
-  <img src="https://github.com/antoniocasto/NotAPlace/blob/main/doc/41.PNG?raw=true" width="180" alt="User Onboarding">
-</div>
 
 NotAPlace is an iPhone application built with **SwiftUI**, designed to track places around the world that evoke positive emotions in the user.
 
@@ -33,5 +25,7 @@ NotAPlace is an iPhone application built with **SwiftUI**, designed to track pla
 - **Multimedia Support:** Integrates **PhotosUI** and the **Camera** for capturing and managing images.
 - **State Management:** Uses `@StateObject` and `@EnvironmentObject` for reactive state handling.
 - **Permission Handling & Localization:** Ensures proper **permission management** and supports **English and Italian** translations.
+
+Screenshots and app flow previews are available in the repository documentation.
 
 The source code is available on **[GitHub]({{ page.github }})**.

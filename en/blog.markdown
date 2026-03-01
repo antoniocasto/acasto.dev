@@ -14,7 +14,7 @@ In this section, I will publish articles and tutorials about iOS development and
 _There are no articles at the moment. Check back soon for updates!_
 {% else %}
 <div id="category-filters">
-  <h3>Filter by Category</h3>
+  <h3>{{ site.data.localization[page.lang].a11y.filter_by_category }}</h3>
   <div class="tiles-container">
     {% assign categories = "" %}
     {% for post in localized_posts %}
@@ -27,14 +27,13 @@ _There are no articles at the moment. Check back soon for updates!_
     {% assign categories = categories | split: "," | uniq %}
     {% for normCat in categories %}
       {% if normCat != "" %}
-        <div class="filter-tile" data-value="{{ normCat }}">
+        <button type="button" class="filter-tile" data-value="{{ normCat }}" aria-pressed="false">
           {{ normCat | capitalize }}
-        </div>
+        </button>
       {% endif %}
     {% endfor %}
   </div>
 </div>
-<br>
 {% endif %}
 
 
@@ -47,16 +46,14 @@ _There are no articles at the moment. Check back soon for updates!_
         {% assign postCategories = postCategories | append: "," %}
       {% endunless %}
     {% endfor %}
-    <p>
     <div class="post-item" data-categories="{{ postCategories }}">
-        <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
+      <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
       <div class="post-categories">
         {% for cat in post.categories %}
           <span class="category-tile">{{ cat | capitalize }}</span>
         {% endfor %}
       </div>
-      <small class="post-date"><i>(Published on {{ post.date | date: "%d %B %Y" }})</i></small>
+      <small class="post-date"><i>({{ site.data.localization[page.lang].post.published_on }} {{ post.date | date: "%d %B %Y" }})</i></small>
     </div>
-    </p>
   {% endfor %}
 </div>
