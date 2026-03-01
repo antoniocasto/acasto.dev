@@ -10,6 +10,12 @@
 
   {% seo %}
 
+  {% if site.asset_version %}
+    {% assign asset_version = site.asset_version %}
+  {% else %}
+    {% assign asset_version = site.time | date: '%s' %}
+  {% endif %}
+
   {% if page.ref %}
     {% assign default_translation = nil %}
     {% for lang in site.languages %}
@@ -42,8 +48,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.asset_version | default: '1' }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ asset_version }}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">{{ a11y.skip_to_content | default: "Skip to main content" }}</a>
@@ -199,6 +204,6 @@
 
   <div class="theme-overlay"></div>
 
-  <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.asset_version | default: '1' }}"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}"></script>
 </body>
 </html>
