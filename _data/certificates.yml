@@ -1,0 +1,14 @@
+# Add new certificates by appending a new item to this list.
+# Required fields: id, title(en/it), provider(en/it), course_url, certificate_image, certificate_alt(en/it)
+- id: "hacking-with-swift-100-days-swiftui"
+  title:
+    en: "100 Days of SwiftUI"
+    it: "100 Days of SwiftUI"
+  provider:
+    en: "Hacking with Swift"
+    it: "Hacking with Swift"
+  course_url: "https://www.hackingwithswift.com/100/swiftui"
+  certificate_image: "/assets/images/certificates/hacking-with-swift-100-days-swiftui.jpg"
+  certificate_alt:
+    en: "Certificate of Merit for Antonio Casto in 100 Days of SwiftUI by Hacking with Swift"
+    it: "Certificato di merito per Antonio Casto in 100 Days of SwiftUI rilasciato da Hacking with Swift"
