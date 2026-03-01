@@ -128,6 +128,11 @@
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
 }
 
+.language-dropdown summary:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
+  outline-offset: 2px;
+}
+
 .language-icon {
   display: inline-flex;
   color: var(--dropdown-text);
@@ -251,6 +256,12 @@
   transform: scale(1.1);       // slight scale for hover
 }
 
+.menu-toggle:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
 .burger-icon {
   display: block;
   width: 25px;
@@ -364,21 +375,6 @@
   pointer-events: auto;
 }
 
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.38);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1200;
-}
-
-.menu-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 // Sidebar header (with close button)
 .side-menu .side-menu-header {
   display: flex;
@@ -399,6 +395,12 @@
 
 .close-menu:hover {
   color: var(--primary-color);
+}
+
+.close-menu:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 // Sidebar menu list

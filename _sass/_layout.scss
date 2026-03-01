@@ -25,7 +25,8 @@ main.container {
 }
 
 .page-content--blog,
-.page-content--contacts {
+.page-content--contacts,
+.page-content--certificates {
     width: 100%;
     align-self: stretch;
     text-align: left;
@@ -33,7 +34,8 @@ main.container {
 }
 
 .page-content--blog > *,
-.page-content--contacts > * {
+.page-content--contacts > *,
+.page-content--certificates > * {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;

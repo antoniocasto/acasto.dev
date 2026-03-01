@@ -8,7 +8,7 @@ permalink: "/it/about/"
   <div class="about-hero__identity">
     <div class="avatar-block">
       <div class="avatar-ring">
-        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image">
+        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image" loading="lazy" decoding="async" width="764" height="824">
       </div>
       <span class="role-badge">iOS Developer</span>
     </div>
@@ -126,6 +126,7 @@ permalink: "/it/about/"
 <section class="about-section">
   <div class="cta-row cta-row--full">
     <a class="cta-button cta-button--ghost" href="/it/portfolio/">Guarda il Portfolio</a>
+    <a class="cta-button cta-button--ghost" href="/it/certificates/">Guarda i Certificati</a>
     <a class="cta-link" href="/it/contacts/">Contattami</a>
   </div>
 </section>

@@ -3,10 +3,12 @@ title: "Antonio Casto - Passionate iOS Developer"
 description: >-
   "This is the personal website and blog of Antonio Casto - Passionate iOS Developer.
   Here you will find my projects, my thoughts and my contacts."
+asset_version: "3"
 
 # Multilingual settings
 languages: ["en", "it"]  # Add new languages here (e.g., "fr", "de")
 default_lang: "en"  # Default language
+locale: en_US
 
 # Base URL settings
 url: "https://acasto.dev"
@@ -20,6 +22,15 @@ email: developer@acasto.dev
 linkedin_link: https://www.linkedin.com/in/antonio-casto-547a411a1/
 github_username: antoniocasto
 github_link: https://github.com/antoniocasto/
+author:
+  name: Antonio Casto
+  email: developer@acasto.dev
+social:
+  name: Antonio Casto
+  links:
+    - https://www.linkedin.com/in/antonio-casto-547a411a1/
+    - https://github.com/antoniocasto/
+logo: /assets/images/acasto-logo.png
 
 # Build settings
 markdown: kramdown

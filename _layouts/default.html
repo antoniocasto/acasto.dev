@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.default_lang }}">
+{% assign current_lang = page.lang | default: site.default_lang %}
+{% assign a11y = site.data.localization[current_lang].a11y %}
+<html lang="{{ current_lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="color-scheme" content="light dark" />
 
-  <!-- Favicon -->
+  {% seo %}
+
+  {% if site.asset_version %}
+    {% assign asset_version = site.asset_version %}
+  {% else %}
+    {% assign asset_version = site.time | date: '%s' %}
+  {% endif %}
+
+  {% if page.ref %}
+    {% assign default_translation = nil %}
+    {% for lang in site.languages %}
+      {%- assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first -%}
+      {%- if translated_page == nil -%}
+        {%- assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first -%}
+      {%- endif -%}
+      {%- if translated_page == nil -%}
+        {%- assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first -%}
+      {%- endif -%}
+      {% if translated_page %}
+        <link rel="alternate" hreflang="{{ lang }}" href="{{ translated_page.url | absolute_url }}" />
+        {% if lang == site.default_lang %}
+          {% assign default_translation = translated_page %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if default_translation %}
+      <link rel="alternate" hreflang="x-default" href="{{ default_translation.url | absolute_url }}" />
+    {% endif %}
+  {% endif %}
+
   <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
   <link rel="shortcut icon" href="/assets/images/favicon.ico" />
@@ -13,157 +45,165 @@
   <meta name="apple-mobile-web-app-title" content="acasto" />
   <link rel="manifest" href="/assets/images/site.webmanifest" />
 
-  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  
-  <!-- Link to the main CSS file -->
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}?v={{ site.time | date: '%s' }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ asset_version }}">
 </head>
 <body>
-  <!-- Header with navigation bar -->
+  <a class="skip-link" href="#main-content">{{ a11y.skip_to_content | default: "Skip to main content" }}</a>
+
   <header class="site-header glass-panel">
     <nav class="nav-bar container">
-      <!-- Nav Left: Desktop logo and burger button -->
       <div class="nav-left">
-        <!-- Desktop Logo (visible on desktop only) -->
-        <a href="{{ site.baseurl }}/{{ page.lang }}/" class="brand-logo desktop-logo">
-          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img">
+        <a href="{{ site.baseurl }}/{{ current_lang }}/" class="brand-logo desktop-logo">
+          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
         </a>
-        <!-- Burger button (always visible on mobile) -->
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+
+        <button type="button" class="menu-toggle" aria-label="{{ a11y.open_menu | default: 'Open menu' }}" aria-expanded="false" aria-controls="mobile-menu">
           <span class="burger-icon"></span>
         </button>
-        <!-- Desktop menu (visible on wide screens) -->
+
         <ul class="menu desktop-menu">
           <li {% if page.ref == "home" %}class="active"{% endif %}>
-            <a href="{{ site.baseurl }}/{{ page.lang }}/">
-              {{ site.data.localization[page.lang].navigation.home }}
+            <a href="{{ site.baseurl }}/{{ current_lang }}/">
+              {{ site.data.localization[current_lang].navigation.home }}
             </a>
           </li>
           <li {% if page.ref == "about" %}class="active"{% endif %}>
-            <a href="{{ site.baseurl }}/{{ page.lang }}/about/">
-              {{ site.data.localization[page.lang].navigation.about }}
+            <a href="{{ site.baseurl }}/{{ current_lang }}/about/">
+              {{ site.data.localization[current_lang].navigation.about }}
             </a>
           </li>
           <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
-            <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
-              {{ site.data.localization[page.lang].navigation.portfolio }}
+            <a href="{{ site.baseurl }}/{{ current_lang }}/portfolio/">
+              {{ site.data.localization[current_lang].navigation.portfolio }}
+            </a>
+          </li>
+          <li {% if page.ref == "certificates" %}class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ current_lang }}/certificates/">
+              {{ site.data.localization[current_lang].navigation.certificates }}
             </a>
           </li>
           <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
-            <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">
-              {{ site.data.localization[page.lang].navigation.blog }}
+            <a href="{{ site.baseurl }}/{{ current_lang }}/blog/">
+              {{ site.data.localization[current_lang].navigation.blog }}
             </a>
           </li>
           <li {% if page.ref == "contacts" %}class="active"{% endif %}>
-            <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">
-              {{ site.data.localization[page.lang].navigation.contacts }}
+            <a href="{{ site.baseurl }}/{{ current_lang }}/contacts/">
+              {{ site.data.localization[current_lang].navigation.contacts }}
             </a>
           </li>
         </ul>
       </div>
 
-      <!-- Nav Center: Mobile logo (visible on mobile only) -->
       <div class="nav-center">
-        <a href="{{ site.baseurl }}/{{ page.lang }}/" class="brand-logo mobile-logo">
-          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img">
+        <a href="{{ site.baseurl }}/{{ current_lang }}/" class="brand-logo mobile-logo">
+          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
         </a>
       </div>
 
-      <!-- Nav Right: Language selector (always visible) -->
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary>
+          <summary aria-label="{{ a11y.select_language | default: 'Select language' }}">
             <span class="language-icon" aria-hidden="true">
               <svg class="icon icon--sm">
                 <use href="{{ '/assets/images/icons.svg#icon-globe' | relative_url }}"></use>
               </svg>
             </span>
-            <span class="language-label">{{ page.lang | upcase }}</span>
+            <span class="language-label">{{ current_lang | upcase }}</span>
           </summary>
           <ul class="language-options">
-            {% for lang in site.languages %}
-              {%- assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first -%}
-              {%- if translated_page == nil -%}
-                {%- assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first -%}
-              {%- endif -%}
-              {%- if translated_page == nil -%}
-                {%- assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first -%}
-              {%- endif -%}
-              {%- if translated_page and lang != page.lang -%}
-                <li>
-                  <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
-                </li>
-              {%- endif -%}
-            {% endfor %}
+            {% if page.ref %}
+              {% for lang in site.languages %}
+                {%- assign translated_page = site.pages | where: "ref", page.ref | where: "lang", lang | first -%}
+                {%- if translated_page == nil -%}
+                  {%- assign translated_page = site.posts | where: "ref", page.ref | where: "lang", lang | first -%}
+                {%- endif -%}
+                {%- if translated_page == nil -%}
+                  {%- assign translated_page = site.portfolio | where: "ref", page.ref | where: "lang", lang | first -%}
+                {%- endif -%}
+                {%- if translated_page and lang != current_lang -%}
+                  <li>
+                    <a href="{{ translated_page.url }}">{{ lang | upcase }}</a>
+                  </li>
+                {%- endif -%}
+              {% endfor %}
+            {% else %}
+              {% for lang in site.languages %}
+                {% if lang != current_lang %}
+                  <li>
+                    <a href="{{ site.baseurl }}/{{ lang }}/">{{ lang | upcase }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
           </ul>
         </details>
       </div>
     </nav>
   </header>
 
-  <!-- Side menu for mobile devices -->
-  <div class="side-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu">
-    <!-- Side menu header with close button -->
+  <div class="side-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="{{ a11y.menu | default: 'Menu' }}" tabindex="-1">
     <div class="side-menu-header">
-      <button class="close-menu" aria-label="Close menu">&times;</button>
+      <button type="button" class="close-menu" aria-label="{{ a11y.close_menu | default: 'Close menu' }}">&times;</button>
     </div>
-    <!-- Mobile menu items -->
+
     <ul class="menu">
       <li {% if page.ref == "home" %}class="active"{% endif %}>
-        <a href="{{ site.baseurl }}/{{ page.lang }}/">
-          {{ site.data.localization[page.lang].navigation.home }}
+        <a href="{{ site.baseurl }}/{{ current_lang }}/">
+          {{ site.data.localization[current_lang].navigation.home }}
         </a>
       </li>
       <li {% if page.ref == "about" %}class="active"{% endif %}>
-        <a href="{{ site.baseurl }}/{{ page.lang }}/about/">
-          {{ site.data.localization[page.lang].navigation.about }}
+        <a href="{{ site.baseurl }}/{{ current_lang }}/about/">
+          {{ site.data.localization[current_lang].navigation.about }}
         </a>
       </li>
       <li {% if page.ref == "portfolio" or page.layout == "portfolio" %}class="active"{% endif %}>
-        <a href="{{ site.baseurl }}/{{ page.lang }}/portfolio/">
-          {{ site.data.localization[page.lang].navigation.portfolio }}
+        <a href="{{ site.baseurl }}/{{ current_lang }}/portfolio/">
+          {{ site.data.localization[current_lang].navigation.portfolio }}
+        </a>
+      </li>
+      <li {% if page.ref == "certificates" %}class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/{{ current_lang }}/certificates/">
+          {{ site.data.localization[current_lang].navigation.certificates }}
         </a>
       </li>
       <li {% if page.ref == "blog" or page.layout == "post" %}class="active"{% endif %}>
-        <a href="{{ site.baseurl }}/{{ page.lang }}/blog/">
-          {{ site.data.localization[page.lang].navigation.blog }}
+        <a href="{{ site.baseurl }}/{{ current_lang }}/blog/">
+          {{ site.data.localization[current_lang].navigation.blog }}
         </a>
       </li>
       <li {% if page.ref == "contacts" %}class="active"{% endif %}>
-        <a href="{{ site.baseurl }}/{{ page.lang }}/contacts/">
-          {{ site.data.localization[page.lang].navigation.contacts }}
+        <a href="{{ site.baseurl }}/{{ current_lang }}/contacts/">
+          {{ site.data.localization[current_lang].navigation.contacts }}
         </a>
       </li>
     </ul>
   </div>
   <div class="menu-overlay" aria-hidden="true"></div>
 
-  <!-- Main content area -->
-  <main class="container{% if page.ref %} page-content--{{ page.ref }}{% endif %}">
+  <main id="main-content" tabindex="-1" class="container{% if page.ref %} page-content--{{ page.ref }}{% endif %}">
     {{ content }}
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer container">
-    <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥️.</p>
+    <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥.</p>
   </footer>
 
-  <!-- Floating theme switch button -->
   <div class="theme-switch">
-    <input type="checkbox" id="theme-toggle">
+    <input type="checkbox" id="theme-toggle" aria-label="{{ a11y.toggle_theme | default: 'Toggle theme' }}">
     <label for="theme-toggle" class="theme-toggle-label">
       <svg class="theme-icon icon" aria-hidden="true">
         <use href="{{ '/assets/images/icons.svg#icon-moon' | relative_url }}"></use>
       </svg>
     </label>
   </div>
-  <!-- Theme overlay for expansion animation on theme change -->
+
   <div class="theme-overlay"></div>
 
-  <!-- Include main JavaScript file -->
-  <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}"></script>
 </body>
 </html>

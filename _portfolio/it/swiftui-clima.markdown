@@ -8,18 +8,12 @@ github: "https://github.com/antoniocasto/SwiftUIClima"
 description: "Un'app iOS per il meteo scritta in SwiftUI."
 thumbnail: "https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png"
 thumbnail_alt: "Schermata meteo di SwiftUIClima"
+thumbnail_bg: "linear-gradient(135deg, #0ea5e9, #1d4ed8)"
 technologies: ["SwiftUI", "LottieFiles", "OpenWeather API", "MVVM", "CoreData", "CoreLocation", "UserDefaults", "URLSession"]
 published: true
 ---
 
 *{{ page.description }}*
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png" width="180" alt="Weather - Light">
-    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/2.png" width="180" alt="Weather - Dark">
-    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/3.png" width="180px" alt="Weather Details - Light">
-    <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/4.png" width="180px" alt="Weather Details - Dark">
-</div>
 
 SwiftUIClima è un'applicazione per iPhone, scritta in **SwiftUI**, che consente di tenere traccia delle condizioni meteorologiche nel luogo in cui ti trovi e nei tuoi luoghi preferiti.
 
@@ -39,5 +33,7 @@ L'applicazione utilizza l'**API OpenWeather** per ottenere informazioni aggiorna
 - **Gestione dello stato** tramite `@StateObject` e `ObservableObject`.
 - **Gestione dei permessi** per l'accesso alla posizione.
 - **Traduzione multilingua** (italiano e inglese).
+
+Screenshot e stati principali sono documentati nel repository.
 
 Il codice sorgente è disponibile su **[GitHub]({{ page.github }})**.
