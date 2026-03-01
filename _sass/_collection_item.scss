@@ -21,6 +21,21 @@
   color: var(--text-color); // Text color for paragraphs in collection items
 }
 
+.collection_item__hero {
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--portfolio-thumb-bg, var(--surface-muted));
+}
+
+.collection_item__hero img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: min(60vh, 520px);
+}
+
 /* Specific style for blog tiles (post-item) */
 .post-item {
   background-color: var(--collection-bg); // Background color for post items
