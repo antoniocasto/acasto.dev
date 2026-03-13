@@ -31,6 +31,12 @@ _{{ site.data.localization[page.lang].certificates.empty_state }}_
       {% assign course_title = certificate.title[page.lang] | default: certificate.title[site.default_lang] %}
       {% assign provider_name = certificate.provider[page.lang] | default: certificate.provider[site.default_lang] %}
       {% assign image_alt = certificate.certificate_alt[page.lang] | default: certificate.certificate_alt[site.default_lang] %}
+      {% assign course_link = certificate.course_url %}
+      {% if certificate.course_url and certificate.course_url contains "://" %}
+        {% assign course_link = certificate.course_url %}
+      {% elsif certificate.course_url %}
+        {% assign course_link = certificate.course_url | relative_url %}
+      {% endif %}
 
       <article class="certificate-card" data-certificate-slide>
         <div class="certificate-card__media">
@@ -39,7 +45,7 @@ _{{ site.data.localization[page.lang].certificates.empty_state }}_
         <div class="certificate-card__body">
           <p class="certificate-card__provider">
             <span>{{ site.data.localization[page.lang].certificates.provider_label }}: {{ provider_name }}</span>
-            <a class="certificate-card__course-link" href="{{ certificate.course_url }}" target="_blank" rel="noopener noreferrer">
+            <a class="certificate-card__course-link" href="{{ course_link }}" target="_blank" rel="noopener noreferrer">
               {{ site.data.localization[page.lang].certificates.course_link_label }} <span aria-hidden="true">↗</span>
             </a>
           </p>

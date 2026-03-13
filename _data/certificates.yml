@@ -1,5 +1,17 @@
 # Add new certificates by appending a new item to this list.
 # Required fields: id, title(en/it), provider(en/it), course_url, certificate_image, certificate_alt(en/it)
+- id: "swiftui-advanced-architectures"
+  title:
+    en: "SwiftUI Advanced Architectures"
+    it: "SwiftUI Advanced Architectures"
+  provider:
+    en: "Swiftful Thinking"
+    it: "Swiftful Thinking"
+  course_url: "https://www.swiftful-thinking.com/architecture"
+  certificate_image: "/assets/images/certificates/swiftui-advanced-architectures.png"
+  certificate_alt:
+    en: "SwiftUI Advanced Architectures certificate from Swiftful Thinking"
+    it: "Certificato SwiftUI Advanced Architectures di Swiftful Thinking"
 - id: "hacking-with-swift-100-days-swiftui"
   title:
     en: "100 Days of SwiftUI"
