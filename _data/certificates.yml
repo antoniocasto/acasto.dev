@@ -5,13 +5,13 @@
     en: "SwiftUI Advanced Architectures"
     it: "SwiftUI Advanced Architectures"
   provider:
-    en: "iOS Certification"
-    it: "Certificazione iOS"
-  course_url: "/assets/certificates/swiftui-advanced-architectures.pdf"
+    en: "Swiftful Thinking"
+    it: "Swiftful Thinking"
+  course_url: "https://www.swiftful-thinking.com/architecture"
   certificate_image: "/assets/images/certificates/swiftui-advanced-architectures.png"
   certificate_alt:
-    en: "SwiftUI Advanced Architectures certificate"
-    it: "Certificato SwiftUI Advanced Architectures"
+    en: "SwiftUI Advanced Architectures certificate from Swiftful Thinking"
+    it: "Certificato SwiftUI Advanced Architectures di Swiftful Thinking"
 - id: "hacking-with-swift-100-days-swiftui"
   title:
     en: "100 Days of SwiftUI"
