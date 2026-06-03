@@ -1,16 +1,53 @@
 ---
 layout: default
 ---
-<!-- This is the main index layout for the website. It includes a terminal-style header with a typing animation and a placeholder for the page content. -->
-<div class="terminal">
-    <h1 class="typing-animation">acasto<span class="dot">.</span>dev 👋🏻</h1>
-</div>
+{% assign home_lang = page.lang | default: site.default_lang %}
+{% assign portfolio_href = '/' | append: home_lang | append: '/portfolio/' | relative_url %}
+{% assign contacts_href = '/' | append: home_lang | append: '/contacts/' | relative_url %}
+{% if home_lang == 'it' %}
+  {% assign portfolio_label = 'Portfolio' %}
+  {% assign contacts_label = 'Contatti' %}
+{% else %}
+  {% assign portfolio_label = 'Portfolio' %}
+  {% assign contacts_label = 'Contacts' %}
+{% endif %}
+{% capture action_arrow %}&rarr;{% endcapture %}
 
-<section class="home-hero">
-    <div class="home-hero__content">
-        {{ content }}
+<section class="home-shell" aria-labelledby="home-title">
+  <div class="home-intro">
+    <p class="home-role">iOS Developer</p>
+    <h1 id="home-title">Antonio Casto</h1>
+    <div class="home-copy">
+      {{ content }}
     </div>
-    <div class="home-hero__image">
-        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" loading="eager" fetchpriority="high" decoding="async" width="764" height="824">
+
+    <div class="home-actions" aria-label="Primary actions">
+      {% include acd/button.liquid
+        href=portfolio_href
+        label=portfolio_label
+        size="large"
+        class="home-action"
+        trailing_html=action_arrow
+      %}
+      {% include acd/button.liquid
+        href=contacts_href
+        label=contacts_label
+        variant="secondary"
+        size="large"
+        class="home-action"
+      %}
     </div>
+
+    <div class="home-tags" aria-label="Core skills">
+      {% include acd/tag.liquid label="SwiftUI" variant="outlined" size="small" color="accent" %}
+      {% include acd/tag.liquid label="UIKit" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid label="Architecture" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid label="Testing" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid label="CI/CD" variant="outlined" size="small" color="surface" %}
+    </div>
+  </div>
+
+  <figure class="home-portrait">
+    <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="Antonio Casto" loading="eager" fetchpriority="high" decoding="async" width="764" height="824">
+  </figure>
 </section>
