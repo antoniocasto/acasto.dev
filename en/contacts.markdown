@@ -4,9 +4,12 @@ title: "Contacts"
 ref: "contacts"
 permalink: "/en/contacts/"
 ---
-# Contacts  
-
-Feel free to send me a message, or reach out to me through my social profiles.  
+{% include site/page-header.html
+  title="Contacts"
+  subtitle="Feel free to send me a message, or reach out to me through my social profiles."
+  heading_tag="h1"
+  size="large"
+%}
 
 ## Email  
 You can contact me via email at <span class="contact-item"><span class="contact-icon" aria-hidden="true">✉️</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>.

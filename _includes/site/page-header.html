@@ -1,0 +1,14 @@
+{% assign page_header_class = 'site-page-header' %}
+{% if include.class %}
+  {% assign page_header_class = page_header_class | append: ' ' | append: include.class %}
+{% endif %}
+{::nomarkdown}
+{% include acd/section-header.liquid
+  title=include.title
+  subtitle=include.subtitle
+  heading_tag=include.heading_tag
+  style=include.style
+  size=include.size
+  class=page_header_class
+%}
+{:/nomarkdown}

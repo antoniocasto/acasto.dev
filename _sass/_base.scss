@@ -32,23 +32,47 @@ body.menu-open {
 }
 
 // Base styles for heading elements
-h1, h2, h3, h4 {
+h1:not(.ac-section-header__title),
+h2:not(.ac-section-header__title),
+h3:not(.ac-section-header__title),
+h4:not(.ac-section-header__title) {
   font-weight: 600; // Set font weight to 600
   margin-bottom: 0.5em; // Add margin below headings
   color: var(--text-color);
   font-family: var(--font-display);
 }
 
-h2,
-h3 {
+h2:not(.ac-section-header__title),
+h3:not(.ac-section-header__title) {
   border-bottom: 2px solid rgba(37, 99, 235, 0.2);
   display: inline-block;
   padding-bottom: 0.25rem;
 }
 
-p {
+p:not(.ac-section-header__subtitle) {
   line-height: 1.7;
   color: var(--text-muted);
+}
+
+.site-page-header {
+  padding: 0 0 var(--ac-space-xl);
+  margin-bottom: var(--ac-space-lg);
+}
+
+.site-page-header .ac-section-header__title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.site-page-header .ac-section-header__subtitle {
+  max-width: 42rem;
+  color: var(--ac-color-foreground-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.55;
 }
 
 // Base styles for links

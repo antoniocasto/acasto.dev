@@ -4,9 +4,12 @@ title: "Blog"
 ref: "blog"
 permalink: "/en/blog/"
 ---
-# Blog  
-
-In this section, I will publish articles and tutorials about iOS development and technology.
+{% include site/page-header.html
+  title="Blog"
+  subtitle="In this section, I will publish articles and tutorials about iOS development and technology."
+  heading_tag="h1"
+  size="large"
+%}
 
 {% assign localized_posts = site.posts | where: "lang", page.lang %}
 

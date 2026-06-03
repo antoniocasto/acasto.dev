@@ -4,9 +4,12 @@ title: "Contatti"
 ref: "contacts"
 permalink: "/it/contacts/"
 ---
-# Contatti  
-
-Sentiti libero di inviarmi un messaggio oppure di contattarmi attraverso i miei profili social.  
+{% include site/page-header.html
+  title="Contatti"
+  subtitle="Sentiti libero di inviarmi un messaggio oppure di contattarmi attraverso i miei profili social."
+  heading_tag="h1"
+  size="large"
+%}
 
 ## Email  
 Puoi contattarmi via email a <span class="contact-item"><span class="contact-icon" aria-hidden="true">✉️</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>.

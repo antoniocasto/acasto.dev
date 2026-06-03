@@ -4,9 +4,14 @@ title: "Certificates"
 ref: "certificates"
 permalink: "/en/certificates/"
 ---
-# {{ site.data.localization[page.lang].certificates.heading }}
-
-{{ site.data.localization[page.lang].certificates.intro }}
+{% assign certificates_title = site.data.localization[page.lang].certificates.heading %}
+{% assign certificates_intro = site.data.localization[page.lang].certificates.intro %}
+{% include site/page-header.html
+  title=certificates_title
+  subtitle=certificates_intro
+  heading_tag="h1"
+  size="large"
+%}
 
 {% assign localized_certificates = site.data.certificates %}
 

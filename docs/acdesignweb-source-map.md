@@ -20,5 +20,6 @@ Rules:
 - `ACDesignWeb` is read-only for this migration.
 - Local consumer adaptations are allowed only in the vendored copies inside `acasto.dev`.
 - The copied Jekyll adapter includes are adapted from Liquid `{&#37; render &#37;}` to Jekyll 3.10-compatible `{&#37; include &#37;}` because this site uses Liquid 4.0.4.
+- The copied internal attribute helpers preserve leading spaces before optional attributes after the render-to-include conversion, so generated HTML attributes do not concatenate.
 - Site-specific layout and content CSS belongs in `_sass/`.
 - Production must not load files from the private `ACDesignWeb` repository.
