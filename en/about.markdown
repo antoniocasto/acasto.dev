@@ -5,22 +5,23 @@ ref: "about"
 permalink: "/en/about/"
 ---
 
+{::nomarkdown}
 <section class="about-hero">
   <div class="about-hero__identity">
     <div class="avatar-block">
-      <div class="avatar-ring">
-        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image" loading="lazy" decoding="async" width="764" height="824">
+      <div class="avatar-ring ac-avatar" data-ac-shape="rounded" data-ac-border="true">
+        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image ac-avatar__image" loading="lazy" decoding="async" width="764" height="824">
       </div>
-      <span class="role-badge">iOS Developer</span>
+      <span class="role-badge ac-tag" data-ac-color="accent"><span class="ac-tag__label">iOS Developer</span></span>
     </div>
     <h1>Antonio Casto</h1>
     <p class="role-line">Based in Italy · Fully bilingual (English/Italian)</p>
-    <div class="cta-row">
-      <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
-      <a class="cta-link" href="/en/contacts/">Contact Me</a>
+    <div class="about-actions">
+      <a class="about-action ac-button" data-ac-variant="secondary" href="/en/portfolio/"><span class="ac-button__label">View Portfolio</span></a>
+      <a class="about-action ac-button" href="/en/contacts/"><span class="ac-button__label">Contact Me</span></a>
     </div>
   </div>
-  <div class="about-hero__summary">
+  <div class="about-hero__summary ac-card" data-ac-variant="filled">
     <p>I design and build iOS apps with a focus on modularity, scalability, and testability.</p>
     <p>From architecture to delivery, I collaborate closely with teams and ship reliable features with clear ownership.</p>
     <ul class="highlights-list">
@@ -34,9 +35,9 @@ permalink: "/en/about/"
 </section>
 
 <section class="about-section">
-  <h2>Work Experience</h2>
+  {% include acd/section-header.liquid title="Work Experience" heading_tag="h2" size="regular" class="about-section__header" %}
   <div class="about-grid">
-    <article class="about-card">
+    <article class="about-card ac-card" data-ac-variant="filled">
       <header>
         <h3>iOS Developer — Hidonix</h3>
         <p class="meta">Catania, Italy · Oct 9, 2023 — Present</p>
@@ -48,7 +49,7 @@ permalink: "/en/about/"
         <li>Collaboration within the team to solve technical challenges and align on effective approaches.</li>
       </ul>
     </article>
-    <article class="about-card">
+    <article class="about-card ac-card" data-ac-variant="filled">
       <header>
         <h3>Developer — Research Scholarship</h3>
         <p class="meta">Nexa Center for Internet &amp; Society — Politecnico di Torino (DAUIN)</p>
@@ -63,8 +64,8 @@ permalink: "/en/about/"
 </section>
 
 <section class="about-section">
-  <h2>Core iOS Skills</h2>
-  <div class="about-card">
+  {% include acd/section-header.liquid title="Core iOS Skills" heading_tag="h2" size="regular" class="about-section__header" %}
+  <div class="about-card ac-card" data-ac-variant="filled">
     <ul class="skill-list">
       <li><strong>Frameworks:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
       <li><strong>Architecture:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator, Repository pattern.</li>
@@ -77,8 +78,8 @@ permalink: "/en/about/"
 </section>
 
 <section class="about-section">
-  <h2>Quality &amp; Delivery</h2>
-  <div class="about-card">
+  {% include acd/section-header.liquid title="Quality & Delivery" heading_tag="h2" size="regular" class="about-section__header" %}
+  <div class="about-card ac-card" data-ac-variant="filled">
     <ul class="skill-list">
       <li><strong>Dependency management:</strong> Swift Package Manager (adding dependencies and reusable internal packages), CocoaPods.</li>
       <li><strong>CI/CD and automation:</strong> Fastlane, GitLab CI/CD.</li>
@@ -91,8 +92,8 @@ permalink: "/en/about/"
 </section>
 
 <section class="about-section">
-  <h2>Education</h2>
-  <div class="about-card">
+  {% include acd/section-header.liquid title="Education" heading_tag="h2" size="regular" class="about-section__header" %}
+  <div class="about-card ac-card" data-ac-variant="filled">
     <ul class="skill-list">
       <li>M.Sc. Computer Engineering (Software) — Politecnico di Torino (2018–2022).</li>
       <li>B.Sc. Computer Engineering — Politecnico di Torino (2014–2018).</li>
@@ -103,8 +104,8 @@ permalink: "/en/about/"
 </section>
 
 <section class="about-section">
-  <h2>Continuous Learning</h2>
-  <div class="about-card">
+  {% include acd/section-header.liquid title="Continuous Learning" heading_tag="h2" size="regular" class="about-section__header" %}
+  <div class="about-card ac-card" data-ac-variant="filled">
     <p>Continuous learning is part of my daily routine: I study every week, experiment, and apply new ideas immediately.</p>
     <p>I stay sharp through Hacking with Swift, Design+Code, and Point-Free, alongside official documentation and books.</p>
     <p>Mentors I follow consistently include Sean Allen, Donny Wals, Antoine van der Lee, and Paul Hudson.</p>
@@ -113,8 +114,8 @@ permalink: "/en/about/"
 </section>
 
 <section class="about-section">
-  <h2>Additional Technologies</h2>
-  <details class="about-details">
+  {% include acd/section-header.liquid title="Additional Technologies" heading_tag="h2" size="regular" class="about-section__header" %}
+  <details class="about-details ac-card" data-ac-variant="filled">
     <summary>View supporting tools and platforms</summary>
     <div class="about-details__content">
       <p><strong>Platforms (past experience):</strong> Flutter, React, Angular, Spring Boot.</p>
@@ -125,9 +126,10 @@ permalink: "/en/about/"
 </section>
 
 <section class="about-section">
-  <div class="cta-row cta-row--full">
-    <a class="cta-button cta-button--ghost" href="/en/portfolio/">View Portfolio</a>
-    <a class="cta-button cta-button--ghost" href="/en/certificates/">View Certificates</a>
-    <a class="cta-link" href="/en/contacts/">Contact Me</a>
+  <div class="about-actions about-actions--full">
+    <a class="about-action ac-button" data-ac-variant="secondary" href="/en/portfolio/"><span class="ac-button__label">View Portfolio</span></a>
+    <a class="about-action ac-button" data-ac-variant="secondary" href="/en/certificates/"><span class="ac-button__label">View Certificates</span></a>
+    <a class="about-action ac-button" href="/en/contacts/"><span class="ac-button__label">Contact Me</span></a>
   </div>
 </section>
+{:/nomarkdown}
