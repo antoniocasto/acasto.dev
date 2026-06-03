@@ -22,11 +22,11 @@ _{{ site.data.localization[page.lang].certificates.empty_state }}_
   <div class="certificates__header">
     <p class="certificates__hint">{{ site.data.localization[page.lang].certificates.carousel_hint }}</p>
     <div class="certificates__controls">
-      <button type="button" class="certificates__button" data-certificates-prev aria-label="{{ site.data.localization[page.lang].certificates.previous }}">
-        <span aria-hidden="true">&larr;</span>
+      <button type="button" class="certificates__button ac-icon-button" data-ac-shape="circle" data-ac-variant="outlined" data-ac-color="accent" data-certificates-prev aria-label="{{ site.data.localization[page.lang].certificates.previous }}">
+        <span class="ac-icon-button__icon" aria-hidden="true">&larr;</span>
       </button>
-      <button type="button" class="certificates__button" data-certificates-next aria-label="{{ site.data.localization[page.lang].certificates.next }}">
-        <span aria-hidden="true">&rarr;</span>
+      <button type="button" class="certificates__button ac-icon-button" data-ac-shape="circle" data-ac-variant="outlined" data-ac-color="accent" data-certificates-next aria-label="{{ site.data.localization[page.lang].certificates.next }}">
+        <span class="ac-icon-button__icon" aria-hidden="true">&rarr;</span>
       </button>
     </div>
   </div>
@@ -43,7 +43,7 @@ _{{ site.data.localization[page.lang].certificates.empty_state }}_
         {% assign course_link = certificate.course_url | relative_url %}
       {% endif %}
 
-      <article class="certificate-card" data-certificate-slide>
+      <article class="certificate-card ac-card" data-ac-variant="filled" data-certificate-slide>
         <div class="certificate-card__media">
           <img src="{{ certificate.certificate_image | relative_url }}" alt="{{ image_alt }}" loading="lazy" decoding="async">
         </div>
