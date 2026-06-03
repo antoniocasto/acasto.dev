@@ -1,0 +1,14 @@
+<span
+  class="{% include acd/_internal/class-name.liquid base='ac-badge' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
+  {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- if include.label -%}
+    {{ include.label | escape }}
+  {%- elsif include.count -%}
+    {{ include.count | escape }}
+  {%- endif -%}
+</span>

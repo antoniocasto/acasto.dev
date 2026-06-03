@@ -1,0 +1,37 @@
+{%- assign kind = include.kind | default: 'line' -%}
+{%- if kind == 'block' -%}
+  <span
+    class="{% include acd/_internal/class-name.liquid base='ac-skeleton-block' extra=include.class %}"
+    aria-hidden="true"
+    {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+    {%- if include.width or include.height -%}
+      style="{% if include.width %}--ac-skeleton-width: {{ include.width }};{% endif %}{% if include.height %} --ac-skeleton-block-height: {{ include.height }};{% endif %}"
+    {%- endif -%}
+  ></span>
+{%- elsif kind == 'list-row' -%}
+  <div class="{% include acd/_internal/class-name.liquid base='ac-skeleton-list-row' extra=include.class %}" aria-hidden="true">
+    <span class="ac-skeleton-list-row__avatar"></span>
+    <span class="ac-skeleton-list-row__body">
+      <span class="ac-skeleton-line" style="--ac-skeleton-width: 48%;"></span>
+      <span class="ac-skeleton-line" style="--ac-skeleton-width: 74%;"></span>
+    </span>
+  </div>
+{%- elsif kind == 'card' -%}
+  <div class="{% include acd/_internal/class-name.liquid base='ac-skeleton-card' extra=include.class %}" aria-hidden="true">
+    <div class="ac-skeleton-card__header"></div>
+    <div class="ac-skeleton-card__body">
+      <span class="ac-skeleton-line" style="--ac-skeleton-width: 52%;"></span>
+      <span class="ac-skeleton-line" style="--ac-skeleton-width: 86%;"></span>
+      <span class="ac-skeleton-line" style="--ac-skeleton-width: 64%;"></span>
+    </div>
+  </div>
+{%- else -%}
+  <span
+    class="{% include acd/_internal/class-name.liquid base='ac-skeleton-line' extra=include.class %}"
+    aria-hidden="true"
+    {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+    {%- if include.width or include.height -%}
+      style="{% if include.width %}--ac-skeleton-width: {{ include.width }};{% endif %}{% if include.height %} --ac-skeleton-line-height: {{ include.height }};{% endif %}"
+    {%- endif -%}
+  ></span>
+{%- endif -%}

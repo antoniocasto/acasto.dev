@@ -1,0 +1,73 @@
+:where(.ac-avatar) {
+  --ac-avatar-size: 2.5rem;
+  --ac-avatar-radius: var(--ac-radius-full);
+  --ac-avatar-font-size: 0.875rem;
+  inline-size: var(--ac-avatar-size);
+  block-size: var(--ac-avatar-size);
+  display: inline-grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: var(--ac-avatar-radius);
+  background: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+  position: relative;
+  flex: none;
+  box-sizing: border-box;
+}
+
+:where(.ac-avatar[data-ac-size="small"]) {
+  --ac-avatar-size: 2rem;
+  --ac-avatar-font-size: 0.75rem;
+}
+
+:where(.ac-avatar[data-ac-size="large"]) {
+  --ac-avatar-size: 3.5rem;
+  --ac-avatar-font-size: 1.25rem;
+}
+
+:where(.ac-avatar[data-ac-size="xlarge"]) {
+  --ac-avatar-size: 4.5rem;
+  --ac-avatar-font-size: 1.625rem;
+}
+
+:where(.ac-avatar[data-ac-shape="rounded"]) {
+  --ac-avatar-radius: calc(var(--ac-avatar-size) * 0.25);
+}
+
+:where(.ac-avatar[data-ac-border="true"]) {
+  box-shadow: inset 0 0 0 var(--ac-border-default) var(--ac-color-border);
+}
+
+:where(.ac-avatar__image) {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+:where(.ac-avatar__initials) {
+  font-size: var(--ac-avatar-font-size);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+:where(.ac-avatar__placeholder) {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  opacity: 0.92;
+  background-image:
+    radial-gradient(
+      circle at 50% 32%,
+      var(--ac-color-foreground-secondary) 0 18%,
+      transparent 19%
+    ),
+    radial-gradient(
+      ellipse 34% 24% at 50% 74%,
+      var(--ac-color-foreground-secondary) 0 99%,
+      transparent 100%
+    );
+  background-repeat: no-repeat;
+}

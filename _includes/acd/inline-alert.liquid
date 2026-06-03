@@ -1,0 +1,24 @@
+<div
+  class="{% include acd/_internal/class-name.liquid base='ac-inline-alert' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-tone' value=include.tone -%}
+  role="{{ include.role | default: 'status' | escape }}"
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- if include.icon_html -%}
+    <span class="ac-message__icon" aria-hidden="true">{{ include.icon_html }}</span>
+  {%- endif -%}
+  <div class="ac-message__content">
+    {%- if include.title -%}
+      <p class="ac-message__title">{{ include.title | escape }}</p>
+    {%- endif -%}
+    {%- if include.message -%}
+      <p class="ac-message__message">{{ include.message | escape }}</p>
+    {%- endif -%}
+  </div>
+  {%- if include.dismiss_html -%}
+    {{ include.dismiss_html }}
+  {%- elsif include.dismiss_label -%}
+    <button class="ac-message__dismiss" type="button" aria-label="{{ include.dismiss_label | escape }}">×</button>
+  {%- endif -%}
+</div>

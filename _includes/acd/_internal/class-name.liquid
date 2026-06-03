@@ -1,0 +1,9 @@
+{%- assign base = include.base | default: "" | strip -%}
+{%- assign extra = include.extra | default: "" | strip -%}
+{%- if base != "" and extra != "" -%}
+{{ base }} {{ extra }}
+{%- elsif extra != "" -%}
+{{ extra }}
+{%- else -%}
+{{ base }}
+{%- endif -%}

@@ -1,0 +1,49 @@
+{%- assign show_close = include.show_close != 'false' and include.show_close != false -%}
+{%- assign modal_title_id = include.title_id | default: '' | strip -%}
+{%- if modal_title_id == '' and include.id and include.id != '' -%}
+  {%- assign modal_title_id = include.id | append: '-title' -%}
+{%- endif -%}
+{%- assign modal_aria_label = include.aria_label | default: include.title -%}
+<dialog
+  class="{% include acd/_internal/class-name.liquid base='ac-modal' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-header-style' value=include.header_style -%}
+  {%- if include.dismissible == false or include.dismissible == 'false' -%} data-ac-dismissible="false"{%- endif -%}
+  {%- if include.backdrop_dismiss == false or include.backdrop_dismiss == 'false' -%} data-ac-backdrop-dismiss="false"{%- endif -%}
+  {%- if modal_title_id != '' -%}
+    {%- include acd/_internal/attribute.liquid name='aria-labelledby' value=modal_title_id -%}
+  {%- else -%}
+    {%- include acd/_internal/attribute.liquid name='aria-label' value=modal_aria_label -%}
+  {%- endif -%}
+  {%- if include.open == true or include.open == 'true' -%} open{%- endif -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  <div class="ac-modal__surface">
+    <header class="ac-modal__header">
+      <div class="ac-modal__leading">{{ include.leading_html }}</div>
+      <div class="ac-modal__heading">
+        <h2 class="ac-modal__title"{%- include acd/_internal/attribute.liquid name='id' value=modal_title_id -%}>{{ include.title | escape }}</h2>
+        {%- if include.subtitle -%}
+          <p class="ac-modal__subtitle">{{ include.subtitle | escape }}</p>
+        {%- endif -%}
+      </div>
+      <div class="ac-modal__trailing">
+        {{ include.trailing_html }}
+        {%- if show_close -%}
+          {%- if include.close_html -%}
+            {{ include.close_html }}
+          {%- else -%}
+            <button class="ac-modal__close" data-ac-modal-close type="button" aria-label="{{ include.close_label | default: 'Close modal' | escape }}">×</button>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </header>
+    <div class="ac-modal__body">
+      {{ include.body_html }}
+      {%- if include.footer_html -%}
+        <div class="ac-modal__footer">{{ include.footer_html }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</dialog>

@@ -1,0 +1,152 @@
+:where(.ac-step-indicator) {
+  --ac-step-indicator-size: 1.5rem;
+  --ac-step-indicator-gap: var(--ac-space-md);
+  --ac-step-indicator-label-gap: var(--ac-space-sm);
+  --ac-step-indicator-min-height: 4.75rem;
+  --ac-step-indicator-connector-thickness: 0.25rem;
+  --ac-step-indicator-connector-color: color-mix(in srgb, var(--ac-color-border) 82%, transparent);
+  display: flex;
+  gap: 0;
+  inline-size: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+:where(.ac-step-indicator[data-ac-variant="compact"]) {
+  --ac-step-indicator-size: 1.125rem;
+  --ac-step-indicator-gap: var(--ac-space-sm);
+  --ac-step-indicator-label-gap: var(--ac-space-xs);
+  --ac-step-indicator-min-height: 3rem;
+  --ac-step-indicator-compact-gap-before: var(--ac-space-lg);
+  --ac-step-indicator-compact-gap-after: var(--ac-space-md);
+  --ac-step-indicator-compact-connector-width: 2.5rem;
+}
+
+:where(.ac-step-indicator__item) {
+  position: relative;
+  flex: 1 1 0;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: var(--ac-step-indicator-label-gap);
+  min-inline-size: 0;
+  min-block-size: var(--ac-step-indicator-min-height);
+  padding-inline: calc(var(--ac-step-indicator-gap) * 0.5);
+  text-align: center;
+}
+
+:where(.ac-step-indicator__item:last-child) {
+  padding-inline-end: 0;
+}
+
+:where(.ac-step-indicator__item:first-child) {
+  padding-inline-start: 0;
+}
+
+:where(.ac-step-indicator__item:not(:last-child))::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(50% + (var(--ac-step-indicator-size) * 0.5) + var(--ac-step-indicator-gap) * 0.5);
+  inset-inline-end: calc(-50% + (var(--ac-step-indicator-size) * 0.5) + var(--ac-step-indicator-gap) * 0.5);
+  inset-block-start: calc((var(--ac-step-indicator-size) * 0.5) - (var(--ac-step-indicator-connector-thickness) * 0.5));
+  block-size: var(--ac-step-indicator-connector-thickness);
+  border-radius: var(--ac-radius-full);
+  background: var(--ac-step-indicator-connector-color);
+  z-index: 0;
+}
+
+:where(.ac-step-indicator__item[data-ac-state="completed"]:has(+ .ac-step-indicator__item:is([data-ac-state="completed"], [data-ac-state="current"])))::after {
+  background: var(--ac-color-accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--ac-color-accent) 16%, transparent);
+}
+
+:where(.ac-step-indicator__marker) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--ac-step-indicator-size);
+  block-size: var(--ac-step-indicator-size);
+  border: var(--ac-border-default) solid var(--ac-color-border);
+  border-radius: var(--ac-radius-full);
+  background: var(--ac-color-surface);
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: 800;
+  line-height: 1;
+  z-index: 1;
+}
+
+:where(.ac-step-indicator__item[data-ac-state="completed"] .ac-step-indicator__marker) {
+  border-color: var(--ac-color-accent);
+  background: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
+}
+
+:where(.ac-step-indicator__item[data-ac-state="current"] .ac-step-indicator__marker) {
+  border-color: var(--ac-color-foreground);
+  background: var(--ac-color-foreground);
+  color: var(--ac-color-background);
+}
+
+:where(.ac-step-indicator__content) {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: var(--ac-step-indicator-label-gap);
+  min-inline-size: 0;
+}
+
+:where(.ac-step-indicator__label) {
+  color: var(--ac-color-foreground);
+  font-size: var(--ac-type-body-font-size);
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+:where(.ac-step-indicator__item[data-ac-state="upcoming"] .ac-step-indicator__label) {
+  color: var(--ac-color-foreground-secondary);
+}
+
+:where(.ac-step-indicator__meta) {
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-caption-font-size);
+  line-height: 1.3;
+}
+
+:where(.ac-step-indicator[data-ac-variant="compact"] .ac-step-indicator__item) {
+  flex: 0 0 auto;
+  grid-template-columns: var(--ac-step-indicator-size) minmax(0, auto);
+  justify-items: start;
+  align-items: center;
+  align-content: center;
+  gap: var(--ac-step-indicator-gap);
+  min-block-size: var(--ac-step-indicator-min-height);
+  min-inline-size: max-content;
+  padding-inline-start: 0;
+  padding-inline-end: calc(var(--ac-step-indicator-compact-gap-before) + var(--ac-step-indicator-compact-connector-width) + var(--ac-step-indicator-compact-gap-after));
+  text-align: start;
+}
+
+:where(.ac-step-indicator[data-ac-variant="compact"] .ac-step-indicator__content) {
+  justify-items: start;
+  align-self: center;
+}
+
+:where(.ac-step-indicator[data-ac-variant="compact"] .ac-step-indicator__label) {
+  font-size: var(--ac-type-caption-font-size);
+}
+
+:where(.ac-step-indicator[data-ac-variant="compact"] .ac-step-indicator__item:not(:last-child))::after {
+  inset-inline-start: auto;
+  inset-inline-end: var(--ac-step-indicator-compact-gap-after);
+  inline-size: var(--ac-step-indicator-compact-connector-width);
+  inset-block-start: calc(50% - (var(--ac-step-indicator-connector-thickness) * 0.5));
+}
+
+:where(.ac-step-indicator[data-ac-variant="compact"] .ac-step-indicator__item:last-child) {
+  padding-inline-end: 0;
+}

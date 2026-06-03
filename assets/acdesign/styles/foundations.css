@@ -1,0 +1,81 @@
+@import "./tokens.css";
+
+:where(.ac-theme) {
+  background: var(--ac-color-background);
+  color: var(--ac-color-foreground);
+  font-family: var(--ac-font-family-sans);
+}
+
+:where(.ac-surface) {
+  background: var(--ac-color-surface);
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  border-radius: var(--ac-radius-md);
+  color: var(--ac-color-foreground);
+}
+
+:where(.ac-surface-elevated) {
+  background: var(--ac-color-surface-elevated);
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  border-radius: var(--ac-radius-lg);
+  color: var(--ac-color-foreground);
+}
+
+:where(.ac-text-display) {
+  font-size: var(--ac-type-display-font-size);
+  font-weight: var(--ac-type-display-font-weight);
+  letter-spacing: var(--ac-type-display-letter-spacing);
+  line-height: var(--ac-type-display-line-height);
+}
+
+:where(.ac-text-title) {
+  font-size: var(--ac-type-title-font-size);
+  font-weight: var(--ac-type-title-font-weight);
+  letter-spacing: var(--ac-type-title-letter-spacing);
+  line-height: var(--ac-type-title-line-height);
+}
+
+:where(.ac-text-headline) {
+  font-size: var(--ac-type-headline-font-size);
+  font-weight: var(--ac-type-headline-font-weight);
+  letter-spacing: var(--ac-type-headline-letter-spacing);
+  line-height: var(--ac-type-headline-line-height);
+}
+
+:where(.ac-text-body) {
+  font-size: var(--ac-type-body-font-size);
+  font-weight: var(--ac-type-body-font-weight);
+  letter-spacing: var(--ac-type-body-letter-spacing);
+  line-height: var(--ac-type-body-line-height);
+}
+
+:where(.ac-text-caption) {
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: var(--ac-type-caption-font-weight);
+  letter-spacing: var(--ac-type-caption-letter-spacing);
+  line-height: var(--ac-type-caption-line-height);
+}
+
+:where(.ac-text-label) {
+  font-size: var(--ac-type-label-font-size);
+  font-weight: var(--ac-type-label-font-weight);
+  letter-spacing: var(--ac-type-label-letter-spacing);
+  line-height: var(--ac-type-label-line-height);
+  text-transform: uppercase;
+}
+
+:where(.ac-motion-transition) {
+  transition-duration: var(--ac-motion-duration-default);
+  transition-timing-function: var(--ac-motion-easing-standard);
+}
+
+:where(.ac-motion-spring) {
+  transition-duration: var(--ac-motion-duration-default);
+  transition-timing-function: var(--ac-motion-easing-spring-fallback);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ac-motion-transition, .ac-motion-spring) {
+    transition-duration: 0ms;
+    animation-duration: 0ms;
+  }
+}

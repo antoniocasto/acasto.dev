@@ -1,0 +1,30 @@
+{%- assign is_disabled = include.disabled == true or include.disabled == 'true' -%}
+<fieldset
+  class="{% include acd/_internal/class-name.liquid base='ac-radio-group' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
+  {%- if is_disabled -%} data-ac-disabled="true"{%- endif -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- if include.legend -%}
+    <legend class="ac-field-legend">{{ include.legend | escape }}</legend>
+  {%- endif -%}
+  <div class="ac-radio-group__list">
+    {%- for option in include.options -%}
+      {%- assign option_checked = option.checked == true or option.checked == 'true' -%}
+      {%- assign option_disabled = is_disabled or option.disabled == true or option.disabled == 'true' -%}
+      <label class="ac-radio">
+        <input
+          class="ac-radio__input"
+          type="radio"
+          name="{{ option.name | default: include.name | escape }}"
+          {%- include acd/_internal/attribute.liquid name='value' value=option.value -%}
+          {%- if option_checked -%} checked{%- endif -%}
+          {%- if option_disabled -%} disabled{%- endif -%}
+        />
+        <span class="ac-radio__control"></span>
+        <span class="ac-radio__label">{{ option.label | escape }}</span>
+      </label>
+    {%- endfor -%}
+  </div>
+</fieldset>

@@ -1,0 +1,53 @@
+<div
+  class="{% include acd/_internal/class-name.liquid base='ac-tag-group' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-selection-mode' value=include.selection_mode -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-layout' value=include.layout -%}
+  {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- for item in include.items -%}
+    {%- assign is_selected = item.selected == true or item.selected == 'true' -%}
+    {%- assign item_value = item.value | default: item.label | slugify -%}
+    {%- if include.selection_mode == 'static-display' -%}
+      <span class="ac-tag-group__chip">
+        {%- include acd/tag.liquid id=item.id
+          class=item.class
+          label=item.label
+          color=item.color
+          variant=item.variant
+          size=item.size
+          icon_html=item.icon_html
+          attrs=item.attrs
+        -%}
+        {%- if item.remove_label -%}
+          <button class="ac-tag-group__remove" type="button" aria-label="{{ item.remove_label | escape }}">×</button>
+        {%- endif -%}
+      </span>
+    {%- else -%}
+      {%- assign tag_variant = 'outlined' -%}
+      {%- assign tag_color = 'default' -%}
+      {%- if is_selected -%}
+        {%- assign tag_variant = 'filled' -%}
+        {%- assign tag_color = 'accent' -%}
+      {%- endif -%}
+      {%- capture tag_attrs -%}
+        data-ac-value="{{ item_value | escape }}"
+        data-ac-selected="{{ is_selected }}"
+        aria-pressed="{{ is_selected }}"
+        {%- if item.attrs -%} {{ item.attrs | strip }}{%- endif -%}
+      {%- endcapture -%}
+      {%- capture tag_class -%}ac-tag-group__item{%- if item.class -%} {{ item.class | strip }}{%- endif -%}{%- endcapture -%}
+      {%- include acd/tag.liquid id=item.id
+        button=true
+        class=tag_class
+        label=item.label
+        variant=tag_variant
+        size=item.size
+        color=tag_color
+        icon_html=item.icon_html
+        attrs=tag_attrs
+      -%}
+    {%- endif -%}
+  {%- endfor -%}
+</div>

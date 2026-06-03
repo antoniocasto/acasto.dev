@@ -1,0 +1,21 @@
+<article
+  class="{% include acd/_internal/class-name.liquid base='ac-stat-card' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- if include.meta or include.icon_html or include.trend -%}
+    <div class="ac-stat-card__meta">
+      {%- if include.icon_html -%}
+        <span class="ac-stat-card__icon" aria-hidden="true">{{ include.icon_html }}</span>
+      {%- endif -%}
+      {%- if include.meta -%}
+        <span>{{ include.meta | escape }}</span>
+      {%- endif -%}
+      {%- if include.trend -%}
+        <span class="ac-stat-card__trend" data-ac-trend="{{ include.trend_state | default: 'neutral' | escape }}">{{ include.trend | escape }}</span>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+  <p class="ac-stat-card__value">{{ include.value | escape }}</p>
+  <p class="ac-stat-card__label">{{ include.label | escape }}</p>
+</article>

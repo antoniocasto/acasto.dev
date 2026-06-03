@@ -1,0 +1,34 @@
+{%- assign show_group = include.items and include.items.size > 0 -%}
+{%- if show_group -%}
+  <div
+    class="{% include acd/_internal/class-name.liquid base='ac-accordion-group' extra=include.class %}"
+    {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+    {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+    {%- if include.allow_multiple == true or include.allow_multiple == 'true' -%} data-ac-allow-multiple="true"{%- endif -%}
+    {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+  >
+    {%- for item in include.items -%}
+      {%- assign is_open = item.open == true or item.open == 'true' -%}
+      {%- assign is_disabled = item.disabled == true or item.disabled == 'true' -%}
+      {%- assign accordion_size = item.size | default: include.size -%}
+      <details
+        class="ac-accordion"
+        {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=accordion_size -%}
+        {%- if is_disabled -%} data-ac-disabled="true"{%- endif -%}
+        {%- if is_open -%} open{%- endif -%}
+      >
+        <summary class="ac-accordion__summary">
+          <span class="ac-accordion__title">{{ item.title | escape }}</span>
+          <span class="ac-accordion__chevron" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M6 3L11 8L6 13"></path>
+            </svg>
+          </span>
+        </summary>
+        {%- if item.body_html -%}
+          <div class="ac-accordion__panel">{{ item.body_html }}</div>
+        {%- endif -%}
+      </details>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

@@ -1,0 +1,17 @@
+{%- assign progress_value = include.value | default: 0 | times: 1.0 -%}
+{%- assign progress_ratio = progress_value | divided_by: 100.0 -%}
+{%- assign progress_angle = progress_value | times: 3.6 -%}
+<div
+  class="{% include acd/_internal/class-name.liquid base='ac-progress-ring' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
+  role="progressbar"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="{{ progress_value | round }}"
+  style="--ac-progress-value: {{ progress_ratio }}; --ac-progress-angle: {{ progress_angle }}deg;"
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  <span class="ac-progress-ring__label">{% if include.label %}{{ include.label | escape }}{% else %}{{ progress_value | append: '%' }}{% endif %}</span>
+</div>
