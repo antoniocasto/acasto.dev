@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const applyThemeClass = (isDark) => {
     if (rootElement) {
       rootElement.classList.toggle('dark-theme', isDark);
+      rootElement.dataset.acTheme = isDark ? 'dark' : 'light';
     }
     document.body.classList.toggle('dark-theme', isDark);
   };

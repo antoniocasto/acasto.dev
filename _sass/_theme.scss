@@ -1,30 +1,33 @@
 :root {
-  --primary-color: #2563eb; /* Primary color */
-  --secondary-color: #38bdf8; /* Secondary accent */
-  --background-color: #f5f7fb; /* Background color */
-  --surface-color: #ffffff; /* Surface color */
-  --surface-muted: #eef2ff; /* Muted surface */
-  --text-color: #101828; /* Text color */
-  --text-muted: #475467; /* Muted text */
-  --border-color: rgba(16, 24, 40, 0.08); /* Subtle borders */
-  --font-stack: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Body font */
-  --font-display: "Space Grotesk", "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; /* Display font */
-  --radius-xl: 20px;
-  --radius-lg: 16px;
-  --radius-md: 12px;
-  --radius-sm: 8px;
-  --radius-pill: 999px;
-  --space-2xl: 2.5rem;
-  --space-xl: 2rem;
-  --space-lg: 1.5rem;
-  --space-md: 1rem;
-  --space-sm: 0.75rem;
-  --space-xs: 0.5rem;
-  --accent-gradient: linear-gradient(135deg, #2563eb, #38bdf8); /* Accent gradient */
-  --page-gradient: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 50%); /* Background glow */
-  --hero-bg: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(56, 189, 248, 0.12)); /* Hero background */
-  --glass-bg: rgba(255, 255, 255, 0.7); /* Glass background */
-  --glass-border: rgba(37, 99, 235, 0.12); /* Glass border */
+  --primary-color: var(--ac-color-accent);
+  --secondary-color: var(--ac-color-foreground-secondary);
+  --background-color: var(--ac-color-background);
+  --surface-color: var(--ac-color-surface);
+  --surface-muted: var(--ac-color-surface-elevated);
+  --text-color: var(--ac-color-foreground);
+  --text-muted: var(--ac-color-foreground-secondary);
+  --border-color: var(--ac-color-border-subtle);
+  --font-stack: var(--ac-font-family-sans);
+  --font-display: var(--ac-font-family-sans);
+  --radius-xl: var(--ac-radius-xl);
+  --radius-lg: var(--ac-radius-lg);
+  --radius-md: var(--ac-radius-md);
+  --radius-sm: var(--ac-radius-sm);
+  --radius-pill: var(--ac-radius-full);
+  --space-2xl: var(--ac-space-xxxl);
+  --space-xl: var(--ac-space-xxl);
+  --space-lg: var(--ac-space-xl);
+  --space-md: var(--ac-space-lg);
+  --space-sm: var(--ac-space-md);
+  --space-xs: var(--ac-space-sm);
+  --accent-gradient: linear-gradient(135deg, var(--ac-color-accent), var(--ac-color-foreground));
+  --accent-gradient: linear-gradient(135deg, var(--ac-color-accent), color-mix(in srgb, var(--ac-color-accent) 62%, var(--ac-color-foreground)));
+  --page-gradient: none;
+  --hero-bg: var(--ac-color-surface);
+  --glass-bg: var(--ac-color-surface-elevated);
+  --glass-bg: color-mix(in srgb, var(--ac-color-surface-elevated) 72%, transparent);
+  --glass-border: var(--ac-color-border-subtle);
+  --glass-border: color-mix(in srgb, var(--ac-color-border-subtle) 84%, transparent);
   --switch-bg: #0b1120; /* Switch button background hints dark mode */
   --switch-icon-color: #e2e8f0; /* Switch icon color in light mode */
   --side-menu-bg: #ffffff; /* Sidebar background in light mode */
@@ -45,19 +48,22 @@
 }
 
 .dark-theme {
-  --primary-color: #60a5fa; /* Primary color */
-  --secondary-color: #38bdf8; /* Secondary accent */
-  --background-color: #0b1120; /* Background color */
-  --surface-color: #111827; /* Surface color */
-  --surface-muted: #1f2937; /* Muted surface */
-  --text-color: #e5e7eb; /* Text color */
-  --text-muted: #94a3b8; /* Muted text */
-  --border-color: rgba(148, 163, 184, 0.18); /* Subtle borders */
-  --accent-gradient: linear-gradient(135deg, #60a5fa, #38bdf8); /* Accent gradient */
-  --page-gradient: radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 55%); /* Background glow */
-  --hero-bg: linear-gradient(135deg, rgba(96, 165, 250, 0.18), rgba(56, 189, 248, 0.12)); /* Hero background */
-  --glass-bg: rgba(17, 24, 39, 0.72); /* Glass background */
-  --glass-border: rgba(96, 165, 250, 0.18); /* Glass border */
+  --primary-color: var(--ac-color-accent);
+  --secondary-color: var(--ac-color-foreground-secondary);
+  --background-color: var(--ac-color-background);
+  --surface-color: var(--ac-color-surface);
+  --surface-muted: var(--ac-color-surface-elevated);
+  --text-color: var(--ac-color-foreground);
+  --text-muted: var(--ac-color-foreground-secondary);
+  --border-color: var(--ac-color-border-subtle);
+  --accent-gradient: linear-gradient(135deg, var(--ac-color-accent), var(--ac-color-foreground));
+  --accent-gradient: linear-gradient(135deg, var(--ac-color-accent), color-mix(in srgb, var(--ac-color-accent) 62%, var(--ac-color-foreground)));
+  --page-gradient: none;
+  --hero-bg: var(--ac-color-surface);
+  --glass-bg: var(--ac-color-surface-elevated);
+  --glass-bg: color-mix(in srgb, var(--ac-color-surface-elevated) 72%, transparent);
+  --glass-border: var(--ac-color-border-subtle);
+  --glass-border: color-mix(in srgb, var(--ac-color-border-subtle) 84%, transparent);
   --switch-bg: #f5f7fb; /* Switch button background hints light mode */
   --switch-icon-color: #0f172a; /* Switch icon color in dark mode */
   --side-menu-bg: #0f172a; /* Sidebar background in dark mode */
