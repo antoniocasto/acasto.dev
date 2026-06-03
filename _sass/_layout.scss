@@ -8,7 +8,7 @@
 .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: var(--space-lg);
+    padding: var(--ac-space-xl);
 }
 
 // Site header class with token-driven translucent chrome
@@ -22,8 +22,8 @@
 }
 
 main.container {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-2xl);
+    padding-top: var(--ac-space-xxl);
+    padding-bottom: var(--ac-space-xxxl);
     flex: 1;
 }
 
@@ -49,9 +49,9 @@ main.container {
 }
 
 .site-footer {
-    color: var(--text-muted);
+    color: var(--ac-color-foreground-secondary);
     font-size: 0.9rem;
-    padding-bottom: var(--space-xl);
+    padding-bottom: var(--ac-space-xxl);
 }
 
 /* Basic rules for the menu inside the site header */
@@ -60,7 +60,7 @@ main.container {
     margin: 0; // Removing default margin
     padding: 0; // Removing default padding
     display: flex; // Using flexbox for layout
-    gap: 1rem; // Adding space between menu items
+    gap: var(--ac-space-lg); // Adding space between menu items
 }
 
 // Styling for links inside the menu

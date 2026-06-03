@@ -18,13 +18,13 @@
 // Apply filter to logo images
 .desktop-logo .logo-img,
 .mobile-logo .logo-img {
-  filter: brightness(0) saturate(100%) var(--logo-filter-light);
+  filter: brightness(0) saturate(100%) invert(36.5%) sepia(24.4%) saturate(1272%) hue-rotate(183deg) brightness(109%) contrast(155%);
 }
 
 // In dark mode, use the specific filter
-.dark-theme .desktop-logo .logo-img,
-.dark-theme .mobile-logo .logo-img {
-  filter: brightness(0) saturate(100%) var(--logo-filter-dark);
+[data-ac-theme="dark"] .desktop-logo .logo-img,
+[data-ac-theme="dark"] .mobile-logo .logo-img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
 // ------------------------------

@@ -1,9 +1,3 @@
-.glass-panel {
-  @include glass(15px); // Apply glass effect with 15px blur
-  border-radius: var(--radius-sm); // Rounded corners
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1); // Subtle shadow
-}
-
 .menu li.active a {
   font-weight: bold; // Bold text for active menu item
   color: var(--ac-color-accent); // Primary color for active menu item
@@ -75,7 +69,8 @@
 }
 
 .filter-tile:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
+  outline: var(--ac-border-emphasis) solid rgba(27, 47, 110, 0.65);
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 65%, transparent);
   outline-offset: 2px;
 }
 
@@ -132,8 +127,8 @@
 /* Label fills the entire button */
 .theme-switch label {
   --ac-icon-button-size: 3.5rem;
-  --ac-icon-button-background: var(--switch-bg);
-  --ac-icon-button-foreground: var(--switch-icon-color);
+  --ac-icon-button-background: var(--ac-color-foreground);
+  --ac-icon-button-foreground: var(--ac-color-background);
   --ac-icon-button-border-color: transparent;
   margin: 0; // Remove margin
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18); // Subtle shadow
@@ -149,7 +144,7 @@
   width: 24px; // Icon size
   height: 24px;
   display: block;
-  color: var(--switch-icon-color); // Icon color from variable
+  color: currentColor; // Icon color follows the ACDesign icon button
   transition: color 0.3s ease; // Smooth transition for color
 }
 
@@ -160,7 +155,7 @@
   right: 1rem; // Same position as the button
   width: 20px; // Initial small size
   height: 20px; // Initial small size
-  background-color: var(--background-color); // Background color from variable
+  background-color: var(--ac-color-background); // Background color from ACDesign tokens
   border-radius: 50%; // Fully rounded corners
   z-index: 1000; // High z-index to be on top
   transform: scale(0); // Initial scale
@@ -297,7 +292,7 @@
 }
 
 .page-content--certificates > p {
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--ac-space-sm);
 }
 
 .page-content--certificates > p + .certificates {
