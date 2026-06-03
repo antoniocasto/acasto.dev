@@ -1,0 +1,43 @@
+{% assign post_href = include.post.url | relative_url %}
+{% assign lang = include.lang | default: site.default_lang %}
+{% assign localized_date = include.post.date | date: "%d %B %Y" %}
+{% if lang == "it" %}
+  {% assign localized_date = localized_date
+    | replace: "January", "Gennaio"
+    | replace: "February", "Febbraio"
+    | replace: "March", "Marzo"
+    | replace: "April", "Aprile"
+    | replace: "May", "Maggio"
+    | replace: "June", "Giugno"
+    | replace: "July", "Luglio"
+    | replace: "August", "Agosto"
+    | replace: "September", "Settembre"
+    | replace: "October", "Ottobre"
+    | replace: "November", "Novembre"
+    | replace: "December", "Dicembre" %}
+{% endif %}
+
+{% capture post_categories %}
+  {% if include.post.categories %}
+    <span class="post-list-row__tags">
+      {% for cat in include.post.categories %}
+        {% include acd/tag.liquid label=cat variant="outlined" size="small" color="surface" %}
+      {% endfor %}
+    </span>
+  {% endif %}
+{% endcapture %}
+
+<div class="post-item" data-categories="{{ include.post.categories | join: ',' }}">
+  <a class="ac-list-row post-list-row" href="{{ post_href }}">
+    <span class="ac-list-row__body">
+      <span class="ac-list-row__title">{{ include.post.title | escape }}</span>
+      <span class="ac-list-row__subtitle">
+        {{ site.data.localization[lang].post.published_on }} {{ localized_date }}
+      </span>
+      {{ post_categories }}
+    </span>
+    <span class="ac-list-row__trailing">
+      <span class="post-list-row__arrow" aria-hidden="true">-&gt;</span>
+    </span>
+  </a>
+</div>

@@ -66,38 +66,66 @@
   max-height: min(60vh, 520px);
 }
 
-/* Specific style for blog tiles (post-item) */
+#posts-list {
+  display: grid;
+  gap: var(--ac-space-sm);
+}
+
 .post-item {
-  background-color: var(--collection-bg); // Background color for post items
-  padding: var(--space-md); // Padding around post items
-  margin-bottom: var(--space-md); // Space below each post item
-  border-radius: var(--radius-md); // Rounded corners for post items
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08); // Subtle shadow for post items
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; // Smooth transition for background color on hover
-  border: 1px solid var(--border-color);
+  overflow: hidden;
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  border-radius: var(--ac-radius-lg); // Rounded corners for post items
+  background: var(--ac-color-background); // Background color for post items
+  transition: background-color var(--ac-motion-preset-default), border-color var(--ac-motion-preset-default); // Smooth transition for row state
 }
 
 .post-item:hover {
-  background-color: var(--blog-tile-hover-bg); // Background color for post items on hover
-  transform: translateY(-2px);
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+  border-color: var(--ac-color-border); // Border color for post items on hover
 }
 
-.post-item strong a {
-  color: var(--text-color); // Text color for links inside strong tags in post items
-  text-decoration: none; // No underline for links inside strong tags in post items
-  transition: color 0.3s ease; // Smooth transition for text color on hover
+.post-list-row {
+  --ac-list-row-padding-block: var(--ac-space-lg);
+  color: var(--ac-color-foreground);
 }
 
-.post-item strong a:hover {
-  color: var(--primary-color); // Text color for links inside strong tags in post items on hover
+.post-list-row:hover {
+  background: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+  text-decoration: none;
 }
 
-.post-categories {
-  margin-top: 0.5rem; // Space above post categories
+.post-list-row .ac-list-row__title {
+  color: var(--ac-color-foreground);
+  font-size: var(--ac-type-body-font-size);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.35;
 }
 
-.post-date {
-  color: var(--text-color); // Text color for post dates
-  font-size: 0.8rem; // Font size for post dates
+.post-list-row .ac-list-row__subtitle {
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.post-list-row__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ac-space-xs);
+  margin-top: var(--ac-space-sm);
+}
+
+.post-list-row__arrow {
+  color: var(--ac-color-accent);
+  font-weight: 900;
+  transition: transform var(--ac-motion-preset-fast);
+}
+
+.post-list-row:hover .post-list-row__arrow {
+  transform: translateX(2px);
+}
+
+.post-detail__tags {
+  margin-top: calc(var(--ac-space-sm) * -1);
 }

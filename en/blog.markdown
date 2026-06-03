@@ -16,6 +16,7 @@ permalink: "/en/blog/"
 {% if localized_posts.size == 0 %}
 _There are no articles at the moment. Check back soon for updates!_
 {% else %}
+{::nomarkdown}
 <div id="category-filters">
   <h3>{{ site.data.localization[page.lang].a11y.filter_by_category }}</h3>
   <div class="tiles-container">
@@ -30,33 +31,18 @@ _There are no articles at the moment. Check back soon for updates!_
     {% assign categories = categories | split: "," | uniq %}
     {% for normCat in categories %}
       {% if normCat != "" %}
-        <button type="button" class="filter-tile" data-value="{{ normCat }}" aria-pressed="false">
-          {{ normCat | capitalize }}
+        <button type="button" class="filter-tile ac-tag" data-ac-variant="outlined" data-ac-color="surface" data-value="{{ normCat }}" aria-pressed="false">
+          <span class="ac-tag__label">{{ normCat | capitalize }}</span>
         </button>
       {% endif %}
     {% endfor %}
   </div>
 </div>
-{% endif %}
-
 
 <div id="posts-list">
   {% for post in localized_posts %}
-    {% assign postCategories = "" %}
-    {% for cat in post.categories %}
-      {% assign postCategories = postCategories | append: cat %}
-      {% unless forloop.last %}
-        {% assign postCategories = postCategories | append: "," %}
-      {% endunless %}
-    {% endfor %}
-    <div class="post-item" data-categories="{{ postCategories }}">
-      <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
-      <div class="post-categories">
-        {% for cat in post.categories %}
-          <span class="category-tile">{{ cat | capitalize }}</span>
-        {% endfor %}
-      </div>
-      <small class="post-date"><i>({{ site.data.localization[page.lang].post.published_on }} {{ post.date | date: "%d %B %Y" }})</i></small>
-    </div>
+    {% include site/post-list-row.html post=post lang=page.lang %}
   {% endfor %}
 </div>
+{:/nomarkdown}
+{% endif %}

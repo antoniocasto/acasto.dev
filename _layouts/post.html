@@ -3,34 +3,36 @@ layout: default
 ---
 <!-- This is the layout for individual blog posts -->
 <article class="collection_item">
-  <h1>{{ page.title }}</h1>
-  <p>
-    <small>
-      {% if page.lang == "en" %}
-        {{ site.data.localization[page.lang].post.published_on }} {{ page.date | date: "%d %B %Y" }}
-      {% elsif page.lang == "it" %}
-        {{ site.data.localization[page.lang].post.published_on }}
-        {{ page.date | date: "%d %B %Y"
-           | replace: "January", "Gennaio"
-           | replace: "February", "Febbraio"
-           | replace: "March", "Marzo"
-           | replace: "April", "Aprile"
-           | replace: "May", "Maggio"
-           | replace: "June", "Giugno"
-           | replace: "July", "Luglio"
-           | replace: "August", "Agosto"
-           | replace: "September", "Settembre"
-           | replace: "October", "Ottobre"
-           | replace: "November", "Novembre"
-           | replace: "December", "Dicembre" }}
-      {% endif %}
-    </small>
-  </p>
-  
+  {% assign localized_date = page.date | date: "%d %B %Y" %}
+  {% if page.lang == "it" %}
+    {% assign localized_date = localized_date
+      | replace: "January", "Gennaio"
+      | replace: "February", "Febbraio"
+      | replace: "March", "Marzo"
+      | replace: "April", "Aprile"
+      | replace: "May", "Maggio"
+      | replace: "June", "Giugno"
+      | replace: "July", "Luglio"
+      | replace: "August", "Agosto"
+      | replace: "September", "Settembre"
+      | replace: "October", "Ottobre"
+      | replace: "November", "Novembre"
+      | replace: "December", "Dicembre" %}
+  {% endif %}
+  {% capture post_meta %}{{ site.data.localization[page.lang].post.published_on }} {{ localized_date }}{% endcapture %}
+
+  {% include acd/section-header.liquid
+    title=page.title
+    subtitle=post_meta
+    heading_tag="h1"
+    size="large"
+    class="collection_item__header post-detail__header"
+  %}
+
   {% if page.categories %}
-  <div class="post-categories">
+  <div class="post-categories post-detail__tags" aria-label="Post categories">
     {% for cat in page.categories %}
-      <span class="category-tile">{{ cat | capitalize }}</span>
+      {% include acd/tag.liquid label=cat variant="outlined" size="small" color="surface" %}
     {% endfor %}
   </div>
   {% endif %}

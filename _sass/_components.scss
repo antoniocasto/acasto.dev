@@ -36,32 +36,42 @@
 }
 
 /* Category filter tiles */
+#category-filters {
+  display: grid;
+  gap: var(--ac-space-sm);
+  margin-bottom: var(--ac-space-xl);
+}
+
+#category-filters h3 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-bottom: 0;
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: var(--ac-type-caption-font-weight);
+  letter-spacing: 0;
+  line-height: var(--ac-type-caption-line-height);
+}
+
 .tiles-container {
   display: flex; // Flexbox layout
   flex-wrap: wrap; // Wrap items to the next line
-  gap: 8px; // Space between items
-  margin-bottom: 1rem; // Bottom margin
+  gap: var(--ac-space-sm); // Space between items
 }
 
 .filter-tile {
-  appearance: none;
+  --ac-tag-foreground: var(--ac-color-foreground-secondary);
   cursor: pointer; // Pointer cursor on hover
-  padding: 0.1rem 0.7rem; // Padding inside the tile
-  border: 1px solid var(--border-color); // Light gray border
-  border-radius: var(--radius-pill); // Fully rounded corners
-  font-weight: normal; // Normal font weight
-  color: var(--text-color); // Text color from variable
-  background-color: var(--surface-color);
-  font-family: inherit;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  transition: all 0.2s ease; // Smooth transition for all properties
+  border: 0;
 }
 
-.filter-tile.selected {
-  border: 2px solid var(--primary-color); // Thicker border for selected tile
-  font-weight: bold; // Bold text for selected tile
-  color: var(--primary-color); // Primary color for selected tile
+.filter-tile.selected,
+.filter-tile[aria-pressed="true"] {
+  --ac-tag-background: var(--ac-color-accent);
+  --ac-tag-foreground: var(--ac-color-accent-foreground);
+  --ac-tag-border-color: var(--ac-color-accent);
+  color: var(--ac-tag-foreground); // Keep selected text readable
 }
 
 .filter-tile:focus-visible {
@@ -72,31 +82,7 @@
 .post-categories {
   display: flex; // Flexbox layout
   flex-wrap: wrap; // Wrap items to the next line
-  gap: 4px; // Space between items
-  margin-top: 6px; // Top margin
-}
-
-.post-date {
-  font-size: 0.7rem; // Small font size
-  color: var(--text-muted); // Muted color
-}
-
-.category-tile {
-  display: inline-block; // Inline-block layout
-  padding: 2px 8px; // Padding inside the tile
-  font-size: 0.75rem; // Small font size
-  font-weight: 500; // Medium font weight
-  color: var(--text-color); // Text color from variable
-  background-color: var(--category-bg); // Background color from variable
-  border: 1px solid var(--category-border); // Border color from variable
-  border-radius: var(--radius-pill); // Fully rounded corners
-  transition: all 0.2s ease-in-out; // Smooth transition for all properties
-}
-
-.category-tile:hover {
-  background-color: var(--category-hover-bg); // Background color on hover
-  border-color: var(--primary-color); // Border color on hover
-  color: var(--primary-color); // Text color on hover
+  gap: var(--ac-space-sm); // Space between items
 }
 
 // Styles for theme switch
