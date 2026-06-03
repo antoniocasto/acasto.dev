@@ -54,15 +54,15 @@
 <body class="ac-theme">
   <a class="skip-link" href="#main-content">{{ a11y.skip_to_content | default: "Skip to main content" }}</a>
 
-  <header class="site-header glass-panel">
+  <header class="site-header">
     <nav class="nav-bar container">
       <div class="nav-left">
         <a href="{{ site.baseurl }}/{{ current_lang }}/" class="brand-logo desktop-logo">
           <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
         </a>
 
-        <button type="button" class="menu-toggle" aria-label="{{ a11y.open_menu | default: 'Open menu' }}" aria-expanded="false" aria-controls="mobile-menu">
-          <span class="burger-icon"></span>
+        <button type="button" class="menu-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="{{ a11y.open_menu | default: 'Open menu' }}" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="burger-icon ac-icon-button__icon"></span>
         </button>
 
         <ul class="menu desktop-menu">
@@ -107,7 +107,7 @@
 
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary aria-label="{{ a11y.select_language | default: 'Select language' }}">
+          <summary class="language-dropdown__summary ac-icon-button" data-ac-size="small" data-ac-variant="outlined" aria-label="{{ a11y.select_language | default: 'Select language' }}">
             <span class="language-icon" aria-hidden="true">
               <svg class="icon icon--sm">
                 <use href="{{ '/assets/images/icons.svg#icon-globe' | relative_url }}"></use>
@@ -148,7 +148,9 @@
 
   <div class="side-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="{{ a11y.menu | default: 'Menu' }}" tabindex="-1">
     <div class="side-menu-header">
-      <button type="button" class="close-menu" aria-label="{{ a11y.close_menu | default: 'Close menu' }}">&times;</button>
+      <button type="button" class="close-menu ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="{{ a11y.close_menu | default: 'Close menu' }}">
+        <span class="ac-icon-button__icon" aria-hidden="true">&times;</span>
+      </button>
     </div>
 
     <ul class="menu">
@@ -196,7 +198,7 @@
 
   <div class="theme-switch">
     <input type="checkbox" id="theme-toggle" aria-label="{{ a11y.toggle_theme | default: 'Toggle theme' }}">
-    <label for="theme-toggle" class="theme-toggle-label">
+    <label for="theme-toggle" class="theme-toggle-label ac-icon-button" data-ac-shape="circle" data-ac-variant="outlined" data-ac-color="accent">
       <svg class="theme-icon icon" aria-hidden="true">
         <use href="{{ '/assets/images/icons.svg#icon-moon' | relative_url }}"></use>
       </svg>

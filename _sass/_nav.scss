@@ -1,6 +1,6 @@
 :root {
   --nav-logo-size: 40px;
-  --nav-logo-gap: 1rem;
+  --nav-logo-gap: var(--ac-space-lg);
 }
 
 // Desktop Logo dimensions (visible on desktop)
@@ -53,7 +53,7 @@
 .desktop-menu {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: var(--ac-space-sm);
   margin: 0;
   padding: 0;
 }
@@ -63,17 +63,32 @@
 }
 
 .desktop-menu li a {
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
+  color: var(--ac-color-foreground-secondary);
+  font-weight: 650;
   position: relative;
-  padding-bottom: 0.25rem;
-  transition: color 0.2s ease;
+  padding: var(--ac-space-sm) var(--ac-space-md);
+  border-radius: var(--ac-radius-full);
+  transition:
+    background-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default);
 }
 
 .desktop-menu li.active a {
-  color: var(--primary-color);
-  font-weight: 600;
+  color: var(--ac-color-accent);
+  font-weight: 750;
+}
+
+.desktop-menu li a:hover {
+  background-color: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+}
+
+.desktop-menu li a:focus-visible {
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
+  outline-offset: var(--ac-border-default);
 }
 
 .desktop-menu li a::after {
@@ -82,12 +97,13 @@
   left: 0;
   bottom: 0;
   width: 0%;
-  height: 2px;
-  background: var(--accent-gradient);
-  transition: width 0.2s ease;
+  height: var(--ac-border-default);
+  background: var(--ac-color-accent);
+  transition: width var(--ac-motion-preset-default);
 }
 
-.desktop-menu li a:hover::after {
+.desktop-menu li a:hover::after,
+.desktop-menu li.active a::after {
   width: 100%;
 }
 
@@ -98,7 +114,7 @@
 .language-dropdown {
   position: relative;
   display: inline-block;
-  min-width: 88px;
+  min-width: 5.5rem;
   cursor: pointer;
 }
 
@@ -108,18 +124,21 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0.4rem;
-  padding: var(--space-xs) var(--space-md);
+  padding: 0 var(--ac-space-md);
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid var(--dropdown-border);
-  background-color: var(--dropdown-bg);
-  color: var(--dropdown-text);
-  font-size: 0.9rem;
-  font-weight: bold;
-  border-radius: var(--radius-sm);
-  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-  padding-left: var(--space-md);
-  padding-right: var(--space-xl);
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  background-color: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: var(--ac-type-caption-font-weight);
+  border-radius: var(--ac-radius-full);
+  transition:
+    background-color var(--ac-motion-preset-default),
+    border-color var(--ac-motion-preset-default),
+    box-shadow var(--ac-motion-preset-default);
+  padding-left: var(--ac-space-md);
+  padding-right: var(--ac-space-xl);
   position: relative;
   white-space: nowrap;
 }
@@ -129,13 +148,13 @@
 }
 
 .language-dropdown summary:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
-  outline-offset: 2px;
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
+  outline-offset: var(--ac-border-default);
 }
 
 .language-icon {
   display: inline-flex;
-  color: var(--dropdown-text);
+  color: var(--ac-color-accent);
 }
 
 .language-dropdown summary::after {
@@ -145,9 +164,9 @@
   top: 50%;
   width: 14px;
   height: 10px;
-  background-color: var(--dropdown-text);
+  background-color: var(--ac-color-foreground-secondary);
   transform: translateY(-50%);
-  transition: transform 0.2s ease;
+  transition: transform var(--ac-motion-preset-default);
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.2 1.2L6 6l4.8-4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   mask-repeat: no-repeat;
   mask-position: center;
@@ -159,8 +178,7 @@
 }
 
 .language-dropdown[open] summary {
-  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-  border-bottom-color: transparent;
+  border-color: var(--ac-color-accent);
 }
 
 .language-dropdown[open] summary::after {
@@ -182,18 +200,19 @@
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  background: var(--dropdown-option-bg);  // Slightly different color from selected options
-  border: 1px solid var(--dropdown-border);
-  border-top: none;  // Visually connect to the summary
+  background: var(--ac-color-surface);
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
   /* Only round the bottom corners */
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  border-radius: var(--ac-radius-md);
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
   z-index: 100;
   /* Initially hidden, with a sliding effect */
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity var(--ac-motion-preset-default),
+    transform var(--ac-motion-preset-default);
 }
 
 /* When the dropdown is open, show the options */
@@ -206,23 +225,26 @@
 /* Style for each option */
 .language-options li a {
   display: block;
-  padding: var(--space-xs) var(--space-xl);
+  padding: var(--ac-space-sm) var(--ac-space-lg);
   text-decoration: none;
-  color: var(--dropdown-text);
+  color: var(--ac-color-foreground);
   text-align: left;
   white-space: nowrap;
-  transition: background-color 0.3s ease;
+  transition:
+    background-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default);
 }
 
 /* Hover for each option */
 .language-options li a:hover {
-  background-color: var(--dropdown-hover-bg);
+  background-color: var(--ac-color-surface-elevated);
+  color: var(--ac-color-accent);
 }
 
 /* Selected state (current language) */
 .language-options li a.selected {
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
 }
 
 // ------------------------------
@@ -241,53 +263,48 @@
 
 // Burger button styling (visible on mobile)
 .menu-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 50px;  // same width as the language dropdown
-  height: 50px;
+  --ac-icon-button-background: transparent;
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-border-subtle);
   display: none; // will be shown on mobile via media query
-  color: var(--text-color); // normal state: use the text color defined in the theme
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .menu-toggle:hover {
-  color: var(--primary-color); // change color to var(--primary-color) on hover
-  transform: scale(1.1);       // slight scale for hover
+  --ac-icon-button-foreground: var(--ac-color-accent);
+  --ac-icon-button-border-color: var(--ac-color-accent);
 }
 
 .menu-toggle:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
+  outline-offset: var(--ac-border-default);
 }
 
 .burger-icon {
   display: block;
-  width: 25px;
-  height: 2px;
+  width: 18px;
+  height: var(--ac-border-default);
   background-color: currentColor; // inherit color from normal or hover state
   position: relative;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--ac-motion-preset-default);
 }
 
 .burger-icon::before,
 .burger-icon::after {
   content: '';
   position: absolute;
-  width: 25px;
-  height: 2px;
+  width: 18px;
+  height: var(--ac-border-default);
   background-color: currentColor;
   left: 0;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--ac-motion-preset-default);
 }
 
 .burger-icon::before {
-  top: -8px;
+  top: -6px;
 }
 
 .burger-icon::after {
-  top: 8px;
+  top: 6px;
 }
 
 // ------------------------------
@@ -329,23 +346,26 @@
   width: 90vw;
   max-width: 420px;
   height: auto;
-  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - var(--space-xl));
+  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - var(--ac-space-xxl));
   box-sizing: border-box;
-  background-color: rgba(var(--side-menu-bg-rgb) / 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background-color: var(--ac-color-surface);
+  background-color: color-mix(in srgb, var(--ac-color-surface) 84%, transparent);
+  backdrop-filter: blur(1rem) saturate(140%);
+  -webkit-backdrop-filter: blur(1rem) saturate(140%);
   box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
-  border: 1px solid var(--side-menu-border);
-  border-radius: var(--radius-lg);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  border-radius: var(--ac-radius-xl);
+  transition:
+    transform var(--ac-motion-preset-slow),
+    opacity var(--ac-motion-preset-slow);
   z-index: 1300;
-  padding: calc(var(--space-xl) + env(safe-area-inset-top, 0px))
-    calc(var(--space-xl) + env(safe-area-inset-right, 0px))
-    calc(var(--space-lg) + env(safe-area-inset-bottom, 0px))
-    calc(var(--space-xl) + env(safe-area-inset-left, 0px));
+  padding: calc(var(--ac-space-xxl) + env(safe-area-inset-top, 0px))
+    calc(var(--ac-space-xxl) + env(safe-area-inset-right, 0px))
+    calc(var(--ac-space-xl) + env(safe-area-inset-bottom, 0px))
+    calc(var(--ac-space-xxl) + env(safe-area-inset-left, 0px));
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--ac-space-lg);
   overflow-y: auto;
   opacity: 0;
   pointer-events: none;
@@ -366,7 +386,7 @@
   -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--ac-motion-preset-default);
   z-index: 1200;
 }
 
@@ -385,22 +405,20 @@
 
 // Sidebar close button
 .close-menu {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--text-color);
-  transition: color 0.3s ease, transform 0.2s ease;
+  --ac-icon-button-background: transparent;
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-border-subtle);
+  font-size: 1.25rem;
 }
 
 .close-menu:hover {
-  color: var(--primary-color);
+  --ac-icon-button-foreground: var(--ac-color-accent);
+  --ac-icon-button-border-color: var(--ac-color-accent);
 }
 
 .close-menu:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
+  outline-offset: var(--ac-border-default);
 }
 
 // Sidebar menu list
@@ -413,8 +431,8 @@
 
 // Style for each list item
 .side-menu .menu li {
-  border-bottom: 1px solid var(--side-menu-border); // Use the variable for the border
-  padding: var(--space-xs) 0;
+  border-bottom: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  padding: var(--ac-space-xs) 0;
 }
 
 // Remove the border from the last item
@@ -425,15 +443,15 @@
 // Style for sidebar links
 .side-menu .menu li a {
   display: block;
-  padding: var(--space-md) 0;
-  color: var(--text-color);
+  padding: var(--ac-space-lg) 0;
+  color: var(--ac-color-foreground);
   font-weight: 600;
-  transition: color 0.2s ease;
+  transition: color var(--ac-motion-preset-default);
 }
 
 // Highlight the active menu
 .side-menu .menu li.active a {
-  color: var(--primary-color);
+  color: var(--ac-color-accent);
   font-weight: 600;
 }
 
@@ -447,7 +465,7 @@
   }
   // Show burger button on mobile
   .menu-toggle {
-    display: block !important;
+    display: inline-flex !important;
   }
   // Hide desktop logo and show mobile logo in nav-center
   .desktop-logo {

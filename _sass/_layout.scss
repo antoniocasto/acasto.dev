@@ -11,11 +11,14 @@
     padding: var(--space-lg);
 }
 
-// Site header class with padding and a glass effect
+// Site header class with token-driven translucent chrome
 .site-header {
-    padding: calc(var(--space-md) + env(safe-area-inset-top, 0px)) 0 var(--space-md);
-    @include glass(16px); // Applying glass effect with 16px blur
-    border-bottom: 1px solid var(--border-color);
+    padding: calc(var(--ac-space-lg) + env(safe-area-inset-top, 0px)) 0 var(--ac-space-lg);
+    border-bottom: var(--ac-border-default) solid var(--ac-color-border-subtle);
+    background: var(--ac-color-background);
+    background: color-mix(in srgb, var(--ac-color-background) 88%, transparent);
+    backdrop-filter: blur(1rem) saturate(140%);
+    -webkit-backdrop-filter: blur(1rem) saturate(140%);
 }
 
 main.container {

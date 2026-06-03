@@ -6,7 +6,7 @@
 
 .menu li.active a {
   font-weight: bold; // Bold text for active menu item
-  color: var(--primary-color); // Primary color for active menu item
+  color: var(--ac-color-accent); // Primary color for active menu item
 }
 
 .icon {
@@ -120,20 +120,16 @@
   bottom: 1rem; // 1rem from the bottom
   right: 1rem; // 1rem from the right
   z-index: 1100; // High z-index to be on top
-  width: 50px; // Fixed width
-  height: 50px; // Fixed height
-  background: var(--switch-bg); // Background from variable
-  border-radius: 50%; // Fully rounded corners
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Subtle shadow
-  cursor: pointer; // Pointer cursor on hover
+  width: 3.5rem; // Fixed width
+  height: 3.5rem; // Fixed height
+  border-radius: var(--ac-radius-full); // Fully rounded corners
   display: flex; // Flexbox layout
   align-items: center; // Center items vertically
   justify-content: center; // Center items horizontally
-  transition: background-color 0.3s ease, transform 0.3s ease; // Smooth transition for background color and transform
 }
 
-.theme-switch:hover {
-  transform: scale(1.1); // Slightly enlarge on hover
+.theme-switch:hover .theme-toggle-label {
+  transform: translateY(-1px); // Slight lift on hover
 }
 
 /* Hide the checkbox */
@@ -149,19 +145,17 @@
 
 /* Label fills the entire button */
 .theme-switch label {
+  --ac-icon-button-size: 3.5rem;
+  --ac-icon-button-background: var(--switch-bg);
+  --ac-icon-button-foreground: var(--switch-icon-color);
+  --ac-icon-button-border-color: transparent;
   margin: 0; // Remove margin
-  width: 100%; // Full width
-  height: 100%; // Full height
-  display: flex; // Flexbox layout
-  align-items: center; // Center items vertically
-  justify-content: center; // Center items horizontally
-  cursor: pointer; // Pointer cursor on hover
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18); // Subtle shadow
 }
 
 .theme-switch input:focus-visible + .theme-toggle-label {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
-  outline-offset: 3px;
-  border-radius: 50%;
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
+  outline-offset: var(--ac-border-default);
 }
 
 /* Icon style */
