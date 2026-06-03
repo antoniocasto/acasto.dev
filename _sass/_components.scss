@@ -252,19 +252,28 @@
   line-height: 1.55;
 }
 
-.contact-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: var(--space-xs) var(--space-sm);
-  background-color: var(--surface-color);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+.contact-list {
+  margin-top: var(--ac-space-lg);
 }
 
-.contact-icon {
-  font-size: 1rem;
+.contact-list .ac-list-row {
+  color: var(--ac-color-foreground);
+}
+
+.contact-list a.ac-list-row:hover {
+  background: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+  text-decoration: none;
+}
+
+.contact-list .ac-list-row__title {
+  font-size: var(--ac-type-body-font-size);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.contact-list .ac-list-row__subtitle {
+  letter-spacing: 0;
 }
 
 .certificates {
