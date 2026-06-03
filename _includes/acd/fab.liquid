@@ -10,7 +10,7 @@
       class="{% include acd/_internal/class-name.liquid base='ac-fab' extra=include.class %}"
       href="{{ include.href | escape }}"
       {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
-      {%- if include.extended == true or include.extended == 'true' -%} data-ac-extended="true"{%- endif -%}
+      {%- if include.extended == true or include.extended == 'true' %} data-ac-extended="true"{%- endif -%}
       {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
       {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
     >
@@ -22,7 +22,7 @@
       class="{% include acd/_internal/class-name.liquid base='ac-fab' extra=include.class %}"
       type="{{ include.type | default: 'button' | escape }}"
       {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
-      {%- if include.extended == true or include.extended == 'true' -%} data-ac-extended="true"{%- endif -%}
+      {%- if include.extended == true or include.extended == 'true' %} data-ac-extended="true"{%- endif -%}
       {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
       {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
     >

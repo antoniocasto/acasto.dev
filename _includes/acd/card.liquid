@@ -10,8 +10,8 @@
   class="{% include acd/_internal/class-name.liquid base='ac-card' extra=include.class %}"
   {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
   {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
-  {%- if is_link -%} href="{{ include.href | escape }}"{%- endif -%}
-  {%- if element == 'button' -%} type="{{ include.type | default: 'button' | escape }}"{%- endif -%}
+  {%- if is_link %} href="{{ include.href | escape }}"{%- endif -%}
+  {%- if element == 'button' %} type="{{ include.type | default: 'button' | escape }}"{%- endif -%}
   {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
 >
   {%- if include.header_html or include.title -%}

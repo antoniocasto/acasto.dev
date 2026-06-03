@@ -10,8 +10,8 @@
   {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
   {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
   {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
-  {%- if element == 'a' -%} href="{{ include.href | escape }}"{%- endif -%}
-  {%- if element == 'button' -%} type="{{ include.type | default: 'button' | escape }}"{%- endif -%}
+  {%- if element == 'a' %} href="{{ include.href | escape }}"{%- endif -%}
+  {%- if element == 'button' %} type="{{ include.type | default: 'button' | escape }}"{%- endif -%}
   {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
 >
   {%- if include.icon_html -%}

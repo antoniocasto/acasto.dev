@@ -8,9 +8,9 @@
 <{{ element }}
   class="{% include acd/_internal/class-name.liquid base='ac-list-row' extra=include.class %}"
   {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
-  {%- if element == 'a' -%} href="{{ include.href | escape }}"{%- endif -%}
-  {%- if element == 'button' -%} type="{{ include.type | default: 'button' | escape }}"{%- endif -%}
-  {%- if include.divider == false or include.divider == 'false' -%} data-ac-divider="false"{%- endif -%}
+  {%- if element == 'a' %} href="{{ include.href | escape }}"{%- endif -%}
+  {%- if element == 'button' %} type="{{ include.type | default: 'button' | escape }}"{%- endif -%}
+  {%- if include.divider == false or include.divider == 'false' %} data-ac-divider="false"{%- endif -%}
   {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
 >
   {%- if include.leading_html -%}

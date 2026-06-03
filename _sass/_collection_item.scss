@@ -1,32 +1,62 @@
 .collection_item {
-  background-color: var(--collection-bg); // Background color for collection items
-  padding: var(--space-xl); // Padding around collection items
-  margin-bottom: var(--space-xl); // Space below each collection item
-  border-radius: var(--radius-lg); // Rounded corners for collection items
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08); // Subtle shadow for collection items
-  border: 1px solid var(--border-color);
-  color: var(--text-color); // Text color for collection items
+  display: grid;
+  gap: var(--ac-space-xl);
+  color: var(--ac-color-foreground); // Text color for collection items
 }
 
-.collection_item h1 {
-  margin-top: 0; // No margin at the top of h1 in collection items
-  margin-bottom: 1rem; // Space below h1 in collection items
-  font-size: 2.1rem; // Font size for h1 in collection items
-  color: var(--text-color); // Text color for h1 in collection items
+.collection_item > h1 {
+  margin: 0; // No margin around direct titles in collection items
+  font-size: var(--ac-type-title-font-size); // Font size for direct h1 in collection items
+  font-weight: var(--ac-type-title-font-weight);
+  letter-spacing: 0;
+  line-height: var(--ac-type-title-line-height);
+  color: var(--ac-color-foreground); // Text color for h1 in collection items
 }
 
 .collection_item p {
-  line-height: 1.6; // Line height for paragraphs in collection items
-  margin-bottom: 1rem; // Space below paragraphs in collection items
-  color: var(--text-color); // Text color for paragraphs in collection items
+  line-height: 1.7; // Line height for paragraphs in collection items
+  color: var(--ac-color-foreground-secondary); // Text color for paragraphs in collection items
+}
+
+.collection_item__header {
+  padding: 0;
+  margin: 0;
+}
+
+.collection_item__header .ac-section-header__title {
+  font-size: var(--ac-type-title-font-size);
+  font-weight: var(--ac-type-title-font-weight);
+  letter-spacing: 0;
+  line-height: var(--ac-type-title-line-height);
+}
+
+.collection_item__header .ac-section-header__subtitle {
+  max-width: 42rem;
+  font-size: var(--ac-type-body-font-size);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: var(--ac-type-body-line-height);
+}
+
+.collection_item .content {
+  width: 100%;
+  max-width: 72ch;
+}
+
+.collection_item .content > :first-child {
+  margin-top: 0;
+}
+
+.collection_item .content > :last-child {
+  margin-bottom: 0;
 }
 
 .collection_item__hero {
-  margin-bottom: var(--space-lg);
-  border-radius: var(--radius-md);
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  border-radius: var(--ac-radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border-color);
-  background: var(--portfolio-thumb-bg, var(--surface-muted));
+  background: var(--ac-color-surface-elevated);
+  background: var(--portfolio-thumb-bg, var(--ac-color-surface-elevated));
 }
 
 .collection_item__hero img {

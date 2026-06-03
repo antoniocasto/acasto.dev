@@ -21,7 +21,14 @@ layout: default
     </div>
   {% endif %}
 
-  <h1>{{ page.title }}</h1>
+  {% include acd/section-header.liquid
+    title=page.title
+    subtitle=page.description
+    heading_tag="h1"
+    size="large"
+    class="collection_item__header"
+  %}
+
   <div class="content">
     {{ content }}
   </div>
