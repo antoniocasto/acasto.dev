@@ -53,7 +53,7 @@
 .desktop-menu {
   list-style: none;
   display: flex;
-  gap: var(--ac-space-sm);
+  gap: var(--ac-space-xs);
   margin: 0;
   padding: 0;
 }
@@ -63,48 +63,60 @@
 }
 
 .desktop-menu li a {
+  --site-nav-link-background: transparent;
+  --site-nav-link-foreground: var(--ac-color-foreground-secondary);
+  --site-nav-link-border: transparent;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: 2.125rem;
+  box-sizing: border-box;
   text-decoration: none;
-  color: var(--ac-color-foreground-secondary);
-  font-weight: 650;
+  color: var(--site-nav-link-foreground);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1;
   position: relative;
-  padding: var(--ac-space-sm) var(--ac-space-md);
-  border-radius: var(--ac-radius-full);
+  padding: 0 var(--ac-space-md);
+  border: var(--ac-border-default) solid var(--site-nav-link-border);
+  border-radius: var(--ac-radius-md);
+  background: var(--site-nav-link-background);
   transition:
     background-color var(--ac-motion-preset-default),
-    color var(--ac-motion-preset-default);
+    border-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default),
+    opacity var(--ac-motion-preset-fast),
+    transform var(--ac-motion-preset-fast);
 }
 
 .desktop-menu li.active a {
-  color: var(--ac-color-accent);
-  font-weight: 750;
+  --site-nav-link-background: var(--ac-color-accent);
+  --site-nav-link-foreground: var(--ac-color-accent-foreground);
+  --site-nav-link-border: var(--ac-color-accent);
 }
 
 .desktop-menu li a:hover {
-  background-color: var(--ac-color-surface);
-  color: var(--ac-color-foreground);
+  --site-nav-link-background: var(--ac-color-surface);
+  --site-nav-link-foreground: var(--ac-color-foreground);
+  --site-nav-link-border: var(--ac-color-border-subtle);
+  text-decoration: none;
+}
+
+.desktop-menu li.active a:hover {
+  --site-nav-link-background: color-mix(in srgb, var(--ac-color-accent) 92%, var(--ac-color-background));
+  --site-nav-link-foreground: var(--ac-color-accent-foreground);
+  --site-nav-link-border: var(--ac-color-accent);
+}
+
+.desktop-menu li a:active {
+  transform: scale(0.96);
+  opacity: 0.85;
 }
 
 .desktop-menu li a:focus-visible {
   outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
   outline-offset: var(--ac-border-default);
-}
-
-.desktop-menu li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: var(--ac-border-default);
-  background: var(--ac-color-accent);
-  transition: width var(--ac-motion-preset-default);
-}
-
-.desktop-menu li a:hover::after,
-.desktop-menu li.active a::after {
-  width: 100%;
 }
 
 // ------------------------------
@@ -114,42 +126,54 @@
 .language-dropdown {
   position: relative;
   display: inline-block;
-  min-width: 5.5rem;
+  min-width: 5rem;
   cursor: pointer;
 }
 
 /* Closed button (summary) */
 .language-dropdown summary {
+  --site-language-background: transparent;
+  --site-language-foreground: var(--ac-color-foreground);
+  --site-language-border: var(--ac-color-border-subtle);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0.4rem;
-  padding: 0 var(--ac-space-md);
+  min-height: 2.125rem;
+  padding: 0 var(--ac-space-xl) 0 var(--ac-space-md);
   width: 100%;
   box-sizing: border-box;
-  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
-  background-color: var(--ac-color-surface);
-  color: var(--ac-color-foreground);
+  border: var(--ac-border-default) solid var(--site-language-border);
+  background-color: var(--site-language-background);
+  color: var(--site-language-foreground);
   font-size: var(--ac-type-caption-font-size);
   font-weight: var(--ac-type-caption-font-weight);
-  border-radius: var(--ac-radius-full);
+  line-height: 1;
+  border-radius: var(--ac-radius-md);
   transition:
     background-color var(--ac-motion-preset-default),
     border-color var(--ac-motion-preset-default),
-    box-shadow var(--ac-motion-preset-default);
-  padding-left: var(--ac-space-md);
-  padding-right: var(--ac-space-xl);
+    color var(--ac-motion-preset-default),
+    opacity var(--ac-motion-preset-fast),
+    transform var(--ac-motion-preset-fast);
   position: relative;
   white-space: nowrap;
 }
 
 .language-dropdown summary:hover {
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+  --site-language-background: var(--ac-color-surface);
+  --site-language-foreground: var(--ac-color-foreground);
+  --site-language-border: var(--ac-color-border-subtle);
 }
 
 .language-dropdown summary:focus-visible {
   outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
   outline-offset: var(--ac-border-default);
+}
+
+.language-dropdown summary:active {
+  transform: scale(0.96);
+  opacity: 0.85;
 }
 
 .language-icon {
@@ -178,7 +202,9 @@
 }
 
 .language-dropdown[open] summary {
-  border-color: var(--ac-color-accent);
+  --site-language-background: color-mix(in srgb, var(--ac-color-accent) 12%, transparent);
+  --site-language-foreground: var(--ac-color-foreground);
+  --site-language-border: var(--ac-color-accent);
 }
 
 .language-dropdown[open] summary::after {
@@ -196,19 +222,17 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  top: calc(100% - 1px);  // Attach to the summary
+  top: calc(100% + var(--ac-space-xs));
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  background: var(--ac-color-surface);
+  background: var(--ac-color-surface-elevated);
   border: var(--ac-border-default) solid var(--ac-color-border-subtle);
-  /* Only round the bottom corners */
   border-radius: var(--ac-radius-md);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
   z-index: 100;
-  /* Initially hidden, with a sliding effect */
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-4px);
   pointer-events: none;
   transition:
     opacity var(--ac-motion-preset-default),
@@ -225,9 +249,11 @@
 /* Style for each option */
 .language-options li a {
   display: block;
-  padding: var(--ac-space-sm) var(--ac-space-lg);
+  padding: var(--ac-space-sm) var(--ac-space-md);
   text-decoration: none;
   color: var(--ac-color-foreground);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: var(--ac-type-caption-font-weight);
   text-align: left;
   white-space: nowrap;
   transition:
@@ -237,8 +263,9 @@
 
 /* Hover for each option */
 .language-options li a:hover {
-  background-color: var(--ac-color-surface-elevated);
+  background-color: var(--ac-color-surface);
   color: var(--ac-color-accent);
+  text-decoration: none;
 }
 
 /* Selected state (current language) */
@@ -431,7 +458,6 @@
 
 // Style for each list item
 .side-menu .menu li {
-  border-bottom: var(--ac-border-default) solid var(--ac-color-border-subtle);
   padding: var(--ac-space-xs) 0;
 }
 
@@ -442,17 +468,40 @@
 
 // Style for sidebar links
 .side-menu .menu li a {
-  display: block;
-  padding: var(--ac-space-lg) 0;
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--ac-space-md);
+  border-radius: var(--ac-radius-md);
   color: var(--ac-color-foreground);
-  font-weight: 600;
-  transition: color var(--ac-motion-preset-default);
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default);
+}
+
+.side-menu .menu li a:hover {
+  background: var(--ac-color-surface-elevated);
+  color: var(--ac-color-foreground);
+  text-decoration: none;
 }
 
 // Highlight the active menu
 .side-menu .menu li.active a {
-  color: var(--ac-color-accent);
-  font-weight: 600;
+  background: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
+  font-weight: 800;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desktop-menu li a,
+  .language-dropdown summary,
+  .language-options,
+  .language-options li a,
+  .side-menu .menu li a {
+    transition-duration: 0ms;
+  }
 }
 
 // ------------------------------
