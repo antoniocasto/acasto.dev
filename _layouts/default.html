@@ -193,14 +193,21 @@
     <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥.</p>
   </footer>
 
-  <div class="theme-switch">
-    <input type="checkbox" id="theme-toggle" aria-label="{{ a11y.toggle_theme | default: 'Toggle theme' }}">
-    <label for="theme-toggle" class="theme-toggle-label ac-icon-button" data-ac-shape="circle" data-ac-variant="outlined" data-ac-color="accent">
-      <svg class="theme-icon icon" aria-hidden="true">
-        <use href="{{ '/assets/images/icons.svg#icon-moon' | relative_url }}"></use>
-      </svg>
-    </label>
-  </div>
+  {% capture theme_icon_html %}
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use href="{{ '/assets/images/icons.svg#icon-moon' | relative_url }}"></use>
+    </svg>
+  {% endcapture %}
+  {% assign theme_toggle_label = a11y.toggle_theme | default: 'Toggle theme' %}
+  {% assign theme_toggle_attrs = 'id="theme-toggle" aria-pressed="false"' %}
+  {% include acd/fab.liquid
+    anchor_class="theme-switch"
+    class="theme-toggle-fab"
+    variant="glass"
+    icon_html=theme_icon_html
+    aria_label=theme_toggle_label
+    attrs=theme_toggle_attrs
+  %}
 
   <div class="theme-overlay"></div>
 

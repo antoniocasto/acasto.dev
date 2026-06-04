@@ -7,9 +7,29 @@ layout: default
 {% if home_lang == 'it' %}
   {% assign portfolio_label = 'Portfolio' %}
   {% assign contacts_label = 'Contatti' %}
+  {% assign proof_aria_label = 'Punti chiave professionali' %}
+  {% assign proof_one_meta = 'Native iOS' %}
+  {% assign proof_one_value = 'SwiftUI/UIKit' %}
+  {% assign proof_one_label = 'Interfacce e API di piattaforma' %}
+  {% assign proof_two_meta = 'Architecture' %}
+  {% assign proof_two_value = 'MVVM/VIPER/TCA' %}
+  {% assign proof_two_label = 'Modularita e testabilita' %}
+  {% assign proof_three_meta = 'Delivery' %}
+  {% assign proof_three_value = 'CI/CD' %}
+  {% assign proof_three_label = 'Fastlane, GitLab, quality gates' %}
 {% else %}
   {% assign portfolio_label = 'Portfolio' %}
   {% assign contacts_label = 'Contacts' %}
+  {% assign proof_aria_label = 'Professional proof points' %}
+  {% assign proof_one_meta = 'Native iOS' %}
+  {% assign proof_one_value = 'SwiftUI/UIKit' %}
+  {% assign proof_one_label = 'Interfaces and platform APIs' %}
+  {% assign proof_two_meta = 'Architecture' %}
+  {% assign proof_two_value = 'MVVM/VIPER/TCA' %}
+  {% assign proof_two_label = 'Modularity and testability' %}
+  {% assign proof_three_meta = 'Delivery' %}
+  {% assign proof_three_value = 'CI/CD' %}
+  {% assign proof_three_label = 'Fastlane, GitLab, quality gates' %}
 {% endif %}
 {% capture action_arrow %}&rarr;{% endcapture %}
 
@@ -19,6 +39,27 @@ layout: default
     <h1 id="home-title">Antonio Casto</h1>
     <div class="home-copy">
       {{ content }}
+    </div>
+
+    <div class="home-proof" aria-label="{{ proof_aria_label }}">
+      {% include acd/stat-card.liquid
+        class="home-proof__item"
+        meta=proof_one_meta
+        value=proof_one_value
+        label=proof_one_label
+      %}
+      {% include acd/stat-card.liquid
+        class="home-proof__item"
+        meta=proof_two_meta
+        value=proof_two_value
+        label=proof_two_label
+      %}
+      {% include acd/stat-card.liquid
+        class="home-proof__item"
+        meta=proof_three_meta
+        value=proof_three_value
+        label=proof_three_label
+      %}
     </div>
 
     <div class="home-actions" aria-label="Primary actions">
@@ -38,12 +79,12 @@ layout: default
       %}
     </div>
 
-    <div class="home-tags" aria-label="Core skills">
-      {% include acd/tag.liquid label="SwiftUI" variant="outlined" size="small" color="accent" %}
-      {% include acd/tag.liquid label="UIKit" variant="outlined" size="small" color="surface" %}
-      {% include acd/tag.liquid label="Architecture" variant="outlined" size="small" color="surface" %}
-      {% include acd/tag.liquid label="Testing" variant="outlined" size="small" color="surface" %}
-      {% include acd/tag.liquid label="CI/CD" variant="outlined" size="small" color="surface" %}
+    <div class="ac-tag-group home-tags" data-ac-selection-mode="static-display" data-ac-layout="compact" aria-label="Core skills">
+      {% include acd/tag.liquid class="ac-tag-group__item" label="SwiftUI" variant="outlined" size="small" color="accent" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="UIKit" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="Architecture" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="Testing" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="CI/CD" variant="outlined" size="small" color="surface" %}
     </div>
   </div>
 

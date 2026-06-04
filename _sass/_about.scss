@@ -44,7 +44,7 @@
   background: var(--ac-color-surface);
 }
 
-.avatar-image {
+.avatar-ring .ac-avatar__image {
   object-position: center 85%;
 }
 
@@ -157,72 +157,12 @@
   gap: var(--ac-space-sm);
 }
 
-.about-details {
-  --ac-card-padding: 0;
-  overflow: hidden;
-}
-
-.about-details summary {
-  cursor: pointer;
-  padding: var(--ac-space-lg);
-  padding-right: var(--ac-space-xxxl);
-  color: var(--ac-color-foreground);
-  font-weight: 800;
-  position: relative;
-  list-style: none;
-}
-
-.about-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.about-details summary::after {
-  content: "";
-  position: absolute;
-  right: var(--ac-space-lg);
-  top: 50%;
-  width: 14px;
-  height: 10px;
-  background-color: var(--ac-color-foreground);
-  transform: translateY(-50%);
-  transition: transform var(--ac-motion-preset-default);
-  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.2 1.2L6 6l4.8-4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.2 1.2L6 6l4.8-4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-}
-
-.about-details[open] summary::after {
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.about-details > .about-details__content {
-  padding: 0 var(--ac-space-lg) var(--ac-space-lg);
+.about-accordion__panel {
   display: grid;
   gap: var(--ac-space-sm);
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-6px);
-  overflow: hidden;
-  transition: max-height var(--ac-motion-preset-slow), opacity var(--ac-motion-preset-default), transform var(--ac-motion-preset-default);
 }
 
-.about-details:not([open]) > .about-details__content {
-  pointer-events: none;
-}
-
-.about-details[open] .about-details__content {
-  max-height: 400px;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.about-details__content p {
+.about-accordion__panel p {
   margin: 0;
   color: var(--ac-color-foreground-secondary);
 }
@@ -273,14 +213,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about-details summary::after,
-  .about-details__content {
-    transition: none;
-  }
-
-  .about-details__content {
-    max-height: none;
-    opacity: 1;
-    transform: none;
+  .about-accordion .ac-accordion__chevron {
+    transition-duration: 0ms;
   }
 }

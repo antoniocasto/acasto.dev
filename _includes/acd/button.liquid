@@ -2,12 +2,13 @@
 {%- assign is_disabled = include.disabled == true or include.disabled == "true" -%}
 {%- assign is_loading = include.loading == true or include.loading == "true" -%}
 {%- assign is_inactive = is_disabled or is_loading -%}
+{%- assign component_size = include['size'] -%}
 {%- if is_link -%}
   <a
     class="{% include acd/_internal/class-name.liquid base='ac-button' extra=include.class %}"
     {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
     {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
-    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
     {%- if include.full_width == true or include.full_width == 'true' %} data-ac-full-width="true"{%- endif -%}
     {%- if is_loading %} data-ac-loading="true" aria-busy="true"{%- endif -%}
     {%- if is_inactive %} aria-disabled="true" tabindex="-1"{%- endif -%}
@@ -34,7 +35,7 @@
     type="{{ include.type | default: 'button' | escape }}"
     {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
     {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
-    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
     {%- if include.full_width == true or include.full_width == 'true' %} data-ac-full-width="true"{%- endif -%}
     {%- if is_loading %} data-ac-loading="true" aria-busy="true"{%- endif -%}
     {%- if is_disabled %} disabled{%- endif -%}

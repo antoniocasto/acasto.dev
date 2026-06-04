@@ -4,11 +4,12 @@
 {%- elsif include.button == true or include.button == 'true' -%}
   {%- assign element = 'button' -%}
 {%- endif -%}
+{%- assign component_size = include['size'] -%}
 <{{ element }}
   class="{% include acd/_internal/class-name.liquid base='ac-tag' extra=include.class %}"
   {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
   {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
-  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
   {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
   {%- if element == 'a' %} href="{{ include.href | escape }}"{%- endif -%}
   {%- if element == 'button' %} type="{{ include.type | default: 'button' | escape }}"{%- endif -%}

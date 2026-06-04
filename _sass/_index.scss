@@ -60,10 +60,26 @@
 }
 
 .home-tags {
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: var(--ac-space-xl);
+}
+
+.home-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--ac-space-sm);
   margin-top: var(--ac-space-xl);
+}
+
+.home-proof__item {
+  --ac-stat-card-padding: var(--ac-space-md);
+  min-block-size: 8.5rem;
+  min-width: 0;
+}
+
+.home-proof__item .ac-stat-card__value {
+  font-size: var(--ac-type-headline-font-size);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
 }
 
 .home-portrait {
@@ -98,6 +114,10 @@
 
   .home-copy {
     font-size: 1.0625rem;
+  }
+
+  .home-proof {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .home-portrait {

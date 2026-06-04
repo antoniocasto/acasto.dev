@@ -29,7 +29,7 @@
   margin-right: 0.35rem;
 }
 
-/* Category filter tiles */
+/* Blog category filters */
 #category-filters {
   display: grid;
   gap: var(--ac-space-sm);
@@ -48,24 +48,8 @@
   line-height: var(--ac-type-caption-line-height);
 }
 
-.tiles-container {
-  display: flex; // Flexbox layout
-  flex-wrap: wrap; // Wrap items to the next line
-  gap: var(--ac-space-sm); // Space between items
-}
-
 .filter-tile {
-  --ac-tag-foreground: var(--ac-color-foreground-secondary);
-  cursor: pointer; // Pointer cursor on hover
-  border: 0;
-}
-
-.filter-tile.selected,
-.filter-tile[aria-pressed="true"] {
-  --ac-tag-background: var(--ac-color-accent);
-  --ac-tag-foreground: var(--ac-color-accent-foreground);
-  --ac-tag-border-color: var(--ac-color-accent);
-  color: var(--ac-tag-foreground); // Keep selected text readable
+  cursor: pointer;
 }
 
 .filter-tile:focus-visible {
@@ -95,77 +79,43 @@
   animation: rotate-animation 0.5s ease-in-out; // Apply rotation animation
 }
 
-/* Floating button for theme switch */
 .theme-switch {
-  position: fixed; // Fixed position
-  bottom: 1rem; // 1rem from the bottom
-  right: 1rem; // 1rem from the right
-  z-index: 1100; // High z-index to be on top
-  width: 3.5rem; // Fixed width
-  height: 3.5rem; // Fixed height
-  border-radius: var(--ac-radius-full); // Fully rounded corners
-  display: flex; // Flexbox layout
-  align-items: center; // Center items vertically
-  justify-content: center; // Center items horizontally
+  z-index: 1100;
 }
 
-.theme-switch:hover .theme-toggle-label {
-  transform: translateY(-1px); // Slight lift on hover
+.theme-toggle-fab {
+  --ac-fab-size: 3.5rem;
 }
 
-/* Hide the checkbox */
-.theme-switch input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
+.theme-switch:hover .theme-toggle-fab {
+  transform: translateY(-1px);
+}
+
+.theme-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  color: currentColor;
+  transition: color var(--ac-motion-preset-default);
+}
+
+.theme-overlay {
+  position: fixed;
+  bottom: var(--ac-space-lg);
+  right: var(--ac-space-lg);
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--ac-color-background);
+  border-radius: var(--ac-radius-full);
+  z-index: 1000;
+  transform: scale(0);
+  transform-origin: center center;
+  transition: transform 0.6s ease-out;
   pointer-events: none;
 }
 
-/* Label fills the entire button */
-.theme-switch label {
-  --ac-icon-button-size: 3.5rem;
-  --ac-icon-button-background: var(--ac-color-foreground);
-  --ac-icon-button-foreground: var(--ac-color-background);
-  --ac-icon-button-border-color: transparent;
-  margin: 0; // Remove margin
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18); // Subtle shadow
-}
-
-.theme-switch input:focus-visible + .theme-toggle-label {
-  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
-  outline-offset: var(--ac-border-default);
-}
-
-/* Icon style */
-.theme-icon {
-  width: 24px; // Icon size
-  height: 24px;
-  display: block;
-  color: currentColor; // Icon color follows the ACDesign icon button
-  transition: color 0.3s ease; // Smooth transition for color
-}
-
-/* Overlay for expanding animation */
-.theme-overlay {
-  position: fixed; // Fixed position
-  bottom: 1rem; // Same position as the button
-  right: 1rem; // Same position as the button
-  width: 20px; // Initial small size
-  height: 20px; // Initial small size
-  background-color: var(--ac-color-background); // Background color from ACDesign tokens
-  border-radius: 50%; // Fully rounded corners
-  z-index: 1000; // High z-index to be on top
-  transform: scale(0); // Initial scale
-  transform-origin: center center; // Scale from the center
-  transition: transform 0.6s ease-out; // Smooth transition for transform
-  pointer-events: none; // Disable pointer events
-}
-
 .theme-overlay.expand {
-  transform: scale(var(--overlay-scale, 100)); // Expand to full size
+  transform: scale(var(--overlay-scale, 100));
 }
 
 .portfolio-grid {

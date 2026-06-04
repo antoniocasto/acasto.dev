@@ -22,5 +22,6 @@ Rules:
 - The copied Jekyll adapter includes are adapted from Liquid `{&#37; render &#37;}` to Jekyll 3.10-compatible `{&#37; include &#37;}` because this site uses Liquid 4.0.4.
 - The copied internal attribute helpers preserve leading spaces before optional attributes after the render-to-include conversion, so generated HTML attributes do not concatenate.
 - The copied link/button templates preserve leading whitespace inside conditional attributes such as `href`, `type`, `disabled`, and `data-ac-*` after the render-to-include conversion.
+- The copied components that expose a `size` parameter use bracket access (`include['size']` / `item['size']`) in this local Jekyll adapter, avoiding Liquid's `include.size`/`item.size` collection-size collision when the parameter is omitted.
 - Site-specific layout and content CSS belongs in `_sass/`.
 - Production must not load files from the private `ACDesignWeb` repository.

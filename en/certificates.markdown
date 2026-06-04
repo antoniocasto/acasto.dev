@@ -14,6 +14,12 @@ permalink: "/en/certificates/"
 %}
 
 {% assign localized_certificates = site.data.certificates %}
+{% capture certificates_prev_icon %}&larr;{% endcapture %}
+{% capture certificates_next_icon %}&rarr;{% endcapture %}
+{% assign certificates_prev_attrs = 'data-certificates-prev' %}
+{% assign certificates_next_attrs = 'data-certificates-next' %}
+{% assign certificates_previous_label = site.data.localization[page.lang].certificates.previous %}
+{% assign certificates_next_label = site.data.localization[page.lang].certificates.next %}
 
 {% if localized_certificates.size == 0 %}
 _{{ site.data.localization[page.lang].certificates.empty_state }}_
@@ -22,12 +28,24 @@ _{{ site.data.localization[page.lang].certificates.empty_state }}_
   <div class="certificates__header">
     <p class="certificates__hint">{{ site.data.localization[page.lang].certificates.carousel_hint }}</p>
     <div class="certificates__controls">
-      <button type="button" class="certificates__button ac-icon-button" data-ac-shape="circle" data-ac-variant="outlined" data-ac-color="accent" data-certificates-prev aria-label="{{ site.data.localization[page.lang].certificates.previous }}">
-        <span class="ac-icon-button__icon" aria-hidden="true">&larr;</span>
-      </button>
-      <button type="button" class="certificates__button ac-icon-button" data-ac-shape="circle" data-ac-variant="outlined" data-ac-color="accent" data-certificates-next aria-label="{{ site.data.localization[page.lang].certificates.next }}">
-        <span class="ac-icon-button__icon" aria-hidden="true">&rarr;</span>
-      </button>
+      {% include acd/icon-button.liquid
+        class="certificates__button"
+        shape="circle"
+        variant="outlined"
+        color="accent"
+        aria_label=certificates_previous_label
+        icon_html=certificates_prev_icon
+        attrs=certificates_prev_attrs
+      %}
+      {% include acd/icon-button.liquid
+        class="certificates__button"
+        shape="circle"
+        variant="outlined"
+        color="accent"
+        aria_label=certificates_next_label
+        icon_html=certificates_next_icon
+        attrs=certificates_next_attrs
+      %}
     </div>
   </div>
 

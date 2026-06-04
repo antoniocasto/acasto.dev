@@ -1,7 +1,8 @@
+{%- assign component_size = include['size'] -%}
 <span
   class="{% include acd/_internal/class-name.liquid base='ac-avatar' extra=include.class %}"
   {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
-  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
   {%- include acd/_internal/data-attr.liquid name='data-ac-shape' value=include.shape -%}
   {%- if include.border == true or include.border == 'true' -%} data-ac-border="true"{%- endif -%}
   {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}

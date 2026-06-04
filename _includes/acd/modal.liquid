@@ -4,10 +4,11 @@
   {%- assign modal_title_id = include.id | append: '-title' -%}
 {%- endif -%}
 {%- assign modal_aria_label = include.aria_label | default: include.title -%}
+{%- assign component_size = include['size'] -%}
 <dialog
   class="{% include acd/_internal/class-name.liquid base='ac-modal' extra=include.class %}"
   {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
-  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
   {%- include acd/_internal/data-attr.liquid name='data-ac-header-style' value=include.header_style -%}
   {%- if include.dismissible == false or include.dismissible == 'false' -%} data-ac-dismissible="false"{%- endif -%}
   {%- if include.backdrop_dismiss == false or include.backdrop_dismiss == 'false' -%} data-ac-backdrop-dismiss="false"{%- endif -%}

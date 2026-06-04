@@ -8,16 +8,14 @@ permalink: "/it/about/"
 <section class="about-hero">
   <div class="about-hero__identity">
     <div class="avatar-block">
-      <div class="avatar-ring ac-avatar" data-ac-shape="rounded" data-ac-border="true">
-        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" class="avatar-image ac-avatar__image" loading="lazy" decoding="async" width="764" height="824">
-      </div>
-      <span class="role-badge ac-tag" data-ac-color="accent"><span class="ac-tag__label">iOS Developer</span></span>
+      {% include acd/avatar.liquid class="avatar-ring" shape="rounded" border=true image_src="/assets/images/profile.jpeg" image_alt="Antonio Casto" %}
+      {% include acd/tag.liquid class="role-badge" label="iOS Developer" color="accent" %}
     </div>
     <h1>Antonio Casto</h1>
     <p class="role-line">In Italia · Bilingue (italiano/inglese)</p>
     <div class="about-actions">
-      <a class="about-action ac-button" data-ac-variant="secondary" href="/it/portfolio/"><span class="ac-button__label">Guarda il Portfolio</span></a>
-      <a class="about-action ac-button" href="/it/contacts/"><span class="ac-button__label">Contattami</span></a>
+      {% include acd/button.liquid href="/it/portfolio/" label="Guarda il Portfolio" variant="secondary" class="about-action" %}
+      {% include acd/button.liquid href="/it/contacts/" label="Contattami" class="about-action" %}
     </div>
   </div>
   <div class="about-hero__summary ac-card" data-ac-variant="filled">
@@ -114,21 +112,30 @@ permalink: "/it/about/"
 
 <section class="about-section">
   {% include acd/section-header.liquid title="Tecnologie Aggiuntive" heading_tag="h2" size="regular" class="about-section__header" %}
-  <details class="about-details ac-card" data-ac-variant="filled">
-    <summary>Vedi strumenti e piattaforme di supporto</summary>
-    <div class="about-details__content">
+  <div class="ac-accordion-group about-accordion" aria-label="Tecnologie Aggiuntive">
+    <details class="ac-accordion" data-ac-size="large">
+      <summary class="ac-accordion__summary">
+        <span class="ac-accordion__title">Vedi strumenti e piattaforme di supporto</span>
+        <span class="ac-accordion__chevron" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 3L11 8L6 13"></path>
+          </svg>
+        </span>
+      </summary>
+      <div class="ac-accordion__panel about-accordion__panel">
       <p><strong>Piattaforme (esperienze passate):</strong> Flutter, React, Angular, Spring Boot.</p>
       <p><strong>Linguaggi:</strong> Swift, Objective-C, Python, Dart, Kotlin, Java, C, SQL, JavaScript, TypeScript.</p>
       <p><strong>Strumenti:</strong> Xcode, VS Code, Android Studio — Postman, Proxyman, Swagger — GitHub, GitLab.</p>
-    </div>
-  </details>
+      </div>
+    </details>
+  </div>
 </section>
 
 <section class="about-section">
   <div class="about-actions about-actions--full">
-    <a class="about-action ac-button" data-ac-variant="secondary" href="/it/portfolio/"><span class="ac-button__label">Guarda il Portfolio</span></a>
-    <a class="about-action ac-button" data-ac-variant="secondary" href="/it/certificates/"><span class="ac-button__label">Guarda i Certificati</span></a>
-    <a class="about-action ac-button" href="/it/contacts/"><span class="ac-button__label">Contattami</span></a>
+    {% include acd/button.liquid href="/it/portfolio/" label="Guarda il Portfolio" variant="secondary" class="about-action" %}
+    {% include acd/button.liquid href="/it/certificates/" label="Guarda i Certificati" variant="secondary" class="about-action" %}
+    {% include acd/button.liquid href="/it/contacts/" label="Contattami" class="about-action" %}
   </div>
 </section>
 {:/nomarkdown}

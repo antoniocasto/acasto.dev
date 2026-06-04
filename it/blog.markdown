@@ -17,9 +17,9 @@ permalink: "/it/blog/"
 _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
 {% else %}
 {::nomarkdown}
-<div id="category-filters">
+<div id="category-filters" class="blog-filters">
   <h3>{{ site.data.localization[page.lang].a11y.filter_by_category }}</h3>
-  <div class="tiles-container">
+  <div class="ac-tag-group blog-filter-group" data-ac-selection-mode="multiple" data-ac-layout="compact" aria-label="{{ site.data.localization[page.lang].a11y.filter_by_category }}">
     {% assign categories = "" %}
     {% for post in localized_posts %}
       {% for cat in post.categories %}
@@ -31,9 +31,15 @@ _Non ci sono articoli al momento. Torna presto per aggiornamenti!_
     {% assign categories = categories | split: "," | uniq %}
     {% for normCat in categories %}
       {% if normCat != "" %}
-        <button type="button" class="filter-tile ac-tag" data-ac-variant="outlined" data-ac-color="surface" data-value="{{ normCat }}" aria-pressed="false">
-          <span class="ac-tag__label">{{ normCat | capitalize }}</span>
-        </button>
+        {% capture filter_attrs %}data-value="{{ normCat }}" data-ac-selected="false" aria-pressed="false"{% endcapture %}
+        {% include acd/tag.liquid
+          button=true
+          class="ac-tag-group__item filter-tile"
+          label=normCat
+          variant="outlined"
+          color="surface"
+          attrs=filter_attrs
+        %}
       {% endif %}
     {% endfor %}
   </div>

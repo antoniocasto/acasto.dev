@@ -1,4 +1,5 @@
 {%- assign show_group = include.items and include.items.size > 0 -%}
+{%- assign group_size = include['size'] -%}
 {%- if show_group -%}
   <div
     class="{% include acd/_internal/class-name.liquid base='ac-accordion-group' extra=include.class %}"
@@ -10,7 +11,8 @@
     {%- for item in include.items -%}
       {%- assign is_open = item.open == true or item.open == 'true' -%}
       {%- assign is_disabled = item.disabled == true or item.disabled == 'true' -%}
-      {%- assign accordion_size = item.size | default: include.size -%}
+      {%- assign item_size = item['size'] -%}
+      {%- assign accordion_size = item_size | default: group_size -%}
       <details
         class="ac-accordion"
         {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=accordion_size -%}

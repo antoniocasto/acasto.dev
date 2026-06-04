@@ -1,10 +1,11 @@
 {%- assign progress_value = include.value | default: 0 | times: 1.0 -%}
 {%- assign progress_ratio = progress_value | divided_by: 100.0 -%}
 {%- assign progress_angle = progress_value | times: 3.6 -%}
+{%- assign component_size = include['size'] -%}
 <div
   class="{% include acd/_internal/class-name.liquid base='ac-progress-ring' extra=include.class %}"
   {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
-  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
   {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
   role="progressbar"
   aria-valuemin="0"

@@ -2,11 +2,12 @@
 {%- assign is_disabled = include.disabled == true or include.disabled == 'true' -%}
 {%- assign is_inactive = is_disabled -%}
 {%- assign button_style = include.style | default: include.variant -%}
+{%- assign component_size = include['size'] -%}
 {%- if is_link -%}
   <a
     class="{% include acd/_internal/class-name.liquid base='ac-icon-button' extra=include.class %}"
     {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
-    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
     {%- include acd/_internal/data-attr.liquid name='data-ac-shape' value=include.shape -%}
     {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=button_style -%}
     {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
@@ -24,7 +25,7 @@
     class="{% include acd/_internal/class-name.liquid base='ac-icon-button' extra=include.class %}"
     type="{{ include.type | default: 'button' | escape }}"
     {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
-    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=include.size -%}
+    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
     {%- include acd/_internal/data-attr.liquid name='data-ac-shape' value=include.shape -%}
     {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=button_style -%}
     {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}

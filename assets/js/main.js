@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
+  const setThemeToggleState = (theme) => {
+    if (!themeToggle) return;
+    themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  };
+
   const setThemeIcon = (theme) => {
     if (!themeIconUse) return;
     const iconId = theme === 'dark' ? 'icon-sun' : 'icon-moon';
@@ -34,16 +39,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (currentTheme === 'dark') {
     applyThemeClass(true);
-    if (themeToggle) themeToggle.checked = true;
     setThemeIcon('dark');
+    setThemeToggleState('dark');
   } else {
     applyThemeClass(false);
     setThemeIcon('light');
+    setThemeToggleState('light');
   }
 
   if (themeToggle) {
-    themeToggle.addEventListener('change', function () {
+    themeToggle.addEventListener('click', function () {
       const duration = prefersReducedMotion ? 0 : 600;
+      const nextIsDark = rootElement.dataset.acTheme !== 'dark';
 
       if (overlay && !prefersReducedMotion) {
         const scaleFactor = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2) / 10;
@@ -52,14 +59,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       setTimeout(() => {
-        if (this.checked) {
+        if (nextIsDark) {
           applyThemeClass(true);
           localStorage.setItem('theme', 'dark');
           setThemeIcon('dark');
+          setThemeToggleState('dark');
         } else {
           applyThemeClass(false);
           localStorage.setItem('theme', 'light');
           setThemeIcon('light');
+          setThemeToggleState('light');
         }
 
         if (themeIconSvg && !prefersReducedMotion) {
@@ -338,6 +347,9 @@ document.addEventListener('DOMContentLoaded', function () {
     tile.addEventListener('click', function () {
       const isSelected = tile.classList.toggle('selected');
       tile.setAttribute('aria-pressed', String(isSelected));
+      tile.setAttribute('data-ac-selected', String(isSelected));
+      tile.setAttribute('data-ac-variant', isSelected ? 'filled' : 'outlined');
+      tile.setAttribute('data-ac-color', isSelected ? 'accent' : 'surface');
       filterPosts();
     });
   });

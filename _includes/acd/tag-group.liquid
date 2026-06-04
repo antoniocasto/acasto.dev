@@ -9,6 +9,7 @@
   {%- for item in include.items -%}
     {%- assign is_selected = item.selected == true or item.selected == 'true' -%}
     {%- assign item_value = item.value | default: item.label | slugify -%}
+    {%- assign item_size = item['size'] -%}
     {%- if include.selection_mode == 'static-display' -%}
       <span class="ac-tag-group__chip">
         {%- include acd/tag.liquid id=item.id
@@ -16,7 +17,7 @@
           label=item.label
           color=item.color
           variant=item.variant
-          size=item.size
+          size=item_size
           icon_html=item.icon_html
           attrs=item.attrs
         -%}
@@ -43,7 +44,7 @@
         class=tag_class
         label=item.label
         variant=tag_variant
-        size=item.size
+        size=item_size
         color=tag_color
         icon_html=item.icon_html
         attrs=tag_attrs
