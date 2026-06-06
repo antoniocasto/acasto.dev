@@ -1,0 +1,76 @@
+{%- assign wrapper_id = include.id | default: '' -%}
+{%- assign field_id = include.input_id | default: '' -%}
+{%- assign field_name = include.name | default: '' | strip -%}
+{%- if field_id == '' and wrapper_id != '' -%}
+  {%- assign field_id = wrapper_id | append: '-input' -%}
+{%- elsif field_id == '' and field_name != '' -%}
+  {%- assign field_id = field_name | slugify | append: '-input' -%}
+{%- endif -%}
+{%- assign is_disabled = include.disabled == true or include.disabled == 'true' -%}
+{%- assign has_value = include.value and include.value != '' -%}
+{%- assign message_id = '' -%}
+{%- if field_id != '' -%}
+  {%- capture message_id -%}{{ field_id }}-help{%- endcapture -%}
+{%- elsif wrapper_id != '' -%}
+  {%- capture message_id -%}{{ wrapper_id }}-help{%- endcapture -%}
+{%- endif -%}
+{%- capture describedby -%}
+  {%- if include.describedby -%}
+    {{ include.describedby }}
+  {%- elsif include.message_text or include.message_html -%}
+    {{ message_id }}
+  {%- endif -%}
+{%- endcapture -%}
+<div
+  class="{% include acd/_internal/class-name.liquid base='ac-text-field' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=wrapper_id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-state' value=include.state -%}
+  {%- if is_disabled -%} data-ac-disabled="true"{%- endif -%}
+  {%- if has_value -%} data-ac-filled="true"{%- endif -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  <div class="ac-text-field__control">
+    {%- if include.leading_html -%}
+      <div class="ac-text-field__leading" aria-hidden="true">{{ include.leading_html }}</div>
+    {%- endif -%}
+    <div class="ac-text-field__body">
+      <input
+        class="ac-text-field__input"
+        {%- include acd/_internal/attribute.liquid name='id' value=field_id -%}
+        {%- include acd/_internal/attribute.liquid name='name' value=include.name -%}
+        type="{{ include.type | default: 'text' | escape }}"
+        placeholder="{{ include.placeholder | default: ' ' | escape }}"
+        {%- include acd/_internal/attribute.liquid name='value' value=include.value -%}
+        {%- include acd/_internal/attribute.liquid name='autocomplete' value=include.autocomplete -%}
+        {%- include acd/_internal/attribute.liquid name='inputmode' value=include.inputmode -%}
+        {%- include acd/_internal/attribute.liquid name='pattern' value=include.pattern -%}
+        {%- include acd/_internal/attribute.liquid name='minlength' value=include.minlength -%}
+        {%- include acd/_internal/attribute.liquid name='maxlength' value=include.maxlength -%}
+        {%- if describedby != '' -%} aria-describedby="{{ describedby | strip | escape }}"{%- endif -%}
+        {%- if include.state == 'error' -%} aria-invalid="true"{%- endif -%}
+        {%- if include.required == true or include.required == 'true' -%} required{%- endif -%}
+        {%- if include.readonly == true or include.readonly == 'true' -%} readonly{%- endif -%}
+        {%- if is_disabled -%} disabled{%- endif -%}
+      />
+      {%- if include.label -%}
+        <label class="ac-text-field__label"{% if field_id != '' %} for="{{ field_id | escape }}"{% endif %}>{{ include.label | escape }}</label>
+      {%- endif -%}
+    </div>
+    {%- if include.trailing_html or include.action_html or include.status_html or include.state == 'error' or include.state == 'success' -%}
+      <div class="ac-text-field__trailing">
+        {%- if include.trailing_html -%}{{ include.trailing_html }}{%- endif -%}
+        {%- if include.status_html -%}
+          <span class="ac-text-field__status" data-ac-state="{{ include.state | escape }}" aria-hidden="true">{{ include.status_html }}</span>
+        {%- elsif include.state == 'error' or include.state == 'success' -%}
+          <span class="ac-text-field__status" data-ac-state="{{ include.state | escape }}" aria-hidden="true"></span>
+        {%- endif -%}
+        {%- if include.action_html -%}{{ include.action_html }}{%- endif -%}
+      </div>
+  {%- endif -%}
+  </div>
+  {%- if include.message_text or include.message_html -%}
+    <p class="ac-field-message"{% if message_id != '' %} id="{{ message_id | escape }}"{% endif %}>
+      {%- if include.message_html -%}{{ include.message_html }}{%- else -%}{{ include.message_text | escape }}{%- endif -%}
+    </p>
+  {%- endif -%}
+</div>

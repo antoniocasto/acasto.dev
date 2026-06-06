@@ -8,19 +8,26 @@
 .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: var(--space-lg);
+    padding: var(--ac-space-xl);
 }
 
-// Site header class with padding and a glass effect
+// Site header class with token-driven translucent chrome
 .site-header {
-    padding: calc(var(--space-md) + env(safe-area-inset-top, 0px)) 0 var(--space-md);
-    @include glass(16px); // Applying glass effect with 16px blur
-    border-bottom: 1px solid var(--border-color);
+    padding: env(safe-area-inset-top, 0px) 0 0;
+    border-bottom: var(--ac-border-default) solid var(--ac-color-border-subtle);
+    background: var(--ac-color-background);
+    background: color-mix(in srgb, var(--ac-color-background) 88%, transparent);
+    backdrop-filter: blur(1rem) saturate(140%);
+    -webkit-backdrop-filter: blur(1rem) saturate(140%);
+}
+
+.site-header .nav-bar.container {
+    padding-block: var(--ac-space-md);
 }
 
 main.container {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-2xl);
+    padding-top: var(--ac-space-xxl);
+    padding-bottom: var(--ac-space-xxxl);
     flex: 1;
 }
 
@@ -46,9 +53,9 @@ main.container {
 }
 
 .site-footer {
-    color: var(--text-muted);
+    color: var(--ac-color-foreground-secondary);
     font-size: 0.9rem;
-    padding-bottom: var(--space-xl);
+    padding-bottom: var(--ac-space-xxl);
 }
 
 /* Basic rules for the menu inside the site header */
@@ -57,10 +64,26 @@ main.container {
     margin: 0; // Removing default margin
     padding: 0; // Removing default padding
     display: flex; // Using flexbox for layout
-    gap: 1rem; // Adding space between menu items
+    gap: var(--ac-space-lg); // Adding space between menu items
 }
 
 // Styling for links inside the menu
 .site-header .menu li a {
     font-weight: 500; // Setting font weight to 500
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: env(safe-area-inset-top, 0px) 0 0;
+    }
+
+    .site-header .nav-bar.container {
+        padding-block: var(--ac-space-sm);
+    }
+}
+
+@media (max-width: 360px) {
+    main.page-content--home {
+        padding-top: var(--ac-space-md);
+    }
 }

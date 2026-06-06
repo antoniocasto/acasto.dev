@@ -1,0 +1,35 @@
+{%- assign tooltip_id = include.tooltip_id | default: '' | strip -%}
+{%- if tooltip_id == '' and include.id and include.id != '' -%}
+  {%- assign tooltip_id = include.id | append: '-tooltip' -%}
+{%- endif -%}
+{%- assign trigger_type = include.trigger_type | default: 'button' -%}
+{%- capture trigger_attrs -%}data-ac-tooltip-trigger{%- if include.trigger_attrs -%} {{ include.trigger_attrs | strip }}{%- endif -%}{%- endcapture -%}
+<span
+  class="{% include acd/_internal/class-name.liquid base='ac-tooltip-anchor' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-placement' value=include.placement -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- if include.trigger_html -%}
+    {{ include.trigger_html }}
+  {%- else -%}
+    {%- include acd/button.liquid label=include.trigger_label
+      type=trigger_type
+      class=include.trigger_class
+      variant=include.trigger_variant
+      size=include.trigger_size
+      leading_html=include.trigger_leading_html
+      trailing_html=include.trigger_trailing_html
+      aria_label=include.trigger_aria_label
+      attrs=trigger_attrs
+    -%}
+  {%- endif -%}
+  <span
+    class="ac-tooltip"
+    {%- include acd/_internal/attribute.liquid name='id' value=tooltip_id -%}
+    role="tooltip"
+    {%- include acd/_internal/data-attr.liquid name='data-ac-tone' value=include.tone -%}
+  >
+    {%- if include.body_html -%}{{ include.body_html }}{%- else -%}{{ include.text | escape }}{%- endif -%}
+  </span>
+</span>

@@ -1,0 +1,65 @@
+{%- assign is_disabled = include.disabled == true or include.disabled == 'true' -%}
+{%- assign wrapper_id = include.id | default: '' -%}
+{%- assign control_id = include.input_id | default: '' -%}
+{%- assign field_name = include.name | default: '' | strip -%}
+{%- if control_id == '' and wrapper_id != '' -%}
+  {%- assign control_id = wrapper_id | append: '-input' -%}
+{%- elsif control_id == '' and field_name != '' -%}
+  {%- assign control_id = field_name | slugify | append: '-input' -%}
+{%- endif -%}
+{%- assign rows = include.rows | default: 4 -%}
+{%- assign message_id = '' -%}
+{%- if control_id != '' -%}
+  {%- capture message_id -%}{{ control_id }}-help{%- endcapture -%}
+{%- elsif wrapper_id != '' -%}
+  {%- capture message_id -%}{{ wrapper_id }}-help{%- endcapture -%}
+{%- endif -%}
+{%- capture describedby -%}
+  {%- if include.describedby -%}
+    {{ include.describedby }}
+  {%- elsif include.message_text or include.message_html or include.show_counter == true or include.show_counter == 'true' -%}
+    {{ message_id }}
+  {%- endif -%}
+{%- endcapture -%}
+<div
+  class="{% include acd/_internal/class-name.liquid base='ac-text-area' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=wrapper_id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-state' value=include.state -%}
+  {%- if is_disabled -%} data-ac-disabled="true"{%- endif -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- if include.label -%}
+    <label class="ac-text-area__label"{% if control_id != '' %} for="{{ control_id | escape }}"{% endif %}>{{ include.label | escape }}</label>
+  {%- endif -%}
+  <div class="ac-text-area__control">
+    <textarea
+      class="ac-text-area__input"
+      {%- include acd/_internal/attribute.liquid name='id' value=control_id -%}
+      {%- include acd/_internal/attribute.liquid name='name' value=include.name -%}
+      {%- include acd/_internal/attribute.liquid name='placeholder' value=include.placeholder -%}
+      {%- include acd/_internal/attribute.liquid name='rows' value=rows -%}
+      {%- include acd/_internal/attribute.liquid name='maxlength' value=include.maxlength -%}
+      {%- if describedby != '' -%} aria-describedby="{{ describedby | strip | escape }}"{%- endif -%}
+      {%- if include.state == 'error' -%} aria-invalid="true"{%- endif -%}
+      {%- if include.required == true or include.required == 'true' -%} required{%- endif -%}
+      {%- if include.readonly == true or include.readonly == 'true' -%} readonly{%- endif -%}
+      {%- if is_disabled -%} disabled{%- endif -%}
+    >{{ include.value | escape }}</textarea>
+  </div>
+  {%- if include.message_text or include.message_html or include.show_counter == true or include.show_counter == 'true' -%}
+    <div class="ac-field-feedback">
+      {%- if include.message_text or include.message_html -%}
+        <p
+          class="ac-field-message"
+          {%- include acd/_internal/attribute.liquid name='id' value=message_id -%}
+          {%- include acd/_internal/data-attr.liquid name='data-ac-tone' value=include.message_tone -%}
+        >
+          {%- if include.message_html -%}{{ include.message_html }}{%- else -%}{{ include.message_text | escape }}{%- endif -%}
+        </p>
+      {%- endif -%}
+      {%- if include.show_counter == true or include.show_counter == 'true' -%}
+        <p class="ac-field-counter" data-ac-role="count"></p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>

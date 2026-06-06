@@ -1,0 +1,26 @@
+{% assign thumbnail_src = include.project.thumbnail %}
+{% assign project_href = include.project.url | relative_url %}
+{% if include.project.thumbnail and include.project.thumbnail contains "://" %}
+  {% assign thumbnail_src = include.project.thumbnail %}
+{% elsif include.project.thumbnail %}
+  {% assign thumbnail_src = include.project.thumbnail | relative_url %}
+{% endif %}
+
+{% capture project_body %}
+  <div class="project-card__media"{% if include.project.thumbnail_bg %} style="--portfolio-thumb-bg: {{ include.project.thumbnail_bg }};"{% endif %}>
+    {% if thumbnail_src %}
+      <img src="{{ thumbnail_src }}" alt="{{ include.project.thumbnail_alt | default: include.project.title }}" loading="eager" decoding="async">
+    {% else %}
+      <span class="project-card__placeholder" aria-hidden="true">App</span>
+    {% endif %}
+  </div>
+  <p>{{ include.project.description }}</p>
+{% endcapture %}
+
+{% include acd/card.liquid
+  href=project_href
+  title=include.project.title
+  body_html=project_body
+  variant="filled"
+  class="project-card"
+%}

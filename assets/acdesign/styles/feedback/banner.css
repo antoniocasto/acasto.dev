@@ -1,0 +1,93 @@
+:where(.ac-banner) {
+  --ac-banner-padding-inline: var(--ac-space-lg);
+  --ac-banner-padding-block: 0.875rem;
+  --ac-banner-radius: var(--ac-radius-lg);
+  --ac-banner-min-height: 4rem;
+  --ac-banner-gap: var(--ac-space-md);
+  --ac-banner-action-gap: var(--ac-space-md);
+  display: grid;
+  gap: var(--ac-banner-action-gap);
+  inline-size: 100%;
+  min-block-size: var(--ac-banner-min-height);
+  padding: var(--ac-banner-padding-block) var(--ac-banner-padding-inline);
+  border: var(--ac-message-border-width) solid var(--ac-message-border-color);
+  border-radius: var(--ac-banner-radius);
+  background: var(--ac-message-background);
+  box-sizing: border-box;
+}
+
+:where(.ac-banner__main) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--ac-banner-gap);
+  align-items: start;
+}
+
+:where(.ac-banner__action) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:where(.ac-banner__action-button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.125rem;
+  padding-inline: 0.875rem;
+  border: var(--ac-border-default) solid currentColor;
+  border-radius: var(--ac-radius-md);
+  background: transparent;
+  color: var(--ac-message-foreground);
+  font-family: var(--ac-font-family-sans);
+  font-size: var(--ac-type-label-font-size);
+  font-weight: 800;
+  letter-spacing: var(--ac-type-label-letter-spacing);
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  appearance: none;
+}
+
+:where(.ac-banner[data-ac-tone="success"][data-ac-emphasis="subtle"] .ac-banner__action-button) {
+  color: var(--ac-color-accent);
+}
+
+:where(.ac-banner[data-ac-tone="error"][data-ac-emphasis="subtle"] .ac-banner__action-button) {
+  color: var(--ac-color-foreground);
+}
+
+:where(.ac-banner[data-ac-tone="warning"][data-ac-emphasis="subtle"] .ac-banner__action-button) {
+  color: var(--ac-color-foreground);
+}
+
+:where(.ac-banner[data-ac-tone="info"][data-ac-emphasis="subtle"] .ac-banner__action-button) {
+  color: var(--ac-color-foreground);
+}
+
+:where(.ac-banner[data-ac-emphasis="strong"] .ac-banner__action-button) {
+  background: var(--ac-message-icon-background);
+  border-color: var(--ac-message-icon-background);
+  color: var(--ac-message-icon-foreground);
+}
+
+:where(.ac-banner__action-button:active) {
+  transform: scale(0.98);
+}
+
+@media (max-width: 40rem) {
+  :where(.ac-banner__main) {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  :where(.ac-banner__main .ac-message__dismiss) {
+    grid-column: 2;
+    justify-self: end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ac-banner__action-button:active) {
+    transform: none;
+  }
+}

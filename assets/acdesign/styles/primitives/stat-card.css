@@ -1,0 +1,84 @@
+:where(.ac-stat-card) {
+  --ac-stat-card-padding: var(--ac-space-lg);
+  --ac-stat-card-radius: var(--ac-radius-lg);
+  --ac-stat-card-meta-icon-size: 1.375rem;
+  --ac-stat-card-meta-font-size: 0.875rem;
+  --ac-stat-card-meta-icon-glyph-size: 0.75rem;
+  display: grid;
+  grid-template-rows: minmax(1.5rem, auto) 1fr auto;
+  row-gap: var(--ac-space-sm);
+  inline-size: 100%;
+  min-block-size: 12.5rem;
+  padding: var(--ac-stat-card-padding);
+  border-radius: var(--ac-stat-card-radius);
+  background: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+  box-sizing: border-box;
+}
+
+:where(.ac-stat-card__meta) {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ac-space-sm);
+  min-block-size: 1.5rem;
+}
+
+:where(.ac-stat-card__icon) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--ac-stat-card-meta-icon-size);
+  block-size: var(--ac-stat-card-meta-icon-size);
+  flex: none;
+  color: var(--ac-color-foreground-secondary);
+}
+
+:where(.ac-stat-card__icon > svg) {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+:where(.ac-stat-card__trend) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1875rem;
+  color: var(--ac-color-foreground);
+  font-size: var(--ac-stat-card-meta-font-size);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+:where(.ac-stat-card__trend[data-ac-trend="neutral"]) {
+  color: var(--ac-color-foreground-secondary);
+}
+
+:where(.ac-stat-card__trend-icon) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--ac-stat-card-meta-icon-glyph-size);
+  font-weight: 900;
+}
+
+:where(.ac-stat-card__value) {
+  grid-row: 2;
+  margin: 0;
+  font-size: var(--ac-type-display-font-size);
+  font-weight: var(--ac-type-display-font-weight);
+  letter-spacing: var(--ac-type-display-letter-spacing);
+  line-height: 1.05;
+  align-self: end;
+}
+
+:where(.ac-stat-card__label) {
+  grid-row: 3;
+  margin: 0;
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: var(--ac-type-caption-font-weight);
+  letter-spacing: var(--ac-type-caption-letter-spacing);
+  line-height: var(--ac-type-caption-line-height);
+}

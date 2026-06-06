@@ -1,0 +1,33 @@
+{%- assign is_link = include.href and include.href != '' -%}
+<div
+  class="{% include acd/_internal/class-name.liquid base='ac-fab-anchor' extra=include.anchor_class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-position' value=include.position -%}
+  {%- if include.anchor_attrs %} {{ include.anchor_attrs | strip }}{%- endif -%}
+>
+  {%- if is_link -%}
+    <a
+      class="{% include acd/_internal/class-name.liquid base='ac-fab' extra=include.class %}"
+      href="{{ include.href | escape }}"
+      {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
+      {%- if include.extended == true or include.extended == 'true' %} data-ac-extended="true"{%- endif -%}
+      {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+      {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+    >
+      <span class="ac-fab__icon" aria-hidden="true">{{ include.icon_html }}</span>
+      {%- if include.label -%}<span class="ac-fab__label">{{ include.label | escape }}</span>{%- endif -%}
+    </a>
+  {%- else -%}
+    <button
+      class="{% include acd/_internal/class-name.liquid base='ac-fab' extra=include.class %}"
+      type="{{ include.type | default: 'button' | escape }}"
+      {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
+      {%- if include.extended == true or include.extended == 'true' %} data-ac-extended="true"{%- endif -%}
+      {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+      {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+    >
+      <span class="ac-fab__icon" aria-hidden="true">{{ include.icon_html }}</span>
+      {%- if include.label -%}<span class="ac-fab__label">{{ include.label | escape }}</span>{%- endif -%}
+    </button>
+  {%- endif -%}
+</div>

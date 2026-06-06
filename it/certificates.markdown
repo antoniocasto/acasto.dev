@@ -4,11 +4,30 @@ title: "Certificati"
 ref: "certificates"
 permalink: "/it/certificates/"
 ---
-# {{ site.data.localization[page.lang].certificates.heading }}
-
-{{ site.data.localization[page.lang].certificates.intro }}
+{% assign certificates_title = site.data.localization[page.lang].certificates.heading %}
+{% assign certificates_intro = site.data.localization[page.lang].certificates.intro %}
+{% include site/page-header.html
+  title=certificates_title
+  subtitle=certificates_intro
+  heading_tag="h1"
+  size="large"
+%}
 
 {% assign localized_certificates = site.data.certificates %}
+{% capture certificates_prev_icon %}
+  <svg class="icon icon--sm" aria-hidden="true">
+    <use href="{{ '/assets/images/icons.svg' | relative_url }}?v={{ site.asset_version }}#icon-chevron-left"></use>
+  </svg>
+{% endcapture %}
+{% capture certificates_next_icon %}
+  <svg class="icon icon--sm" aria-hidden="true">
+    <use href="{{ '/assets/images/icons.svg' | relative_url }}?v={{ site.asset_version }}#icon-chevron-right"></use>
+  </svg>
+{% endcapture %}
+{% assign certificates_prev_attrs = 'data-certificates-prev' %}
+{% assign certificates_next_attrs = 'data-certificates-next' %}
+{% assign certificates_previous_label = site.data.localization[page.lang].certificates.previous %}
+{% assign certificates_next_label = site.data.localization[page.lang].certificates.next %}
 
 {% if localized_certificates.size == 0 %}
 _{{ site.data.localization[page.lang].certificates.empty_state }}_
@@ -17,12 +36,24 @@ _{{ site.data.localization[page.lang].certificates.empty_state }}_
   <div class="certificates__header">
     <p class="certificates__hint">{{ site.data.localization[page.lang].certificates.carousel_hint }}</p>
     <div class="certificates__controls">
-      <button type="button" class="certificates__button" data-certificates-prev aria-label="{{ site.data.localization[page.lang].certificates.previous }}">
-        <span aria-hidden="true">&larr;</span>
-      </button>
-      <button type="button" class="certificates__button" data-certificates-next aria-label="{{ site.data.localization[page.lang].certificates.next }}">
-        <span aria-hidden="true">&rarr;</span>
-      </button>
+      {% include acd/icon-button.liquid
+        class="certificates__button"
+        shape="circle"
+        variant="outlined"
+        color="accent"
+        aria_label=certificates_previous_label
+        icon_html=certificates_prev_icon
+        attrs=certificates_prev_attrs
+      %}
+      {% include acd/icon-button.liquid
+        class="certificates__button"
+        shape="circle"
+        variant="outlined"
+        color="accent"
+        aria_label=certificates_next_label
+        icon_html=certificates_next_icon
+        attrs=certificates_next_attrs
+      %}
     </div>
   </div>
 
@@ -38,15 +69,18 @@ _{{ site.data.localization[page.lang].certificates.empty_state }}_
         {% assign course_link = certificate.course_url | relative_url %}
       {% endif %}
 
-      <article class="certificate-card" data-certificate-slide>
+      <article class="certificate-card ac-card" data-ac-variant="filled" data-certificate-slide>
         <div class="certificate-card__media">
-          <img src="{{ certificate.certificate_image | relative_url }}" alt="{{ image_alt }}" loading="lazy" decoding="async">
+          <img src="{{ certificate.certificate_image | relative_url }}" alt="{{ image_alt }}" loading="eager" decoding="async">
         </div>
         <div class="certificate-card__body">
           <p class="certificate-card__provider">
             <span>{{ site.data.localization[page.lang].certificates.provider_label }}: {{ provider_name }}</span>
             <a class="certificate-card__course-link" href="{{ course_link }}" target="_blank" rel="noopener noreferrer">
-              {{ site.data.localization[page.lang].certificates.course_link_label }} <span aria-hidden="true">↗</span>
+              {{ site.data.localization[page.lang].certificates.course_link_label }}
+              <svg class="certificate-card__course-icon icon icon--sm" aria-hidden="true">
+                <use href="{{ '/assets/images/icons.svg' | relative_url }}?v={{ site.asset_version }}#icon-external-link"></use>
+              </svg>
             </a>
           </p>
           <h2>{{ course_title }}</h2>

@@ -1,0 +1,41 @@
+{% assign lang = include.lang | default: site.default_lang %}
+{% assign email_href = site.email | prepend: "mailto:" %}
+
+{% if lang == "it" %}
+  {% assign email_title = "Email" %}
+  {% assign email_subtitle = site.email %}
+  {% assign linkedin_title = "LinkedIn" %}
+  {% assign linkedin_subtitle = "Profilo professionale" %}
+  {% assign github_title = "GitHub" %}
+  {% assign github_subtitle = "Repository e progetti" %}
+{% else %}
+  {% assign email_title = "Email" %}
+  {% assign email_subtitle = site.email %}
+  {% assign linkedin_title = "LinkedIn" %}
+  {% assign linkedin_subtitle = "Professional profile" %}
+  {% assign github_title = "GitHub" %}
+  {% assign github_subtitle = "Repositories and projects" %}
+{% endif %}
+
+<div class="ac-list-container contact-list">
+  {% include acd/list-row.liquid
+    href=email_href
+    title=email_title
+    subtitle=email_subtitle
+  %}
+
+  {% include acd/list-row.liquid
+    href=site.linkedin_link
+    title=linkedin_title
+    subtitle=linkedin_subtitle
+    attrs='target="_blank" rel="noopener noreferrer"'
+  %}
+
+  {% include acd/list-row.liquid
+    href=site.github_link
+    title=github_title
+    subtitle=github_subtitle
+    divider=false
+    attrs='target="_blank" rel="noopener noreferrer"'
+  %}
+</div>

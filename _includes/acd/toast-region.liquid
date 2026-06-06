@@ -1,0 +1,31 @@
+<aside
+  class="{% include acd/_internal/class-name.liquid base='ac-toast-region' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-placement' value=include.placement -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-max-visible' value=include.max_visible -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-duration' value=include.duration -%}
+  aria-live="{{ include.aria_live | default: 'polite' | escape }}"
+  aria-atomic="{{ include.aria_atomic | default: 'false' | escape }}"
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  <div class="ac-toast-region__stack">
+    {%- for item in include.items -%}
+      <article
+        class="ac-toast"
+        data-ac-variant="{{ item.variant | default: 'info' | escape }}"
+        {%- if item.autohide == false or item.autohide == 'false' -%} data-ac-autohide="false"{%- endif -%}
+        role="{{ item.role | default: 'status' | escape }}"
+      >
+        <span class="ac-toast__icon" aria-hidden="true">{{ item.icon_html | default: 'i' }}</span>
+        <div class="ac-toast__body">
+          {%- if item.title -%}<p class="ac-toast__title">{{ item.title | escape }}</p>{%- endif -%}
+          {%- if item.message -%}<p class="ac-toast__message">{{ item.message | escape }}</p>{%- endif -%}
+        </div>
+        <button class="ac-toast__close" type="button" aria-label="{{ item.close_label | default: 'Dismiss notification' | escape }}">×</button>
+        {%- if item.show_progress != false and item.show_progress != 'false' -%}
+          <div class="ac-toast__progress"><div class="ac-toast__progress-fill"></div></div>
+        {%- endif -%}
+      </article>
+    {%- endfor -%}
+  </div>
+</aside>

@@ -1,0 +1,11 @@
+<div
+  class="{% include acd/_internal/class-name.liquid base='ac-info-row' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-layout' value=include.layout -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-style' value=include.style -%}
+  {%- if include.divider == false or include.divider == 'false' %} data-ac-divider="false"{%- endif -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  <p class="ac-info-row__label">{{ include.label | escape }}</p>
+  <p class="ac-info-row__value">{{ include.value | escape }}</p>
+</div>

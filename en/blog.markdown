@@ -4,18 +4,22 @@ title: "Blog"
 ref: "blog"
 permalink: "/en/blog/"
 ---
-# Blog  
-
-In this section, I will publish articles and tutorials about iOS development and technology.
+{% include site/page-header.html
+  title="Blog"
+  subtitle="In this section, I will publish articles and tutorials about iOS development and technology."
+  heading_tag="h1"
+  size="large"
+%}
 
 {% assign localized_posts = site.posts | where: "lang", page.lang %}
 
 {% if localized_posts.size == 0 %}
 _There are no articles at the moment. Check back soon for updates!_
 {% else %}
-<div id="category-filters">
+{::nomarkdown}
+<div id="category-filters" class="blog-filters">
   <h3>{{ site.data.localization[page.lang].a11y.filter_by_category }}</h3>
-  <div class="tiles-container">
+  <div class="ac-tag-group blog-filter-group" data-ac-selection-mode="multiple" data-ac-layout="compact" aria-label="{{ site.data.localization[page.lang].a11y.filter_by_category }}">
     {% assign categories = "" %}
     {% for post in localized_posts %}
       {% for cat in post.categories %}
@@ -27,33 +31,24 @@ _There are no articles at the moment. Check back soon for updates!_
     {% assign categories = categories | split: "," | uniq %}
     {% for normCat in categories %}
       {% if normCat != "" %}
-        <button type="button" class="filter-tile" data-value="{{ normCat }}" aria-pressed="false">
-          {{ normCat | capitalize }}
-        </button>
+        {% capture filter_attrs %}data-value="{{ normCat }}" data-ac-selected="false" aria-pressed="false"{% endcapture %}
+        {% include acd/tag.liquid
+          button=true
+          class="ac-tag-group__item filter-tile"
+          label=normCat
+          variant="outlined"
+          color="surface"
+          attrs=filter_attrs
+        %}
       {% endif %}
     {% endfor %}
   </div>
 </div>
-{% endif %}
-
 
 <div id="posts-list">
   {% for post in localized_posts %}
-    {% assign postCategories = "" %}
-    {% for cat in post.categories %}
-      {% assign postCategories = postCategories | append: cat %}
-      {% unless forloop.last %}
-        {% assign postCategories = postCategories | append: "," %}
-      {% endunless %}
-    {% endfor %}
-    <div class="post-item" data-categories="{{ postCategories }}">
-      <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
-      <div class="post-categories">
-        {% for cat in post.categories %}
-          <span class="category-tile">{{ cat | capitalize }}</span>
-        {% endfor %}
-      </div>
-      <small class="post-date"><i>({{ site.data.localization[page.lang].post.published_on }} {{ post.date | date: "%d %B %Y" }})</i></small>
-    </div>
+    {% include site/post-list-row.html post=post lang=page.lang %}
   {% endfor %}
 </div>
+{:/nomarkdown}
+{% endif %}

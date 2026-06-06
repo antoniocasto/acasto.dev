@@ -1,10 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="acasto favicon">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2563eb" />
-      <stop offset="100%" stop-color="#38bdf8" />
-    </linearGradient>
-  </defs>
-  <rect width="128" height="128" rx="28" fill="url(#bg)" />
-  <path fill="#ffffff" d="M64 24L27 104h15l8.6-19h26.8l8.6 19h15L64 24zm0 31.4L71.8 73H56.2L64 55.4z"/>
+  <style>
+    .bg { fill: #FFFFFF; }
+    .mark { fill: #0A0A0A; }
+    .ring { fill: none; stroke: #0A0A0A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0A0A0A; }
+      .mark { fill: #F5F5F5; }
+      .ring { stroke: #F5F5F5; }
+    }
+  </style>
+  <rect class="bg" width="128" height="128" rx="28" />
+  <circle class="ring" cx="64" cy="64" r="46" stroke-width="8" />
+  <path class="mark" d="M64 24L27 104h15l8.6-19h26.8l8.6 19h15L64 24zm0 31.4L71.8 73H56.2L64 55.4z" />
 </svg>

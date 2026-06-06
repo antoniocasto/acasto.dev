@@ -3,7 +3,7 @@ title: "Antonio Casto - Passionate iOS Developer"
 description: >-
   "This is the personal website and blog of Antonio Casto - Passionate iOS Developer.
   Here you will find my projects, my thoughts and my contacts."
-asset_version: "3"
+asset_version: "45"
 
 # Multilingual settings
 languages: ["en", "it"]  # Add new languages here (e.g., "fr", "de")
@@ -38,6 +38,9 @@ theme: null
 plugins:
   - jekyll-seo-tag  # Generates SEO meta tags
   - jekyll-sitemap  # Automatically generates sitemap.xml
+
+exclude:
+  - docs/superpowers/plans/
 
 # Collections - Portfolio and Blog
 collections:

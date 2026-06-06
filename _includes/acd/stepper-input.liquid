@@ -1,0 +1,33 @@
+{%- assign is_disabled = include.disabled == true or include.disabled == 'true' -%}
+{%- assign input_value = include.value | default: 0 -%}
+{%- assign input_label = include.input_label | default: include.label -%}
+{%- assign component_size = include['size'] -%}
+<div
+  class="{% include acd/_internal/class-name.liquid base='ac-stepper-input' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
+  {%- if is_disabled -%} data-ac-disabled="true"{%- endif -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  <button class="ac-stepper-input__button" data-ac-step="decrement" type="button" aria-label="{{ include.decrement_label | default: 'Decrease value' | escape }}">
+    {{ include.decrement_html | default: '−' }}
+  </button>
+  <div class="ac-stepper-input__value-wrap">
+    <span class="ac-stepper-input__value" aria-hidden="true">{{ input_value | escape }}</span>
+    <input
+      class="ac-stepper-input__input"
+      type="number"
+      {%- include acd/_internal/attribute.liquid name='name' value=include.name -%}
+      {%- include acd/_internal/attribute.liquid name='value' value=input_value -%}
+      {%- include acd/_internal/attribute.liquid name='min' value=include.min -%}
+      {%- include acd/_internal/attribute.liquid name='max' value=include.max -%}
+      {%- include acd/_internal/attribute.liquid name='step' value=include.step -%}
+      {%- include acd/_internal/attribute.liquid name='aria-label' value=input_label -%}
+      {%- if is_disabled -%} disabled{%- endif -%}
+    />
+  </div>
+  <button class="ac-stepper-input__button" data-ac-step="increment" type="button" aria-label="{{ include.increment_label | default: 'Increase value' | escape }}">
+    {{ include.increment_html | default: '+' }}
+  </button>
+</div>

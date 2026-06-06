@@ -1,0 +1,32 @@
+{%- assign element = include.element | default: 'article' -%}
+{%- assign is_button = include.button == true or include.button == 'true' -%}
+{%- assign is_link = include.href and include.href != '' -%}
+{%- if is_link -%}
+  {%- assign element = 'a' -%}
+{%- elsif is_button -%}
+  {%- assign element = 'button' -%}
+{%- endif -%}
+<{{ element }}
+  class="{% include acd/_internal/class-name.liquid base='ac-card' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
+  {%- if is_link %} href="{{ include.href | escape }}"{%- endif -%}
+  {%- if element == 'button' %} type="{{ include.type | default: 'button' | escape }}"{%- endif -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- if include.header_html or include.title -%}
+    <div class="ac-card__header">
+      {%- if include.header_html -%}
+        {{ include.header_html }}
+      {%- elsif include.title -%}
+        <p class="ac-card__title">{{ include.title | escape }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+  {%- if include.body_html -%}
+    <div class="ac-card__body">{{ include.body_html }}</div>
+  {%- endif -%}
+  {%- if include.footer_html -%}
+    <div class="ac-card__footer">{{ include.footer_html }}</div>
+  {%- endif -%}
+</{{ element }}>

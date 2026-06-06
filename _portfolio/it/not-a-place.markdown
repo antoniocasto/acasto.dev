@@ -8,7 +8,7 @@ github: "https://github.com/antoniocasto/NotAPlace"
 description: "Un'app iOS sviluppata in SwiftUI per tracciare i luoghi che evocano emozioni positive."
 thumbnail: "https://raw.githubusercontent.com/antoniocasto/NotAPlace/refs/heads/main/doc/56.PNG"
 thumbnail_alt: "NotAPlace vista mappa"
-thumbnail_bg: "linear-gradient(135deg, #111827, #334155)"
+thumbnail_bg: "linear-gradient(135deg, var(--ac-color-surface), color-mix(in srgb, var(--ac-color-foreground) 18%, var(--ac-color-surface-elevated)))"
 technologies: ["SwiftUI", "MapKit", "CoreLocation", "UserDefaults", "DocumentDirectory", "Keychain", "LocalAuthentication", "PhotosUI", "Fotocamera", "@StateObject", "@EnvironmentObject"]
 published: true
 ---
@@ -29,5 +29,3 @@ NotAPlace è un'applicazione per iPhone sviluppata in **SwiftUI**, progettata pe
 - **Gestione Permessi e Localizzazione:** Garantisce un'adeguata **gestione dei permessi** e supporta le traduzioni in **italiano e inglese**.
 
 Screenshot e flussi dell'app sono disponibili nella documentazione del repository.
-
-Il codice sorgente è disponibile su **[GitHub]({{ page.github }})**.
