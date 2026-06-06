@@ -1,0 +1,50 @@
+---
+layout: post
+title: "ACDesign: how I keep design and code aligned"
+ref: "acdesign"
+permalink: "/en/blog/2026/06/06/acdesign/"
+date: 2026-06-06 10:00:00 +0200
+categories: ["Design System"]
+tags: ["ACDesign", "SwiftUI", "Web", "Design System", "iOS"]
+published: true
+---
+
+# ACDesign: how I keep design and code aligned
+
+ACDesign is the design system I am building for my iOS apps and for the web.
+
+It did not start as a style exercise. It started from a practical need: avoiding the same repeated decisions around colors, spacing, borders, typography, states, and components. When those choices stay scattered across the codebase, every screen ends up with a small unwanted variation. At first it looks harmless, then it becomes noise.
+
+With ACDesign I wanted a shared foundation: a visual and technical grammar that I can use in SwiftUI and bring to the web without changing identity every time.
+
+## Why it exists
+
+While working on iOS apps, I realized that consistency is not only a design topic. It also affects how code is written, reused, and maintained.
+
+If a button, a card, or a list row has clear rules, I do not need to rethink it for every new feature. I can focus on the flow, the logic, and the experience. The component becomes a small reliable unit, with a precise name and predictable behavior.
+
+This is close to how I think about architecture too: modularity, separation of responsibilities, and testability. ACDesign applies the same principle to UI.
+
+## What inspired it
+
+ACDesign is shaped by how I work with SwiftUI: composition, small components, readable APIs, and useful previews. It does not try to replace everything the platform already does well. Navigation bars, tab bars, sheets, alerts, context menus, and other native elements stay where they belong: in system APIs.
+
+The visual direction is intentionally direct: black and white as the base, one chromatic accent, geometric shapes, solid borders, and strong typography. No decoration added to hide structural problems. If a screen works, it should work because hierarchy, spacing, and components are clear.
+
+On the web, I kept the same direction. ACDesignWeb is not a second design system: it is the web port of ACDesign. The core contains tokens, CSS, semantic contracts, and enhancement hooks. The Jekyll adapter stays thin and maps Liquid includes to the core contracts. JavaScript is added only when HTML and CSS are no longer enough.
+
+## What it offers
+
+ACDesign currently offers a SwiftUI foundation with tokens for color, spacing, radius, borders, typography, and motion. On top of that foundation there are reusable components such as buttons, tags, badges, cards, list rows, form rows, banners, inline alerts, modals, tooltips, progress views, step indicators, and other pieces I use to build consistent interfaces.
+
+The Swift repository also includes a SwiftUI catalog for previews, component tests, and offline HTML references. This helps me verify that the system is not only visually coherent, but also organized enough to maintain.
+
+ACDesignWeb brings the same logic to the web. On this website, for example, I use the same principles for navigation, cards, tags, list rows, editorial pages, and surfaces. I do not want the website to feel detached from the apps: it should carry the same character, adapted to the medium.
+
+## The point
+
+For me, ACDesign is mainly a way to reduce friction.
+
+When I open a project, I want to already know how a surface behaves, how much space belongs between two blocks, how a primary action should look, how a title should read, and how to distinguish a state. Not because everything must be rigid, but because repeated decisions should not steal energy from important ones.
+
+ACDesign exists for that: keeping design and code, SwiftUI and web, aesthetics and maintenance aligned.

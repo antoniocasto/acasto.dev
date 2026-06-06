@@ -12,7 +12,7 @@ layout: default
   {% assign proof_one_value = 'SwiftUI/UIKit' %}
   {% assign proof_one_label = 'Interfacce e API di piattaforma' %}
   {% assign proof_two_meta = 'Architecture' %}
-  {% assign proof_two_value = 'MVVM/VIPER' %}
+  {% assign proof_two_value = 'MVVM/VIPER/RIB' %}
   {% assign proof_two_label = 'Modularità e testabilità' %}
   {% assign proof_three_meta = 'Delivery' %}
   {% assign proof_three_value = 'CI/CD' %}
@@ -25,7 +25,7 @@ layout: default
   {% assign proof_one_value = 'SwiftUI/UIKit' %}
   {% assign proof_one_label = 'Interfaces and platform APIs' %}
   {% assign proof_two_meta = 'Architecture' %}
-  {% assign proof_two_value = 'MVVM/VIPER' %}
+  {% assign proof_two_value = 'MVVM/VIPER/RIB' %}
   {% assign proof_two_label = 'Modularity and testability' %}
   {% assign proof_three_meta = 'Delivery' %}
   {% assign proof_three_value = 'CI/CD' %}
@@ -55,24 +55,27 @@ layout: default
 
   <div class="home-details">
     <div class="home-proof" aria-label="{{ proof_aria_label }}">
-      {% include acd/stat-card.liquid
-        class="home-proof__item"
-        meta=proof_one_meta
-        value=proof_one_value
-        label=proof_one_label
-      %}
-      {% include acd/stat-card.liquid
-        class="home-proof__item"
-        meta=proof_two_meta
-        value=proof_two_value
-        label=proof_two_label
-      %}
-      {% include acd/stat-card.liquid
-        class="home-proof__item"
-        meta=proof_three_meta
-        value=proof_three_value
-        label=proof_three_label
-      %}
+      <div class="ac-list-row home-proof__item">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">{{ proof_one_meta }}</span>
+          <span class="ac-list-row__title home-proof__value">{{ proof_one_value }}</span>
+          <span class="ac-list-row__subtitle home-proof__label">{{ proof_one_label }}</span>
+        </span>
+      </div>
+      <div class="ac-list-row home-proof__item">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">{{ proof_two_meta }}</span>
+          <span class="ac-list-row__title home-proof__value">{{ proof_two_value }}</span>
+          <span class="ac-list-row__subtitle home-proof__label">{{ proof_two_label }}</span>
+        </span>
+      </div>
+      <div class="ac-list-row home-proof__item" data-ac-divider="false">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">{{ proof_three_meta }}</span>
+          <span class="ac-list-row__title home-proof__value">{{ proof_three_value }}</span>
+          <span class="ac-list-row__subtitle home-proof__label">{{ proof_three_label }}</span>
+        </span>
+      </div>
     </div>
 
     <div class="home-actions" aria-label="Primary actions">
