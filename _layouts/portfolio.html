@@ -7,7 +7,44 @@ layout: default
   It displays the title and content of a portfolio item.
 -->
 
-<article class="collection_item">
+{% assign title_length = page.title | size %}
+{% assign portfolio_lang = page.lang | default: site.default_lang %}
+{% if portfolio_lang == "it" %}
+  {% assign project_type_label = "Progetto" %}
+  {% assign project_date_label = "Pubblicato" %}
+  {% assign github_label = "Codice sorgente" %}
+  {% assign tech_aria_label = "Tecnologie del progetto" %}
+  {% assign meta_aria_label = "Metadati progetto" %}
+{% else %}
+  {% assign project_type_label = "Project" %}
+  {% assign project_date_label = "Published" %}
+  {% assign github_label = "Source code" %}
+  {% assign tech_aria_label = "Project technologies" %}
+  {% assign meta_aria_label = "Project metadata" %}
+{% endif %}
+{% assign project_date = page.date | date: "%d %B %Y" %}
+{% if portfolio_lang == "it" %}
+  {% assign project_date = project_date
+    | replace: "January", "Gennaio"
+    | replace: "February", "Febbraio"
+    | replace: "March", "Marzo"
+    | replace: "April", "Aprile"
+    | replace: "May", "Maggio"
+    | replace: "June", "Giugno"
+    | replace: "July", "Luglio"
+    | replace: "August", "Agosto"
+    | replace: "September", "Settembre"
+    | replace: "October", "Ottobre"
+    | replace: "November", "Novembre"
+    | replace: "December", "Dicembre" %}
+{% endif %}
+{% capture external_icon %}
+  <svg class="icon icon--sm" aria-hidden="true">
+    <use href="{{ '/assets/images/icons.svg' | relative_url }}?v={{ site.asset_version }}#icon-external-link"></use>
+  </svg>
+{% endcapture %}
+
+<article class="collection_item editorial-detail portfolio-detail{% if title_length > 16 %} portfolio-detail--long-title{% endif %}">
   {% assign project_thumbnail = page.thumbnail %}
   {% if page.thumbnail and page.thumbnail contains "://" %}
     {% assign project_thumbnail = page.thumbnail %}
@@ -15,21 +52,50 @@ layout: default
     {% assign project_thumbnail = page.thumbnail | relative_url %}
   {% endif %}
 
-  {% if project_thumbnail %}
-    <div class="collection_item__hero"{% if page.thumbnail_bg %} style="--portfolio-thumb-bg: {{ page.thumbnail_bg }};"{% endif %}>
-      <img src="{{ project_thumbnail }}" alt="{{ page.thumbnail_alt | default: page.title }}" loading="lazy" decoding="async">
+  <header class="editorial-detail__masthead portfolio-detail__masthead">
+    {% include acd/section-header.liquid
+      title=page.title
+      subtitle=page.description
+      heading_tag="h1"
+      size="large"
+      class="collection_item__header editorial-detail__header"
+    %}
+
+    <div class="editorial-detail__meta portfolio-detail__meta" aria-label="{{ meta_aria_label }}">
+      <span class="editorial-detail__eyebrow">{{ project_type_label }}</span>
+      {% if page.date %}
+        <span>{{ project_date_label }} {{ project_date }}</span>
+      {% endif %}
+      {% if page.github %}
+        {% include acd/button.liquid
+          href=page.github
+          label=github_label
+          variant="secondary"
+          size="small"
+          class="editorial-detail__source-link"
+          trailing_html=external_icon
+          target="_blank"
+          rel="noopener noreferrer"
+        %}
+      {% endif %}
     </div>
+
+    {% if page.technologies %}
+    <div class="editorial-detail__tags portfolio-detail__technologies" aria-label="{{ tech_aria_label }}">
+      {% for technology in page.technologies %}
+        {% include acd/tag.liquid label=technology variant="outlined" size="small" color="surface" %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  {% if project_thumbnail %}
+    <figure class="collection_item__hero editorial-detail__hero"{% if page.thumbnail_bg %} style="--portfolio-thumb-bg: {{ page.thumbnail_bg }};"{% endif %}>
+      <img src="{{ project_thumbnail }}" alt="{{ page.thumbnail_alt | default: page.title }}" loading="eager" decoding="async">
+    </figure>
   {% endif %}
 
-  {% include acd/section-header.liquid
-    title=page.title
-    subtitle=page.description
-    heading_tag="h1"
-    size="large"
-    class="collection_item__header"
-  %}
-
-  <div class="content">
+  <div class="content editorial-detail__body">
     {{ content }}
   </div>
 </article>

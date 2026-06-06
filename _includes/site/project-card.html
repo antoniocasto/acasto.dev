@@ -9,7 +9,7 @@
 {% capture project_body %}
   <div class="project-card__media"{% if include.project.thumbnail_bg %} style="--portfolio-thumb-bg: {{ include.project.thumbnail_bg }};"{% endif %}>
     {% if thumbnail_src %}
-      <img src="{{ thumbnail_src }}" alt="{{ include.project.thumbnail_alt | default: include.project.title }}" loading="lazy" decoding="async">
+      <img src="{{ thumbnail_src }}" alt="{{ include.project.thumbnail_alt | default: include.project.title }}" loading="eager" decoding="async">
     {% else %}
       <span class="project-card__placeholder" aria-hidden="true">App</span>
     {% endif %}

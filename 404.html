@@ -1,25 +1,31 @@
 ---
 permalink: /404.html
 layout: default
+title: "Page not found"
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+{% capture home_action %}
+  {% include acd/button.liquid
+    href="/"
+    label="Go home"
+    size="large"
+  %}
+{% endcapture %}
 
-<div class="container">
-  <h1>404</h1>
+{% capture not_found_icon %}
+  <svg class="icon" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M9.09 9a3 3 0 1 1 4.91 2.3c-.94.62-1.5 1.1-1.5 2.2"></path>
+    <path d="M12 17h.01"></path>
+  </svg>
+{% endcapture %}
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="not-found-page">
+  {% include acd/empty-state.liquid
+    title="404"
+    subtitle="The requested page could not be found."
+    title_tag="h1"
+    icon_html=not_found_icon
+    actions_html=home_action
+  %}
 </div>

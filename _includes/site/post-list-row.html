@@ -26,6 +26,11 @@
     </span>
   {% endif %}
 {% endcapture %}
+{% capture post_chevron %}
+  <svg class="post-list-row__chevron icon icon--sm" aria-hidden="true">
+    <use href="{{ '/assets/images/icons.svg' | relative_url }}?v={{ site.asset_version }}#icon-chevron-right"></use>
+  </svg>
+{% endcapture %}
 
 <div class="post-item" data-categories="{{ include.post.categories | join: ',' }}">
   <a class="ac-list-row post-list-row" href="{{ post_href }}">
@@ -37,7 +42,7 @@
       {{ post_categories }}
     </span>
     <span class="ac-list-row__trailing">
-      <span class="post-list-row__arrow" aria-hidden="true">-&gt;</span>
+      {{ post_chevron }}
     </span>
   </a>
 </div>

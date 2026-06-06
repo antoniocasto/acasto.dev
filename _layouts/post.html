@@ -2,7 +2,7 @@
 layout: default
 ---
 <!-- This is the layout for individual blog posts -->
-<article class="collection_item">
+<article class="collection_item editorial-detail post-detail">
   {% assign localized_date = page.date | date: "%d %B %Y" %}
   {% if page.lang == "it" %}
     {% assign localized_date = localized_date
@@ -18,26 +18,42 @@ layout: default
       | replace: "October", "Ottobre"
       | replace: "November", "Novembre"
       | replace: "December", "Dicembre" %}
-  {% endif %}
+{% endif %}
   {% capture post_meta %}{{ site.data.localization[page.lang].post.published_on }} {{ localized_date }}{% endcapture %}
-
-  {% include acd/section-header.liquid
-    title=page.title
-    subtitle=post_meta
-    heading_tag="h1"
-    size="large"
-    class="collection_item__header post-detail__header"
-  %}
-
-  {% if page.categories %}
-  <div class="post-categories post-detail__tags" aria-label="Post categories">
-    {% for cat in page.categories %}
-      {% include acd/tag.liquid label=cat variant="outlined" size="small" color="surface" %}
-    {% endfor %}
-  </div>
+  {% if page.lang == "it" %}
+    {% assign article_type_label = "Articolo" %}
+    {% assign meta_aria_label = "Metadati articolo" %}
+    {% assign categories_aria_label = "Categorie articolo" %}
+  {% else %}
+    {% assign article_type_label = "Article" %}
+    {% assign meta_aria_label = "Article metadata" %}
+    {% assign categories_aria_label = "Post categories" %}
   {% endif %}
+
+  <header class="editorial-detail__masthead">
+    {% include acd/section-header.liquid
+      title=page.title
+      subtitle=post_meta
+      heading_tag="h1"
+      size="large"
+      class="collection_item__header editorial-detail__header post-detail__header"
+    %}
+
+    <div class="editorial-detail__meta" aria-label="{{ meta_aria_label }}">
+      <span class="editorial-detail__eyebrow">{{ article_type_label }}</span>
+      <span>{{ localized_date }}</span>
+    </div>
+
+    {% if page.categories %}
+    <div class="post-categories editorial-detail__tags post-detail__tags" aria-label="{{ categories_aria_label }}">
+      {% for cat in page.categories %}
+        {% include acd/tag.liquid label=cat variant="outlined" size="small" color="surface" %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
   
-  <div class="content">
+  <div class="content editorial-detail__body">
     {{ content }}
   </div>
 </article>

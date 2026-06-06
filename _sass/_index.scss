@@ -1,23 +1,41 @@
 .home-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(17rem, 22rem);
-  gap: var(--ac-space-xxxl);
+  grid-template-columns: minmax(0, 1fr) minmax(19rem, 24rem);
+  grid-template-areas:
+    "intro portrait"
+    "details portrait";
+  column-gap: clamp(var(--ac-space-xxl), 7vw, 5rem);
+  row-gap: 0;
   align-items: center;
-  min-height: calc(100svh - 11rem);
-  padding: var(--ac-space-xxl) 0 var(--ac-space-xxxl);
+  box-sizing: border-box;
+  min-height: min(38rem, calc(100svh - 8rem));
+  padding: var(--ac-space-xl) 0;
 }
 
 .home-intro {
+  grid-area: intro;
   max-width: 39rem;
+  align-self: end;
+}
+
+.home-details {
+  grid-area: details;
+  max-width: 39rem;
+  align-self: start;
 }
 
 .home-role {
   margin: 0 0 var(--ac-space-md);
-  color: var(--ac-color-accent);
-  font-size: var(--ac-type-caption-font-size);
-  font-weight: var(--ac-type-caption-font-weight);
+}
+
+.home-role__badge {
+  --ac-badge-height: 1.5rem;
+  --ac-badge-padding-inline: 0.625rem;
+  background: var(--ac-color-surface);
+  box-shadow: inset 0 0 0 var(--ac-border-default) var(--ac-color-border-subtle);
+  color: var(--ac-color-foreground);
+  font-size: 0.75rem;
   letter-spacing: 0;
-  text-transform: uppercase;
 }
 
 .home-intro h1 {
@@ -50,12 +68,10 @@
 
 .home-action {
   box-sizing: border-box;
-  color: var(--ac-button-foreground);
   text-decoration: none;
 }
 
 .home-action:hover {
-  color: var(--ac-button-foreground);
   text-decoration: none;
 }
 
@@ -72,40 +88,66 @@
 
 .home-proof__item {
   --ac-stat-card-padding: var(--ac-space-md);
+  grid-template-rows: 1.5rem 2rem 2.4rem;
+  align-content: start;
   min-block-size: 8.5rem;
   min-width: 0;
 }
 
 .home-proof__item .ac-stat-card__value {
+  align-self: end;
+  min-block-size: 2rem;
+  display: flex;
+  align-items: flex-end;
   font-size: var(--ac-type-headline-font-size);
   line-height: 1.1;
   overflow-wrap: anywhere;
 }
 
+.home-proof__item .ac-stat-card__label {
+  min-block-size: 2.4rem;
+}
+
 .home-portrait {
-  width: min(100%, 22rem);
+  grid-area: portrait;
+  width: min(100%, 21rem);
+  aspect-ratio: 4 / 5;
   margin: 0;
   justify-self: end;
+  align-self: center;
+  overflow: hidden;
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  border-radius: var(--ac-radius-xl);
+  background: var(--ac-color-surface);
+  box-shadow: var(--site-shadow-elevated);
 }
 
 .home-portrait img {
   width: 100%;
-  aspect-ratio: 1 / 1.08;
+  height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center;
-  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
-  border-radius: var(--ac-radius-xl);
-  background: var(--ac-color-surface);
-  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.16);
+  object-position: center 40%;
+  transform: scale(1.14);
+  transform-origin: center 40%;
 }
 
 @media (max-width: 860px) {
   .home-shell {
     grid-template-columns: 1fr;
-    gap: var(--ac-space-xxl);
+    grid-template-areas:
+      "intro"
+      "portrait"
+      "details";
+    gap: var(--ac-space-xl);
     min-height: auto;
     padding-top: var(--ac-space-xl);
+  }
+
+  .home-intro,
+  .home-details {
+    max-width: none;
+    align-self: stretch;
   }
 
   .home-intro h1 {
@@ -118,11 +160,19 @@
 
   .home-proof {
     grid-template-columns: minmax(0, 1fr);
+    margin-top: 0;
   }
 
   .home-portrait {
-    width: min(100%, 19rem);
-    justify-self: start;
+    width: min(100%, 25rem);
+    aspect-ratio: 6 / 5;
+    justify-self: center;
+  }
+
+  .home-portrait img {
+    object-position: 52% 34%;
+    transform: scale(1.16);
+    transform-origin: 52% 34%;
   }
 }
 
@@ -137,6 +187,37 @@
   }
 
   .home-portrait {
-    width: 100%;
+    width: min(100%, 23rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .home-shell {
+    gap: var(--ac-space-md);
+    padding-top: var(--ac-space-sm);
+  }
+
+  .home-role {
+    margin-bottom: var(--ac-space-sm);
+  }
+
+  .home-intro h1 {
+    font-size: 2.25rem;
+  }
+
+  .home-copy {
+    margin-top: var(--ac-space-md);
+    font-size: 1rem;
+    line-height: 1.52;
+  }
+
+  .home-portrait {
+    aspect-ratio: 4 / 3;
+  }
+
+  .home-portrait img {
+    object-position: 52% 30%;
+    transform: scale(1.12);
+    transform-origin: 52% 30%;
   }
 }

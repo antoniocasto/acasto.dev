@@ -22,7 +22,7 @@ I have a keen eye for **design**, **smooth animations**, and the integration of 
 On this blog, I want to cover topics related to iOS development, from theory to practice. Here are some of the main themes:
 
 - **SwiftUI and UIKit** 📱: best practices, tutorials, and practical tips.
-- **iOS app architectures** 🏗️: MVVM, VIPER, TCA, and my approach to scalable app development.
+- **iOS app architectures** 🏗️: MVVM, VIPER, Coordinator, Repository pattern, and my approach to scalable app development.
 - **Automation and CI/CD** ⚙️: improving workflow with tools like Fastlane, GitHub Actions, and GitLab CI.
 - **Development experiences** 👨‍💻: challenges faced, mistakes made, and lessons learned.
 - **Personal projects** 🎨: behind-the-scenes of my apps and the technologies I am experimenting with.

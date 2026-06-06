@@ -7,16 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
   setViewportHeight();
   window.addEventListener('resize', setViewportHeight);
 
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIconSvg = document.querySelector('.theme-icon');
-  const themeIconUse = document.querySelector('.theme-icon use');
+  const themeToggles = Array.from(document.querySelectorAll('[data-theme-toggle]'));
+  const themeIconSvgs = Array.from(document.querySelectorAll('.theme-icon'));
+  const themeIconUses = Array.from(document.querySelectorAll('[data-theme-icon-use], .theme-icon use'));
   const overlay = document.querySelector('.theme-overlay');
   const rootElement = document.documentElement;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const savedTheme = localStorage.getItem('theme');
   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   const currentTheme = savedTheme || systemTheme;
-  const iconSprite = themeIconUse ? themeIconUse.getAttribute('href').split('#')[0] : '';
+  const firstThemeIconUse = themeIconUses[0];
+  const iconSprite = firstThemeIconUse ? firstThemeIconUse.getAttribute('href').split('#')[0] : '';
 
   const applyThemeClass = (isDark) => {
     if (rootElement) {
@@ -25,16 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   const setThemeToggleState = (theme) => {
-    if (!themeToggle) return;
-    themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    themeToggles.forEach((themeToggle) => {
+      themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    });
   };
 
   const setThemeIcon = (theme) => {
-    if (!themeIconUse) return;
     const iconId = theme === 'dark' ? 'icon-sun' : 'icon-moon';
     const href = iconSprite ? `${iconSprite}#${iconId}` : `#${iconId}`;
-    themeIconUse.setAttribute('href', href);
-    themeIconUse.setAttribute('xlink:href', href);
+    themeIconUses.forEach((themeIconUse) => {
+      themeIconUse.setAttribute('href', href);
+      themeIconUse.setAttribute('xlink:href', href);
+    });
   };
 
   if (currentTheme === 'dark') {
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setThemeToggleState('light');
   }
 
-  if (themeToggle) {
+  themeToggles.forEach((themeToggle) => {
     themeToggle.addEventListener('click', function () {
       const duration = prefersReducedMotion ? 0 : 600;
       const nextIsDark = rootElement.dataset.acTheme !== 'dark';
@@ -71,9 +74,11 @@ document.addEventListener('DOMContentLoaded', function () {
           setThemeToggleState('light');
         }
 
-        if (themeIconSvg && !prefersReducedMotion) {
-          themeIconSvg.classList.add('rotate-animation');
-          setTimeout(() => themeIconSvg.classList.remove('rotate-animation'), 500);
+        if (!prefersReducedMotion) {
+          themeIconSvgs.forEach((themeIconSvg) => {
+            themeIconSvg.classList.add('rotate-animation');
+            setTimeout(() => themeIconSvg.classList.remove('rotate-animation'), 500);
+          });
         }
 
         if (overlay) {
@@ -81,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }, duration);
     });
-  }
+  });
 
   const menuToggle = document.querySelector('.menu-toggle');
   const sideMenu = document.querySelector('.side-menu');

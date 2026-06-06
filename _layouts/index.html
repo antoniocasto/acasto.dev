@@ -12,8 +12,8 @@ layout: default
   {% assign proof_one_value = 'SwiftUI/UIKit' %}
   {% assign proof_one_label = 'Interfacce e API di piattaforma' %}
   {% assign proof_two_meta = 'Architecture' %}
-  {% assign proof_two_value = 'MVVM/VIPER/TCA' %}
-  {% assign proof_two_label = 'Modularita e testabilita' %}
+  {% assign proof_two_value = 'MVVM/VIPER' %}
+  {% assign proof_two_label = 'Modularità e testabilità' %}
   {% assign proof_three_meta = 'Delivery' %}
   {% assign proof_three_value = 'CI/CD' %}
   {% assign proof_three_label = 'Fastlane, GitLab, quality gates' %}
@@ -25,22 +25,35 @@ layout: default
   {% assign proof_one_value = 'SwiftUI/UIKit' %}
   {% assign proof_one_label = 'Interfaces and platform APIs' %}
   {% assign proof_two_meta = 'Architecture' %}
-  {% assign proof_two_value = 'MVVM/VIPER/TCA' %}
+  {% assign proof_two_value = 'MVVM/VIPER' %}
   {% assign proof_two_label = 'Modularity and testability' %}
   {% assign proof_three_meta = 'Delivery' %}
   {% assign proof_three_value = 'CI/CD' %}
   {% assign proof_three_label = 'Fastlane, GitLab, quality gates' %}
 {% endif %}
-{% capture action_arrow %}&rarr;{% endcapture %}
+{% assign role_label = 'iOS Developer' %}
+{% capture action_chevron %}
+  <svg class="icon icon--sm" aria-hidden="true">
+    <use href="{{ '/assets/images/icons.svg' | relative_url }}?v={{ site.asset_version }}#icon-chevron-right"></use>
+  </svg>
+{% endcapture %}
 
 <section class="home-shell" aria-labelledby="home-title">
   <div class="home-intro">
-    <p class="home-role">iOS Developer</p>
+    <div class="home-role">
+      {% include acd/badge.liquid label=role_label class="home-role__badge" %}
+    </div>
     <h1 id="home-title">Antonio Casto</h1>
     <div class="home-copy">
       {{ content }}
     </div>
+  </div>
 
+  <figure class="home-portrait">
+    <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="Antonio Casto" loading="eager" fetchpriority="high" decoding="async" width="764" height="824">
+  </figure>
+
+  <div class="home-details">
     <div class="home-proof" aria-label="{{ proof_aria_label }}">
       {% include acd/stat-card.liquid
         class="home-proof__item"
@@ -68,7 +81,7 @@ layout: default
         label=portfolio_label
         size="large"
         class="home-action"
-        trailing_html=action_arrow
+        trailing_html=action_chevron
       %}
       {% include acd/button.liquid
         href=contacts_href
@@ -80,15 +93,11 @@ layout: default
     </div>
 
     <div class="ac-tag-group home-tags" data-ac-selection-mode="static-display" data-ac-layout="compact" aria-label="Core skills">
-      {% include acd/tag.liquid class="ac-tag-group__item" label="SwiftUI" variant="outlined" size="small" color="accent" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="SwiftUI" variant="outlined" size="small" color="surface" %}
       {% include acd/tag.liquid class="ac-tag-group__item" label="UIKit" variant="outlined" size="small" color="surface" %}
       {% include acd/tag.liquid class="ac-tag-group__item" label="Architecture" variant="outlined" size="small" color="surface" %}
       {% include acd/tag.liquid class="ac-tag-group__item" label="Testing" variant="outlined" size="small" color="surface" %}
       {% include acd/tag.liquid class="ac-tag-group__item" label="CI/CD" variant="outlined" size="small" color="surface" %}
     </div>
   </div>
-
-  <figure class="home-portrait">
-    <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="Antonio Casto" loading="eager" fetchpriority="high" decoding="async" width="764" height="824">
-  </figure>
 </section>

@@ -9,7 +9,7 @@ permalink: "/it/about/"
   <div class="about-hero__identity">
     <div class="avatar-block">
       {% include acd/avatar.liquid class="avatar-ring" shape="rounded" border=true image_src="/assets/images/profile.jpeg" image_alt="Antonio Casto" %}
-      {% include acd/tag.liquid class="role-badge" label="iOS Developer" color="accent" %}
+      {% include acd/tag.liquid class="role-badge" label="iOS Developer" variant="outlined" color="surface" %}
     </div>
     <h1>Antonio Casto</h1>
     <p class="role-line">In Italia · Bilingue (italiano/inglese)</p>
@@ -22,7 +22,7 @@ permalink: "/it/about/"
     <p>Progetto e sviluppo app iOS con focus su modularità, scalabilità e testabilità.</p>
     <p>Dall’architettura al delivery, collaboro con il team e porto in produzione funzionalità affidabili.</p>
     <ul class="highlights-list">
-      <li>SwiftUI &amp; UIKit con architetture manutenibili (MVVM, VIPER, TCA, Coordinator, Repository pattern).</li>
+      <li>SwiftUI &amp; UIKit con architetture manutenibili (MVVM, VIPER, Coordinator, Repository pattern).</li>
       <li>CI/CD: Fastlane + GitLab CI/CD, SwiftLint, test automatizzati.</li>
       <li>R&amp;D con ARKit, SceneKit, CoreML.</li>
       <li>Ambienti multipli con target/scheme/build config; Tuist.</li>
@@ -65,7 +65,7 @@ permalink: "/it/about/"
   <div class="about-card ac-card" data-ac-variant="filled">
     <ul class="skill-list">
       <li><strong>Framework:</strong> SwiftUI, UIKit, Core Data, MapKit, Core Location, User Defaults, ARKit, SceneKit, CoreML.</li>
-      <li><strong>Architettura:</strong> MVVM, VIPER, The Composable Architecture (TCA), Coordinator, Repository pattern.</li>
+      <li><strong>Architettura:</strong> MVVM, VIPER, Coordinator, Repository pattern.</li>
       <li><strong>Concorrenza:</strong> Swift Concurrency fino a Swift 6.2 (Approachable Concurrency): async/await, structured concurrency (Task, TaskGroup), actor; Grand Central Dispatch (GCD): code, coordinamento sync/async; bridge di API legacy verso async/await tramite continuations (checked/unsafe quando serve).</li>
       <li><strong>Comunicazione e flussi di eventi:</strong> AsyncStream / AsyncSequence avanzato: consumo di stream prodotti via AsyncStream.Continuation; gestione della cancellazione; progettazione di pipeline di eventi; Combine (base): osservazione di @Published e reazione ai cambiamenti di valore; pattern Delegate; callback e completion handler.</li>
       <li><strong>Localizzazione:</strong> String Catalogs per i flussi di localizzazione iOS.</li>

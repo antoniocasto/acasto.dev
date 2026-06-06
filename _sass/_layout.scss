@@ -13,12 +13,16 @@
 
 // Site header class with token-driven translucent chrome
 .site-header {
-    padding: calc(var(--ac-space-lg) + env(safe-area-inset-top, 0px)) 0 var(--ac-space-lg);
+    padding: env(safe-area-inset-top, 0px) 0 0;
     border-bottom: var(--ac-border-default) solid var(--ac-color-border-subtle);
     background: var(--ac-color-background);
     background: color-mix(in srgb, var(--ac-color-background) 88%, transparent);
     backdrop-filter: blur(1rem) saturate(140%);
     -webkit-backdrop-filter: blur(1rem) saturate(140%);
+}
+
+.site-header .nav-bar.container {
+    padding-block: var(--ac-space-md);
 }
 
 main.container {
@@ -66,4 +70,20 @@ main.container {
 // Styling for links inside the menu
 .site-header .menu li a {
     font-weight: 500; // Setting font weight to 500
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: env(safe-area-inset-top, 0px) 0 0;
+    }
+
+    .site-header .nav-bar.container {
+        padding-block: var(--ac-space-sm);
+    }
+}
+
+@media (max-width: 360px) {
+    main.page-content--home {
+        padding-top: var(--ac-space-md);
+    }
 }

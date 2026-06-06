@@ -21,5 +21,3 @@ ACSwiftUINavigation è un pacchetto Swift che ho sviluppato per semplificare la 
 - Approccio strutturato per gestire la navigazione in SwiftUI.
 - Semplifica la gestione dei deep link e dei flussi di navigazione complessi.
 - Integrazione facile tramite Swift Package Manager.
-
-Il codice sorgente è disponibile su **[GitHub]({{ page.github }})**.

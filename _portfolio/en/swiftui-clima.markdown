@@ -8,7 +8,7 @@ github: "https://github.com/antoniocasto/SwiftUIClima"
 description: "An iOS weather app built with SwiftUI."
 thumbnail: "https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png"
 thumbnail_alt: "SwiftUIClima weather screen"
-thumbnail_bg: "linear-gradient(135deg, #0ea5e9, #1d4ed8)"
+thumbnail_bg: "linear-gradient(135deg, color-mix(in srgb, var(--ac-color-accent) 78%, var(--ac-color-surface)), color-mix(in srgb, var(--ac-color-accent) 42%, var(--ac-color-surface-elevated)))"
 technologies: ["SwiftUI", "LottieFiles", "OpenWeather API", "MVVM", "CoreData", "CoreLocation", "UserDefaults", "URLSession"]
 published: true
 ---
@@ -35,5 +35,3 @@ The application uses the **OpenWeather API** to fetch real-time weather data.
 - **Multilingual support** (English and Italian).
 
 Screenshots and demo states are documented in the repository.
-
-The source code is available on **[GitHub]({{ page.github }})**.

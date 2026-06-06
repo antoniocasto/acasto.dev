@@ -78,7 +78,7 @@
 
 .highlights-list li::marker,
 .about-card li::marker {
-  color: var(--ac-color-accent);
+  color: var(--site-accent-text);
 }
 
 .about-section {
@@ -181,14 +181,12 @@
 }
 
 .about-action {
-  color: var(--ac-button-foreground);
   white-space: normal;
   text-align: center;
 }
 
 .about-action:hover,
 .about-action:focus-visible {
-  color: var(--ac-button-foreground);
   text-decoration: none;
 }
 
@@ -209,6 +207,13 @@
 
   .about-action {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-hero__identity h1 {
+    font-size: 2.25rem;
+    line-height: 1;
   }
 }
 
