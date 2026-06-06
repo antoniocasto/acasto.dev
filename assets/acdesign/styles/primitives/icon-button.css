@@ -1,0 +1,88 @@
+:where(.ac-icon-button) {
+  --ac-action-control-pressed-scale: 0.93;
+  --ac-icon-button-size: 2.75rem;
+  --ac-icon-button-icon-size: 1.125rem;
+  --ac-icon-button-radius: var(--ac-radius-md);
+  --ac-icon-button-border-width: 0;
+  --ac-icon-button-background: var(--ac-color-foreground);
+  --ac-icon-button-foreground: var(--ac-color-background);
+  --ac-icon-button-border-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--ac-icon-button-size);
+  block-size: var(--ac-icon-button-size);
+  padding: 0;
+  border: var(--ac-icon-button-border-width) solid var(--ac-icon-button-border-color);
+  border-radius: var(--ac-icon-button-radius);
+  background: var(--ac-icon-button-background);
+  color: var(--ac-icon-button-foreground);
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  transition:
+    transform var(--ac-motion-preset-fast),
+    opacity var(--ac-motion-preset-fast),
+    background-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default),
+    border-color var(--ac-motion-preset-default);
+}
+
+:where(.ac-icon-button[data-ac-size="small"]) {
+  --ac-icon-button-size: 2rem;
+  --ac-icon-button-icon-size: 0.875rem;
+  --ac-icon-button-radius: var(--ac-radius-sm);
+}
+
+:where(.ac-icon-button[data-ac-size="large"]) {
+  --ac-icon-button-size: 3.5rem;
+  --ac-icon-button-icon-size: 1.375rem;
+  --ac-icon-button-radius: var(--ac-radius-lg);
+}
+
+:where(.ac-icon-button[data-ac-shape="circle"]) {
+  --ac-icon-button-radius: var(--ac-radius-full);
+}
+
+:where(.ac-icon-button[data-ac-variant="outlined"]) {
+  --ac-icon-button-border-width: var(--ac-border-default);
+  --ac-icon-button-background: transparent;
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-foreground);
+}
+
+:where(.ac-icon-button[data-ac-color="accent"]) {
+  --ac-icon-button-background: var(--ac-color-accent);
+  --ac-icon-button-foreground: var(--ac-color-accent-foreground);
+}
+
+:where(.ac-icon-button[data-ac-variant="outlined"][data-ac-color="accent"]) {
+  --ac-icon-button-background: transparent;
+  --ac-icon-button-foreground: var(--ac-color-accent);
+  --ac-icon-button-border-color: var(--ac-color-accent);
+}
+
+:where(.ac-icon-button__icon) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--ac-icon-button-icon-size);
+  block-size: var(--ac-icon-button-icon-size);
+  flex: none;
+}
+
+:where(.ac-icon-button__icon > svg) {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+:where(.ac-icon-button:focus-visible) {
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
+  outline-offset: var(--ac-border-default);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ac-icon-button) {
+    transition-duration: 0ms;
+  }
+}

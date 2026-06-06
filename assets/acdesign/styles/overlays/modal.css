@@ -1,0 +1,163 @@
+:where(dialog.ac-modal) {
+  --ac-modal-width: 56rem;
+  --ac-modal-height: 100dvh;
+  --ac-modal-shell-inset-inline: 0;
+  --ac-modal-shell-inset-block: 0;
+  --ac-modal-radius: 0;
+  --ac-modal-header-height: 3.5rem;
+  --ac-modal-padding-inline: var(--ac-space-lg);
+  --ac-modal-padding-block: var(--ac-space-lg);
+  inline-size: 100vw;
+  max-inline-size: none;
+  block-size: 100dvh;
+  max-block-size: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+:where(dialog.ac-modal:not([open])) {
+  display: none;
+}
+
+:where(dialog.ac-modal[open]) {
+  display: grid;
+  align-items: end;
+  justify-items: center;
+}
+
+:where(dialog.ac-modal[data-ac-size="large"]) {
+  --ac-modal-height: min(92dvh, 52rem);
+  --ac-modal-shell-inset-inline: var(--ac-space-lg);
+  --ac-modal-shell-inset-block: var(--ac-space-lg);
+  --ac-modal-radius: 1.25rem;
+}
+
+:where(dialog.ac-modal[data-ac-size="medium"]) {
+  --ac-modal-height: min(78dvh, 44rem);
+  --ac-modal-shell-inset-inline: var(--ac-space-lg);
+  --ac-modal-shell-inset-block: var(--ac-space-lg);
+  --ac-modal-radius: 1.25rem;
+}
+
+:where(dialog.ac-modal)::backdrop {
+  background: rgba(15, 23, 42, 0.52);
+}
+
+:where(.ac-modal__surface) {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  inline-size: min(100%, var(--ac-modal-width));
+  block-size: min(100%, var(--ac-modal-height));
+  margin-inline: var(--ac-modal-shell-inset-inline);
+  margin-block: var(--ac-modal-shell-inset-block);
+  overflow: hidden;
+  border: var(--ac-border-default) solid var(--ac-color-border);
+  border-radius: var(--ac-modal-radius);
+  background: var(--ac-color-background);
+  box-shadow: 0 1.5rem 3rem rgba(15, 23, 42, 0.24);
+}
+
+:where(.ac-modal__header) {
+  display: grid;
+  grid-template-columns: minmax(2.75rem, auto) minmax(0, 1fr) minmax(2.75rem, auto);
+  gap: var(--ac-space-md);
+  align-items: center;
+  min-block-size: var(--ac-modal-header-height);
+  padding-inline: var(--ac-modal-padding-inline);
+  padding-block: var(--ac-space-sm);
+  border-block-end: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  background: var(--ac-color-surface-elevated);
+  color: var(--ac-color-foreground);
+}
+
+:where(.ac-modal[data-ac-header-style="accented"] .ac-modal__header) {
+  background: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
+  border-block-end-color: color-mix(in srgb, var(--ac-color-accent-foreground) 18%, transparent);
+}
+
+:where(.ac-modal__leading, .ac-modal__trailing) {
+  display: inline-flex;
+  align-items: center;
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+}
+
+:where(.ac-modal__heading) {
+  display: grid;
+  gap: 0.125rem;
+  min-inline-size: 0;
+}
+
+:where(.ac-modal__title) {
+  margin: 0;
+  color: inherit;
+  font-size: var(--ac-type-title-font-size);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+:where(.ac-modal__subtitle) {
+  margin: 0;
+  color: color-mix(in srgb, currentColor 76%, transparent);
+  font-size: var(--ac-type-caption-font-size);
+  line-height: 1.35;
+}
+
+:where(.ac-modal__close) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ac-radius-full);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+}
+
+:where(.ac-modal__close > svg) {
+  inline-size: 1rem;
+  block-size: 1rem;
+}
+
+:where(.ac-modal__close:focus-visible) {
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, currentColor 72%, transparent);
+  outline-offset: var(--ac-border-default);
+}
+
+:where(.ac-modal__body) {
+  display: grid;
+  align-content: start;
+  gap: var(--ac-space-lg);
+  min-block-size: 0;
+  padding: var(--ac-modal-padding-block) var(--ac-modal-padding-inline);
+  overflow: auto;
+  color: var(--ac-color-foreground-secondary);
+}
+
+:where(.ac-modal__footer) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--ac-space-sm);
+}
+
+@media (max-width: 47.99rem) {
+  :where(dialog.ac-modal[data-ac-size="large"], dialog.ac-modal[data-ac-size="medium"]) {
+    --ac-modal-shell-inset-inline: 0;
+    --ac-modal-shell-inset-block: var(--ac-space-sm) 0;
+    --ac-modal-width: 100%;
+    --ac-modal-radius: 1.25rem 1.25rem 0 0;
+  }
+
+  :where(.ac-modal__surface) {
+    inline-size: 100%;
+  }
+}

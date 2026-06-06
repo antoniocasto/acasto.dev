@@ -1,0 +1,12 @@
+<section
+  class="{% include acd/_internal/class-name.liquid base='ac-bottom-action-bar' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-layout' value=include.layout -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-surface' value=include.surface -%}
+  {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  <div class="ac-bottom-action-bar__actions">
+    {{ include.actions_html }}
+  </div>
+</section>

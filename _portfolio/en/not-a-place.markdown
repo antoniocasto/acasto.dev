@@ -8,7 +8,7 @@ github: "https://github.com/antoniocasto/NotAPlace"
 description: "An iOS app built with SwiftUI to track places that evoke positive emotions."
 thumbnail: "https://raw.githubusercontent.com/antoniocasto/NotAPlace/refs/heads/main/doc/56.PNG"
 thumbnail_alt: "NotAPlace map view"
-thumbnail_bg: "linear-gradient(135deg, #111827, #334155)"
+thumbnail_bg: "linear-gradient(135deg, var(--ac-color-surface), color-mix(in srgb, var(--ac-color-foreground) 18%, var(--ac-color-surface-elevated)))"
 technologies: ["SwiftUI", "MapKit", "CoreLocation", "UserDefaults", "DocumentDirectory", "Keychain", "LocalAuthentication", "PhotosUI", "Camera", "@StateObject", "@EnvironmentObject"]
 published: true
 ---
@@ -29,5 +29,3 @@ NotAPlace is an iPhone application built with **SwiftUI**, designed to track pla
 - **Permission Handling & Localization:** Ensures proper **permission management** and supports **English and Italian** translations.
 
 Screenshots and app flow previews are available in the repository documentation.
-
-The source code is available on **[GitHub]({{ page.github }})**.

@@ -1,16 +1,106 @@
 ---
 layout: default
 ---
-<!-- This is the main index layout for the website. It includes a terminal-style header with a typing animation and a placeholder for the page content. -->
-<div class="terminal">
-    <h1 class="typing-animation">acasto<span class="dot">.</span>dev 👋🏻</h1>
-</div>
+{% assign home_lang = page.lang | default: site.default_lang %}
+{% assign portfolio_href = '/' | append: home_lang | append: '/portfolio/' | relative_url %}
+{% assign contacts_href = '/' | append: home_lang | append: '/contacts/' | relative_url %}
+{% if home_lang == 'it' %}
+  {% assign portfolio_label = 'Portfolio' %}
+  {% assign contacts_label = 'Contatti' %}
+  {% assign proof_aria_label = 'Punti chiave professionali' %}
+  {% assign proof_one_meta = 'Native iOS' %}
+  {% assign proof_one_value = 'SwiftUI/UIKit' %}
+  {% assign proof_one_label = 'Interfacce e API di piattaforma' %}
+  {% assign proof_two_meta = 'Architecture' %}
+  {% assign proof_two_value = 'MVVM/VIPER/RIB' %}
+  {% assign proof_two_label = 'Modularità e testabilità' %}
+  {% assign proof_three_meta = 'Delivery' %}
+  {% assign proof_three_value = 'CI/CD' %}
+  {% assign proof_three_label = 'Fastlane, GitLab, quality gates' %}
+{% else %}
+  {% assign portfolio_label = 'Portfolio' %}
+  {% assign contacts_label = 'Contacts' %}
+  {% assign proof_aria_label = 'Professional proof points' %}
+  {% assign proof_one_meta = 'Native iOS' %}
+  {% assign proof_one_value = 'SwiftUI/UIKit' %}
+  {% assign proof_one_label = 'Interfaces and platform APIs' %}
+  {% assign proof_two_meta = 'Architecture' %}
+  {% assign proof_two_value = 'MVVM/VIPER/RIB' %}
+  {% assign proof_two_label = 'Modularity and testability' %}
+  {% assign proof_three_meta = 'Delivery' %}
+  {% assign proof_three_value = 'CI/CD' %}
+  {% assign proof_three_label = 'Fastlane, GitLab, quality gates' %}
+{% endif %}
+{% assign role_label = 'iOS Developer' %}
+{% capture action_chevron %}
+  <svg class="icon icon--sm" aria-hidden="true">
+    <use href="{{ '/assets/images/icons.svg' | relative_url }}?v={{ site.asset_version }}#icon-chevron-right"></use>
+  </svg>
+{% endcapture %}
 
-<section class="home-hero">
-    <div class="home-hero__content">
-        {{ content }}
+<section class="home-shell" aria-labelledby="home-title">
+  <div class="home-intro">
+    <div class="home-role">
+      {% include acd/badge.liquid label=role_label class="home-role__badge" %}
     </div>
-    <div class="home-hero__image">
-        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" loading="eager" fetchpriority="high" decoding="async" width="764" height="824">
+    <h1 id="home-title">Antonio Casto</h1>
+    <div class="home-copy">
+      {{ content }}
     </div>
+  </div>
+
+  <figure class="home-portrait">
+    <img src="{{ '/assets/images/profile.jpeg' | relative_url }}" alt="Antonio Casto" loading="eager" fetchpriority="high" decoding="async" width="764" height="824">
+  </figure>
+
+  <div class="home-details">
+    <div class="home-proof" aria-label="{{ proof_aria_label }}">
+      <div class="ac-list-row home-proof__item">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">{{ proof_one_meta }}</span>
+          <span class="ac-list-row__title home-proof__value">{{ proof_one_value }}</span>
+          <span class="ac-list-row__subtitle home-proof__label">{{ proof_one_label }}</span>
+        </span>
+      </div>
+      <div class="ac-list-row home-proof__item">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">{{ proof_two_meta }}</span>
+          <span class="ac-list-row__title home-proof__value">{{ proof_two_value }}</span>
+          <span class="ac-list-row__subtitle home-proof__label">{{ proof_two_label }}</span>
+        </span>
+      </div>
+      <div class="ac-list-row home-proof__item" data-ac-divider="false">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">{{ proof_three_meta }}</span>
+          <span class="ac-list-row__title home-proof__value">{{ proof_three_value }}</span>
+          <span class="ac-list-row__subtitle home-proof__label">{{ proof_three_label }}</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="home-actions" aria-label="Primary actions">
+      {% include acd/button.liquid
+        href=portfolio_href
+        label=portfolio_label
+        size="large"
+        class="home-action"
+        trailing_html=action_chevron
+      %}
+      {% include acd/button.liquid
+        href=contacts_href
+        label=contacts_label
+        variant="secondary"
+        size="large"
+        class="home-action"
+      %}
+    </div>
+
+    <div class="ac-tag-group home-tags" data-ac-selection-mode="static-display" data-ac-layout="compact" aria-label="Core skills">
+      {% include acd/tag.liquid class="ac-tag-group__item" label="SwiftUI" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="UIKit" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="Architecture" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="Testing" variant="outlined" size="small" color="surface" %}
+      {% include acd/tag.liquid class="ac-tag-group__item" label="CI/CD" variant="outlined" size="small" color="surface" %}
+    </div>
+  </div>
 </section>

@@ -1,6 +1,6 @@
 :root {
   --nav-logo-size: 40px;
-  --nav-logo-gap: 1rem;
+  --nav-logo-gap: var(--ac-space-lg);
 }
 
 // Desktop Logo dimensions (visible on desktop)
@@ -15,16 +15,14 @@
   width: auto;
 }
 
-// Apply filter to logo images
 .desktop-logo .logo-img,
 .mobile-logo .logo-img {
-  filter: brightness(0) saturate(100%) var(--logo-filter-light);
+  filter: none;
 }
 
-// In dark mode, use the specific filter
-.dark-theme .desktop-logo .logo-img,
-.dark-theme .mobile-logo .logo-img {
-  filter: brightness(0) saturate(100%) var(--logo-filter-dark);
+[data-ac-theme="dark"] .desktop-logo .logo-img,
+[data-ac-theme="dark"] .mobile-logo .logo-img {
+  filter: invert(1);
 }
 
 // ------------------------------
@@ -40,6 +38,7 @@
 .brand-logo {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   line-height: 0;
 }
 
@@ -53,7 +52,7 @@
 .desktop-menu {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: var(--ac-space-xs);
   margin: 0;
   padding: 0;
 }
@@ -63,32 +62,69 @@
 }
 
 .desktop-menu li a {
+  --site-nav-link-background: transparent;
+  --site-nav-link-foreground: var(--ac-color-foreground);
+  --site-nav-link-border: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.125rem;
+  box-sizing: border-box;
   text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
+  color: var(--site-nav-link-foreground);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1;
   position: relative;
-  padding-bottom: 0.25rem;
-  transition: color 0.2s ease;
+  padding: 0 var(--ac-space-md);
+  border: var(--ac-border-default) solid var(--site-nav-link-border);
+  border-radius: var(--ac-radius-md);
+  background: var(--site-nav-link-background);
+  transition:
+    background-color var(--ac-motion-preset-default),
+    border-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default),
+    opacity var(--ac-motion-preset-fast),
+    transform var(--ac-motion-preset-fast);
 }
 
 .desktop-menu li.active a {
-  color: var(--primary-color);
-  font-weight: 600;
+  --site-nav-link-background: var(--ac-color-accent);
+  --site-nav-link-foreground: var(--ac-color-accent-foreground);
+  --site-nav-link-border: var(--ac-color-accent);
+  background: var(--site-nav-link-background);
+  border-color: var(--site-nav-link-border);
+  color: var(--site-nav-link-foreground);
 }
 
-.desktop-menu li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--accent-gradient);
-  transition: width 0.2s ease;
+.desktop-menu li a:hover {
+  --site-nav-link-background: var(--ac-color-surface);
+  --site-nav-link-foreground: var(--ac-color-foreground);
+  --site-nav-link-border: var(--ac-color-border-subtle);
+  background: var(--site-nav-link-background);
+  border-color: var(--site-nav-link-border);
+  color: var(--site-nav-link-foreground);
+  text-decoration: none;
 }
 
-.desktop-menu li a:hover::after {
-  width: 100%;
+.desktop-menu li.active a:hover {
+  --site-nav-link-background: color-mix(in srgb, var(--ac-color-accent) 92%, var(--ac-color-background));
+  --site-nav-link-foreground: var(--ac-color-accent-foreground);
+  --site-nav-link-border: var(--ac-color-accent);
+  background: var(--site-nav-link-background);
+  border-color: var(--site-nav-link-border);
+  color: var(--site-nav-link-foreground);
+}
+
+.desktop-menu li a:active {
+  transform: scale(0.96);
+  opacity: 0.85;
+}
+
+.desktop-menu li a:focus-visible {
+  outline: var(--ac-border-emphasis) solid var(--site-focus-ring);
+  outline-offset: var(--ac-border-default);
 }
 
 // ------------------------------
@@ -98,44 +134,65 @@
 .language-dropdown {
   position: relative;
   display: inline-block;
-  min-width: 88px;
+  min-width: 5rem;
   cursor: pointer;
 }
 
 /* Closed button (summary) */
 .language-dropdown summary {
+  --site-language-background: transparent;
+  --site-language-foreground: var(--ac-color-foreground);
+  --site-language-border: var(--ac-color-border-subtle);
+  --ac-icon-button-background: var(--site-language-background);
+  --ac-icon-button-foreground: var(--site-language-foreground);
+  --ac-icon-button-border-color: var(--site-language-border);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0.4rem;
-  padding: var(--space-xs) var(--space-md);
+  min-height: 2.125rem;
+  padding: 0 var(--ac-space-xl) 0 var(--ac-space-md);
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid var(--dropdown-border);
-  background-color: var(--dropdown-bg);
-  color: var(--dropdown-text);
-  font-size: 0.9rem;
-  font-weight: bold;
-  border-radius: var(--radius-sm);
-  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-  padding-left: var(--space-md);
-  padding-right: var(--space-xl);
+  border: var(--ac-border-default) solid var(--site-language-border);
+  background: var(--site-language-background);
+  color: var(--site-language-foreground);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: var(--ac-type-caption-font-weight);
+  line-height: 1;
+  border-radius: var(--ac-radius-md);
+  transition:
+    background-color var(--ac-motion-preset-default),
+    border-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default),
+    opacity var(--ac-motion-preset-fast),
+    transform var(--ac-motion-preset-fast);
   position: relative;
   white-space: nowrap;
 }
 
 .language-dropdown summary:hover {
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+  --site-language-background: var(--ac-color-surface);
+  --site-language-foreground: var(--ac-color-foreground);
+  --site-language-border: var(--ac-color-border-subtle);
+  background: var(--site-language-background);
+  border-color: var(--site-language-border);
+  color: var(--site-language-foreground);
 }
 
 .language-dropdown summary:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
-  outline-offset: 2px;
+  outline: var(--ac-border-emphasis) solid var(--site-focus-ring);
+  outline-offset: var(--ac-border-default);
+}
+
+.language-dropdown summary:active {
+  transform: scale(0.96);
+  opacity: 0.85;
 }
 
 .language-icon {
   display: inline-flex;
-  color: var(--dropdown-text);
+  color: currentColor;
 }
 
 .language-dropdown summary::after {
@@ -145,9 +202,9 @@
   top: 50%;
   width: 14px;
   height: 10px;
-  background-color: var(--dropdown-text);
+  background-color: var(--ac-color-foreground-secondary);
   transform: translateY(-50%);
-  transition: transform 0.2s ease;
+  transition: transform var(--ac-motion-preset-default);
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.2 1.2L6 6l4.8-4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   mask-repeat: no-repeat;
   mask-position: center;
@@ -159,8 +216,12 @@
 }
 
 .language-dropdown[open] summary {
-  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-  border-bottom-color: transparent;
+  --site-language-background: color-mix(in srgb, var(--ac-color-accent) 12%, transparent);
+  --site-language-foreground: var(--ac-color-foreground);
+  --site-language-border: var(--ac-color-accent);
+  background: var(--site-language-background);
+  border-color: var(--site-language-border);
+  color: var(--site-language-foreground);
 }
 
 .language-dropdown[open] summary::after {
@@ -178,22 +239,21 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  top: calc(100% - 1px);  // Attach to the summary
+  top: calc(100% + var(--ac-space-xs));
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  background: var(--dropdown-option-bg);  // Slightly different color from selected options
-  border: 1px solid var(--dropdown-border);
-  border-top: none;  // Visually connect to the summary
-  /* Only round the bottom corners */
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  background: var(--ac-color-surface-elevated);
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  border-radius: var(--ac-radius-md);
+  box-shadow: var(--site-shadow-elevated);
   z-index: 100;
-  /* Initially hidden, with a sliding effect */
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-4px);
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity var(--ac-motion-preset-default),
+    transform var(--ac-motion-preset-default);
 }
 
 /* When the dropdown is open, show the options */
@@ -205,24 +265,33 @@
 
 /* Style for each option */
 .language-options li a {
-  display: block;
-  padding: var(--space-xs) var(--space-xl);
+  display: flex;
+  align-items: center;
+  min-height: 2.125rem;
+  box-sizing: border-box;
+  padding: 0 var(--ac-space-md);
   text-decoration: none;
-  color: var(--dropdown-text);
+  color: var(--ac-color-foreground);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: var(--ac-type-caption-font-weight);
   text-align: left;
   white-space: nowrap;
-  transition: background-color 0.3s ease;
+  transition:
+    background-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default);
 }
 
 /* Hover for each option */
 .language-options li a:hover {
-  background-color: var(--dropdown-hover-bg);
+  background-color: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+  text-decoration: none;
 }
 
 /* Selected state (current language) */
 .language-options li a.selected {
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
 }
 
 // ------------------------------
@@ -236,58 +305,34 @@
 
 // Desktop Logo (visible on desktop)
 .desktop-logo {
-  display: inline-block;
+  display: inline-flex;
 }
 
 // Burger button styling (visible on mobile)
 .menu-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 50px;  // same width as the language dropdown
-  height: 50px;
+  --ac-icon-button-size: 2.75rem;
+  --ac-icon-button-icon-size: 1.125rem;
+  --ac-icon-button-background: transparent;
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-border-subtle);
+  background: var(--ac-icon-button-background);
+  border-color: var(--ac-icon-button-border-color);
+  color: var(--ac-icon-button-foreground);
   display: none; // will be shown on mobile via media query
-  color: var(--text-color); // normal state: use the text color defined in the theme
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .menu-toggle:hover {
-  color: var(--primary-color); // change color to var(--primary-color) on hover
-  transform: scale(1.1);       // slight scale for hover
+  --ac-icon-button-background: var(--ac-color-surface);
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-border);
+  background: var(--ac-icon-button-background);
+  border-color: var(--ac-icon-button-border-color);
+  color: var(--ac-icon-button-foreground);
 }
 
 .menu-toggle:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
-.burger-icon {
-  display: block;
-  width: 25px;
-  height: 2px;
-  background-color: currentColor; // inherit color from normal or hover state
-  position: relative;
-  transition: background-color 0.3s ease;
-}
-
-.burger-icon::before,
-.burger-icon::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 2px;
-  background-color: currentColor;
-  left: 0;
-  transition: background-color 0.3s ease;
-}
-
-.burger-icon::before {
-  top: -8px;
-}
-
-.burger-icon::after {
-  top: 8px;
+  outline: var(--ac-border-emphasis) solid var(--site-focus-ring);
+  outline-offset: var(--ac-border-default);
 }
 
 // ------------------------------
@@ -321,31 +366,27 @@
 // Sidebar (Side Menu)
 .side-menu {
   position: fixed;
-  top: 50%;
+  top: auto;
   left: 50%;
   right: auto;
-  bottom: auto;
-  transform: translate(-50%, -48%) scale(0.98); // Hidden modal state
-  width: 90vw;
-  max-width: 420px;
+  bottom: var(--ac-space-lg);
+  transform: translate(-50%, calc(100% + var(--ac-space-xxl)));
+  width: min(calc(100vw - (var(--ac-space-lg) * 2)), 28rem);
+  max-width: none;
   height: auto;
-  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - var(--space-xl));
+  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - var(--ac-space-xxl));
   box-sizing: border-box;
-  background-color: rgba(var(--side-menu-bg-rgb) / 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
-  border: 1px solid var(--side-menu-border);
-  border-radius: var(--radius-lg);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  background: var(--ac-color-background);
+  backdrop-filter: blur(1rem) saturate(140%);
+  -webkit-backdrop-filter: blur(1rem) saturate(140%);
+  box-shadow: var(--site-shadow-modal);
+  border-radius: var(--ac-radius-xl);
+  transition: opacity var(--ac-motion-preset-slow);
   z-index: 1300;
-  padding: calc(var(--space-xl) + env(safe-area-inset-top, 0px))
-    calc(var(--space-xl) + env(safe-area-inset-right, 0px))
-    calc(var(--space-lg) + env(safe-area-inset-bottom, 0px))
-    calc(var(--space-xl) + env(safe-area-inset-left, 0px));
+  padding: var(--ac-space-lg);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--ac-space-md);
   overflow-y: auto;
   opacity: 0;
   pointer-events: none;
@@ -353,7 +394,7 @@
 
 // Rule to show the sidebar
 .side-menu.open {
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, 0);
   opacity: 1;
   pointer-events: auto;
 }
@@ -361,12 +402,12 @@
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.38);
+  background: var(--site-overlay-background);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--ac-motion-preset-default);
   z-index: 1200;
 }
 
@@ -379,28 +420,54 @@
 .side-menu .side-menu-header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.mobile-theme-toggle {
+  --ac-icon-button-size: 2.75rem;
+  --ac-icon-button-icon-size: 1.25rem;
+  --ac-icon-button-background: transparent;
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-border-subtle);
+  background: var(--ac-icon-button-background);
+  border-color: var(--ac-icon-button-border-color);
+  color: var(--ac-icon-button-foreground);
+}
+
+.mobile-theme-toggle:hover {
+  --ac-icon-button-background: var(--ac-color-surface);
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-border);
+  background: var(--ac-icon-button-background);
+  border-color: var(--ac-icon-button-border-color);
+  color: var(--ac-icon-button-foreground);
 }
 
 // Sidebar close button
 .close-menu {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--text-color);
-  transition: color 0.3s ease, transform 0.2s ease;
+  --ac-icon-button-size: 2.75rem;
+  --ac-icon-button-icon-size: 1.125rem;
+  --ac-icon-button-background: transparent;
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-border-subtle);
+  background: var(--ac-icon-button-background);
+  border-color: var(--ac-icon-button-border-color);
+  color: var(--ac-icon-button-foreground);
 }
 
 .close-menu:hover {
-  color: var(--primary-color);
+  --ac-icon-button-background: var(--ac-color-surface);
+  --ac-icon-button-foreground: var(--ac-color-foreground);
+  --ac-icon-button-border-color: var(--ac-color-border);
+  background: var(--ac-icon-button-background);
+  border-color: var(--ac-icon-button-border-color);
+  color: var(--ac-icon-button-foreground);
 }
 
 .close-menu:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
+  outline: var(--ac-border-emphasis) solid var(--site-focus-ring);
+  outline-offset: var(--ac-border-default);
 }
 
 // Sidebar menu list
@@ -413,8 +480,7 @@
 
 // Style for each list item
 .side-menu .menu li {
-  border-bottom: 1px solid var(--side-menu-border); // Use the variable for the border
-  padding: var(--space-xs) 0;
+  padding: 0;
 }
 
 // Remove the border from the last item
@@ -424,17 +490,43 @@
 
 // Style for sidebar links
 .side-menu .menu li a {
-  display: block;
-  padding: var(--space-md) 0;
-  color: var(--text-color);
-  font-weight: 600;
-  transition: color 0.2s ease;
+  --ac-list-row-padding-block: var(--ac-space-md);
+  min-height: 3.5rem;
+  color: var(--ac-color-foreground);
+  transition:
+    background-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default);
+}
+
+.side-menu .menu li a:hover {
+  background: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+  text-decoration: none;
 }
 
 // Highlight the active menu
 .side-menu .menu li.active a {
-  color: var(--primary-color);
-  font-weight: 600;
+  background: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
+}
+
+.side-menu .menu li.active .ac-list-row__title {
+  color: var(--ac-color-accent-foreground);
+  font-weight: 800;
+}
+
+.side-menu .menu li:last-child .ac-list-row {
+  border-block-end: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desktop-menu li a,
+  .language-dropdown summary,
+  .language-options,
+  .language-options li a,
+  .side-menu .menu li a {
+    transition-duration: 0ms;
+  }
 }
 
 // ------------------------------
@@ -447,7 +539,7 @@
   }
   // Show burger button on mobile
   .menu-toggle {
-    display: block !important;
+    display: inline-flex !important;
   }
   // Hide desktop logo and show mobile logo in nav-center
   .desktop-logo {
@@ -462,9 +554,46 @@
     pointer-events: none;
   }
   .mobile-logo {
-    display: inline-block;
+    display: inline-flex;
     position: relative;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
     pointer-events: auto;
+  }
+
+  .language-dropdown {
+    min-width: 5.5rem;
+  }
+
+  .language-dropdown summary {
+    min-height: 2.75rem;
+    padding-inline: var(--ac-space-md) var(--ac-space-xl);
+  }
+
+  .language-options li a {
+    min-height: 2.75rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+
+  .side-menu {
+    inset-inline: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: min(82dvh, 40rem);
+    padding:
+      var(--ac-space-lg)
+      calc(var(--ac-space-lg) + env(safe-area-inset-right, 0px))
+      calc(var(--ac-space-lg) + env(safe-area-inset-bottom, 0px))
+      calc(var(--ac-space-lg) + env(safe-area-inset-left, 0px));
+    border-radius: var(--ac-radius-xl) var(--ac-radius-xl) 0 0;
+    transform: translateY(100%);
+  }
+
+  .side-menu.open {
+    transform: translateY(0);
   }
 }
 
@@ -474,7 +603,7 @@
     display: none;
   }
   .desktop-logo {
-    display: inline-block;
+    display: inline-flex;
   }
   .menu-toggle {
     display: none;

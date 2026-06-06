@@ -1,0 +1,9 @@
+{%- assign element = include.element | default: 'aside' -%}
+<{{ element }}
+  class="{% include acd/_internal/class-name.liquid base='ac-glass-container' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-align' value=include.align -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {{ include.content_html }}
+</{{ element }}>

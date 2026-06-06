@@ -1,0 +1,56 @@
+{%- assign is_link = include.href and include.href != "" -%}
+{%- assign is_disabled = include.disabled == true or include.disabled == "true" -%}
+{%- assign is_loading = include.loading == true or include.loading == "true" -%}
+{%- assign is_inactive = is_disabled or is_loading -%}
+{%- assign component_size = include['size'] -%}
+{%- if is_link -%}
+  <a
+    class="{% include acd/_internal/class-name.liquid base='ac-button' extra=include.class %}"
+    {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+    {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
+    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
+    {%- if include.full_width == true or include.full_width == 'true' %} data-ac-full-width="true"{%- endif -%}
+    {%- if is_loading %} data-ac-loading="true" aria-busy="true"{%- endif -%}
+    {%- if is_inactive %} aria-disabled="true" tabindex="-1"{%- endif -%}
+    {%- unless is_inactive %} href="{{ include.href | escape }}"{%- endunless -%}
+    {%- unless is_inactive -%}{%- include acd/_internal/attribute.liquid name='target' value=include.target -%}{%- endunless -%}
+    {%- unless is_inactive -%}{%- include acd/_internal/attribute.liquid name='rel' value=include.rel -%}{%- endunless -%}
+    {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+    {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+  >
+    {%- if include.leading_html -%}
+      <span class="ac-button__icon" data-ac-slot="leading" aria-hidden="true">{{ include.leading_html }}</span>
+    {%- endif -%}
+    <span class="ac-button__label">{{ include.label | escape }}</span>
+    {%- if include.trailing_html -%}
+      <span class="ac-button__icon" data-ac-slot="trailing" aria-hidden="true">{{ include.trailing_html }}</span>
+    {%- endif -%}
+    {%- if is_loading -%}
+      <span class="ac-button__spinner" aria-hidden="true">{{ include.spinner_html }}</span>
+    {%- endif -%}
+  </a>
+{%- else -%}
+  <button
+    class="{% include acd/_internal/class-name.liquid base='ac-button' extra=include.class %}"
+    type="{{ include.type | default: 'button' | escape }}"
+    {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+    {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
+    {%- include acd/_internal/data-attr.liquid name='data-ac-size' value=component_size -%}
+    {%- if include.full_width == true or include.full_width == 'true' %} data-ac-full-width="true"{%- endif -%}
+    {%- if is_loading %} data-ac-loading="true" aria-busy="true"{%- endif -%}
+    {%- if is_disabled %} disabled{%- endif -%}
+    {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+    {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+  >
+    {%- if include.leading_html -%}
+      <span class="ac-button__icon" data-ac-slot="leading" aria-hidden="true">{{ include.leading_html }}</span>
+    {%- endif -%}
+    <span class="ac-button__label">{{ include.label | escape }}</span>
+    {%- if include.trailing_html -%}
+      <span class="ac-button__icon" data-ac-slot="trailing" aria-hidden="true">{{ include.trailing_html }}</span>
+    {%- endif -%}
+    {%- if is_loading -%}
+      <span class="ac-button__spinner" aria-hidden="true">{{ include.spinner_html }}</span>
+    {%- endif -%}
+  </button>
+{%- endif -%}

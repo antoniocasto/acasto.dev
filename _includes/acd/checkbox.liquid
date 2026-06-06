@@ -1,0 +1,23 @@
+{%- assign is_checked = include.checked == true or include.checked == 'true' -%}
+{%- assign is_disabled = include.disabled == true or include.disabled == 'true' -%}
+{%- assign is_indeterminate = include.indeterminate == true or include.indeterminate == 'true' -%}
+<label
+  class="{% include acd/_internal/class-name.liquid base='ac-checkbox' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-color' value=include.color -%}
+  {%- if is_indeterminate -%} data-ac-indeterminate="true"{%- endif -%}
+  {%- if is_disabled -%} data-ac-disabled="true"{%- endif -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  <input
+    class="ac-checkbox__input"
+    type="checkbox"
+    {%- include acd/_internal/attribute.liquid name='id' value=include.input_id -%}
+    {%- include acd/_internal/attribute.liquid name='name' value=include.name -%}
+    {%- include acd/_internal/attribute.liquid name='value' value=include.value -%}
+    {%- if is_checked -%} checked{%- endif -%}
+    {%- if is_disabled -%} disabled{%- endif -%}
+  />
+  <span class="ac-checkbox__control"><span class="ac-checkbox__mark"></span></span>
+  <span class="ac-checkbox__label">{{ include.label | escape }}</span>
+</label>

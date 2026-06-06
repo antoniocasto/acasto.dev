@@ -2,24 +2,55 @@
   Define base global styles using CSS custom properties
 */
 
+:root {
+  --site-shadow-subtle: 0 1px 2px rgba(10, 10, 10, 0.06);
+  --site-shadow-subtle: 0 1px 2px color-mix(in srgb, var(--ac-color-foreground) 6%, transparent);
+  --site-shadow-elevated: 0 1rem 2rem rgba(10, 10, 10, 0.12);
+  --site-shadow-elevated: 0 1rem 2rem color-mix(in srgb, var(--ac-color-foreground) 12%, transparent);
+  --site-shadow-modal: 0 1.5rem 3rem rgba(10, 10, 10, 0.24);
+  --site-shadow-modal: 0 1.5rem 3rem color-mix(in srgb, var(--ac-color-foreground) 24%, transparent);
+  --site-overlay-background: rgba(10, 10, 10, 0.42);
+  --site-overlay-background: color-mix(in srgb, #0A0A0A 42%, transparent);
+  --site-selection-background: #E8E8E8;
+  --site-selection-background: color-mix(in srgb, var(--ac-color-accent) 18%, transparent);
+  --site-accent-text: var(--ac-color-accent);
+  --site-focus-ring: var(--ac-color-accent);
+}
+
+[data-ac-theme="dark"] {
+  --site-shadow-subtle: none;
+  --site-shadow-elevated: none;
+  --site-shadow-modal: 0 1.5rem 3rem rgba(10, 10, 10, 0.4);
+  --site-shadow-modal: 0 1.5rem 3rem color-mix(in srgb, #0A0A0A 54%, transparent);
+  --site-selection-background: #222222;
+  --site-selection-background: color-mix(in srgb, var(--ac-color-accent) 28%, transparent);
+  --site-accent-text: var(--ac-color-foreground);
+  --site-accent-text: color-mix(in srgb, var(--ac-color-accent) 40%, var(--ac-color-foreground));
+  --site-focus-ring: var(--site-accent-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-ac-theme="light"]):not([data-ac-theme="dark"]) {
+    --site-accent-text: var(--ac-color-foreground);
+    --site-accent-text: color-mix(in srgb, var(--ac-color-accent) 40%, var(--ac-color-foreground));
+    --site-focus-ring: var(--site-accent-text);
+  }
+}
+
 html,
 body {
   height: 100%;
 }
 
 html {
-  background-color: var(--background-color);
-  background-image: var(--page-gradient);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: var(--ac-color-background);
 }
 
-// Base styles for the body element
 body {
-  font-family: var(--font-stack); // Use custom font stack
-  color: var(--text-color); // Use custom text color
-  background-color: transparent; // Use custom background color
-  margin: 0; // Remove default margin
+  font-family: var(--ac-font-family-sans);
+  color: var(--ac-color-foreground);
+  background-color: transparent;
+  margin: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
   display: flex;
@@ -31,62 +62,93 @@ body.menu-open {
   touch-action: none;
 }
 
-// Base styles for heading elements
-h1, h2, h3, h4 {
-  font-weight: 600; // Set font weight to 600
-  margin-bottom: 0.5em; // Add margin below headings
-  color: var(--text-color);
-  font-family: var(--font-display);
+h1:not(.ac-section-header__title),
+h2:not(.ac-section-header__title),
+h3:not(.ac-section-header__title),
+h4:not(.ac-section-header__title) {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  color: var(--ac-color-foreground);
+  font-family: var(--ac-font-family-sans);
 }
 
-h2,
-h3 {
-  border-bottom: 2px solid rgba(37, 99, 235, 0.2);
-  display: inline-block;
-  padding-bottom: 0.25rem;
-}
-
-p {
+p:not(.ac-section-header__subtitle) {
   line-height: 1.7;
-  color: var(--text-muted);
+  color: var(--ac-color-foreground-secondary);
 }
 
-// Base styles for links
-a {
-  color: var(--primary-color); // Use custom primary color
-  text-decoration: none; // Remove default underline
+.site-page-header {
+  padding: 0 0 var(--ac-space-xl);
+  margin-bottom: var(--ac-space-lg);
+}
+
+.site-page-header .ac-section-header__title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.site-page-header .ac-section-header__subtitle {
+  max-width: 42rem;
+  color: var(--ac-color-foreground-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.55;
+}
+
+main a:not(.ac-button):not(.ac-list-row):not(.ac-card):not(.ac-fab):not(.ac-tag) {
+  color: var(--site-accent-text);
+  text-decoration: none;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-// Hover effect for links
-a:hover {
-  text-decoration: underline; // Add underline on hover
+main a:not(.ac-button):not(.ac-list-row):not(.ac-card):not(.ac-fab):not(.ac-tag):hover {
+  text-decoration: underline;
 }
 
 .skip-link {
   position: absolute;
   top: -100px;
-  left: var(--space-md);
+  left: var(--ac-space-lg);
   z-index: 1500;
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-sm);
-  background: var(--surface-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
+  padding: var(--ac-space-sm) var(--ac-space-lg);
+  border-radius: var(--ac-radius-sm);
+  background: var(--ac-color-surface);
+  color: var(--ac-color-foreground);
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
 }
 
 .skip-link:focus-visible {
-  top: var(--space-md);
+  top: var(--ac-space-lg);
 }
 
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 input:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-color) 65%, transparent);
+  outline: var(--ac-border-emphasis) solid var(--site-focus-ring);
   outline-offset: 2px;
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.2);
+  background: var(--site-selection-background);
+}
+
+.not-found-page {
+  min-height: calc(100svh - 18rem);
+  display: grid;
+  align-items: center;
+  padding-block: var(--ac-space-xxxl);
+}
+
+.not-found-page .ac-empty-state__title {
+  font-size: var(--ac-type-display-font-size);
+  font-weight: var(--ac-type-display-font-weight);
+  letter-spacing: 0;
+}
+
+.not-found-page .ac-empty-state__icon {
+  color: var(--site-accent-text);
 }

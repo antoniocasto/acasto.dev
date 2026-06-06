@@ -8,7 +8,7 @@ github: "https://github.com/antoniocasto/ACSwiftUINavigation"
 description: "Un pacchetto Swift (Swift Package Manager) per implementare una navigazione pulita e modulare nelle app SwiftUI."
 thumbnail: "/assets/images/portfolio/acswiftui-navigation.png"
 thumbnail_alt: "Anteprima di ACSwiftUINavigation"
-thumbnail_bg: "color-mix(in srgb, var(--surface-color) 85%, var(--primary-color))"
+thumbnail_bg: "color-mix(in srgb, var(--ac-color-surface) 85%, var(--ac-color-accent))"
 technologies: ["SwiftUI", "Swift Package Manager", "Navigazione", "Gestione dello stato"]
 published: true
 ---
@@ -21,5 +21,3 @@ ACSwiftUINavigation è un pacchetto Swift che ho sviluppato per semplificare la 
 - Approccio strutturato per gestire la navigazione in SwiftUI.
 - Semplifica la gestione dei deep link e dei flussi di navigazione complessi.
 - Integrazione facile tramite Swift Package Manager.
-
-Il codice sorgente è disponibile su **[GitHub]({{ page.github }})**.

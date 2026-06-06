@@ -1,0 +1,44 @@
+:where(.ac-badge) {
+  --ac-badge-height: 1.125rem;
+  --ac-badge-min-width: 1.125rem;
+  --ac-badge-padding-inline: 0.3125rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: var(--ac-badge-min-width);
+  block-size: var(--ac-badge-height);
+  padding-inline: var(--ac-badge-padding-inline);
+  border-radius: var(--ac-radius-full);
+  background: var(--ac-color-foreground);
+  color: var(--ac-color-background);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+:where(.ac-badge[data-ac-variant="dot"]) {
+  min-inline-size: 0;
+  inline-size: 0.625rem;
+  block-size: 0.625rem;
+  padding-inline: 0;
+}
+
+:where(.ac-badge[data-ac-color="accent"]) {
+  background: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
+}
+
+:where(.ac-badge-anchor) {
+  position: relative;
+  display: inline-grid;
+}
+
+:where(.ac-badge-overlay) {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  transform: translate(25%, -25%);
+}

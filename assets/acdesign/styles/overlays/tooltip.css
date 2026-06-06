@@ -1,0 +1,89 @@
+:where(.ac-tooltip-anchor) {
+  display: inline-flex;
+  position: relative;
+}
+
+:where(.ac-tooltip) {
+  --ac-tooltip-gap: var(--ac-space-sm);
+  --ac-tooltip-max-width: 17.5rem;
+  display: block;
+  position: absolute;
+  z-index: 70;
+  inline-size: max-content;
+  max-inline-size: min(var(--ac-tooltip-max-width), calc(100vw - 2rem));
+  min-block-size: 2.5rem;
+  padding: var(--ac-space-sm) var(--ac-space-md);
+  border: var(--ac-border-default) solid var(--ac-color-foreground);
+  border-radius: var(--ac-radius-md);
+  background: var(--ac-color-foreground);
+  color: var(--ac-color-background);
+  font-size: var(--ac-type-caption-font-size);
+  line-height: 1.4;
+  box-shadow: 0 0.75rem 1.5rem rgba(15, 23, 42, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--ac-motion-preset-fast),
+    transform var(--ac-motion-preset-fast);
+}
+
+:where(.ac-tooltip[data-ac-tone="accent"]) {
+  border-color: var(--ac-color-accent);
+  background: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
+}
+
+:where(.ac-tooltip[data-ac-open="true"], .ac-tooltip[data-ac-measuring="true"]) {
+  visibility: visible;
+}
+
+:where(.ac-tooltip[data-ac-open="true"]) {
+  opacity: 1;
+}
+
+:where(.ac-tooltip[data-ac-resolved-placement="top"]) {
+  inset-inline-start: 50%;
+  inset-block-end: calc(100% + var(--ac-tooltip-gap));
+  transform: translate(-50%, 0.25rem);
+}
+
+:where(.ac-tooltip[data-ac-resolved-placement="top"][data-ac-open="true"]) {
+  transform: translate(-50%, 0);
+}
+
+:where(.ac-tooltip[data-ac-resolved-placement="bottom"]) {
+  inset-inline-start: 50%;
+  inset-block-start: calc(100% + var(--ac-tooltip-gap));
+  transform: translate(-50%, -0.25rem);
+}
+
+:where(.ac-tooltip[data-ac-resolved-placement="bottom"][data-ac-open="true"]) {
+  transform: translate(-50%, 0);
+}
+
+:where(.ac-tooltip[data-ac-resolved-placement="leading"]) {
+  inset-inline-end: calc(100% + var(--ac-tooltip-gap));
+  inset-block-start: 50%;
+  transform: translate(0.25rem, -50%);
+}
+
+:where(.ac-tooltip[data-ac-resolved-placement="leading"][data-ac-open="true"]) {
+  transform: translate(0, -50%);
+}
+
+:where(.ac-tooltip[data-ac-resolved-placement="trailing"]) {
+  inset-inline-start: calc(100% + var(--ac-tooltip-gap));
+  inset-block-start: 50%;
+  transform: translate(-0.25rem, -50%);
+}
+
+:where(.ac-tooltip[data-ac-resolved-placement="trailing"][data-ac-open="true"]) {
+  transform: translate(0, -50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ac-tooltip) {
+    transition-duration: 0ms;
+  }
+}

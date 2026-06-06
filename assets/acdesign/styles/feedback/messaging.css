@@ -1,0 +1,154 @@
+:where(.ac-banner, .ac-inline-alert) {
+  --ac-message-border-width: var(--ac-border-default);
+  --ac-message-background: var(--ac-color-surface);
+  --ac-message-foreground: var(--ac-color-foreground);
+  --ac-message-foreground-secondary: var(--ac-color-foreground-secondary);
+  --ac-message-border-color: var(--ac-color-border-subtle);
+  --ac-message-icon-background: var(--ac-color-foreground);
+  --ac-message-icon-foreground: var(--ac-color-background);
+  --ac-message-dismiss-color: color-mix(in srgb, var(--ac-color-foreground) 45%, transparent);
+}
+
+:where(.ac-inline-alert[data-ac-tone="success"]) {
+  --ac-message-background: var(--ac-color-accent);
+  --ac-message-foreground: var(--ac-color-accent-foreground);
+  --ac-message-foreground-secondary: color-mix(in srgb, var(--ac-color-accent-foreground) 72%, transparent);
+  --ac-message-border-color: var(--ac-color-accent);
+  --ac-message-icon-background: var(--ac-color-accent-foreground);
+  --ac-message-icon-foreground: var(--ac-color-accent);
+  --ac-message-dismiss-color: color-mix(in srgb, var(--ac-color-accent-foreground) 45%, transparent);
+}
+
+:where(.ac-inline-alert[data-ac-tone="error"]) {
+  --ac-message-background: var(--ac-color-foreground);
+  --ac-message-foreground: var(--ac-color-background);
+  --ac-message-foreground-secondary: color-mix(in srgb, var(--ac-color-background) 72%, transparent);
+  --ac-message-border-color: var(--ac-color-foreground);
+  --ac-message-icon-background: var(--ac-color-background);
+  --ac-message-icon-foreground: var(--ac-color-foreground);
+  --ac-message-dismiss-color: color-mix(in srgb, var(--ac-color-background) 45%, transparent);
+}
+
+:where(.ac-inline-alert[data-ac-tone="warning"]) {
+  --ac-message-border-width: var(--ac-border-emphasis);
+  --ac-message-border-color: var(--ac-color-border);
+}
+
+:where(.ac-banner[data-ac-tone="success"][data-ac-emphasis="subtle"]) {
+  --ac-message-border-color: var(--ac-color-accent);
+  --ac-message-icon-background: var(--ac-color-accent);
+  --ac-message-icon-foreground: var(--ac-color-accent-foreground);
+}
+
+:where(.ac-banner[data-ac-tone="success"][data-ac-emphasis="strong"]) {
+  --ac-message-background: var(--ac-color-accent);
+  --ac-message-foreground: var(--ac-color-accent-foreground);
+  --ac-message-foreground-secondary: color-mix(in srgb, var(--ac-color-accent-foreground) 72%, transparent);
+  --ac-message-border-color: var(--ac-color-accent);
+  --ac-message-icon-background: var(--ac-color-accent-foreground);
+  --ac-message-icon-foreground: var(--ac-color-accent);
+  --ac-message-dismiss-color: color-mix(in srgb, var(--ac-color-accent-foreground) 72%, transparent);
+}
+
+:where(.ac-banner[data-ac-tone="error"][data-ac-emphasis="subtle"]) {
+  --ac-message-border-color: var(--ac-color-foreground);
+}
+
+:where(.ac-banner[data-ac-tone="error"][data-ac-emphasis="strong"]) {
+  --ac-message-background: var(--ac-color-foreground);
+  --ac-message-foreground: var(--ac-color-background);
+  --ac-message-foreground-secondary: color-mix(in srgb, var(--ac-color-background) 72%, transparent);
+  --ac-message-border-color: var(--ac-color-foreground);
+  --ac-message-icon-background: var(--ac-color-background);
+  --ac-message-icon-foreground: var(--ac-color-foreground);
+  --ac-message-dismiss-color: color-mix(in srgb, var(--ac-color-background) 72%, transparent);
+}
+
+:where(.ac-banner[data-ac-tone="warning"][data-ac-emphasis="subtle"]) {
+  --ac-message-border-width: var(--ac-border-emphasis);
+  --ac-message-border-color: var(--ac-color-border);
+}
+
+:where(.ac-banner[data-ac-tone="warning"][data-ac-emphasis="strong"]) {
+  --ac-message-background: var(--ac-color-surface-elevated);
+  --ac-message-border-width: var(--ac-border-emphasis);
+  --ac-message-border-color: var(--ac-color-border);
+}
+
+:where(.ac-banner[data-ac-tone="info"][data-ac-emphasis="strong"]) {
+  --ac-message-background: var(--ac-color-surface-elevated);
+  --ac-message-border-color: var(--ac-color-border);
+}
+
+:where(.ac-message__icon) {
+  --ac-message-icon-size: 1.5rem;
+  --ac-message-icon-radius: 0.375rem;
+  --ac-message-icon-symbol-size: 0.6875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--ac-message-icon-size);
+  block-size: var(--ac-message-icon-size);
+  border-radius: var(--ac-message-icon-radius);
+  background: var(--ac-message-icon-background);
+  color: var(--ac-message-icon-foreground);
+  flex: none;
+}
+
+:where(.ac-message__icon > svg) {
+  inline-size: var(--ac-message-icon-symbol-size);
+  block-size: var(--ac-message-icon-symbol-size);
+}
+
+:where(.ac-message__content) {
+  display: grid;
+  gap: 0.25rem;
+  min-inline-size: 0;
+}
+
+:where(.ac-message__title) {
+  margin: 0;
+  color: var(--ac-message-foreground);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+:where(.ac-message__message) {
+  margin: 0;
+  color: var(--ac-message-foreground-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+:where(.ac-message__dismiss) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ac-message-dismiss-color);
+  cursor: pointer;
+  appearance: none;
+  flex: none;
+}
+
+:where(.ac-message__dismiss > svg) {
+  inline-size: 0.625rem;
+  block-size: 0.625rem;
+}
+
+:where(.ac-message__dismiss:active) {
+  transform: scale(0.94);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ac-message__dismiss:active) {
+    transform: none;
+  }
+}

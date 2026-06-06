@@ -1,0 +1,21 @@
+<ol
+  class="{% include acd/_internal/class-name.liquid base='ac-step-indicator' extra=include.class %}"
+  {%- include acd/_internal/attribute.liquid name='id' value=include.id -%}
+  {%- include acd/_internal/data-attr.liquid name='data-ac-variant' value=include.variant -%}
+  {%- include acd/_internal/attribute.liquid name='aria-label' value=include.aria_label -%}
+  {%- if include.attrs %} {{ include.attrs | strip }}{%- endif -%}
+>
+  {%- for step in include.steps -%}
+    {%- assign marker = step.marker | default: forloop.index -%}
+    {%- assign state = step.state | default: 'upcoming' -%}
+    <li class="ac-step-indicator__item" data-ac-state="{{ state | escape }}"{% if step.current == true or step.current == 'true' or state == 'current' %} aria-current="step"{% endif %}>
+      <span class="ac-step-indicator__marker" aria-hidden="true">{{ marker | escape }}</span>
+      <span class="ac-step-indicator__content">
+        <span class="ac-step-indicator__label">{{ step.label | escape }}</span>
+        {%- if step.meta -%}
+          <span class="ac-step-indicator__meta">{{ step.meta | escape }}</span>
+        {%- endif -%}
+      </span>
+    </li>
+  {%- endfor -%}
+</ol>

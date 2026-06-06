@@ -1,0 +1,119 @@
+:where(.ac-segmented-picker) {
+  --ac-segmented-picker-height: 2.75rem;
+  --ac-segmented-picker-radius: var(--ac-radius-lg);
+  --ac-segmented-picker-indicator-radius: var(--ac-radius-md);
+  --ac-segmented-picker-count: 2;
+  --ac-segmented-picker-active-index: 0;
+  --ac-segmented-picker-fill: var(--ac-color-foreground);
+  --ac-segmented-picker-selected-foreground: var(--ac-color-background);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:where(.ac-segmented-picker[data-ac-color="accent"]) {
+  --ac-segmented-picker-fill: var(--ac-color-accent);
+  --ac-segmented-picker-selected-foreground: var(--ac-color-accent-foreground);
+}
+
+:where(.ac-segmented-picker__list) {
+  position: relative;
+  display: flex;
+  gap: 0;
+  padding: 0.25rem;
+  border: var(--ac-border-default) solid var(--ac-color-border);
+  border-radius: var(--ac-segmented-picker-radius);
+  background: var(--ac-color-surface);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+:where(.ac-segmented-picker__list::before) {
+  content: "";
+  position: absolute;
+  inset-block: 0.25rem;
+  inset-inline-start: 0.25rem;
+  inline-size: calc((100% - 0.5rem) / var(--ac-segmented-picker-count));
+  border-radius: var(--ac-segmented-picker-indicator-radius);
+  background: var(--ac-segmented-picker-fill);
+  transform: translateX(calc(100% * var(--ac-segmented-picker-active-index)));
+  transition:
+    transform var(--ac-motion-preset-default),
+    background-color var(--ac-motion-preset-default);
+  z-index: 0;
+}
+
+:where(.ac-segmented-picker__list:has(.ac-segmented-picker__option:nth-child(1) .ac-segmented-picker__input:checked)) {
+  --ac-segmented-picker-active-index: 0;
+}
+
+:where(.ac-segmented-picker__list:has(.ac-segmented-picker__option:nth-child(2) .ac-segmented-picker__input:checked)) {
+  --ac-segmented-picker-active-index: 1;
+}
+
+:where(.ac-segmented-picker__list:has(.ac-segmented-picker__option:nth-child(3) .ac-segmented-picker__input:checked)) {
+  --ac-segmented-picker-active-index: 2;
+}
+
+:where(.ac-segmented-picker__list:has(.ac-segmented-picker__option:nth-child(4) .ac-segmented-picker__input:checked)) {
+  --ac-segmented-picker-active-index: 3;
+}
+
+:where(.ac-segmented-picker__option) {
+  flex: 1 1 0;
+  position: relative;
+  z-index: 1;
+}
+
+:where(.ac-segmented-picker__label-wrap) {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+:where(.ac-segmented-picker__input) {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+:where(.ac-segmented-picker__label) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(var(--ac-segmented-picker-height) - 0.5rem);
+  padding-inline: var(--ac-space-md);
+  border-radius: var(--ac-segmented-picker-indicator-radius);
+  background: transparent;
+  color: var(--ac-color-foreground);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-align: center;
+  transition:
+    background-color var(--ac-motion-preset-default),
+    color var(--ac-motion-preset-default);
+}
+
+:where(.ac-segmented-picker__input:checked + .ac-segmented-picker__label) {
+  background: var(--ac-segmented-picker-fill);
+  color: var(--ac-segmented-picker-selected-foreground);
+}
+
+:where(.ac-segmented-picker__input:focus-visible + .ac-segmented-picker__label) {
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 68%, transparent);
+  outline-offset: var(--ac-border-default);
+}
+
+:where(.ac-segmented-picker:is([disabled], [data-ac-disabled="true"])) {
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ac-segmented-picker__label, .ac-segmented-picker__list::before) {
+    transition-duration: 0ms;
+  }
+}
