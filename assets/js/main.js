@@ -7,44 +7,53 @@ document.addEventListener('DOMContentLoaded', function () {
   setViewportHeight();
   window.addEventListener('resize', setViewportHeight);
 
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIconSvg = document.querySelector('.theme-icon');
-  const themeIconUse = document.querySelector('.theme-icon use');
+  const themeToggles = Array.from(document.querySelectorAll('[data-theme-toggle]'));
+  const themeIconSvgs = Array.from(document.querySelectorAll('.theme-icon'));
+  const themeIconUses = Array.from(document.querySelectorAll('[data-theme-icon-use], .theme-icon use'));
   const overlay = document.querySelector('.theme-overlay');
   const rootElement = document.documentElement;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const savedTheme = localStorage.getItem('theme');
   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   const currentTheme = savedTheme || systemTheme;
-  const iconSprite = themeIconUse ? themeIconUse.getAttribute('href').split('#')[0] : '';
+  const firstThemeIconUse = themeIconUses[0];
+  const iconSprite = firstThemeIconUse ? firstThemeIconUse.getAttribute('href').split('#')[0] : '';
 
   const applyThemeClass = (isDark) => {
     if (rootElement) {
-      rootElement.classList.toggle('dark-theme', isDark);
+      rootElement.dataset.acTheme = isDark ? 'dark' : 'light';
     }
-    document.body.classList.toggle('dark-theme', isDark);
+  };
+
+  const setThemeToggleState = (theme) => {
+    themeToggles.forEach((themeToggle) => {
+      themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    });
   };
 
   const setThemeIcon = (theme) => {
-    if (!themeIconUse) return;
     const iconId = theme === 'dark' ? 'icon-sun' : 'icon-moon';
     const href = iconSprite ? `${iconSprite}#${iconId}` : `#${iconId}`;
-    themeIconUse.setAttribute('href', href);
-    themeIconUse.setAttribute('xlink:href', href);
+    themeIconUses.forEach((themeIconUse) => {
+      themeIconUse.setAttribute('href', href);
+      themeIconUse.setAttribute('xlink:href', href);
+    });
   };
 
   if (currentTheme === 'dark') {
     applyThemeClass(true);
-    if (themeToggle) themeToggle.checked = true;
     setThemeIcon('dark');
+    setThemeToggleState('dark');
   } else {
     applyThemeClass(false);
     setThemeIcon('light');
+    setThemeToggleState('light');
   }
 
-  if (themeToggle) {
-    themeToggle.addEventListener('change', function () {
+  themeToggles.forEach((themeToggle) => {
+    themeToggle.addEventListener('click', function () {
       const duration = prefersReducedMotion ? 0 : 600;
+      const nextIsDark = rootElement.dataset.acTheme !== 'dark';
 
       if (overlay && !prefersReducedMotion) {
         const scaleFactor = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2) / 10;
@@ -53,19 +62,23 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       setTimeout(() => {
-        if (this.checked) {
+        if (nextIsDark) {
           applyThemeClass(true);
           localStorage.setItem('theme', 'dark');
           setThemeIcon('dark');
+          setThemeToggleState('dark');
         } else {
           applyThemeClass(false);
           localStorage.setItem('theme', 'light');
           setThemeIcon('light');
+          setThemeToggleState('light');
         }
 
-        if (themeIconSvg && !prefersReducedMotion) {
-          themeIconSvg.classList.add('rotate-animation');
-          setTimeout(() => themeIconSvg.classList.remove('rotate-animation'), 500);
+        if (!prefersReducedMotion) {
+          themeIconSvgs.forEach((themeIconSvg) => {
+            themeIconSvg.classList.add('rotate-animation');
+            setTimeout(() => themeIconSvg.classList.remove('rotate-animation'), 500);
+          });
         }
 
         if (overlay) {
@@ -73,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }, duration);
     });
-  }
+  });
 
   const menuToggle = document.querySelector('.menu-toggle');
   const sideMenu = document.querySelector('.side-menu');
@@ -339,6 +352,9 @@ document.addEventListener('DOMContentLoaded', function () {
     tile.addEventListener('click', function () {
       const isSelected = tile.classList.toggle('selected');
       tile.setAttribute('aria-pressed', String(isSelected));
+      tile.setAttribute('data-ac-selected', String(isSelected));
+      tile.setAttribute('data-ac-variant', isSelected ? 'filled' : 'outlined');
+      tile.setAttribute('data-ac-color', isSelected ? 'accent' : 'surface');
       filterPosts();
     });
   });

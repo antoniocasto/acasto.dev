@@ -1,0 +1,19 @@
+:where(.ac-button, .ac-icon-button, .ac-fab) {
+  --ac-action-control-pressed-scale: 0.96;
+  --ac-action-control-pressed-opacity: 0.85;
+  --ac-action-control-disabled-opacity: 0.4;
+}
+
+:where(.ac-button) {
+  --ac-action-control-disabled-opacity: 1;
+}
+
+:where(.ac-button, .ac-icon-button, .ac-fab):is([disabled], [aria-disabled="true"], [data-ac-disabled="true"]) {
+  opacity: var(--ac-action-control-disabled-opacity);
+  pointer-events: none;
+}
+
+:where(.ac-button, .ac-icon-button, .ac-fab):not(:is([disabled], [aria-disabled="true"], [data-ac-disabled="true"])):active {
+  transform: scale(var(--ac-action-control-pressed-scale));
+  opacity: var(--ac-action-control-pressed-opacity);
+}

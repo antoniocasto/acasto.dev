@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 
 
+
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#2563eb" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0A0A" />
   <meta name="color-scheme" content="light dark" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.acTheme = savedTheme || systemTheme;
+      } catch (error) {
+        document.documentElement.dataset.acTheme = 'light';
+      }
+    }());
+  </script>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Certificates | Antonio Casto - Passionate iOS Developer</title>
@@ -52,23 +67,25 @@
   <meta name="apple-mobile-web-app-title" content="acasto" />
   <link rel="manifest" href="/assets/images/site.webmanifest" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=3">
+  <link rel="stylesheet" href="/assets/acdesign/styles/components.css?v=45">
+  <link rel="stylesheet" href="/assets/css/style.css?v=45">
 </head>
-<body>
+<body class="ac-theme">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header glass-panel">
+  <header class="site-header">
     <nav class="nav-bar container">
       <div class="nav-left">
         <a href="/en/" class="brand-logo desktop-logo">
           <img src="/assets/images/acasto-logo.png" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
         </a>
 
-        <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span class="burger-icon"></span>
+        <button type="button" class="menu-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="ac-icon-button__icon" aria-hidden="true">
+            <svg class="icon icon--md">
+              <use href="/assets/images/icons.svg?v=45#icon-menu"></use>
+            </svg>
+          </span>
         </button>
 
         <ul class="menu desktop-menu">
@@ -113,10 +130,10 @@
 
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary aria-label="Select language">
+          <summary class="language-dropdown__summary ac-icon-button" data-ac-size="small" data-ac-variant="outlined" aria-label="Select language">
             <span class="language-icon" aria-hidden="true">
               <svg class="icon icon--sm">
-                <use href="/assets/images/icons.svg#icon-globe"></use>
+                <use href="/assets/images/icons.svg?v=45#icon-globe"></use>
               </svg>
             </span>
             <span class="language-label">EN</span>
@@ -133,40 +150,65 @@
     </nav>
   </header>
 
-  <div class="side-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
+  <div class="side-menu ac-surface-elevated" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
     <div class="side-menu-header">
-      <button type="button" class="close-menu" aria-label="Close menu">&times;</button>
+      <button type="button" class="mobile-theme-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Toggle theme" data-theme-toggle aria-pressed="false">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span>
+      </button>
+      <button type="button" class="close-menu ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Close menu">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+          <svg class="icon icon--md">
+            <use href="/assets/images/icons.svg?v=45#icon-x"></use>
+          </svg>
+        </span>
+      </button>
     </div>
 
-    <ul class="menu">
+    <ul class="menu mobile-menu-list ac-list-container">
       <li >
-        <a href="/en/">
-          Home
+        <a class="mobile-menu-link ac-list-row" href="/en/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Home</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/about/">
-          About me
+        <a class="mobile-menu-link ac-list-row" href="/en/about/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">About me</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/portfolio/">
-          Portfolio
+        <a class="mobile-menu-link ac-list-row" href="/en/portfolio/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Portfolio</span>
+          </span>
         </a>
       </li>
       <li class="active">
-        <a href="/en/certificates/">
-          Certificates
+        <a class="mobile-menu-link ac-list-row" href="/en/certificates/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Certificates</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/blog/">
-          Blog
+        <a class="mobile-menu-link ac-list-row" href="/en/blog/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Blog</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/contacts/">
-          Contacts
+        <a class="mobile-menu-link ac-list-row" href="/en/contacts/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Contacts</span>
+          </span>
         </a>
       </li>
     </ul>
@@ -174,20 +216,33 @@
   <div class="menu-overlay" aria-hidden="true"></div>
 
   <main id="main-content" tabindex="-1" class="container page-content--certificates">
-    <h1 id="certificates">Certificates</h1>
+    
+<header
+  class="ac-section-header site-page-header" data-ac-size="large">
+  <div class="ac-section-header__main">
+    <div class="ac-section-header__heading-group">
+      <h1 class="ac-section-header__title">Certificates</h1><p class="ac-section-header__subtitle">A collection of training paths I completed. You can swipe or scroll through the cards.</p></div></div>
+</header>
 
-<p>A collection of training paths I completed. You can swipe or scroll through the cards.</p>
 
 <section class="certificates" data-certificates-carousel="">
   <div class="certificates__header">
     <p class="certificates__hint">Swipe on mobile or use horizontal scroll on desktop.</p>
     <div class="certificates__controls">
-      <button type="button" class="certificates__button" data-certificates-prev="" aria-label="Previous certificate">
-        <span aria-hidden="true">&larr;</span>
-      </button>
-      <button type="button" class="certificates__button" data-certificates-next="" aria-label="Next certificate">
-        <span aria-hidden="true">&rarr;</span>
-      </button>
+      <button class="ac-icon-button certificates__button" type="button" data-ac-shape="circle" data-ac-variant="outlined" data-ac-color="accent" aria-label="Previous certificate" data-certificates-prev="">
+    <span class="ac-icon-button__icon" aria-hidden="true">
+  <svg class="icon icon--sm" aria-hidden="true">
+    <use href="/assets/images/icons.svg?v=45#icon-chevron-left"></use>
+  </svg>
+</span>
+  </button>
+      <button class="ac-icon-button certificates__button" type="button" data-ac-shape="circle" data-ac-variant="outlined" data-ac-color="accent" aria-label="Next certificate" data-certificates-next="">
+    <span class="ac-icon-button__icon" aria-hidden="true">
+  <svg class="icon icon--sm" aria-hidden="true">
+    <use href="/assets/images/icons.svg?v=45#icon-chevron-right"></use>
+  </svg>
+</span>
+  </button>
     </div>
   </div>
 
@@ -199,15 +254,18 @@
       
       
 
-      <article class="certificate-card" data-certificate-slide="">
+      <article class="certificate-card ac-card" data-ac-variant="filled" data-certificate-slide="">
         <div class="certificate-card__media">
-          <img src="/assets/images/certificates/swiftui-advanced-architectures.png" alt="SwiftUI Advanced Architectures certificate from Swiftful Thinking" loading="lazy" decoding="async" />
+          <img src="/assets/images/certificates/swiftui-advanced-architectures.png" alt="SwiftUI Advanced Architectures certificate from Swiftful Thinking" loading="eager" decoding="async" />
         </div>
         <div class="certificate-card__body">
           <p class="certificate-card__provider">
             <span>Platform: Swiftful Thinking</span>
             <a class="certificate-card__course-link" href="https://www.swiftful-thinking.com/architecture" target="_blank" rel="noopener noreferrer">
-              View course <span aria-hidden="true">↗</span>
+              View course
+              <svg class="certificate-card__course-icon icon icon--sm" aria-hidden="true">
+                <use href="/assets/images/icons.svg?v=45#icon-external-link"></use>
+              </svg>
             </a>
           </p>
           <h2>SwiftUI Advanced Architectures</h2>
@@ -220,15 +278,18 @@
       
       
 
-      <article class="certificate-card" data-certificate-slide="">
+      <article class="certificate-card ac-card" data-ac-variant="filled" data-certificate-slide="">
         <div class="certificate-card__media">
-          <img src="/assets/images/certificates/hacking-with-swift-100-days-swiftui.jpg" alt="Certificate of Merit for Antonio Casto in 100 Days of SwiftUI by Hacking with Swift" loading="lazy" decoding="async" />
+          <img src="/assets/images/certificates/hacking-with-swift-100-days-swiftui.jpg" alt="Certificate of Merit for Antonio Casto in 100 Days of SwiftUI by Hacking with Swift" loading="eager" decoding="async" />
         </div>
         <div class="certificate-card__body">
           <p class="certificate-card__provider">
             <span>Platform: Hacking with Swift</span>
             <a class="certificate-card__course-link" href="https://www.hackingwithswift.com/100/swiftui" target="_blank" rel="noopener noreferrer">
-              View course <span aria-hidden="true">↗</span>
+              View course
+              <svg class="certificate-card__course-icon icon icon--sm" aria-hidden="true">
+                <use href="/assets/images/icons.svg?v=45#icon-external-link"></use>
+              </svg>
             </a>
           </p>
           <h2>100 Days of SwiftUI</h2>
@@ -245,17 +306,19 @@
     <p>2026 Antonio Casto - Passionate iOS Developer. Made with ♥.</p>
   </footer>
 
-  <div class="theme-switch">
-    <input type="checkbox" id="theme-toggle" aria-label="Toggle theme">
-    <label for="theme-toggle" class="theme-toggle-label">
-      <svg class="theme-icon icon" aria-hidden="true">
-        <use href="/assets/images/icons.svg#icon-moon"></use>
-      </svg>
-    </label>
-  </div>
+  <div
+  class="ac-fab-anchor theme-switch"><button
+      class="ac-fab theme-toggle-fab"
+      type="button" data-ac-variant="glass" aria-label="Toggle theme" id="theme-toggle" data-theme-toggle aria-pressed="false">
+      <span class="ac-fab__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span></button></div>
+
 
   <div class="theme-overlay"></div>
 
-  <script src="/assets/js/main.js?v=3"></script>
+  <script src="/assets/js/main.js?v=45"></script>
 </body>
 </html>

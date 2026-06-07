@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 
 
+
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#2563eb" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0A0A" />
   <meta name="color-scheme" content="light dark" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.acTheme = savedTheme || systemTheme;
+      } catch (error) {
+        document.documentElement.dataset.acTheme = 'light';
+      }
+    }());
+  </script>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Antonio Casto - Passionate iOS Developer | “This is the personal website and blog of Antonio Casto - Passionate iOS Developer. Here you will find my projects, my thoughts and my contacts.”</title>
+<title>Page not found | Antonio Casto - Passionate iOS Developer</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Antonio Casto - Passionate iOS Developer" />
+<meta property="og:title" content="Page not found" />
 <meta name="author" content="Antonio Casto" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="“This is the personal website and blog of Antonio Casto - Passionate iOS Developer. Here you will find my projects, my thoughts and my contacts.”" />
@@ -21,9 +36,9 @@
 <meta property="og:site_name" content="Antonio Casto - Passionate iOS Developer" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Antonio Casto - Passionate iOS Developer" />
+<meta property="twitter:title" content="Page not found" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Antonio Casto"},"description":"“This is the personal website and blog of Antonio Casto - Passionate iOS Developer. Here you will find my projects, my thoughts and my contacts.”","headline":"Antonio Casto - Passionate iOS Developer","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://acasto.dev/assets/images/acasto-logo.png"},"name":"Antonio Casto"},"url":"https://acasto.dev/404.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Antonio Casto"},"description":"“This is the personal website and blog of Antonio Casto - Passionate iOS Developer. Here you will find my projects, my thoughts and my contacts.”","headline":"Page not found","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://acasto.dev/assets/images/acasto-logo.png"},"name":"Antonio Casto"},"url":"https://acasto.dev/404.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -38,23 +53,25 @@
   <meta name="apple-mobile-web-app-title" content="acasto" />
   <link rel="manifest" href="/assets/images/site.webmanifest" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=3">
+  <link rel="stylesheet" href="/assets/acdesign/styles/components.css?v=45">
+  <link rel="stylesheet" href="/assets/css/style.css?v=45">
 </head>
-<body>
+<body class="ac-theme">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header glass-panel">
+  <header class="site-header">
     <nav class="nav-bar container">
       <div class="nav-left">
         <a href="/en/" class="brand-logo desktop-logo">
           <img src="/assets/images/acasto-logo.png" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
         </a>
 
-        <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span class="burger-icon"></span>
+        <button type="button" class="menu-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="ac-icon-button__icon" aria-hidden="true">
+            <svg class="icon icon--md">
+              <use href="/assets/images/icons.svg?v=45#icon-menu"></use>
+            </svg>
+          </span>
         </button>
 
         <ul class="menu desktop-menu">
@@ -99,10 +116,10 @@
 
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary aria-label="Select language">
+          <summary class="language-dropdown__summary ac-icon-button" data-ac-size="small" data-ac-variant="outlined" aria-label="Select language">
             <span class="language-icon" aria-hidden="true">
               <svg class="icon icon--sm">
-                <use href="/assets/images/icons.svg#icon-globe"></use>
+                <use href="/assets/images/icons.svg?v=45#icon-globe"></use>
               </svg>
             </span>
             <span class="language-label">EN</span>
@@ -125,40 +142,65 @@
     </nav>
   </header>
 
-  <div class="side-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
+  <div class="side-menu ac-surface-elevated" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
     <div class="side-menu-header">
-      <button type="button" class="close-menu" aria-label="Close menu">&times;</button>
+      <button type="button" class="mobile-theme-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Toggle theme" data-theme-toggle aria-pressed="false">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span>
+      </button>
+      <button type="button" class="close-menu ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Close menu">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+          <svg class="icon icon--md">
+            <use href="/assets/images/icons.svg?v=45#icon-x"></use>
+          </svg>
+        </span>
+      </button>
     </div>
 
-    <ul class="menu">
+    <ul class="menu mobile-menu-list ac-list-container">
       <li >
-        <a href="/en/">
-          Home
+        <a class="mobile-menu-link ac-list-row" href="/en/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Home</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/about/">
-          About me
+        <a class="mobile-menu-link ac-list-row" href="/en/about/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">About me</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/portfolio/">
-          Portfolio
+        <a class="mobile-menu-link ac-list-row" href="/en/portfolio/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Portfolio</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/certificates/">
-          Certificates
+        <a class="mobile-menu-link ac-list-row" href="/en/certificates/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Certificates</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/blog/">
-          Blog
+        <a class="mobile-menu-link ac-list-row" href="/en/blog/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Blog</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/contacts/">
-          Contacts
+        <a class="mobile-menu-link ac-list-row" href="/en/contacts/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Contacts</span>
+          </span>
         </a>
       </li>
     </ul>
@@ -166,25 +208,24 @@
   <div class="menu-overlay" aria-hidden="true"></div>
 
   <main id="main-content" tabindex="-1" class="container">
-    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+    
 
-<div class="container">
-  <h1>404</h1>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+
+<div class="not-found-page">
+  <section
+  class="ac-empty-state"><span class="ac-empty-state__icon" aria-hidden="true">
+  <svg class="icon" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M9.09 9a3 3 0 1 1 4.91 2.3c-.94.62-1.5 1.1-1.5 2.2"></path>
+    <path d="M12 17h.01"></path>
+  </svg>
+</span><div class="ac-empty-state__body">
+    <h1 class="ac-empty-state__title">404</h1><p class="ac-empty-state__subtitle">The requested page could not be found.</p></div><div class="ac-empty-state__actions">
+  <a
+    class="ac-button" data-ac-size="large" href="/"><span class="ac-button__label">Go home</span></a>
+</div></section>
+
 </div>
 
   </main>
@@ -193,17 +234,19 @@
     <p>2026 Antonio Casto - Passionate iOS Developer. Made with ♥.</p>
   </footer>
 
-  <div class="theme-switch">
-    <input type="checkbox" id="theme-toggle" aria-label="Toggle theme">
-    <label for="theme-toggle" class="theme-toggle-label">
-      <svg class="theme-icon icon" aria-hidden="true">
-        <use href="/assets/images/icons.svg#icon-moon"></use>
-      </svg>
-    </label>
-  </div>
+  <div
+  class="ac-fab-anchor theme-switch"><button
+      class="ac-fab theme-toggle-fab"
+      type="button" data-ac-variant="glass" aria-label="Toggle theme" id="theme-toggle" data-theme-toggle aria-pressed="false">
+      <span class="ac-fab__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span></button></div>
+
 
   <div class="theme-overlay"></div>
 
-  <script src="/assets/js/main.js?v=3"></script>
+  <script src="/assets/js/main.js?v=45"></script>
 </body>
 </html>

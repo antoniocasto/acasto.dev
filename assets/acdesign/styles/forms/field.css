@@ -1,0 +1,74 @@
+:where(.ac-field-legend) {
+  margin: 0 0 var(--ac-space-sm);
+  padding: 0;
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-label-font-size);
+  font-weight: var(--ac-type-label-font-weight);
+  letter-spacing: var(--ac-type-label-letter-spacing);
+  line-height: var(--ac-type-label-line-height);
+  text-transform: uppercase;
+}
+
+:where(.ac-field-required) {
+  color: var(--ac-color-accent);
+}
+
+:where(.ac-field-feedback) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ac-space-sm);
+}
+
+:where(.ac-field-message) {
+  --ac-field-message-color: var(--ac-color-foreground-tertiary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin: 0;
+  padding-inline-start: var(--ac-space-xs);
+  color: var(--ac-field-message-color);
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  font-size: var(--ac-type-label-font-size);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+:where(.ac-field-message[data-ac-tone="positive"]) {
+  --ac-field-message-color: var(--ac-color-foreground-secondary);
+}
+
+:where(.ac-field-message[data-ac-tone="critical"]) {
+  --ac-field-message-color: var(--ac-color-foreground);
+}
+
+:where(.ac-field-message__dot) {
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+:where(.ac-field-counter) {
+  margin: 0;
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: var(--ac-type-caption-font-weight);
+  letter-spacing: var(--ac-type-caption-letter-spacing);
+  line-height: var(--ac-type-caption-line-height);
+}
+
+:where(.ac-field-counter[data-ac-limit-reached="true"]) {
+  color: var(--ac-color-foreground);
+  font-weight: 700;
+}

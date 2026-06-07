@@ -1,0 +1,99 @@
+:where(.ac-fab) {
+  --ac-action-control-pressed-scale: 0.94;
+  --ac-fab-size: 3.5rem;
+  --ac-fab-icon-size: 1.375rem;
+  --ac-fab-padding-inline: 1.5rem;
+  --ac-fab-gap: var(--ac-space-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ac-fab-gap);
+  min-block-size: var(--ac-fab-size);
+  padding-inline: 0;
+  border: 0;
+  border-radius: var(--ac-radius-full);
+  background: var(--ac-color-accent);
+  color: var(--ac-color-accent-foreground);
+  box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.18);
+  font-family: var(--ac-font-family-sans);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  transition:
+    transform var(--ac-motion-preset-fast),
+    opacity var(--ac-motion-preset-fast),
+    box-shadow var(--ac-motion-preset-default);
+}
+
+:where(.ac-fab[data-ac-size="mini"]) {
+  --ac-fab-size: 2.5rem;
+  --ac-fab-icon-size: 1rem;
+}
+
+:where(.ac-fab[data-ac-extended="true"]) {
+  padding-inline: var(--ac-fab-padding-inline);
+}
+
+:where(.ac-fab:not([data-ac-extended="true"])) {
+  inline-size: var(--ac-fab-size);
+}
+
+:where(.ac-fab[data-ac-variant="glass"]) {
+  background: color-mix(in srgb, var(--ac-color-surface-elevated) 74%, transparent);
+  color: var(--ac-color-foreground);
+  border: var(--ac-border-default) solid color-mix(in srgb, var(--ac-color-border-subtle) 84%, transparent);
+  backdrop-filter: blur(1rem) saturate(150%);
+  -webkit-backdrop-filter: blur(1rem) saturate(150%);
+}
+
+:where(.ac-fab:focus-visible) {
+  outline: var(--ac-border-emphasis) solid color-mix(in srgb, var(--ac-color-accent) 72%, transparent);
+  outline-offset: var(--ac-border-default);
+}
+
+:where(.ac-fab__icon) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--ac-fab-icon-size);
+  block-size: var(--ac-fab-icon-size);
+  flex: none;
+}
+
+:where(.ac-fab__icon > svg) {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+:where(.ac-fab-anchor) {
+  position: fixed;
+  inset-inline-end: var(--ac-space-lg);
+  inset-block-end: var(--ac-space-lg);
+  z-index: 50;
+}
+
+:where(.ac-fab-anchor[data-ac-position="bottom-center"]) {
+  inset-inline: 50% auto;
+  transform: translateX(-50%);
+}
+
+:where(.ac-fab-anchor[data-ac-position="top-end"]) {
+  inset-block: var(--ac-space-lg) auto;
+}
+
+@supports not ((backdrop-filter: blur(1rem))) {
+  :where(.ac-fab[data-ac-variant="glass"]) {
+    background: var(--ac-color-accent);
+    color: var(--ac-color-accent-foreground);
+    border-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ac-fab) {
+    transition-duration: 0ms;
+  }
+}

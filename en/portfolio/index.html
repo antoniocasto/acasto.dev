@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 
 
+
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#2563eb" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0A0A" />
   <meta name="color-scheme" content="light dark" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.acTheme = savedTheme || systemTheme;
+      } catch (error) {
+        document.documentElement.dataset.acTheme = 'light';
+      }
+    }());
+  </script>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Portfolio | Antonio Casto - Passionate iOS Developer</title>
@@ -52,23 +67,25 @@
   <meta name="apple-mobile-web-app-title" content="acasto" />
   <link rel="manifest" href="/assets/images/site.webmanifest" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=3">
+  <link rel="stylesheet" href="/assets/acdesign/styles/components.css?v=45">
+  <link rel="stylesheet" href="/assets/css/style.css?v=45">
 </head>
-<body>
+<body class="ac-theme">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header glass-panel">
+  <header class="site-header">
     <nav class="nav-bar container">
       <div class="nav-left">
         <a href="/en/" class="brand-logo desktop-logo">
           <img src="/assets/images/acasto-logo.png" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
         </a>
 
-        <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span class="burger-icon"></span>
+        <button type="button" class="menu-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="ac-icon-button__icon" aria-hidden="true">
+            <svg class="icon icon--md">
+              <use href="/assets/images/icons.svg?v=45#icon-menu"></use>
+            </svg>
+          </span>
         </button>
 
         <ul class="menu desktop-menu">
@@ -113,10 +130,10 @@
 
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary aria-label="Select language">
+          <summary class="language-dropdown__summary ac-icon-button" data-ac-size="small" data-ac-variant="outlined" aria-label="Select language">
             <span class="language-icon" aria-hidden="true">
               <svg class="icon icon--sm">
-                <use href="/assets/images/icons.svg#icon-globe"></use>
+                <use href="/assets/images/icons.svg?v=45#icon-globe"></use>
               </svg>
             </span>
             <span class="language-label">EN</span>
@@ -133,40 +150,65 @@
     </nav>
   </header>
 
-  <div class="side-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
+  <div class="side-menu ac-surface-elevated" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
     <div class="side-menu-header">
-      <button type="button" class="close-menu" aria-label="Close menu">&times;</button>
+      <button type="button" class="mobile-theme-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Toggle theme" data-theme-toggle aria-pressed="false">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span>
+      </button>
+      <button type="button" class="close-menu ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Close menu">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+          <svg class="icon icon--md">
+            <use href="/assets/images/icons.svg?v=45#icon-x"></use>
+          </svg>
+        </span>
+      </button>
     </div>
 
-    <ul class="menu">
+    <ul class="menu mobile-menu-list ac-list-container">
       <li >
-        <a href="/en/">
-          Home
+        <a class="mobile-menu-link ac-list-row" href="/en/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Home</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/about/">
-          About me
+        <a class="mobile-menu-link ac-list-row" href="/en/about/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">About me</span>
+          </span>
         </a>
       </li>
       <li class="active">
-        <a href="/en/portfolio/">
-          Portfolio
+        <a class="mobile-menu-link ac-list-row" href="/en/portfolio/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Portfolio</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/certificates/">
-          Certificates
+        <a class="mobile-menu-link ac-list-row" href="/en/certificates/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Certificates</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/blog/">
-          Blog
+        <a class="mobile-menu-link ac-list-row" href="/en/blog/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Blog</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/contacts/">
-          Contacts
+        <a class="mobile-menu-link ac-list-row" href="/en/contacts/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Contacts</span>
+          </span>
         </a>
       </li>
     </ul>
@@ -174,53 +216,70 @@
   <div class="menu-overlay" aria-hidden="true"></div>
 
   <main id="main-content" tabindex="-1" class="container page-content--portfolio">
-    <h1 id="portfolio">Portfolio</h1>
+    
+<header
+  class="ac-section-header site-page-header" data-ac-size="large">
+  <div class="ac-section-header__main">
+    <div class="ac-section-header__heading-group">
+      <h1 class="ac-section-header__title">Portfolio</h1><p class="ac-section-header__subtitle">Here are some personal projects I worked on. They mark stages of my growth and don&#39;t fully reflect where I am today.</p></div></div>
+</header>
 
-<p>Here are some personal projects I worked on. They mark stages of my growth and don’t fully reflect where I am today.</p>
 
 <div class="portfolio-grid">
 
   
-  
-  <a class="portfolio-card" href="/en/portfolio/notaplace/">
-    <div class="portfolio-card__media" style="--portfolio-thumb-bg: linear-gradient(135deg, #111827, #334155);">
-      
-      <img src="https://raw.githubusercontent.com/antoniocasto/NotAPlace/refs/heads/main/doc/56.PNG" alt="NotAPlace map view" loading="lazy" decoding="async" />
-      
-    </div>
-    <div class="portfolio-card__body">
-      <h2>NotAPlace</h2>
-      <p>An iOS app built with SwiftUI to track places that evoke positive emotions.</p>
-    </div>
-  </a>
+
+
+
+
+
+<a
+  class="ac-card project-card" data-ac-variant="filled" href="/en/portfolio/notaplace/"><div class="ac-card__header"><p class="ac-card__title">NotAPlace</p></div><div class="ac-card__body">
+  <div class="project-card__media" style="--portfolio-thumb-bg: linear-gradient(135deg, var(--ac-color-surface), color-mix(in srgb, var(--ac-color-foreground) 18%, var(--ac-color-surface-elevated)));">
+    
+      <img src="https://raw.githubusercontent.com/antoniocasto/NotAPlace/refs/heads/main/doc/56.PNG" alt="NotAPlace map view" loading="eager" decoding="async">
+    
+  </div>
+  <p>An iOS app built with SwiftUI to track places that evoke positive emotions.</p>
+</div></a>
+
+
 
   
-  
-  <a class="portfolio-card" href="/en/portfolio/swiftui-clima/">
-    <div class="portfolio-card__media" style="--portfolio-thumb-bg: linear-gradient(135deg, #0ea5e9, #1d4ed8);">
-      
-      <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png" alt="SwiftUIClima weather screen" loading="lazy" decoding="async" />
-      
-    </div>
-    <div class="portfolio-card__body">
-      <h2>SwiftUIClima</h2>
-      <p>An iOS weather app built with SwiftUI.</p>
-    </div>
-  </a>
+
+
+
+
+
+<a
+  class="ac-card project-card" data-ac-variant="filled" href="/en/portfolio/swiftui-clima/"><div class="ac-card__header"><p class="ac-card__title">SwiftUIClima</p></div><div class="ac-card__body">
+  <div class="project-card__media" style="--portfolio-thumb-bg: linear-gradient(135deg, color-mix(in srgb, var(--ac-color-accent) 78%, var(--ac-color-surface)), color-mix(in srgb, var(--ac-color-accent) 42%, var(--ac-color-surface-elevated)));">
+    
+      <img src="https://raw.githubusercontent.com/antoniocasto/SwiftUIClima/refs/heads/main/doc/1.png" alt="SwiftUIClima weather screen" loading="eager" decoding="async">
+    
+  </div>
+  <p>An iOS weather app built with SwiftUI.</p>
+</div></a>
+
+
 
   
-  
-  <a class="portfolio-card" href="/en/portfolio/acswiftui-navigation/">
-    <div class="portfolio-card__media" style="--portfolio-thumb-bg: color-mix(in srgb, var(--surface-color) 85%, var(--primary-color));">
-      
-      <img src="/assets/images/portfolio/acswiftui-navigation.png" alt="ACSwiftUINavigation preview" loading="lazy" decoding="async" />
-      
-    </div>
-    <div class="portfolio-card__body">
-      <h2>ACSwiftUINavigation</h2>
-      <p>A Swift Package (SPM) for implementing clean, modular navigation flows in SwiftUI apps.</p>
-    </div>
-  </a>
+
+
+
+
+
+<a
+  class="ac-card project-card" data-ac-variant="filled" href="/en/portfolio/acswiftui-navigation/"><div class="ac-card__header"><p class="ac-card__title">ACSwiftUINavigation</p></div><div class="ac-card__body">
+  <div class="project-card__media" style="--portfolio-thumb-bg: color-mix(in srgb, var(--ac-color-surface) 85%, var(--ac-color-accent));">
+    
+      <img src="/assets/images/portfolio/acswiftui-navigation.png" alt="ACSwiftUINavigation preview" loading="eager" decoding="async">
+    
+  </div>
+  <p>A Swift Package (SPM) for implementing clean, modular navigation flows in SwiftUI apps.</p>
+</div></a>
+
+
 
 </div>
 
@@ -230,17 +289,19 @@
     <p>2026 Antonio Casto - Passionate iOS Developer. Made with ♥.</p>
   </footer>
 
-  <div class="theme-switch">
-    <input type="checkbox" id="theme-toggle" aria-label="Toggle theme">
-    <label for="theme-toggle" class="theme-toggle-label">
-      <svg class="theme-icon icon" aria-hidden="true">
-        <use href="/assets/images/icons.svg#icon-moon"></use>
-      </svg>
-    </label>
-  </div>
+  <div
+  class="ac-fab-anchor theme-switch"><button
+      class="ac-fab theme-toggle-fab"
+      type="button" data-ac-variant="glass" aria-label="Toggle theme" id="theme-toggle" data-theme-toggle aria-pressed="false">
+      <span class="ac-fab__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span></button></div>
+
 
   <div class="theme-overlay"></div>
 
-  <script src="/assets/js/main.js?v=3"></script>
+  <script src="/assets/js/main.js?v=45"></script>
 </body>
 </html>

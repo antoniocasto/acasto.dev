@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0A0A" />
+  <meta name="color-scheme" content="light dark" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.acTheme = savedTheme || systemTheme;
+      } catch (error) {
+        document.documentElement.dataset.acTheme = 'light';
+      }
+    }());
+  </script>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ACDesign: il mio modo di tenere insieme forma e codice | Antonio Casto - Passionate iOS Developer</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="ACDesign: il mio modo di tenere insieme forma e codice" />
+<meta name="author" content="Antonio Casto" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ACDesign: il mio modo di tenere insieme forma e codice" />
+<meta property="og:description" content="ACDesign: il mio modo di tenere insieme forma e codice" />
+<link rel="canonical" href="https://acasto.dev/it/blog/2026/06/06/acdesign/" />
+<meta property="og:url" content="https://acasto.dev/it/blog/2026/06/06/acdesign/" />
+<meta property="og:site_name" content="Antonio Casto - Passionate iOS Developer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-06T08:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ACDesign: il mio modo di tenere insieme forma e codice" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Antonio Casto"},"dateModified":"2026-06-06T08:00:00+00:00","datePublished":"2026-06-06T08:00:00+00:00","description":"ACDesign: il mio modo di tenere insieme forma e codice","headline":"ACDesign: il mio modo di tenere insieme forma e codice","mainEntityOfPage":{"@type":"WebPage","@id":"https://acasto.dev/it/blog/2026/06/06/acdesign/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://acasto.dev/assets/images/acasto-logo.png"},"name":"Antonio Casto"},"url":"https://acasto.dev/it/blog/2026/06/06/acdesign/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    
+    
+        <link rel="alternate" hreflang="en" href="https://acasto.dev/en/blog/2026/06/06/acdesign/" />
+        
+      
+    
+        <link rel="alternate" hreflang="it" href="https://acasto.dev/it/blog/2026/06/06/acdesign/" />
+        
+      
+    
+    
+      <link rel="alternate" hreflang="x-default" href="https://acasto.dev/en/blog/2026/06/06/acdesign/" />
+    
+  
+
+  <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="acasto" />
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+  <link rel="stylesheet" href="/assets/acdesign/styles/components.css?v=45">
+  <link rel="stylesheet" href="/assets/css/style.css?v=45">
+</head>
+<body class="ac-theme">
+  <a class="skip-link" href="#main-content">Vai al contenuto principale</a>
+
+  <header class="site-header">
+    <nav class="nav-bar container">
+      <div class="nav-left">
+        <a href="/it/" class="brand-logo desktop-logo">
+          <img src="/assets/images/acasto-logo.png" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
+        </a>
+
+        <button type="button" class="menu-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Apri menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="ac-icon-button__icon" aria-hidden="true">
+            <svg class="icon icon--md">
+              <use href="/assets/images/icons.svg?v=45#icon-menu"></use>
+            </svg>
+          </span>
+        </button>
+
+        <ul class="menu desktop-menu">
+          <li >
+            <a href="/it/">
+              Home
+            </a>
+          </li>
+          <li >
+            <a href="/it/about/">
+              Chi sono
+            </a>
+          </li>
+          <li >
+            <a href="/it/portfolio/">
+              Portfolio
+            </a>
+          </li>
+          <li >
+            <a href="/it/certificates/">
+              Certificati
+            </a>
+          </li>
+          <li class="active">
+            <a href="/it/blog/">
+              Blog
+            </a>
+          </li>
+          <li >
+            <a href="/it/contacts/">
+              Contatti
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-center">
+        <a href="/it/" class="brand-logo mobile-logo">
+          <img src="/assets/images/acasto-logo.png" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <details class="language-dropdown">
+          <summary class="language-dropdown__summary ac-icon-button" data-ac-size="small" data-ac-variant="outlined" aria-label="Seleziona lingua">
+            <span class="language-icon" aria-hidden="true">
+              <svg class="icon icon--sm">
+                <use href="/assets/images/icons.svg?v=45#icon-globe"></use>
+              </svg>
+            </span>
+            <span class="language-label">IT</span>
+          </summary>
+          <ul class="language-options">
+            
+              <li>
+                    <a href="/en/blog/2026/06/06/acdesign/">EN</a>
+                  </li>
+            
+          </ul>
+        </details>
+      </div>
+    </nav>
+  </header>
+
+  <div class="side-menu ac-surface-elevated" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
+    <div class="side-menu-header">
+      <button type="button" class="mobile-theme-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Cambia tema" data-theme-toggle aria-pressed="false">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span>
+      </button>
+      <button type="button" class="close-menu ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Chiudi menu">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+          <svg class="icon icon--md">
+            <use href="/assets/images/icons.svg?v=45#icon-x"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <ul class="menu mobile-menu-list ac-list-container">
+      <li >
+        <a class="mobile-menu-link ac-list-row" href="/it/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Home</span>
+          </span>
+        </a>
+      </li>
+      <li >
+        <a class="mobile-menu-link ac-list-row" href="/it/about/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Chi sono</span>
+          </span>
+        </a>
+      </li>
+      <li >
+        <a class="mobile-menu-link ac-list-row" href="/it/portfolio/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Portfolio</span>
+          </span>
+        </a>
+      </li>
+      <li >
+        <a class="mobile-menu-link ac-list-row" href="/it/certificates/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Certificati</span>
+          </span>
+        </a>
+      </li>
+      <li class="active">
+        <a class="mobile-menu-link ac-list-row" href="/it/blog/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Blog</span>
+          </span>
+        </a>
+      </li>
+      <li >
+        <a class="mobile-menu-link ac-list-row" href="/it/contacts/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Contatti</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="menu-overlay" aria-hidden="true"></div>
+
+  <main id="main-content" tabindex="-1" class="container page-content--acdesign">
+    <!-- This is the layout for individual blog posts -->
+<article class="collection_item editorial-detail post-detail">
+  
+  
+  
+  
+
+  <header class="editorial-detail__masthead">
+    <header
+  class="ac-section-header collection_item__header editorial-detail__header post-detail__header" data-ac-size="large">
+  <div class="ac-section-header__main">
+    <div class="ac-section-header__heading-group">
+      <h1 class="ac-section-header__title">ACDesign: il mio modo di tenere insieme forma e codice</h1><p class="ac-section-header__subtitle">Pubblicato il 06 Giugno 2026</p></div></div>
+</header>
+
+
+    <div class="editorial-detail__meta" aria-label="Metadati articolo">
+      <span class="editorial-detail__eyebrow">Articolo</span>
+      <span>06 Giugno 2026</span>
+    </div>
+
+    
+    <div class="post-categories editorial-detail__tags post-detail__tags" aria-label="Categorie articolo">
+      
+        <span
+  class="ac-tag" data-ac-variant="outlined" data-ac-size="small" data-ac-color="surface"><span class="ac-tag__label">Design System</span>
+</span>
+
+      
+    </div>
+    
+  </header>
+  
+  <div class="content editorial-detail__body">
+    <h1 id="acdesign-il-mio-modo-di-tenere-insieme-forma-e-codice">ACDesign: il mio modo di tenere insieme forma e codice</h1>
+
+<p>ACDesign è il design system che sto costruendo per le mie app iOS e per il web.</p>
+
+<p>Non nasce come esercizio di stile. Nasce da un’esigenza molto pratica: evitare di ripetere ogni volta le stesse decisioni su colori, spazi, bordi, tipografia, stati e componenti. Quando queste scelte restano sparse nel codice, ogni schermata finisce per avere una piccola variazione non voluta. All’inizio sembra una cosa innocua, poi diventa rumore.</p>
+
+<p>Con ACDesign ho voluto creare una base comune: una grammatica visiva e tecnica che posso usare in SwiftUI e portare anche sul web senza cambiare identità ogni volta.</p>
+
+<h2 id="perché-è-nato">Perché è nato</h2>
+
+<p>Lavorando su app iOS, mi sono reso conto che la coerenza non riguarda solo il design. Riguarda anche il modo in cui il codice viene scritto, riusato e mantenuto.</p>
+
+<p>Se un bottone, una card o una riga di lista hanno regole chiare, non devo ripensarli a ogni nuova feature. Posso concentrarmi sul flusso, sulla logica e sull’esperienza. Il componente diventa una piccola unità affidabile, con un nome preciso e un comportamento prevedibile.</p>
+
+<p>Questo si collega bene anche al mio modo di ragionare sulle architetture: modularità, separazione delle responsabilità, testabilità. ACDesign applica lo stesso principio alla UI.</p>
+
+<h2 id="a-cosa-si-ispira">A cosa si ispira</h2>
+
+<p>ACDesign prende forma dal mio modo di lavorare con SwiftUI: composizione, componenti piccoli, API leggibili e preview utili. Non prova a sostituire tutto quello che la piattaforma offre già bene. Navigation bar, tab bar, sheet, alert, menu contestuali e altri elementi nativi restano dove hanno senso: nelle API di sistema.</p>
+
+<p>La parte visiva è volutamente netta: base bianco e nero, un solo accento cromatico, forme geometriche, bordi pieni, tipografia forte. Niente decorazione aggiunta per coprire problemi di struttura. Se una schermata funziona, deve funzionare perché gerarchia, spaziatura e componenti sono chiari.</p>
+
+<p>Sul web ho mantenuto la stessa direzione. ACDesignWeb non è un secondo design system: è il port web di ACDesign. Il core contiene token, CSS, contratti semantici e hook di enhancement. L’adapter Jekyll resta sottile e traduce gli include Liquid nei contratti del core. Il JavaScript entra solo quando HTML e CSS non bastano più.</p>
+
+<h2 id="cosa-offre">Cosa offre</h2>
+
+<p>ACDesign oggi offre una base SwiftUI con token di fondazione per colore, spacing, radius, bordi, tipografia e motion. Sopra questa base ci sono componenti riutilizzabili come button, tag, badge, card, list row, form row, banner, inline alert, modal, tooltip, progress, step indicator e altri elementi che uso per costruire interfacce coerenti.</p>
+
+<p>Il repository Swift include anche un catalogo SwiftUI per le preview, test sui componenti e riferimenti HTML offline. Questo mi aiuta a verificare che il sistema non sia solo bello da vedere, ma anche ordinato da mantenere.</p>
+
+<p>ACDesignWeb porta la stessa logica sul web. Nel mio sito, per esempio, uso gli stessi principi per nav, card, tag, righe di lista, pagine editoriali e superfici. Non voglio che il sito sembri un mondo separato dalle app: deve avere lo stesso carattere, adattato al mezzo.</p>
+
+<h2 id="il-punto">Il punto</h2>
+
+<p>Per me ACDesign è soprattutto un modo per ridurre attrito.</p>
+
+<p>Quando apro un progetto, voglio sapere già come deve comportarsi una superficie, quanto spazio serve tra due blocchi, come deve apparire un’azione primaria, come leggere un titolo, come distinguere uno stato. Non perché tutto debba essere rigido, ma perché le scelte ripetitive non devono rubare energia alle scelte importanti.</p>
+
+<p>ACDesign nasce per questo: tenere insieme forma e codice, SwiftUI e web, estetica e manutenzione.</p>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer container">
+    <p>2026 Antonio Casto - Passionate iOS Developer. Made with ♥.</p>
+  </footer>
+
+  <div
+  class="ac-fab-anchor theme-switch"><button
+      class="ac-fab theme-toggle-fab"
+      type="button" data-ac-variant="glass" aria-label="Cambia tema" id="theme-toggle" data-theme-toggle aria-pressed="false">
+      <span class="ac-fab__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span></button></div>
+
+
+  <div class="theme-overlay"></div>
+
+  <script src="/assets/js/main.js?v=45"></script>
+</body>
+</html>

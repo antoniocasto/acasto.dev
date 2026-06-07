@@ -1,0 +1,35 @@
+:where(.ac-inline-alert) {
+  --ac-inline-alert-padding-inline: var(--ac-space-md);
+  --ac-inline-alert-padding-block: 0.625rem;
+  --ac-inline-alert-radius: var(--ac-radius-md);
+  --ac-inline-alert-gap: var(--ac-space-sm);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--ac-inline-alert-gap);
+  align-items: start;
+  inline-size: 100%;
+  padding: var(--ac-inline-alert-padding-block) var(--ac-inline-alert-padding-inline);
+  border: var(--ac-message-border-width) solid var(--ac-message-border-color);
+  border-radius: var(--ac-inline-alert-radius);
+  background: var(--ac-message-background);
+  box-sizing: border-box;
+}
+
+:where(.ac-inline-alert .ac-message__icon) {
+  --ac-message-icon-size: 1.25rem;
+  --ac-message-icon-radius: 0.3125rem;
+  --ac-message-icon-symbol-size: 0.5625rem;
+}
+
+:where(.ac-inline-alert .ac-message__title) {
+  font-size: 0.875rem;
+}
+
+:where(.ac-inline-alert .ac-message__message) {
+  font-size: 0.8125rem;
+}
+
+:where(.ac-inline-alert .ac-message__dismiss) {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}

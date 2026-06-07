@@ -1,0 +1,79 @@
+:where(.ac-form-row) {
+  --ac-form-row-padding-block: var(--ac-space-md);
+  --ac-form-row-gap: var(--ac-space-md);
+  display: grid;
+  gap: var(--ac-form-row-gap);
+  padding-block: var(--ac-form-row-padding-block);
+  box-sizing: border-box;
+}
+
+:where(.ac-form-row[data-ac-layout="horizontal"]) {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+:where(.ac-form-row:not([data-ac-layout]), .ac-form-row[data-ac-layout="stacked"]) {
+  justify-items: start;
+  --ac-form-row-gap: var(--ac-space-xs);
+}
+
+:where(.ac-form-row[data-ac-disabled="true"]) {
+  opacity: 0.4;
+}
+
+:where(.ac-form-row__label) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  margin: 0;
+  color: var(--ac-color-foreground);
+  font-size: var(--ac-type-body-font-size);
+  font-weight: 700;
+  letter-spacing: var(--ac-type-body-letter-spacing);
+  line-height: var(--ac-type-body-line-height);
+}
+
+:where(.ac-form-row__required) {
+  color: var(--ac-color-accent);
+}
+
+:where(.ac-form-row__control) {
+  min-inline-size: 0;
+}
+
+:where(.ac-form-section) {
+  display: grid;
+  gap: var(--ac-space-xs);
+}
+
+:where(.ac-form-section__title) {
+  margin: 0;
+  padding-inline-start: var(--ac-space-xs);
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: 700;
+  letter-spacing: var(--ac-type-caption-letter-spacing);
+  line-height: var(--ac-type-caption-line-height);
+}
+
+:where(.ac-form-section__body) {
+  overflow: hidden;
+  padding-inline: var(--ac-space-lg);
+  border: var(--ac-border-default) solid var(--ac-color-border-subtle);
+  border-radius: var(--ac-radius-lg);
+  background: var(--ac-color-surface);
+}
+
+:where(.ac-form-section__body > .ac-form-row:not(:last-child)) {
+  border-block-end: var(--ac-border-default) solid var(--ac-color-border-subtle);
+}
+
+:where(.ac-form-section__footer) {
+  margin: 0;
+  padding-inline-start: var(--ac-space-xs);
+  color: var(--ac-color-foreground-secondary);
+  font-size: var(--ac-type-caption-font-size);
+  font-weight: 400;
+  letter-spacing: var(--ac-type-caption-letter-spacing);
+  line-height: var(--ac-type-caption-line-height);
+}

@@ -1,0 +1,32 @@
+:where(.ac-glass-container) {
+  --ac-glass-padding: var(--ac-space-lg);
+  --ac-glass-radius: var(--ac-radius-xl);
+  --ac-glass-min-height: 3.5rem;
+  --ac-glass-max-width: 40rem;
+  display: block;
+  inline-size: min(100%, var(--ac-glass-max-width));
+  min-block-size: var(--ac-glass-min-height);
+  margin-inline: auto;
+  padding: var(--ac-glass-padding);
+  border: var(--ac-border-default) solid color-mix(in srgb, var(--ac-color-border-subtle) 84%, transparent);
+  border-radius: var(--ac-glass-radius);
+  background: color-mix(in srgb, var(--ac-color-surface-elevated) 72%, transparent);
+  box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.12);
+  box-sizing: border-box;
+  backdrop-filter: blur(1rem) saturate(160%);
+  -webkit-backdrop-filter: blur(1rem) saturate(160%);
+}
+
+:where(.ac-glass-container[data-ac-align="start"]) {
+  margin-inline: 0 auto;
+}
+
+:where(.ac-glass-container[data-ac-align="end"]) {
+  margin-inline: auto 0;
+}
+
+@supports not ((backdrop-filter: blur(1rem))) {
+  :where(.ac-glass-container) {
+    background: var(--ac-color-surface-elevated);
+  }
+}

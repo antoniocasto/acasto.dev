@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 
 
+
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#2563eb" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A0A0A" />
   <meta name="color-scheme" content="light dark" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.acTheme = savedTheme || systemTheme;
+      } catch (error) {
+        document.documentElement.dataset.acTheme = 'light';
+      }
+    }());
+  </script>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Home | Antonio Casto - Passionate iOS Developer</title>
@@ -52,23 +67,25 @@
   <meta name="apple-mobile-web-app-title" content="acasto" />
   <link rel="manifest" href="/assets/images/site.webmanifest" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=3">
+  <link rel="stylesheet" href="/assets/acdesign/styles/components.css?v=45">
+  <link rel="stylesheet" href="/assets/css/style.css?v=45">
 </head>
-<body>
+<body class="ac-theme">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header glass-panel">
+  <header class="site-header">
     <nav class="nav-bar container">
       <div class="nav-left">
         <a href="/en/" class="brand-logo desktop-logo">
           <img src="/assets/images/acasto-logo.png" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
         </a>
 
-        <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-          <span class="burger-icon"></span>
+        <button type="button" class="menu-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="ac-icon-button__icon" aria-hidden="true">
+            <svg class="icon icon--md">
+              <use href="/assets/images/icons.svg?v=45#icon-menu"></use>
+            </svg>
+          </span>
         </button>
 
         <ul class="menu desktop-menu">
@@ -113,10 +130,10 @@
 
       <div class="nav-right">
         <details class="language-dropdown">
-          <summary aria-label="Select language">
+          <summary class="language-dropdown__summary ac-icon-button" data-ac-size="small" data-ac-variant="outlined" aria-label="Select language">
             <span class="language-icon" aria-hidden="true">
               <svg class="icon icon--sm">
-                <use href="/assets/images/icons.svg#icon-globe"></use>
+                <use href="/assets/images/icons.svg?v=45#icon-globe"></use>
               </svg>
             </span>
             <span class="language-label">EN</span>
@@ -133,40 +150,65 @@
     </nav>
   </header>
 
-  <div class="side-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
+  <div class="side-menu ac-surface-elevated" id="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Menu" tabindex="-1">
     <div class="side-menu-header">
-      <button type="button" class="close-menu" aria-label="Close menu">&times;</button>
+      <button type="button" class="mobile-theme-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Toggle theme" data-theme-toggle aria-pressed="false">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span>
+      </button>
+      <button type="button" class="close-menu ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="Close menu">
+        <span class="ac-icon-button__icon" aria-hidden="true">
+          <svg class="icon icon--md">
+            <use href="/assets/images/icons.svg?v=45#icon-x"></use>
+          </svg>
+        </span>
+      </button>
     </div>
 
-    <ul class="menu">
+    <ul class="menu mobile-menu-list ac-list-container">
       <li class="active">
-        <a href="/en/">
-          Home
+        <a class="mobile-menu-link ac-list-row" href="/en/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Home</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/about/">
-          About me
+        <a class="mobile-menu-link ac-list-row" href="/en/about/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">About me</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/portfolio/">
-          Portfolio
+        <a class="mobile-menu-link ac-list-row" href="/en/portfolio/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Portfolio</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/certificates/">
-          Certificates
+        <a class="mobile-menu-link ac-list-row" href="/en/certificates/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Certificates</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/blog/">
-          Blog
+        <a class="mobile-menu-link ac-list-row" href="/en/blog/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Blog</span>
+          </span>
         </a>
       </li>
       <li >
-        <a href="/en/contacts/">
-          Contacts
+        <a class="mobile-menu-link ac-list-row" href="/en/contacts/">
+          <span class="ac-list-row__body">
+            <span class="ac-list-row__title">Contacts</span>
+          </span>
         </a>
       </li>
     </ul>
@@ -174,25 +216,90 @@
   <div class="menu-overlay" aria-hidden="true"></div>
 
   <main id="main-content" tabindex="-1" class="container page-content--home">
-    <!-- This is the main index layout for the website. It includes a terminal-style header with a typing animation and a placeholder for the page content. -->
-<div class="terminal">
-    <h1 class="typing-animation">acasto<span class="dot">.</span>dev 👋🏻</h1>
-</div>
+    
 
-<section class="home-hero">
-    <div class="home-hero__content">
-        <p>Hello,</p>
 
-<p>My name is Antonio Casto, and I am a <strong>passionate iOS Developer</strong>, fully bilingual (English/Italian), dedicated to creating intuitive and high-performance apps.</p>
 
-<p>I specialize in designing applications using <strong>SwiftUI</strong> and <strong>UIKit</strong>, ensuring modularity, scalability, and testability while following industry best practices.</p>
 
-<p>This is my personal website, where I share my projects and ideas related to <strong>iOS development</strong>.</p>
+
+
+<section class="home-shell" aria-labelledby="home-title">
+  <div class="home-intro">
+    <div class="home-role">
+      <span
+  class="ac-badge home-role__badge">iOS Developer</span>
 
     </div>
-    <div class="home-hero__image">
-        <img src="/assets/images/profile.jpeg" alt="Antonio Casto" loading="eager" fetchpriority="high" decoding="async" width="764" height="824">
+    <h1 id="home-title">Antonio Casto</h1>
+    <div class="home-copy">
+      <p>I build intuitive, high-performance iOS apps with <strong>SwiftUI</strong> and <strong>UIKit</strong>, with a focus on modular architecture, scalability, testability, and bilingual product experiences.</p>
+
     </div>
+  </div>
+
+  <figure class="home-portrait">
+    <img src="/assets/images/profile.jpeg" alt="Antonio Casto" loading="eager" fetchpriority="high" decoding="async" width="764" height="824">
+  </figure>
+
+  <div class="home-details">
+    <div class="home-proof" aria-label="Professional proof points">
+      <div class="ac-list-row home-proof__item">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">Native iOS</span>
+          <span class="ac-list-row__title home-proof__value">SwiftUI/UIKit</span>
+          <span class="ac-list-row__subtitle home-proof__label">Interfaces and platform APIs</span>
+        </span>
+      </div>
+      <div class="ac-list-row home-proof__item">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">Architecture</span>
+          <span class="ac-list-row__title home-proof__value">MVVM/VIPER/RIB</span>
+          <span class="ac-list-row__subtitle home-proof__label">Modularity and testability</span>
+        </span>
+      </div>
+      <div class="ac-list-row home-proof__item" data-ac-divider="false">
+        <span class="ac-list-row__body">
+          <span class="home-proof__meta">Delivery</span>
+          <span class="ac-list-row__title home-proof__value">CI/CD</span>
+          <span class="ac-list-row__subtitle home-proof__label">Fastlane, GitLab, quality gates</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="home-actions" aria-label="Primary actions">
+      <a
+    class="ac-button home-action" data-ac-size="large" href="/en/portfolio/"><span class="ac-button__label">Portfolio</span><span class="ac-button__icon" data-ac-slot="trailing" aria-hidden="true">
+  <svg class="icon icon--sm" aria-hidden="true">
+    <use href="/assets/images/icons.svg?v=45#icon-chevron-right"></use>
+  </svg>
+</span></a>
+      <a
+    class="ac-button home-action" data-ac-variant="secondary" data-ac-size="large" href="/en/contacts/"><span class="ac-button__label">Contacts</span></a>
+    </div>
+
+    <div class="ac-tag-group home-tags" data-ac-selection-mode="static-display" data-ac-layout="compact" aria-label="Core skills">
+      <span
+  class="ac-tag ac-tag-group__item" data-ac-variant="outlined" data-ac-size="small" data-ac-color="surface"><span class="ac-tag__label">SwiftUI</span>
+</span>
+
+      <span
+  class="ac-tag ac-tag-group__item" data-ac-variant="outlined" data-ac-size="small" data-ac-color="surface"><span class="ac-tag__label">UIKit</span>
+</span>
+
+      <span
+  class="ac-tag ac-tag-group__item" data-ac-variant="outlined" data-ac-size="small" data-ac-color="surface"><span class="ac-tag__label">Architecture</span>
+</span>
+
+      <span
+  class="ac-tag ac-tag-group__item" data-ac-variant="outlined" data-ac-size="small" data-ac-color="surface"><span class="ac-tag__label">Testing</span>
+</span>
+
+      <span
+  class="ac-tag ac-tag-group__item" data-ac-variant="outlined" data-ac-size="small" data-ac-color="surface"><span class="ac-tag__label">CI/CD</span>
+</span>
+
+    </div>
+  </div>
 </section>
 
   </main>
@@ -201,17 +308,19 @@
     <p>2026 Antonio Casto - Passionate iOS Developer. Made with ♥.</p>
   </footer>
 
-  <div class="theme-switch">
-    <input type="checkbox" id="theme-toggle" aria-label="Toggle theme">
-    <label for="theme-toggle" class="theme-toggle-label">
-      <svg class="theme-icon icon" aria-hidden="true">
-        <use href="/assets/images/icons.svg#icon-moon"></use>
-      </svg>
-    </label>
-  </div>
+  <div
+  class="ac-fab-anchor theme-switch"><button
+      class="ac-fab theme-toggle-fab"
+      type="button" data-ac-variant="glass" aria-label="Toggle theme" id="theme-toggle" data-theme-toggle aria-pressed="false">
+      <span class="ac-fab__icon" aria-hidden="true">
+    <svg class="theme-icon icon" aria-hidden="true">
+      <use data-theme-icon-use href="/assets/images/icons.svg?v=45#icon-moon"></use>
+    </svg>
+</span></button></div>
+
 
   <div class="theme-overlay"></div>
 
-  <script src="/assets/js/main.js?v=3"></script>
+  <script src="/assets/js/main.js?v=45"></script>
 </body>
 </html>
