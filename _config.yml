@@ -40,7 +40,7 @@ plugins:
   - jekyll-sitemap  # Automatically generates sitemap.xml
 
 exclude:
-  - docs/superpowers/plans/
+  - vendor/
 
 # Collections - Portfolio and Blog
 collections:
