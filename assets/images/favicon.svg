@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="acasto favicon">
-  <style>
-    .bg { fill: #FFFFFF; }
-    .mark { fill: #0A0A0A; }
-    .ring { fill: none; stroke: #0A0A0A; }
-    @media (prefers-color-scheme: dark) {
-      .bg { fill: #0A0A0A; }
-      .mark { fill: #F5F5F5; }
-      .ring { stroke: #F5F5F5; }
-    }
-  </style>
-  <rect class="bg" width="128" height="128" rx="28" />
-  <circle class="ring" cx="64" cy="64" r="46" stroke-width="8" />
-  <path class="mark" d="M64 24L27 104h15l8.6-19h26.8l8.6 19h15L64 24zm0 31.4L71.8 73H56.2L64 55.4z" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 1600 1600" role="img" aria-label="acasto.dev — Orbital A / 02"><title>acasto.dev — Orbital A / 02</title><style>:root { --acasto-icon-color: #122033; } @media (prefers-color-scheme: dark) { :root { --acasto-icon-color: #ffffff; } }</style><g id="monogram-body" fill="var(--acasto-icon-color, #122033)"><path id="open-c" d="M1402.84836,585.11898 A640,640 0 1 0 1402.84836,1014.88102 A215,215 0 0 1 1309.68115,990.16079 A544,544 0 1 1 1309.68115,609.83921 A215,215 0 0 1 1402.84836,585.11898 Z"/><path id="letter-a" d="M782.03799,505.00000 L817.96201,505.00000 L848.33492,564.18335 A210,210 0 0 0 997.96722,855.75044 L1146.41016,1145.00000 L1012.89669,1145.00000 A215,215 0 0 0 587.10331,1145.00000 L453.58984,1145.00000 Z"/></g><circle id="accent-dot" cx="1408" cy="800" r="48" fill="var(--acasto-icon-color, #122033)"/></svg>
