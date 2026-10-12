@@ -57,12 +57,7 @@
     {% endif %}
   {% endif %}
 
-  <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
-  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="acasto" />
-  <link rel="manifest" href="/assets/images/site.webmanifest" />
+  {% include site-icons.html %}
 
   <link rel="stylesheet" href="{{ '/assets/acdesign/styles/components.css' | relative_url }}?v={{ asset_version }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ asset_version }}">
@@ -74,7 +69,7 @@
     <nav class="nav-bar container">
       <div class="nav-left">
         <a href="{{ site.baseurl }}/{{ current_lang }}/" class="brand-logo desktop-logo">
-          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
+          {% include brand-logo.html %}
         </a>
 
         <button type="button" class="menu-toggle ac-icon-button" data-ac-size="small" data-ac-shape="circle" data-ac-variant="outlined" aria-label="{{ a11y.open_menu | default: 'Open menu' }}" aria-expanded="false" aria-controls="mobile-menu">
@@ -121,7 +116,7 @@
 
       <div class="nav-center">
         <a href="{{ site.baseurl }}/{{ current_lang }}/" class="brand-logo mobile-logo">
-          <img src="{{ '/assets/images/acasto-logo.png' | relative_url }}" alt="ACasto Logo" class="logo-img" width="40" height="40" decoding="async">
+          {% include brand-logo.html %}
         </a>
       </div>
 
@@ -232,6 +227,9 @@
   </main>
 
   <footer class="site-footer container">
+    <a href="{{ site.baseurl }}/{{ current_lang }}/" class="brand-logo footer-logo">
+      {% include brand-logo.html variant="wordmark" %}
+    </a>
     <p>{{ site.time | date: "%Y" }} {{ site.title }}. Made with ♥.</p>
   </footer>
 

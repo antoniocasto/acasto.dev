@@ -1,0 +1,10 @@
+{% assign brand_variant = include.variant | default: 'symbol' %}
+{% if brand_variant == 'wordmark' %}
+  {% assign brand_width = 1400 %}
+  {% assign brand_height = 560 %}
+{% else %}
+  {% assign brand_width = 1600 %}
+  {% assign brand_height = 1600 %}
+{% endif %}
+<img src="{{ '/assets/images/brand/' | append: brand_variant | append: '-light.svg' | relative_url }}?v={{ site.asset_version }}" alt="acasto.dev" class="logo-img logo-img--light" width="{{ brand_width }}" height="{{ brand_height }}" decoding="async">
+<img src="{{ '/assets/images/brand/' | append: brand_variant | append: '-dark.svg' | relative_url }}?v={{ site.asset_version }}" alt="acasto.dev" class="logo-img logo-img--dark" width="{{ brand_width }}" height="{{ brand_height }}" decoding="async">

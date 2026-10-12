@@ -58,6 +58,12 @@ main.container {
     padding-bottom: var(--ac-space-xxl);
 }
 
+.footer-logo .logo-img {
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+}
+
 /* Basic rules for the menu inside the site header */
 .site-header .menu {
     list-style: none; // Removing default list styling
