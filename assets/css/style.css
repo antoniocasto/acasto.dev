@@ -61,6 +61,8 @@ main.container { padding-top: var(--ac-space-xxl); padding-bottom: var(--ac-spac
 
 .site-footer { color: var(--ac-color-foreground-secondary); font-size: 0.9rem; padding-bottom: var(--ac-space-xxl); }
 
+.footer-logo .logo-img { width: 240px; max-width: 100%; height: auto; }
+
 /* Basic rules for the menu inside the site header */
 .site-header .menu { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--ac-space-lg); }
 
@@ -468,15 +470,19 @@ main.container { padding-top: var(--ac-space-xxl); padding-bottom: var(--ac-spac
 
 .mobile-logo .logo-img { height: var(--nav-logo-size); width: auto; }
 
-.desktop-logo .logo-img, .mobile-logo .logo-img { filter: none; }
+.brand-logo .logo-img--dark { display: none; }
 
-[data-ac-theme="dark"] .desktop-logo .logo-img, [data-ac-theme="dark"] .mobile-logo .logo-img { filter: invert(1); }
+[data-ac-theme="dark"] .brand-logo .logo-img--light { display: none; }
 
+[data-ac-theme="dark"] .brand-logo .logo-img--dark { display: block; }
+
+@media (prefers-color-scheme: dark) { :root:not([data-ac-theme="light"]):not([data-ac-theme="dark"]) .brand-logo .logo-img--light { display: none; }
+  :root:not([data-ac-theme="light"]):not([data-ac-theme="dark"]) .brand-logo .logo-img--dark { display: block; } }
 .nav-bar { display: flex; align-items: center; justify-content: space-between; position: relative; }
 
 .brand-logo { display: inline-flex; align-items: center; justify-content: center; line-height: 0; }
 
-.brand-logo .logo-img { display: block; }
+.brand-logo .logo-img--light { display: block; }
 
 .desktop-menu { list-style: none; display: flex; gap: var(--ac-space-xs); margin: 0; padding: 0; }
 
