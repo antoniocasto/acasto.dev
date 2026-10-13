@@ -59,7 +59,7 @@ main.container { padding-top: var(--ac-space-xxl); padding-bottom: var(--ac-spac
 
 .page-content--blog #category-filters h3 { display: block; }
 
-.site-footer { color: var(--ac-color-foreground-secondary); font-size: 0.9rem; padding-bottom: var(--ac-space-xxl); }
+.site-footer { color: var(--ac-color-foreground-secondary); font-size: 0.9rem; text-align: center; padding-bottom: var(--ac-space-xxl); }
 
 .site-footer .footer-logo { display: flex; width: fit-content; max-width: 100%; margin-inline: auto; }
 
