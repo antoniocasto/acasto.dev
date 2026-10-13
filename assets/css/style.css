@@ -61,6 +61,8 @@ main.container { padding-top: var(--ac-space-xxl); padding-bottom: var(--ac-spac
 
 .site-footer { color: var(--ac-color-foreground-secondary); font-size: 0.9rem; padding-bottom: var(--ac-space-xxl); }
 
+.site-footer .footer-logo { display: flex; width: fit-content; max-width: 100%; margin-inline: auto; }
+
 .footer-logo .logo-img { width: 240px; max-width: 100%; height: auto; }
 
 /* Basic rules for the menu inside the site header */
