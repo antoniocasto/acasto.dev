@@ -58,6 +58,13 @@ main.container {
     padding-bottom: var(--ac-space-xxl);
 }
 
+.site-footer .footer-logo {
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
 .footer-logo .logo-img {
     width: 240px;
     max-width: 100%;
